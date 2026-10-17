@@ -16,7 +16,54 @@
    "solution": "**א1. הגדרה:** לפי ההרצאה.\n\n**א2.** לקבוצה $A=\\{1,2,3,4,5,6\\}$ יש $6!$ תמורות. כל תמורה שבה מופיע הרצף $x=123$ היא תמורה של הקבוצה $\\{x,4,5,6\\}$, ויש $4!$ תמורות מסוג זה.\n\nמסקנה: מספר התמורות של $\\{1,2,3,4,5,6\\}$ ללא הרצף \"123\" שווה ל: $6!-4!=696$.",
    "solutionSource": "lecturer-solution",
    "official": true,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הגדרת תמורה לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "מספר התמורות הכולל: $6!=720$",
+     "points": 2
+    },
+    {
+     "text": "תמורות שבהן הרצף 123 מופיע: $4!=24$ (בלוק אחד ועוד 3 איברים)",
+     "points": 2
+    },
+    {
+     "text": "ההפרש $720-24=696$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את הרצף 123 כשלושה איברים חופשיים ולקבל $6!/3!$ או $3!\\cdot4!$ במקום $4!$.",
+    "להחסיר את $5!$ (בלוק בגודל 2) במקום $4!$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות יש ל-$\\{1,2,3,4,5,6\\}$?",
+     "answer": 720,
+     "tol": 0,
+     "explain": "$6!=720$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות מכילות את הרצף 123 (בסדר זה וצמוד)?",
+     "answer": 24,
+     "tol": 0,
+     "explain": "הבלוק $x=123$ ועוד $4,5,6$ הם ארבעה איברים, ולכן $4!=24$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות אינן מכילות את הרצף 123?",
+     "answer": 696,
+     "tol": 0,
+     "explain": "$720-24=696$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -27,7 +74,54 @@
    "solution": "**ב1. הגדרה:** לפי ההרצאה.\n\n**ב2.** כל צירוף שמקיים את התנאים הוא בצורה $\\{1,2,a,b,c\\}$ כאשר $\\{a,b,c\\}\\subseteq\\{3,4,6,8,9\\}$.\n\nלכן יש $C(5,3)=C(5,2)=10$ צירופים המקיימים את התנאים.",
    "solutionSource": "lecturer-solution",
    "official": true,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הגדרת צירוף בלי חזרות לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "שני האיברים 1,2 נבחרים והאיברים 5,7 נפסלים",
+     "points": 2
+    },
+    {
+     "text": "בחירת 3 איברים מתוך $\\{3,4,6,8,9\\}$",
+     "points": 2
+    },
+    {
+     "text": "$\\binom53=10$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור 3 איברים מתוך 9 במקום מתוך 5 הנותרים.",
+    "לשכוח שגם 5 וגם 7 אסורים, ולבחור מתוך 6 איברים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה איברים נשארים לבחירה, אחרי שבחרנו את 1 ו-2 ופסלנו את 5 ו-7?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\{3,4,6,8,9\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה איברים עוד צריך לבחור?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$5-2=3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר הצירופים המבוקש:",
+     "answer": 10,
+     "tol": 0,
+     "explain": "$\\binom53=\\binom52=10$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -39,7 +133,91 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "verdict": true
+   "verdict": true,
+   "rubric": [
+    {
+     "text": "הגדרת גרף משלים לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "עץ הוא דו-צדדי ו-$\\max\\{|A|,|B|\\}\\ge3$",
+     "points": 3
+    },
+    {
+     "text": "במשלים יש $C_3$, ולכן הוא אינו דו-צדדי",
+     "points": 2
+    },
+    {
+     "text": "ולכן אינו עץ",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לטעון שבצד אחד יש 3 צמתים בלי שהסכום הוא לפחות 5.",
+    "להסיק שהמשלים אינו עץ רק מכך שיש בו מעגל באורך 3, בלי לציין שבעץ אין מעגלים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "עץ על 5 צמתים הוא דו-צדדי. מהו הגודל המובטח של הצד הגדול?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$\\lceil5/2\\rceil=3$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות ההוכחה.",
+     "lines": [
+      "כל עץ הוא גרף דו-צדדי, $T=(A,B,E)$.",
+      "$|A|+|B|\\ge5$, ולכן $\\max\\{|A|,|B|\\}\\ge3$.",
+      "שלושה צמתים מאותו צד אינם סמוכים ב-$T$, ולכן הם יוצרים $C_3$ במשלים.",
+      "במשלים יש מעגל, ולכן הוא אינו עץ."
+     ],
+     "explain": "כל שורה נשענת על הקודמת."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "כל עץ הוא גרף דו-צדדי, $T=(A,B,E)$.",
+      "$|A|+|B|\\ge5$, ולכן $\\max\\{|A|,|B|\\}\\ge4$.",
+      "שלושה צמתים מאותו צד אינם סמוכים ב-$T$, ולכן הם יוצרים $C_3$ במשלים.",
+      "במשלים יש מעגל, ולכן הוא אינו עץ."
+     ],
+     "bugIndex": 1,
+     "explain": "אפשרית חלוקה $3+2$, ולכן מובטח רק $\\max\\ge3$ (ולא 4)."
+    },
+    {
+     "type": "choice",
+     "prompt": "עבור אילו ערכי $n$ קיים עץ על $n$ צמתים שגם משלימו עץ?",
+     "explain": "הפתרון הנוסף מראה שרק $n=1$ ו-$n=4$ (ב-$n=4$ זהו $P_4$, שמשלימו $P_4$).",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$n\\in\\{1,4\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$n\\in\\{1,2,3,4\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n\\in\\{4,5\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n\\in\\{2,4\\}$"
+      }
+     ]
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -51,7 +229,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "זיהוי המבנה: ארבעת המקומות הראשונים וארבעת האחרונים",
+     "points": 2
+    },
+    {
+     "text": "תמורה אי-סדר מלא של $1,2,3,4$: $D_4=9$",
+     "points": 3
+    },
+    {
+     "text": "גם האחרונים הם תמורה אי-סדר מלא בגודל 4, ולכן $9\\cdot9=81$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את ארבעת האחרונים כתמורה כלשהי ($4!$) ולא כאי-סדר מלא.",
+    "לחשב $D_4$ כ-$4!-3!$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $D_4$ (מספר תמורות אי-סדר מלא של $1,2,3,4$)?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$D_4=24-24+12-4+1=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אפשרויות יש לארבעת המקומות האחרונים, שבהם $x\\ne5,\\ y\\ne6,\\ z\\ne7,\\ w\\ne8$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "אי-סדר מלא על $\\{5,6,7,8\\}$, כלומר שוב $D_4=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר התמורות המבוקש:",
+     "answer": 81,
+     "tol": 0,
+     "explain": "$9\\cdot9=81$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -63,7 +284,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "הקבוצות שמכילות את $1,2$: $\\binom42=6$",
+     "points": 3
+    },
+    {
+     "text": "הקבוצות שמכילות את $5,6$: $\\binom42=6$",
+     "points": 3
+    },
+    {
+     "text": "החיתוך: קבוצה אחת בלבד, $\\{1,2,5,6\\}$",
+     "points": 2
+    },
+    {
+     "text": "הכלה והדחה: $6+6-1=11$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח להחסיר את החיתוך ולקבל 12.",
+    "לבחור את שני האיברים החסרים מתוך 6 ולא מתוך 4."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות בגודל 4 מכילות את 1 ו-2?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\{1,2\\}$ ועוד שני איברים מתוך $\\{3,4,5,6\\}$: $\\binom42=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות בגודל 4 מכילות גם את $1,2$ וגם את $5,6$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "רק $\\{1,2,5,6\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר תתי-הקבוצות המבוקש:",
+     "answer": 11,
+     "tol": 0,
+     "explain": "$6+6-1=11$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -75,7 +343,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "(ג1) $n=1$ מקיים $n\\mid\\phi(n)$",
+     "points": 1
+    },
+    {
+     "text": "(ג1) לכל $n>1$ מתקיים $\\phi(n)\\le n-1$, ולכן $n\\nmid\\phi(n)$",
+     "points": 3
+    },
+    {
+     "text": "(ג2) $\\phi(2^p3^q)=2^p3^{q-1}$",
+     "points": 3
+    },
+    {
+     "text": "(ג2) לכן $\\phi(n)\\mid n$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את המקרה $n=1$ ולכתוב שאין פתרון בכלל.",
+    "לחשב $\\phi(2^p3^q)=2^{p-1}\\cdot3^{q-1}\\cdot2$ ולטעות בגורם $\\left(1-\\frac12\\right)\\left(1-\\frac13\\right)$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "אילו $n$ מקיימים $n\\mid\\phi(n)$?",
+     "explain": "$\\phi(1)=1$ ו-$1\\mid1$. עבור $n>1$ מתקיים $\\phi(n)\\le n-1<n$, ולכן $n\\nmid\\phi(n)$ (כי $\\phi(n)\\ge1$).",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$n=1$ בלבד"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$n\\in\\{1,2\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n\\in\\{1,2,3\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אין אף $n$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=2^3\\cdot3^4=648$, מהו $\\phi(n)$?",
+     "answer": 216,
+     "tol": 0,
+     "explain": "$2^3\\cdot3^{3}=216$, בהתאם ל-$\\phi(2^p3^q)=2^p3^{q-1}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו היחס $n/\\phi(n)$ עבור $n=2^p3^q$ (גם עבור $n=648$)?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$\\frac{2^p3^q}{2^p3^{q-1}}=3$, ולכן $\\phi(n)\\mid n$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -87,7 +423,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "הוצאת 2 עצמים מכל סוג מראש: 8 עצמים",
+     "points": 2
+    },
+    {
+     "text": "נשארו 7 עצמים לבחירה מתוך 4 סוגים",
+     "points": 1
+    },
+    {
+     "text": "$D(4,7)=\\binom{10}{3}=120$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשתמש ב-15 במקום ב-7 בנוסחת $D(n,k)$.",
+    "לחשב $\\binom{10}{4}$ או $\\binom{4+7}{7}$ בלי להתאים את הנוסחה $\\binom{n-1+k}{n-1}$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה עצמים נבחרו מראש (2 מכל סוג)?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$4\\cdot2=8$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה עצמים נשארו לבחירה?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$15-8=7$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר האופנים לבחור:",
+     "answer": 120,
+     "tol": 0,
+     "explain": "$D(4,7)=\\binom{4-1+7}{4-1}=\\binom{10}3=120$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -99,7 +478,93 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 14
+   "points": 14,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית ושורש כפול 3",
+     "points": 2
+    },
+    {
+     "text": "פתרון הומוגני $C_1 3^n+C_2 n3^n$",
+     "points": 2
+    },
+    {
+     "text": "פתרון פרטי $A\\cdot5^n$ עם $A=25$",
+     "points": 4
+    },
+    {
+     "text": "קבועים: $C_1=1,\\ C_2=0$",
+     "points": 3
+    },
+    {
+     "text": "הוכחת $a_n=O(5^n)$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור פתרון פרטי $A\\cdot n\\cdot5^n$ כשהשורש הכפול הוא 3 (אין התאבכות עם 5).",
+    "להציב $a_1=131$ במקום הערך הנתון $a_1=128$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו השורש הכפול של $x^2-6x+9=0$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$(x-3)^2=0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו צורה מחפשים פתרון פרטי כשהאיבר החופשי הוא $4\\cdot5^n$?",
+     "explain": "5 אינו שורש של המשוואה האופיינית. הצורות האחרות אינן מקיימות את הרקורסיה.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$A\\cdot5^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$A\\cdot n\\cdot5^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$A\\cdot3^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$A\\cdot n\\cdot3^n$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הקבוע $A$?",
+     "answer": 25,
+     "tol": 0,
+     "explain": "$25A=30A-9A+100\\Rightarrow4A=100\\Rightarrow A=25$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_1$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$a_0=C_1+25=26$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$a_1=3C_1+3C_2+125=128$, ולכן $C_2=0$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -112,7 +577,76 @@
    "official": true,
    "confidence": "high",
    "verdict": true,
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "הנחה בשלילה שקיים גרף כזה, ו-$r$ אי-זוגי ולכן $|V|$ זוגי",
+     "points": 2
+    },
+    {
+     "text": "דרגת כל צומת במשלים: $|V|-r-1=r$",
+     "points": 2
+    },
+    {
+     "text": "$2r=|V|-1$: זוגי שווה לאי-זוגי, סתירה",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח ש-$r$ ראשוני גדול מ-2 הוא אי-זוגי, ולכן $|V|$ זוגי.",
+    "לכתוב את דרגת הצומת במשלים כ-$|V|-r$ ולא $|V|-r-1$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מדוע $|V|$ הוא מספר זוגי?",
+     "explain": "סכום הדרגות $|V|\\cdot r$ זוגי ו-$r$ אי-זוגי, ולכן $|V|$ זוגי. ראשוניות לבדה אינה סיבה: $r=2$ ראשוני ו-$C_5$ הוא 2-רגולרי על 5 צמתים.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$r$ אי-זוגי ו-$|V|\\cdot r=2|E|$ זוגי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי $r$ ראשוני"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי הגרף קשיר"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי יש בגרף לפחות צלע אחת"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $r=3$: מהו $|V|$ שהיה נדרש מהשוויון $2r=|V|-1$?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$|V|=2r+1=7$, מספר אי-זוגי, בסתירה לכך ש-$|V|$ זוגי."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "נניח שקיים $G$ כזה. $r$ אי-זוגי ולכן $|V|$ זוגי.",
+      "לכל $v$ מתקיים $\\deg_{\\overline G}(v)=|V|-r-1=r$.",
+      "מכאן $2r=|V|-1$.",
+      "$2r$ זוגי ו-$|V|-1$ זוגי (כי $|V|$ זוגי), ולכן אין סתירה."
+     ],
+     "bugIndex": 3,
+     "explain": "אם $|V|$ זוגי אז $|V|-1$ אי-זוגי, ולכן $2r=|V|-1$ הוא שוויון בין זוגי לאי-זוגי, וזו הסתירה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -124,7 +658,68 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "מ-$\\binom n2=300$ מקבלים $n=25$",
+     "points": 2
+    },
+    {
+     "text": "9 ראשוניים ו-16 לא ראשוניים ב-$A$",
+     "points": 3
+    },
+    {
+     "text": "$\\binom93=84$ ו-$\\binom{16}4=1820$",
+     "points": 3
+    },
+    {
+     "text": "$84\\cdot1820=152880$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לא לספור את 1 כמספר לא ראשוני (הוא נכלל ב-16).",
+    "להחליף בין הגדלים: $\\binom{9}{4}\\cdot\\binom{16}{3}$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$, אם $\\binom n2=300$?",
+     "answer": 25,
+     "tol": 0,
+     "explain": "$n(n-1)=600$ נותן $n=25$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ראשוניים יש ב-$\\{1,\\dots,25\\}$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "2, 3, 5, 7, 11, 13, 17, 19, 23."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים אינם ראשוניים ב-$\\{1,\\dots,25\\}$ (כולל 1)?",
+     "answer": 16,
+     "tol": 0,
+     "explain": "$25-9=16$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה דרכים יש לבחור 4 מספרים לא ראשוניים?",
+     "answer": 1820,
+     "tol": 0,
+     "explain": "$\\binom{16}4=1820$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר תתי-הקבוצות המבוקש:",
+     "answer": 152880,
+     "tol": 0,
+     "explain": "$84\\cdot1820=152880$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -136,7 +731,82 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "שימוש בבינום של Newton בשני הסכומים",
+     "points": 4
+    },
+    {
+     "text": "מחלק שמתחלק ב-49 הוא $2^a7^{2+b}$",
+     "points": 2
+    },
+    {
+     "text": "$a\\in[0,3n]$ ו-$b\\in[0,2n-2]$",
+     "points": 2
+    },
+    {
+     "text": "$(3n+1)(2n-1)$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהמחלק חייב להתחלק ב-$7^2$, ולכן החזקה של 7 מתחילה ב-2.",
+    "לחלץ את הגורם $4^n$ כ-$2^n$ ולקבל חזקה שגויה של 2."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה הסגורה של $m$?",
+     "explain": "$m=2^n7^n\\cdot4^n7^n=2^{3n}7^{2n}$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{3n}\\cdot7^{2n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{2n}\\cdot7^{2n}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{3n}\\cdot7^{n}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{n}\\cdot7^{2n}$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=5$: כמה ערכים אפשריים יש לחזקה של 2 במחלק?",
+     "answer": 16,
+     "tol": 0,
+     "explain": "החזקה בין 0 ל-15, כלומר $3n+1=16$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=5$: כמה ערכים אפשריים יש לחזקה של 7 במחלק שמתחלק ב-49?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "החזקה בין 2 ל-10, כלומר $2n-1=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=5$: כמה מחלקים של $m$ מתחלקים ב-49?",
+     "answer": 144,
+     "tol": 0,
+     "explain": "$16\\cdot9=144=(3n+1)(2n-1)$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -148,7 +818,85 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "הגדרת $x$ מספר הצמתים מדרגה 3, ו-$|E|=p+x-1$",
+     "points": 2
+    },
+    {
+     "text": "משפט הדרגות: $p+3x=2(p+x-1)$",
+     "points": 2
+    },
+    {
+     "text": "$x=p-2$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $|E|=p+x$ במקום $p+x-1$ (בעץ יש צלע אחת פחות מצמתים).",
+    "לשכוח שסכום הדרגות שווה ל-$2|E|$ ולא ל-$|E|$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "עבור $p=8$ עלים: כמה צמתים מדרגה 3 יש בעץ?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$x=p-2=6$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו משוואה נכונה (x צמתים מדרגה 3 ו-p עלים)?",
+     "explain": "סכום הדרגות הוא $p\\cdot1+x\\cdot3$ והוא שווה ל-$2|E|=2(p+x-1)$, כי בעץ $|E|=|V|-1$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$p+3x=2(p+x-1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$p+3x=p+x-1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$p+3x=2(p+x)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$3p+x=2(p+x-1)$"
+      }
+     ]
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות ההוכחה.",
+     "lines": [
+      "נסמן ב-$x$ את מספר הצמתים מדרגה 3. $T$ עץ, ולכן $|E|=p+x-1$.",
+      "לפי משפט הדרגות $p+3x=2(p+x-1)$.",
+      "מכאן $x=p-2$."
+     ],
+     "explain": "הגדרה, משוואה, פתרון."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "נסמן ב-$x$ את מספר הצמתים מדרגה 3. $T$ עץ, ולכן $|E|=p+x-1$.",
+      "לפי משפט הדרגות $p+3x=2(p+x)$.",
+      "מכאן $x=p-2$."
+     ],
+     "bugIndex": 1,
+     "explain": "$|E|=p+x-1$ ולכן סכום הדרגות הוא $2(p+x-1)$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
