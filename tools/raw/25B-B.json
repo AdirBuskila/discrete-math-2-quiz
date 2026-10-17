@@ -17,7 +17,82 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת עקרון הכפל לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "פירוק $10!=2^8\\cdot3^4\\cdot5^2\\cdot7$",
+     "points": 2
+    },
+    {
+     "text": "מחלק שאינו מתחלק ב-7 נקבע לפי החזקות של 2, 3 ו-5 בלבד",
+     "points": 2
+    },
+    {
+     "text": "עקרון הכפל: $9\\cdot5\\cdot3=135$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור גם חזקה 1 של 7 ולקבל $9\\cdot5\\cdot3\\cdot2=270$ (המחלקים שמתחלקים ב-7 נכללים).",
+    "לחשב את החזקה של 2 ב-$10!$ כ-7 במקום 8 (יש להחשיב גם את $4$ ואת $8$: $5+2+1$)."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהו הפירוק לראשוניים של $10!$?",
+     "explain": "החזקה של $p$ ב-$10!$ היא $\\sum\\lfloor10/p^k\\rfloor$: עבור 2 מקבלים $5+2+1=8$, עבור 3 מקבלים $3+1=4$, עבור 5 מקבלים 2, עבור 7 מקבלים 1.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^8\\cdot3^4\\cdot5^2\\cdot7$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^7\\cdot3^4\\cdot5^2\\cdot7$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^8\\cdot3^3\\cdot5^2\\cdot7$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^8\\cdot3^4\\cdot5\\cdot7$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ערכים אפשריים יש לחזקה של 2 במחלק של $10!$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "החזקה בין 0 ל-8, כלומר 9 ערכים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ערכים אפשריים יש לחזקה של 3 במחלק של $10!$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "החזקה בין 0 ל-4, כלומר 5 ערכים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מחלקים של $10!$ אינם מתחלקים ב-7?",
+     "answer": 135,
+     "tol": 0,
+     "explain": "$9\\cdot5\\cdot3=135$ (חזקת 5 בין 0 ל-2, וחזקת 7 היא 0)."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -29,7 +104,54 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת תמורה אי-סדר מלא לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "פירוק לשתי תמורות אי-סדר מלא: של $1,2,3,4$ ושל $5,6,7$",
+     "points": 2
+    },
+    {
+     "text": "$\\alpha(4)=9$ ו-$\\alpha(3)=2$",
+     "points": 2
+    },
+    {
+     "text": "הכפלה: $9\\cdot2=18$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את כל התמורות אי-סדר מלא של $\\{1,\\dots,7\\}$ (1854) ולשכוח שהמספרים $1,2,3,4$ חייבים להישאר בארבעת המקומות הראשונים.",
+    "לחשב $\\alpha(4)$ כ-$4!-3!$ או לשכוח את אחד מאיברי ההכלה וההדחה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות אי-סדר מלא יש ל-$1,2,3,4$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$\\alpha(4)=24-24+12-4+1=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות אי-סדר מלא יש ל-$5,6,7$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$\\alpha(3)=6-6+3-1=2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר התמורות המבוקש:",
+     "answer": 18,
+     "tol": 0,
+     "explain": "$9\\cdot2=18$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -41,7 +163,75 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת עלה לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "סכום הדרגות בעץ הוא $2(n-1)=58$",
+     "points": 2
+    },
+    {
+     "text": "המשוואה $p+5(30-p)=58$",
+     "points": 3
+    },
+    {
+     "text": "$p=23$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשתמש ב-$2n$ במקום $2(n-1)$ בסכום הדרגות של עץ.",
+    "לתת לצמתים מדרגה 5 את המשקל 1 ולעלים את המשקל 5 בעת כתיבת המשוואה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הדרגות בעץ עם 30 צמתים?",
+     "answer": 58,
+     "tol": 0,
+     "explain": "$2(n-1)=2\\cdot29=58$."
+    },
+    {
+     "type": "choice",
+     "prompt": "אם $p$ הוא מספר העלים, איזו משוואה נכונה?",
+     "explain": "$p$ עלים תורמים $p$ לסכום הדרגות, ו-$30-p$ הצמתים האחרים תורמים 5 כל אחד. סכום הדרגות בעץ הוא 58 ולא 60.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$p+5(30-p)=58$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$p+5p=58$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$p+5(30-p)=60$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$5p+(30-p)=58$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר העלים של העץ:",
+     "answer": 23,
+     "tol": 0,
+     "explain": "$p+150-5p=58\\Rightarrow4p=92\\Rightarrow p=23$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -53,7 +243,75 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הזזת החסמים התחתונים כך שכל המשתנים אי-שליליים",
+     "points": 2
+    },
+    {
+     "text": "הוספת משתנה עודף $y_4$",
+     "points": 2
+    },
+    {
+     "text": "הסכום החדש הוא 17",
+     "points": 2
+    },
+    {
+     "text": "$\\binom{20}{3}=1140$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את משתנה העודף ולפתור משוואה בלבד עם שוויון.",
+    "לכתוב $x_1\\ge-2$ במקום $x_1\\ge-1$ (החסם $-2<x_1$ הוא אי-שוויון חזק, ולכן $x_1\\ge-1$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "אחרי ההזזה $y_1=x_1+1,\\ y_2=x_2,\\ y_3=x_3-7$ ובהוספת $y_4$, מהו סכום ארבעת המשתנים?",
+     "answer": 17,
+     "tol": 0,
+     "explain": "$23-(-1+0+7)=17$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה משתנים אי-שליליים יש במשוואה החדשה?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "שלושת ה-$y_i$ וגם משתנה העודף $y_4$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו מספר הפתרונות של המשוואה החדשה?",
+     "explain": "$\\binom{17+3}{3}=\\binom{20}{3}=1140$.",
+     "correctId": "b",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\binom{17}{3}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\binom{20}{3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\binom{23}{3}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\binom{20}{4}$"
+      }
+     ]
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -65,7 +323,82 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "שימוש בבינום של Newton לשלושת הסכומים",
+     "points": 3
+    },
+    {
+     "text": "מחלק שמתחלק ב-15 הוא $3^\\alpha5^\\beta11^\\gamma$ עם חסמים",
+     "points": 2
+    },
+    {
+     "text": "ספירה: $n,\\ n,\\ n+1$ אפשרויות",
+     "points": 2
+    },
+    {
+     "text": "התוצאה $n^2(n+1)$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $(8+1)^n$ בסכום השני, ולשכוח את הגורם $3^{n-k}$ שמביא ל-$(8+3)^n$.",
+    "לאפשר $\\alpha=0$ או $\\beta=0$ למרות שהמחלק חייב להתחלק ב-3 וב-5."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה הסגורה של $f(n)$?",
+     "explain": "$f(n)=(2+1)^n(8+3)^n(4+1)^n=3^n\\cdot11^n\\cdot5^n$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$3^n\\cdot5^n\\cdot11^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$3^{3n}\\cdot5^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$3^n\\cdot5^n\\cdot8^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$3^n\\cdot9^n\\cdot5^n$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=11$: כמה ערכים אפשריים יש לחזקה של 3 במחלק שמתחלק ב-15?",
+     "answer": 11,
+     "tol": 0,
+     "explain": "החזקה בין 1 ל-11, כלומר $n=11$ ערכים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=11$: כמה ערכים אפשריים יש לחזקה של 11?",
+     "answer": 12,
+     "tol": 0,
+     "explain": "החזקה בין 0 ל-11, כלומר $n+1=12$ ערכים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=11$: כמה מחלקים של $f(11)$ מתחלקים ב-15?",
+     "answer": 1452,
+     "tol": 0,
+     "explain": "$11\\cdot11\\cdot12=1452=n^2(n+1)$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -77,7 +410,82 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "(ג1) השרשרת $f(1)=5>f(2)=4>f(3)=3>f(4)>\\dots>f(10)\\ge1$",
+     "points": 2
+    },
+    {
+     "text": "(ג1) אין מספיק ערכים קטנים מ-3, ולכן 0 פונקציות",
+     "points": 2
+    },
+    {
+     "text": "(ג2) $n<10$: אין פונקציה חד-חד-ערכית",
+     "points": 2
+    },
+    {
+     "text": "(ג2) $n\\ge10$: $P(n,10)=\\frac{n!}{(n-10)!}$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור פונקציות עולות במקום יורדות (או להפך).",
+    "לשכוח את המקרה $n<10$, שבו אין פונקציה חד-חד-ערכית כלל."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים טבעיים קטנים מ-3 קיימים?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "רק 1 ו-2."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ערכים שונים קטנים מ-3 צריכים $f(4),\\dots,f(10)$ לקבל בפונקציה יורדת ממש?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "7 ערכים שונים, אבל יש רק שניים."
+    },
+    {
+     "type": "choice",
+     "prompt": "כמה פונקציות יורדות ממש מקיימות $f(\\{1,2,3\\})=\\{3,4,5\\}$ (עבור $n=15$)?",
+     "explain": "אין מספיק ערכים קטנים מ-3 ולכן אין פונקציה כזו. בדיקה ישירה בסדרות יורדות מאשרת זאת.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$120$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=12$: כמה פונקציות חד-חד-ערכיות מ-$\\{1,\\dots,10\\}$ ל-$\\{1,\\dots,12\\}$ יש?",
+     "answer": 239500800,
+     "tol": 0,
+     "explain": "$P(12,10)=\\frac{12!}{2!}=239500800$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -89,7 +497,114 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 14
+   "points": 14,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית: שורשים 2 ו-3",
+     "points": 2
+    },
+    {
+     "text": "פתרון הומוגני $C_1 2^n+C_2 3^n$",
+     "points": 2
+    },
+    {
+     "text": "פתרון פרטי $A\\cdot5^n$ עם $A=25$",
+     "points": 4
+    },
+    {
+     "text": "קבועים: $C_1=-5,\\ C_2=5$",
+     "points": 3
+    },
+    {
+     "text": "הוכחת $a_n=O(5^n)$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור פתרון פרטי $A\\cdot n\\cdot5^n$ כשאחד השורשים אינו 5 (אין התאבכות).",
+    "לטעות בסימן ב-$C_1$ ולקבל $C_1=5$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהם שורשי המשוואה האופיינית $x^2-5x+6=0$?",
+     "explain": "$(x-2)(x-3)=x^2-5x+6$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2$ ו-$3$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-2$ ו-$-3$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$1$ ו-$6$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$5$ ו-$6$"
+      }
+     ]
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו צורה מחפשים פתרון פרטי כשהאיבר החופשי הוא $6\\cdot5^n$?",
+     "explain": "5 אינו שורש של המשוואה האופיינית. הצורות האחרות אינן מקיימות את הרקורסיה.",
+     "correctId": "c",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$A\\cdot n\\cdot5^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$A\\cdot2^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$A\\cdot5^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$A\\cdot3^n$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הקבוע $A$?",
+     "answer": 25,
+     "tol": 0,
+     "explain": "$25A=25A-6A+150\\Rightarrow A=25$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_1$?",
+     "answer": -5,
+     "tol": 0,
+     "explain": "$C_1+C_2=0$ ו-$2C_1+3C_2=5$ נותנים $C_1=-5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$C_2=-C_1=5$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -101,7 +616,76 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "המקרים $n=2$ ו-$n=3$",
+     "points": 2
+    },
+    {
+     "text": "$n>3$ ראשוני: $\\phi(n)=n-1$ זוגי וגדול מ-2",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $n=3$ הוא הפתרון היחיד",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את המקרה $n=2$, שבו $\\phi(2)=1$ אינו ראשוני.",
+    "לשכוח ש-$\\phi(n)=n-1$ זוגי כש-$n>2$ ראשוני, ולכן אינו ראשוני אלא אם $\\phi(n)=2$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה משמש הפתרון הרשמי?",
+     "explain": "הפתרון בודק את $n=2$ ו-$n=3$ ישירות, ועבור $n>3$ מראה ש-$\\phi(n)$ זוגי וגדול מ-2.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "פיצול למקרים $n=2$, $n=3$ ו-$n>3$, ובדיקת הזוגיות של $\\phi(n)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על $n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "בניית פונקציה חד-חד-ערכית"
+      }
+     ]
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "$n=2$: $\\phi(2)=1$ אינו ראשוני. $n=3$: $\\phi(3)=2$ ראשוני.",
+      "אם $n>3$ ראשוני אז $\\phi(n)=n-1$ אי-זוגי וגדול מ-2.",
+      "לכן אם $n>3$ אז $\\phi(n)$ אינו ראשוני.",
+      "מסקנה: $n=3$ הוא הפתרון היחיד."
+     ],
+     "bugIndex": 1,
+     "explain": "אם $n>3$ ראשוני אז $n$ אי-זוגי, ולכן $n-1$ זוגי (ולא אי-זוגי)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים ראשוניים $n<100$ מקיימים ש-$\\phi(n)$ ראשוני?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "רק $n=3$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -113,7 +697,57 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "מ-$2^{n-1}-1=4095$ מקבלים $n=13$",
+     "points": 2
+    },
+    {
+     "text": "5 ראשוניים אי-זוגיים ו-6 מספרים זוגיים",
+     "points": 2
+    },
+    {
+     "text": "$\\binom53\\binom64=150$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את 2 כראשוני אי-זוגי (הוא זוגי).",
+    "לחשב $2^n-1$ במקום $2^{n-1}-1$ למספר תתי-הקבוצות הלא ריקות בגודל זוגי."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$, אם $2^{n-1}-1=4095$?",
+     "answer": 13,
+     "tol": 0,
+     "explain": "$2^{n-1}=4096=2^{12}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ראשוניים אי-זוגיים יש ב-$\\{1,\\dots,13\\}$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "3, 5, 7, 11, 13."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים זוגיים יש ב-$\\{1,\\dots,13\\}$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "2, 4, 6, 8, 10, 12."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר תתי-הקבוצות המבוקש:",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$\\binom53\\binom64=10\\cdot15=150$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -126,7 +760,76 @@
    "official": true,
    "confidence": "high",
    "verdict": true,
-   "points": 4
+   "points": 4,
+   "rubric": [
+    {
+     "text": "הנחה: G הוא גרף Euler ולכן כל הדרגות זוגיות",
+     "points": 1
+    },
+    {
+     "text": "$|E|=\\sum_{a\\in A}\\deg(a)$, כי כל צלע נוגעת בצומת אחד מ-$A$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: הטענה נכונה, $|E|$ זוגי",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $|E|=\\sum_{v\\in V}\\deg(v)$ ולשכוח שהסכום הזה שווה ל-$2|E|$.",
+    "לשכוח שהגרף דו-צדדי: בלי זה אין דרך לספור כל צלע פעם אחת."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזה שוויון נכון בכל גרף דו-צדדי $G=(A,B,E)$?",
+     "explain": "כל צלע מחברת צומת מ-$A$ לצומת מ-$B$, ולכן נספרת בדיוק פעם אחת בסכום על $A$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|E|=\\sum_{a\\in A}\\deg(a)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$|E|=\\sum_{v\\in V}\\deg(v)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$|E|=|A|\\cdot|B|$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|E|=|A|+|B|$"
+      }
+     ]
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "$G$ הוא גרף Euler, ולכן $\\deg(v)$ זוגית לכל $v$, וכל צלע נוגעת בדיוק בצומת אחד מ-$A$.",
+      "לכן $|E|=\\sum_{a\\in A}\\deg(a)$.",
+      "סכום של מספרים אי-זוגיים הוא זוגי.",
+      "מסקנה: $|E|$ זוגי, והטענה נכונה."
+     ],
+     "bugIndex": 2,
+     "explain": "הדרגות זוגיות, ולכן מסכמים מספרים זוגיים. סכום של מספרים אי-זוגיים אינו בהכרח זוגי."
+    },
+    {
+     "type": "numeric",
+     "prompt": "ב-$K_{2,4}$ (דו-צדדי ו-Euler), מהו $\\sum_{a\\in A}\\deg(a)$ כאשר $|A|=2$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "שני צמתים בדרגה 4, כלומר 8, וזהו מספר הצלעות."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -138,7 +841,71 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "הדרגות אי-זוגיות ולכן $|V|$ זוגי",
+     "points": 2
+    },
+    {
+     "text": "הדרגות במשלים $|V|-\\deg-1$ זוגיות",
+     "points": 2
+    },
+    {
+     "text": "לגרף Euler אין גשרים ולכן התשובה 0",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להסיק ש-$|V|$ זוגי מכך שהדרגות ראשוניות, ולא מכך שהן אי-זוגיות.",
+    "לשכוח שגרף Euler (כל הדרגות זוגיות, וקשיר) אין בו גשרים."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מדוע $|V|$ הוא מספר זוגי?",
+     "explain": "סכום של $|V|$ מספרים אי-זוגיים זוגי רק כש-$|V|$ זוגי. ראשוניות אינה הסיבה ($C_5$ בדרגה 2 עם 5 צמתים).",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כל הדרגות אי-זוגיות וסכומן $2|E|$ זוגי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי כל הדרגות ראשוניות"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי לכל צומת יש שכן אחד לפחות"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי הגרף קשיר"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "גרף כזה עם 8 צמתים ודרגה 3 בכל צומת: מהי הדרגה של כל צומת במשלים?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$8-3-1=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר הגשרים במשלים של $G$:",
+     "answer": 0,
+     "tol": 0,
+     "explain": "כל הדרגות במשלים זוגיות, ולכן אין גשרים."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -151,7 +918,125 @@
    "official": true,
    "confidence": "high",
    "points": 16,
-   "image": "images/exams/25B-B-Q4c.png"
+   "image": "images/exams/25B-B-Q4c.png",
+   "rubric": [
+    {
+     "text": "$H$ הוא Euler: דרגה 6 לכל צומת וקשיר",
+     "points": 5
+    },
+    {
+     "text": "$P_5$ מושרה ב-$H$ (בית ב-$G$)",
+     "points": 3
+    },
+    {
+     "text": "$C_4$ מושרה ב-$H$",
+     "points": 2
+    },
+    {
+     "text": "$K_4$ מושרה ב-$H$ (קבוצה בלתי תלויה)",
+     "points": 3
+    },
+    {
+     "text": "הגרף שבציור (מנסרה) מושרה ב-$H$, כי $C_6$ מושרה ב-$G$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב את הדרגות ב-$H$ כ-4 (דרגות $G$) במקום $11-1-4=6$.",
+    "לבדוק ישירות הכלה של המנסרה ב-$H$ במקום להשתמש בכך שהמשלים שלה הוא $C_6$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$H$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$G$ הוא 4-רגולרי על 11 צמתים: $11-1-4=6$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו קבוצה של חמישה צמתים מושרה $P_5$ ב-$H$?",
+     "explain": "ב-$G$ הצמתים האלה יוצרים 'בית' (ריבוע עם גג), והמשלים שלו הוא $P_5$ על $v_7,v_5,v_8,v_6,v_9$.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\{v_5,v_6,v_7,v_8,v_9\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\{v_1,v_2,v_3,v_4,v_5\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\{v_1,v_3,v_5,v_9,v_{11}\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\{v_2,v_4,v_6,v_8,v_{10}\\}$"
+      }
+     ]
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו קבוצה של ארבעה צמתים מושרה $C_4$ ב-$H$?",
+     "explain": "ב-$G$ רק שתי הצלעות $v_1v_2$ ו-$v_4v_5$, ולכן ב-$H$ יש מעגל באורך 4. בקבוצות האחרות אין $C_4$ מושרה.",
+     "correctId": "b",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\{v_1,v_2,v_3,v_4\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\{v_1,v_2,v_4,v_5\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\{v_1,v_3,v_5,v_{11}\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\{v_5,v_6,v_7,v_8\\}$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו גודל הקבוצה הבלתי תלויה $\\{v_1,v_3,v_5,v_{11}\\}$ ב-$G$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "ארבעה צמתים ללא צלעות ב-$G$ יוצרים $K_4$ ב-$H$."
+    },
+    {
+     "type": "choice",
+     "prompt": "האם הגרף שבציור (המשלים של $C_6$) מושרה ב-$H$?",
+     "explain": "המשלים של $C_6$ מושרה ב-$H$ בדיוק על אותם הצמתים.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כן, כי ב-$G$ הצמתים $v_1,v_2,v_3,v_4,v_5,v_9$ מושרים $C_6$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "לא, כי ב-$G$ אין $C_6$ מושרה"
+      }
+     ]
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -163,7 +1048,50 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "בחירת מקום ל-1: 5 אפשרויות",
+     "points": 2
+    },
+    {
+     "text": "ארבעת המקומות האחרים: חליפה בגודל 4 של $A\\setminus\\{1\\}$, כלומר $P(7,4)=840$",
+     "points": 2
+    },
+    {
+     "text": "התוצאה $5\\cdot840=4200$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את 1 פעם אחת בלבד במקום ראשון ולשכוח שהוא יכול להופיע בכל אחד מ-5 המקומות.",
+    "לחשב את שאר המקומות כ-$P(8,4)$ (אפשרות להשתמש שוב ב-1)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה מקומות אפשריים יש ל-1 בחליפה בת 5 אותיות?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "כל אחד מחמשת המקומות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בכמה אופנים אפשר למלא את ארבעת המקומות האחרים באיברי $A\\setminus\\{1\\}$?",
+     "answer": 840,
+     "tol": 0,
+     "explain": "$P(7,4)=7\\cdot6\\cdot5\\cdot4=840$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר החליפות המבוקש:",
+     "answer": 4200,
+     "tol": 0,
+     "explain": "$5\\cdot840=4200$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -175,7 +1103,50 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "מ-$2^{n-1}=128$ מקבלים $n=8$",
+     "points": 2
+    },
+    {
+     "text": "תתי-קבוצות בגודל זוגי $\\ge4$: גדלים 4, 6, 8 (או בסימטריה 0, 2, 4)",
+     "points": 3
+    },
+    {
+     "text": "$1+28+70=99$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכלול גם את הגודל 2 (גודל זוגי, אבל קטן מ-4).",
+    "להסיק $n=7$ מ-$2^{n-1}=128$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$, אם $2^{n-1}=128$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$128=2^7$, ולכן $n-1=7$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות בגודל 6 יש ל-$\\{1,\\dots,8\\}$?",
+     "answer": 28,
+     "tol": 0,
+     "explain": "$\\binom86=\\binom82=28$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מספר תתי-הקבוצות בגודל זוגי וגם $\\ge4$:",
+     "answer": 99,
+     "tol": 0,
+     "explain": "$\\binom84+\\binom86+\\binom88=70+28+1=99$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -187,7 +1158,106 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "(ג1) הפרכה: $P_4$ דו-צדדי, קשיר ומשלימו $\\cong P_4$",
+     "points": 4
+    },
+    {
+     "text": "(ג2) הפרכה: $K_{2,3}$ עם מסלול Euler ומסלול Hamilton",
+     "points": 4
+    },
+    {
+     "text": "(ג3) הוכחה בשלילה על הדרגות ב-$A$",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לטעון שגרף דו-צדדי לא יכול להיות משלים של גרף דו-צדדי קשיר בלי לבדוק את $P_4$.",
+    "לבלבל בין מסלול Euler (שתי דרגות אי-זוגיות) למעגל Euler."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזה גרף מפריך את (ג1) (דו-צדדי וקשיר, וגם המשלים שלו דו-צדדי וקשיר)?",
+     "explain": "$\\overline{P_4}\\cong P_4$. המשלים של $C_4$ הוא שתי צלעות זרות, של $K_{1,3}$ משולש וצומת מבודד, ושל $P_3$ צלע וצומת מבודד, ואף אחד מהם אינו קשיר.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$P_4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$C_4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$K_{1,3}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$P_3$"
+      }
+     ]
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה גרף מפריך את (ג2) (יש בו מסלול Euler ומסלול Hamilton, $m\\ge n>1$)?",
+     "explain": "ב-$K_{2,3}$ שני צמתים בדרגה 3 בלבד. ב-$K_{3,3}$ שישה צמתים בדרגה אי-זוגית, ב-$K_{2,4}$ ו-$K_{3,5}$ אין מסלול Hamilton (הפרש הצדדים גדול מ-1).",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$K_{2,3}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$K_{3,3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$K_{2,4}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$K_{3,5}$"
+      }
+     ]
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות הוכחת (ג3).",
+     "lines": [
+      "נניח בשלילה שאין עלה ב-$A$, כלומר $\\deg(x)\\ge2$ לכל $x\\in A$.",
+      "$2|A|\\le\\sum_{v\\in A}\\deg(v)=|E|=|A|+|B|-1$.",
+      "מכאן $|A|\\le|B|-1$, כלומר $|A|<|B|$, בסתירה לנתון $|B|\\le|A|$."
+     ],
+     "explain": "הנחה, חישוב, סתירה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחת (ג3) שורה אחת שגויה. איזו?",
+     "lines": [
+      "נניח בשלילה שאין עלה ב-$A$, כלומר $\\deg(x)\\ge2$ לכל $x\\in A$.",
+      "$2|A|\\le\\sum_{v\\in A}\\deg(v)=|E|=|A|+|B|+1$.",
+      "מכאן $|A|\\le|B|-1$, כלומר $|A|<|B|$, בסתירה לנתון $|B|\\le|A|$."
+     ],
+     "bugIndex": 1,
+     "explain": "בעץ על $|A|+|B|$ צמתים יש $|A|+|B|-1$ צלעות."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 6,
@@ -199,7 +1269,75 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "הסכום הוא על תתי-קבוצות $B$ שגודלן 3, 4 או 5",
+     "points": 3
+    },
+    {
+     "text": "מקבצים לפי גודל: $\\binom nk$ תתי-קבוצות בגודל $k$",
+     "points": 3
+    },
+    {
+     "text": "כל תת-קבוצה בגודל $k$ תורמת $k$",
+     "points": 3
+    },
+    {
+     "text": "$3\\binom n3+4\\binom n4+5\\binom n5$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחבר את מספר תתי-הקבוצות בלבד, בלי להכפיל בגודל $|B|$.",
+    "לפרש את הסכום כסכום על אינדקס $|B|$ ולא על תתי-קבוצות של $A$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=21$: כמה תתי-קבוצות בגודל 4 יש ל-$A$?",
+     "answer": 5985,
+     "tol": 0,
+     "explain": "$\\binom{21}{4}=5985$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו נוסחה נכונה לסכום?",
+     "explain": "כל תת-קבוצה בגודל $k$ תורמת $k$ לסכום, ולכן $k\\binom nk$ לכל גודל.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$3\\binom n3+4\\binom n4+5\\binom n5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\binom n3+\\binom n4+\\binom n5$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$12\\binom n3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(3+4+5)\\binom n5$"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=21$: מהו ערך הסכום?",
+     "answer": 129675,
+     "tol": 0,
+     "explain": "$3\\cdot1330+4\\cdot5985+5\\cdot20349=3990+23940+101745=129675$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 6,
@@ -211,7 +1349,91 @@
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "$E\\ne\\emptyset$ ולכן $\\chi(G)\\ge2$",
+     "points": 2
+    },
+    {
+     "text": "הנחה בשלילה: $\\chi(G)=2$, כלומר $G$ דו-צדדי",
+     "points": 3
+    },
+    {
+     "text": "סכום הדרגות בשני הצדדים שווה: $4+5(|A|-1)=5|B|$",
+     "points": 4
+    },
+    {
+     "text": "$5(|A|-|B|)=1$ בלתי אפשרי בשלמים",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהצומת מדרגה 4 נמצא בצד אחד בלבד, ולכתוב $5|A|=5|B|$.",
+    "להסיק $\\chi(G)\\ge3$ בלי להראות שאין צביעה ב-2 צבעים."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה משמש הפתרון הרשמי?",
+     "explain": "הפתרון מניח ש-$\\chi(G)=2$ ומגיע לסתירה בין שני חישובי הצלעות.",
+     "correctId": "a",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הוכחה בשלילה: הנחה שהגרף דו-צדדי והשוואת סכומי הדרגות בשני הצדדים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על מספר הצמתים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "בניית צביעה מפורשת ב-3 צבעים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אלגוריתם חמדן לצביעה"
+      }
+     ]
+    },
+    {
+     "type": "numeric",
+     "prompt": "הביטוי $5(|A|-|B|)$ שווה ל:",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$4+5|A|-5=5|B|\\Rightarrow5|A|-5|B|=1$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות ההוכחה.",
+     "lines": [
+      "נניח בשלילה ש-$G=(A,B,E)$ דו-צדדי, וב-$A$ נמצא הצומת מדרגה 4.",
+      "סכום הדרגות בכל צד שווה ל-$|E|$: $4+5(|A|-1)=5|B|$.",
+      "מכאן $5(|A|-|B|)=1$, בלתי אפשרי כי $|A|-|B|$ שלם.",
+      "לכן $G$ אינו 2-צביע, וכיוון ש-$E\\ne\\emptyset$, $\\chi(G)\\ge3$."
+     ],
+     "explain": "הנחה, משוואה, סתירה, מסקנה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. איזו?",
+     "lines": [
+      "נניח בשלילה ש-$G=(A,B,E)$ דו-צדדי, וב-$A$ נמצא הצומת מדרגה 4.",
+      "סכום הדרגות בכל צד שווה ל-$|E|$: $4+5(|A|-1)=4+5(|B|-1)$.",
+      "מכאן $5(|A|-|B|)=1$, בלתי אפשרי כי $|A|-|B|$ שלם.",
+      "לכן $G$ אינו 2-צביע, וכיוון ש-$E\\ne\\emptyset$, $\\chi(G)\\ge3$."
+     ],
+     "bugIndex": 1,
+     "explain": "הצומת מדרגה 4 נמצא רק בצד $A$. בצד $B$ כל הדרגות 5, ולכן הסכום הוא $5|B|$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
