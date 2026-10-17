@@ -24,7 +24,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "הגדרת תמורת אי-סדר מלא (לפי ההרצאה)",
+     "points": 4
+    },
+    {
+     "text": "חישוב $D_5=60-20+5-1=44$ לפי הנוסחה",
+     "points": 2
+    },
+    {
+     "text": "התמורות שאינן אי-סדר מלא: $5!-44=76$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לענות $D_5=44$, מספר תמורות אי-הסדר, כשהשאלה מבקשת את התמורות שאינן כאלה.",
+    "לשכוח את הסימנים המתחלפים בנוסחה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו האיבר השלישי בנוסחה, $\\frac{5!}{2!}$?",
+     "answer": 60,
+     "tol": 0,
+     "explain": "$120/2=60$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $D_5$?",
+     "answer": 44,
+     "tol": 0,
+     "explain": "$60-20+5-1=44$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות של $\\{1,\\dots,5\\}$ אינן תמורות אי-סדר מלא?",
+     "answer": 76,
+     "tol": 0,
+     "explain": "$120-44=76$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -36,7 +79,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "הגדרת מחלק של מספר שלם",
+     "points": 4
+    },
+    {
+     "text": "המחלקים המשותפים הם המחלקים של $\\gcd(m,n)$",
+     "points": 2
+    },
+    {
+     "text": "$m=2^2\\cdot3\\cdot5^2,\\ n=2\\cdot3\\cdot5^3$ ולכן $\\gcd=2\\cdot3\\cdot5^2=150$",
+     "points": 2
+    },
+    {
+     "text": "מספר המחלקים: $2\\cdot2\\cdot3=12$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את המחלקים של $\\operatorname{lcm}$ או של המכפלה במקום של ה-$\\gcd$.",
+    "לשכוח שמעריך כל ראשוני במחלק נע מ-0 עד המעריך ב-$\\gcd$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "המחלקים המשותפים של שני מספרים הם בדיוק המחלקים של איזה מספר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\gcd$ שלהם"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\operatorname{lcm}$ שלהם"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "המכפלה שלהם"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "ההפרש שלהם"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$d\\mid m$ וגם $d\\mid n$ אם ורק אם $d\\mid\\gcd(m,n)$. למשל $4\\mid\\operatorname{lcm}(750,300)=1500$ אבל $4\\nmid750$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\gcd(750,300)$?",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$2\\cdot3\\cdot5^2=150$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מחלקים משותפים יש?",
+     "answer": 12,
+     "tol": 0,
+     "explain": "$(1+1)(1+1)(2+1)=12$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -48,7 +159,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת מעגל Euler",
+     "points": 4
+    },
+    {
+     "text": "$\\overline G$ הוא Euler אם ורק אם הוא קשיר וכל דרגותיו זוגיות",
+     "points": 1
+    },
+    {
+     "text": "$n=3,4$: המשלים אינו קשיר; $n=5$: $\\overline{C_5}\\cong C_5$",
+     "points": 1
+    },
+    {
+     "text": "$n\\ge6$: דרגות $n-3\\ge\\frac n2$, Dirac וקשירות, וזוגיות אם ורק אם $n$ אי-זוגי",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכלול את $n=3$ שבו המשלים הוא שלושה צמתים בודדים.",
+    "לכלול את $n=6$: דרגות המשלים הן 3, אי-זוגיות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$\\overline{C_9}$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$9-3=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו ה-$n\\ge3$ הקטן ביותר שעבורו $\\overline{C_n}$ הוא גרף Euler?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\overline{C_5}\\cong C_5$."
+    },
+    {
+     "type": "choice",
+     "prompt": "עבור אילו $n\\ge3$ הוא $\\overline{C_n}$ גרף Euler?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$n$ אי-זוגי וגם $n\\ge5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כל $n\\ge5$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n$ אי-זוגי וגם $n\\ge3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n$ זוגי"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$n=6$ נכשל (דרגות 3), $n=3$ נכשל (המשלים אינו קשיר), ו-$n$ זוגי נכשל כי $n-3$ אי-זוגי."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -60,7 +239,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "שימוש בבינום לסכום הראשון: $\\sum\\binom nk7^k=8^n$",
+     "points": 3
+    },
+    {
+     "text": "הסכום השני: $3\\sum\\binom nk5^k=3\\cdot6^n$",
+     "points": 2
+    },
+    {
+     "text": "חסם $8^n+3\\cdot6^n\\le9^n+3\\cdot9^n=4\\cdot9^n$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $f(n)=O(9^n)$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את הגורם 3 מחוץ לסכום השני.",
+    "להסתפק בטענה ש-$8^n$ קטן מ-$9^n$ בלי לטפל גם באיבר השני."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(2)$ מהחישוב הישיר של הסכום?",
+     "answer": 172,
+     "tol": 0,
+     "explain": "$(1+14+49)+3(1+10+25)=64+108=172$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(3)$ לפי הצורה הסגורה $8^n+3\\cdot6^n$?",
+     "answer": 1160,
+     "tol": 0,
+     "explain": "$512+3\\cdot216=1160$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "איזה קבוע $c$ מופיע בחסם $f(n)\\le c\\cdot9^n$ בפתרון?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$8^n\\le9^n$ ו-$3\\cdot6^n\\le3\\cdot9^n$, ולכן $c=4$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -72,7 +298,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית $x^2=2x-1$ ושורש כפול $x=1$",
+     "points": 2
+    },
+    {
+     "text": "צורה כללית $a_n=C_1+C_2n$",
+     "points": 2
+    },
+    {
+     "text": "$C_1=5$ ו-$C_2=7$",
+     "points": 3
+    },
+    {
+     "text": "הצורה המפורשת $a_n=5+7n$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $C_1+C_2$ בלי הגורם $n$ לשורש כפול.",
+    "להציב $a_1=C_1\\cdot1+C_2\\cdot1$ ולשכוח את הגורם $n=1$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו השורש (הכפול) של $x^2=2x-1$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$(x-1)^2=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$ אחרי הצבת $a_0=5,\\ a_1=12$?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$C_1=5$ ו-$C_1+C_2=12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $a_5$?",
+     "answer": 40,
+     "tol": 0,
+     "explain": "$5+7\\cdot5=40$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -84,7 +357,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "גדלי הקבוצות $|A_1|=100,\\ |A_2|=66,\\ |A_3|=40$",
+     "points": 3
+    },
+    {
+     "text": "הגדלים של החיתוכים בזוגות: $33,20,13$",
+     "points": 2
+    },
+    {
+     "text": "החיתוך המשולש: $6$",
+     "points": 1
+    },
+    {
+     "text": "הצבה בנוסחת ההכלה וההדחה והתוצאה $146$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב את חיתוך זוג כמכפלת הגדלים ולא כ-$\\lfloor200/\\operatorname{lcm}\\rfloor$.",
+    "לשכוח את החיתוך המשולש בסימן חיובי."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הגדלים הבודדים $|A_1|+|A_2|+|A_3|$?",
+     "answer": 206,
+     "tol": 0,
+     "explain": "$100+66+40=206$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הגדלים של שלושת החיתוכים בזוגות?",
+     "answer": 66,
+     "tol": 0,
+     "explain": "$33+20+13=66$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים ב-$A$ מתחלקים בלפחות אחד מ-2, 3, 5?",
+     "answer": 146,
+     "tol": 0,
+     "explain": "$206-66+6=146$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -96,7 +416,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "פתרון $\\binom n2=105$ ומציאת $n=15$",
+     "points": 3
+    },
+    {
+     "text": "8 מספרים אי-זוגיים ב-$A$",
+     "points": 2
+    },
+    {
+     "text": "סכום $\\binom86+\\binom87+\\binom88$",
+     "points": 3
+    },
+    {
+     "text": "התוצאה $37$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לקרוא את התנאי כ\"גודל לכל היותר 6\" ולקבל 247.",
+    "להשאיר את השורש השלילי של משוואת הריבוע."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$ (נתון $\\binom n2=105$)?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$n^2-n-210=0\\Rightarrow n=15$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים אי-זוגיים יש ב-$\\{1,\\dots,15\\}$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$1,3,\\dots,15$: שמונה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות של האי-זוגיים הן בגודל לפחות 6?",
+     "answer": 37,
+     "tol": 0,
+     "explain": "$28+8+1=37$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -108,7 +475,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "סך הפונקציות $5^5=3125$",
+     "points": 1
+    },
+    {
+     "text": "פונקציה עולה נקבעת על ידי בחירה של 5 ערכים עם חזרות: $D(5,5)$",
+     "points": 3
+    },
+    {
+     "text": "$D(5,5)=\\binom94=126$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $3125-126=2999$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור פונקציות עולות ממש ($\\binom55=1$) במקום עולות חלש.",
+    "לענות 126, מספר הפונקציות העולות, כשהשאלה מבקשת את אלה שאינן עולות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות יש בסך הכול מ-$\\{1,\\dots,5\\}$ לעצמה?",
+     "answer": 3125,
+     "tol": 0,
+     "explain": "$5^5=3125$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מהן עולות (כלומר $f(1)\\le\\dots\\le f(5)$)?",
+     "answer": 126,
+     "tol": 0,
+     "explain": "$D(5,5)=\\binom94=126$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות אינן עולות?",
+     "answer": 2999,
+     "tol": 0,
+     "explain": "$3125-126=2999$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -120,7 +534,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "אם $C_n\\cong\\overline{C_n}$ אז $|E|=|\\overline E|=n$",
+     "points": 2
+    },
+    {
+     "text": "$|E|+|\\overline E|=\\frac{n(n-1)}2$",
+     "points": 2
+    },
+    {
+     "text": "המשוואה $n(n-5)=0$",
+     "points": 2
+    },
+    {
+     "text": "$\\overline{C_5}\\cong C_5$, ולכן $n=5$ בלבד",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשאיר את הפתרון $n=0$ שאינו מתאים.",
+    "להסתפק בהגעה ל-$n=5$ בלי להראות שאכן $C_5$ איזומורפי למשלים שלו."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו משוואה בין מספר הצלעות מוליכה לפתרון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2n=\\frac{n(n-1)}2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$n=2\\cdot\\frac{n(n-1)}2$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n^2=\\frac{n(n-1)}2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n+1=\\frac{n(n-1)}2$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "שני הגרפים בעלי $n$ צלעות, וסכומן $\\binom n2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הפתרון החיובי של $n(n-5)=0$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$n=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש ב-$\\overline{C_5}$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\binom52-5=5$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -132,7 +614,57 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "תיאור $\\Omega$: $\\{1,3,5\\}\\times\\{2,4\\}\\cup\\{2,4,6\\}\\times\\{1,3,5\\}$",
+     "points": 3
+    },
+    {
+     "text": "$|\\Omega|=6+9=15$",
+     "points": 3
+    },
+    {
+     "text": "מספר תתי-הקבוצות הלא ריקות: $2^{15}-1$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכלול את הקבוצה הריקה ולכתוב $2^{15}$; הפתרון הרשמי חיסר אותה.",
+    "לשכוח שסכום אי-זוגי דורש זוגיות שונה של $a$ ושל $b$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה זוגות $(a,b)$ עם $a$ אי-זוגי ו-$b$ זוגי?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$3\\cdot2=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה זוגות $(a,b)$ עם $a$ זוגי ו-$b$ אי-זוגי?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$3\\cdot3=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $|\\Omega|$?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$6+9=15$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות לא ריקות של $\\Omega$ יש?",
+     "answer": 32767,
+     "tol": 0,
+     "explain": "$2^{15}-1=32767$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -144,7 +676,43 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "עולה ממש עם $f(1)=3$ שקול ל-$4\\le f(2)<f(3)<f(4)\\le9$",
+     "points": 3
+    },
+    {
+     "text": "$\\{f(2),f(3),f(4)\\}$ היא תת-קבוצה בגודל 3 של $\\{4,\\dots,9\\}$",
+     "points": 2
+    },
+    {
+     "text": "$\\binom63=20$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור מתוך $\\{1,\\dots,9\\}$ במקום מתוך $\\{4,\\dots,9\\}$.",
+    "להשתמש בספירה עם חזרות ($D$) כשהפונקציה עולה ממש."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה ערכים אפשריים יש ל-$f(2),f(3),f(4)$ (כל אחד גדול מ-3 וקטן או שווה ל-9)?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\{4,5,6,7,8,9\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות מתאימות יש?",
+     "answer": 20,
+     "tol": 0,
+     "explain": "$\\binom63=20$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -156,7 +724,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "$\\phi(n^2)=n(n-1)$ ולכן $\\phi(n)^{\\phi(n^2)}=(n-1)^{n(n-1)}$",
+     "points": 3
+    },
+    {
+     "text": "כתיבה בצורה $\\left((n-1)^n\\right)^{n-1}-1$",
+     "points": 3
+    },
+    {
+     "text": "$n\\nmid(n-1)^n$ ומשפט Fermat",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להפעיל את Fermat על הבסיס $n-1$ עם חזקה $n(n-1)$ ולהתעלם מכך שהחזקה צריכה להיות $n-1$.",
+    "לשכוח לבדוק ש-$n$ אינו מחלק את הבסיס."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(25)$ (כלומר $\\phi(n^2)$ עבור $n=5$)?",
+     "answer": 20,
+     "tol": 0,
+     "explain": "$5\\cdot4=20$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איך הפתרון מגיע לצורה שמתאימה למשפט Fermat?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כותב את החזקה $n(n-1)$ כ-$n\\cdot(n-1)$ ומקבל $\\left((n-1)^n\\right)^{n-1}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מציב $n=2$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מחלק את החזקה ב-$n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מעלה את הביטוי בריבוע"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הבסיס החדש $(n-1)^n$ מועלה בחזקה $n-1=\\phi(n)$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את ההוכחה.",
+     "lines": [
+      "$\\phi(n^2)=n^2\\left(1-\\frac1n\\right)=n(n-1)$.",
+      "לכן $\\phi(n)^{\\phi(n^2)}-1=(n-1)^{n(n-1)}-1=\\left((n-1)^n\\right)^{n-1}-1$.",
+      "$n$ ראשוני, ולכן $n\\nmid(n-1)^n$.",
+      "לפי משפט Fermat, $n\\mid\\left((n-1)^n\\right)^{n-1}-1$."
+     ],
+     "explain": "חישוב $\\phi(n^2)$, שכתוב הביטוי, בדיקת התנאי של Fermat ואז המסקנה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -169,7 +805,51 @@
    "official": true,
    "confidence": "high",
    "verdict": false,
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "הנחה שקיים גרף כזה: יש בו 9 צמתים וצומת בדרגה 8",
+     "points": 1
+    },
+    {
+     "text": "צומת בדרגה 8 מחובר לכל האחרים, ולכן הסדרה של $G-v_9$ היא $0,0,0,0,2,3,4,5$",
+     "points": 1
+    },
+    {
+     "text": "צומת בדרגה 5 אינו יכול להיות מחובר ליותר מ-3 צמתים לא מבודדים",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: לא קיים גרף כזה",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להסיק שהסדרה אינה גרפית רק כי סכום הדרגות אי-זוגי: כאן הסכום הוא 30, זוגי.",
+    "לשכוח להפחית 1 מדרגות כל הצמתים אחרי הסרת הצומת בדרגה 8."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה צמתים בדרגה 0 יש ב-$G-v_9$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "אחרי הפחתת 1 מארבעת הצמתים בדרגה 1."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את הנימוק.",
+     "lines": [
+      "נניח שקיים $G$ כזה. יש בו 9 צמתים, ולכן יש צומת $v_9$ בדרגה 8.",
+      "$v_9$ מחובר לכל שאר הצמתים, ולכן סדרת הדרגות של $G-v_9$ היא $0,0,0,0,2,3,4,5$.",
+      "בגרף $G-v_9$ ארבעה צמתים מבודדים, ולכן לצומת בדרגה 5 יש לכל היותר 3 שכנים.",
+      "זו סתירה, ולכן אין גרף כזה."
+     ],
+     "explain": "ההנחה, הסרת הצומת בדרגה 8, מניית הצמתים המבודדים, והסתירה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -181,7 +861,47 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 4
+   "points": 4,
+   "rubric": [
+    {
+     "text": "$\\phi(p^2)=p(p-1)$ ו-$\\phi(p^4)=p^3(p-1)$",
+     "points": 1
+    },
+    {
+     "text": "$\\gcd(p^3,p-1)=1$",
+     "points": 1
+    },
+    {
+     "text": "$(\\phi\\circ\\phi)(p^4)=p^2(p-1)\\phi(p-1)$",
+     "points": 1
+    },
+    {
+     "text": "מסקנה: $\\phi(p^2)=p(p-1)$ מחלק את הביטוי",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להפריד את $\\phi(p^3(p-1))$ למכפלה בלי לבדוק ש-$\\gcd(p^3,p-1)=1$.",
+    "לחשב $(\\phi\\circ\\phi)(p^4)$ כ-$\\phi(p^4)^2$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $(\\phi\\circ\\phi)(81)$ (כלומר $p=3$)?",
+     "answer": 18,
+     "tol": 0,
+     "explain": "$\\phi(81)=54$, $\\phi(54)=18$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המנה $\\frac{(\\phi\\circ\\phi)(p^4)}{\\phi(p^2)}$ עבור $p=3$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$\\frac{18}{6}=3=p\\cdot\\phi(p-1)$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -194,7 +914,103 @@
    "official": true,
    "confidence": "high",
    "points": 16,
-   "contextId": "c1"
+   "contextId": "c1",
+   "rubric": [
+    {
+     "text": "ג1: מעגל Hamilton: $v_1,v_2,v_9,v_{10},v_{11},v_{12},v_7,v_3,v_8,v_6,v_5,v_4$",
+     "points": 4
+    },
+    {
+     "text": "ג2: $\\overline G$ הוא 8-רגולרי, Hamilton (Dirac) ולכן קשיר, וכל הדרגות זוגיות",
+     "points": 4
+    },
+    {
+     "text": "ג3: $C_5\\subseteq G$ ולכן $\\chi\\ge3$, וצביעה ב-3 צבעים",
+     "points": 4
+    },
+    {
+     "text": "ג4: הקבוצה הבלתי תלויה $\\{v_1,v_9,v_{11},v_7,v_8\\}$ יוצרת $K_5$ במשלים",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לדלג על צומת ברשימת מעגל Hamilton: חייבים לעבור בכל 12 הצמתים.",
+    "לבחור 5 צמתים שיש ביניהם צלע ב-$G$ ולטעון שהם $K_5$ במשלים."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזה מהמעגלים הבאים הוא מעגל Hamilton ב-$G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$v_1,v_2,v_9,v_{10},v_{11},v_{12},v_7,v_3,v_8,v_6,v_5,v_4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$v_1,v_2,v_9,v_{11},v_{10},v_{12},v_7,v_3,v_8,v_6,v_5,v_4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$v_1,v_2,v_3,v_7,v_{12},v_9,v_{10},v_{11},v_5,v_4,v_8,v_6$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$v_1,v_{10},v_9,v_2,v_3,v_8,v_4,v_5,v_{11},v_{12},v_7,v_6$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "בשאר הרשימות יש זוג עוקב (או הזוג האחרון עם $v_1$) שאינו צלע של $G$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$\\overline G$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$G$ הוא 3-רגולרי על 12 צמתים: $12-1-3=8$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$G$ מכיל $C_5$, ולכן $\\chi\\ge3$, ויש צביעה ב-3 צבעים."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו קבוצה של 5 צמתים יוצרת $K_5$ מושרה ב-$\\overline G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\{v_1,v_9,v_{11},v_7,v_8\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\{v_1,v_2,v_3,v_4,v_5\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\{v_1,v_9,v_{11},v_7,v_3\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\{v_1,v_3,v_5,v_{10},v_{12}\\}$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "בקבוצה הראשונה אין צלעות של $G$; בכל אחת מהאחרות יש צלע של $G$ (למשל $(v_1,v_2)$, $(v_3,v_7)$, $(v_1,v_{10})$)."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
