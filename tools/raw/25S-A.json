@@ -17,7 +17,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת פונקציה על: לכל $y$ בטווח קיים $x$ בתחום עם $f(x)=y$",
+     "points": 4
+    },
+    {
+     "text": "שימוש בנוסחת ההכלה וההדחה לפונקציות על: $4^6-\\binom41 3^6+\\binom42 2^6-\\binom43 1^6$",
+     "points": 3
+    },
+    {
+     "text": "חישוב נכון של התוצאה $1560$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להחליף בין גודל התחום לגודל הטווח ולכתוב $6^4$ במקום $4^6$.",
+    "לשכוח את האיבר האחרון בסכום המתחלף, או לטעות בסימן."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה מתאימה לספירת הפונקציות **על** מ-$\\{1,\\dots,6\\}$ אל $\\{1,2,3,4\\}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הכלה והדחה על ערכי הטווח שאינם מתקבלים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מספר התמורות של 6 איברים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מכפלת $4\\cdot6$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\binom64$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מורידים מכלל הפונקציות את אלה שמחמיצות ערך אחד או יותר, בסימנים מתחלפים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות יש בסך הכול מ-$\\{1,\\dots,6\\}$ אל $\\{1,2,3,4\\}$ (האיבר הראשון בנוסחה)?",
+     "answer": 4096,
+     "tol": 0,
+     "explain": "$4^6=4096$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו האיבר $\\binom41 3^6$ בנוסחה?",
+     "answer": 2916,
+     "tol": 0,
+     "explain": "$4\\cdot729=2916$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מספר הפונקציות על?",
+     "answer": 1560,
+     "tol": 0,
+     "explain": "$4096-2916+384-4=1560$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -29,7 +100,96 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת $g=\\theta(f)$ עם $c_1,c_2,N$",
+     "points": 4
+    },
+    {
+     "text": "שימוש בקריטריון הגבול: הגבול של $\\frac{g}{f}$ הוא מספר חיובי סופי",
+     "points": 1
+    },
+    {
+     "text": "חישוב הגבול בעזרת כלל לופיטל",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: הגבול $\\frac13>0$ ולכן $\\theta$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להסתפק בגבול קיים: צריך גבול סופי וחיובי.",
+    "להתעלם מהנגזרת של $\\ln^2 n$, שהיא $2\\ln n\\cdot\\frac1n$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה כדאי להוכיח את הטענה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "קריטריון הגבול של $\\frac{g(n)}{f(n)}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על $n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "בדיקת $n=1$ בלבד"
+      }
+     ],
+     "correctId": "a",
+     "explain": "קריטריון הגבול: אם הגבול הוא $L>0$ סופי, אז $g=\\theta(f)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\lim_{n\\to\\infty}\\frac{n^2+2\\ln n}{3n^2+\\ln^2 n}$ (כתבו כעשרוני)?",
+     "answer": 0.3333,
+     "tol": 0.005,
+     "explain": "הגבול הוא $\\frac13$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה צריך להתקיים לגבול $L$ כדי להסיק $\\theta$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$L$ סופי וגדול מ-$0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$L=0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$L=\\infty$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$L=1$ בדיוק"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הגבול חייב להיות מספר ממשי חיובי."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -42,7 +202,87 @@
    "official": true,
    "confidence": "high",
    "verdict": false,
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת גרף דו-צדדי: $A,B$ זרות ולא ריקות והצלעות בין הצדדים",
+     "points": 4
+    },
+    {
+     "text": "זיהוי $C_3$ ב-$\\overline{C_6}$ על הצמתים $v_1,v_3,v_5$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: מעגל אי-זוגי ולכן אינו דו-צדדי",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לטעון ש-$\\overline{C_6}$ דו-צדדי רק כי $C_6$ עצמו דו-צדדי.",
+    "לא לנמק: צריך להראות מעגל אי-זוגי מפורש."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש ב-$\\overline{C_6}$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$\\binom62-6=15-6=9$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה מעגל אי-זוגי מופיע ב-$\\overline{C_6}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$v_1,v_3,v_5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$v_1,v_2,v_3$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$v_1,v_2,v_3,v_4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$v_2,v_4,v_6,v_1$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$(v_1,v_3),(v_3,v_5),(v_5,v_1)\\notin E$, ולכן הן במשלים."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את הנימוק.",
+     "lines": [
+      "נסמן $C_6=(V,E)$ עם $V=\\{v_1,\\dots,v_6\\}$ ו-$E=\\{(v_1,v_2),(v_2,v_3),(v_3,v_4),(v_4,v_5),(v_5,v_6),(v_6,v_1)\\}$.",
+      "הצלעות $(v_1,v_3),(v_3,v_5),(v_5,v_1)$ אינן ב-$E$, ולכן הן ב-$\\overline{E}$.",
+      "לכן $C_3=\\{(v_1,v_3),(v_3,v_5),(v_5,v_1)\\}\\subseteq\\overline{E}$ הוא מעגל באורך 3 ב-$\\overline{C_6}$.",
+      "גרף דו-צדדי אינו יכול להכיל מעגל אי-זוגי, ולכן $\\overline{C_6}$ אינו דו-צדדי."
+     ],
+     "explain": "הגדרת הגרף, זיהוי הצלעות במשלים, המעגל, ואז המסקנה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באיזו שורה יש טעות?",
+     "lines": [
+      "נסמן $C_6=(V,E)$ עם $V=\\{v_1,\\dots,v_6\\}$ ו-$E=\\{(v_1,v_2),(v_2,v_3),(v_3,v_4),(v_4,v_5),(v_5,v_6),(v_6,v_1)\\}$.",
+      "הצלעות $(v_1,v_3),(v_3,v_5),(v_5,v_1)$ אינן ב-$E$, ולכן הן ב-$\\overline{E}$.",
+      "לכן $C_3=\\{(v_1,v_2),(v_3,v_5),(v_5,v_1)\\}\\subseteq\\overline{E}$ הוא מעגל באורך 3 ב-$\\overline{C_6}$.",
+      "גרף דו-צדדי אינו יכול להכיל מעגל אי-זוגי, ולכן $\\overline{C_6}$ אינו דו-צדדי."
+     ],
+     "bugIndex": 2,
+     "explain": "$(v_1,v_2)\\in E$, ולכן אינה במשלים."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -54,7 +294,89 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "$|U|=201$ וסימון הקבוצות $A_1,A_2,A_3$",
+     "points": 2
+    },
+    {
+     "text": "חישוב נכון של $|A_1|,|A_2|,|A_3|$",
+     "points": 2
+    },
+    {
+     "text": "חישוב נכון של החיתוכים בזוגות ושל חיתוך שלושתם",
+     "points": 3
+    },
+    {
+     "text": "הצבה בנוסחת ההכלה וההדחה והתוצאה $122$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור $\\lfloor 300/11\\rfloor$ בלי להחסיר את $\\lfloor 99/11\\rfloor$ (המספרים מתחילים ב-100).",
+    "להשתמש במכפלה במקום בכפולה המשותפת הקטנה ביותר: ל-6 ול-5 היא 30."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איך סופרים את המספרים שלא מתחלקים באף אחד משלושת המספרים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|U|$ פחות האיחוד, בהכלה והדחה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מחסירים את $|A_1|+|A_2|+|A_3|$ בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$|U|\\cdot\\frac{1}{11\\cdot6\\cdot5}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|A_1|\\cdot|A_2|\\cdot|A_3|$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הנוסחה: $|U|-\\sum|A_i|+\\sum|A_i\\cap A_j|-|A_1\\cap A_2\\cap A_3|$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים מ-100 עד 300 מתחלקים ב-11?",
+     "answer": 18,
+     "tol": 0,
+     "explain": "$\\lfloor300/11\\rfloor-\\lfloor99/11\\rfloor=27-9=18$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים מ-100 עד 300 מתחלקים גם ב-6 וגם ב-5 (כלומר ב-30)?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$10-3=7$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים מ-100 עד 300 מתחלקים ב-11, ב-6 וב-5 יחד (כלומר ב-330)?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$330>300$, ולכן אין."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים ב-$U$ לא מתחלקים באף אחד מ-11, 6, 5?",
+     "answer": 122,
+     "tol": 0,
+     "explain": "$201-18-34-41+7+4+3-0=122$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -62,12 +384,86 @@
    "kind": "computation",
    "topic": "recurrences",
    "question": "(8 נק') נתונה נוסחת הנסיגה: $a_n=3a_{n-1}-2a_{n-2}+2^n,\\ a_0=1,\\ a_1=3$. מצאו נוסחה מפורשת של $a_n$.",
-   "solution": "$a_n=a_n^h+a_n^p$\n\n$x^2=3x-2,\\quad x_1=2,\\ x_2=1\\Rightarrow a_n^h=c_1+c_2\\cdot2^n$\n\n$a_n^p=A\\cdot n\\cdot2^n$\n\n$A\\cdot n\\cdot2^n=3A\\cdot(n-1)\\cdot2^{n-1}-2A\\cdot(n-2)\\cdot2^{n-2}+2^n$\n\n$A\\cdot n\\cdot4=3A\\cdot(n-1)\\cdot2-2A\\cdot(n-2)+4$\n\n$4An=6An-6A-2An+4A+4$\n\n$0=-2A+4,\\quad A=2,\\quad a_n^p=2n\\cdot2^n$\n\n$a_n=c_1+c_2\\cdot2^n+2n\\cdot2^n$\n\n$a_0=c_1+c_2=1$\n\n$a_1=c_1+c_2\\cdot2+4=3$\n\n$c_1+c_2=1,\\quad c_1+2c_2=-1$\n\n$c_2=-2,\\quad c_1=3$\n\nתשובה (כפי שמודפסת בפתרון המקורי): $a_n=3-2^n+2n\\cdot2^n$",
-   "solutionSource": "lecturer-solution",
-   "official": true,
+   "solution": "הפתרון הרשמי עם תיקון שגיאה בתשובה הסופית: בפתרון המקורי מודפסת התשובה הסופית $a_n=3-2^n+2n\\cdot2^n$, אך היא אינה מקיימת את $a_0=1$ (היא נותנת $a_0=2$). תוקן רק הביטוי הסופי, ל-$a_n=3-2\\cdot2^n+2n\\cdot2^n$, בהתאם לערכים $c_1=3,\\ c_2=-2$ שמופיעים בפתרון עצמו. שאר הדרך כפי שבפתרון הרשמי.\n\n$a_n=a_n^h+a_n^p$\n\n$x^2=3x-2,\\quad x_1=2,\\ x_2=1\\Rightarrow a_n^h=c_1+c_2\\cdot2^n$\n\n$a_n^p=A\\cdot n\\cdot2^n$\n\n$A\\cdot n\\cdot2^n=3A\\cdot(n-1)\\cdot2^{n-1}-2A\\cdot(n-2)\\cdot2^{n-2}+2^n$\n\n$A\\cdot n\\cdot4=3A\\cdot(n-1)\\cdot2-2A\\cdot(n-2)+4$\n\n$4An=6An-6A-2An+4A+4$\n\n$0=-2A+4,\\quad A=2,\\quad a_n^p=2n\\cdot2^n$\n\n$a_n=c_1+c_2\\cdot2^n+2n\\cdot2^n$\n\n$a_0=c_1+c_2=1$\n\n$a_1=c_1+c_2\\cdot2+4=3$\n\n$c_1+c_2=1,\\quad c_1+2c_2=-1$\n\n$c_2=-2,\\quad c_1=3$\n\nתשובה (מתוקנת): $a_n=3-2\\cdot2^n+2n\\cdot2^n$",
+   "solutionSource": "solved",
+   "official": false,
    "confidence": "high",
    "points": 8,
-   "hold": "The printed final answer does not satisfy a_0 = 1: with c1=3, c2=-2 the formula is 3-2*2^n+2n*2^n, but the printed last line is 3-2^n+2n*2^n (p.5, Q2b). Official key not changed."
+   "rubric": [
+    {
+     "text": "פתרון הומוגני: שורשי $x^2=3x-2$ הם $2,1$ ו-$a_n^h=c_1+c_2\\cdot2^n$",
+     "points": 2
+    },
+    {
+     "text": "ניחוש פתרון פרטי $A\\cdot n\\cdot2^n$ והצבה",
+     "points": 2
+    },
+    {
+     "text": "מציאת $A=2$",
+     "points": 2
+    },
+    {
+     "text": "מציאת $c_1=3,\\ c_2=-2$ מהתנאים ההתחלתיים ורישום הנוסחה הסופית",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לנחש פתרון פרטי $A\\cdot2^n$ כשהמספר 2 הוא כבר שורש אופייני: צריך להכפיל ב-$n$.",
+    "לא לבדוק את התשובה הסופית מול $a_0=1$ ו-$a_1=3$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מדוע הפתרון הפרטי הוא $A\\cdot n\\cdot2^n$ ולא $A\\cdot2^n$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כי 2 הוא שורש של המשוואה האופיינית"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי המעריך הוא $n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי $a_0=1$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי 1 הוא שורש"
+      }
+     ],
+     "correctId": "a",
+     "explain": "אגף ימין $2^n$ כבר פותר את ההומוגנית, ולכן מכפילים ב-$n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $A$ בפתרון הפרטי?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$0=-2A+4$, ולכן $A=2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $c_2$?",
+     "answer": -2,
+     "tol": 0,
+     "explain": "$c_1+c_2=1$ ו-$c_1+2c_2=-1$ נותנות $c_2=-2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "לפי הנוסחה הסופית $3-2\\cdot2^n+2n\\cdot2^n$, מהו $a_5$?",
+     "answer": 259,
+     "tol": 0,
+     "explain": "$3-64+320=259$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -79,7 +475,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "שימוש בבינום של ניוטון לסכומים: $14^n$ ו-$9^n$",
+     "points": 3
+    },
+    {
+     "text": "פירוק $m=2^{3n}\\cdot3^{2n}\\cdot7^{2n}$",
+     "points": 2
+    },
+    {
+     "text": "ספירת מחלקים זוגיים ($a>0$)",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את כל המחלקים במקום רק את הזוגיים: החזקה של 2 חייבת להיות חיובית.",
+    "לטעות בהוצאת $4^n$ ו-$7^n$ מחוץ לסכומים."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "כמה שווה $\\sum_{k=0}^{n}\\binom nk 4^k 10^{n-k}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$14^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$40^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$6^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$4^n\\cdot10^n$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "בינום ניוטון: $(4+10)^n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $m$ עבור $n=1$?",
+     "answer": 3528,
+     "tol": 0,
+     "explain": "$m=2^3\\cdot3^2\\cdot7^2=8\\cdot9\\cdot49=3528$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "במחלק זוגי של $m$ עבור $n=2$ (שם $2^6$ מחלק את $m$), כמה ערכים אפשריים יש לחזקת 2?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$a=1,\\dots,6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מחלקים זוגיים יש ל-$m$ עבור $n=2$?",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$3n(2n+1)^2=6\\cdot25=150$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -91,7 +558,95 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "כתיבת $n=3^a\\cdot7^b\\cdot m$ עם $m$ זר ל-3 ול-7",
+     "points": 2
+    },
+    {
+     "text": "פירוק $\\varphi(21n)$ לפי כפליות",
+     "points": 2
+    },
+    {
+     "text": "חישוב $\\varphi$ של חזקות הראשוניים",
+     "points": 2
+    },
+    {
+     "text": "הוצאת הגורם 12 והמסקנה",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להניח ש-$\\gcd(n,21)=1$: ייתכן ש-3 או 7 מחלקים את $n$ (לכן $a,b\\ge0$).",
+    "לטעות בנוסחה $\\varphi(p^k)=p^k-p^{k-1}$ ולכתוב $p^k-1$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו הצגה של $n$ מתאימה להוכחה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$n=3^a7^bm$ עם $m$ זר ל-3 ול-7"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$n=21k$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n$ ראשוני"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n=2^a$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "כך $21n=3^{a+1}7^{b+1}m$ וניתן לחשב $\\varphi$ בנפרד לכל גורם."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\varphi(21n)$ עבור $n=3$?",
+     "answer": 36,
+     "tol": 0,
+     "explain": "$a=1,\\ b=0,\\ m=1$: $12\\cdot3=36$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות ההוכחה.",
+     "lines": [
+      "נכתוב $n=3^a\\cdot7^b\\cdot m$, כאשר $\\gcd(3,m)=\\gcd(7,m)=1$ ו-$a,b\\ge0$.",
+      "$21n=3^{a+1}\\cdot7^{b+1}\\cdot m$.",
+      "$\\varphi(21n)=\\varphi\\left(3^{a+1}\\right)\\cdot\\varphi\\left(7^{b+1}\\right)\\cdot\\varphi(m)$.",
+      "$\\varphi(21n)=\\left(3^{a+1}-3^a\\right)\\cdot\\left(7^{b+1}-7^b\\right)\\cdot\\varphi(m)$.",
+      "$\\varphi(21n)=3^a\\cdot7^b\\cdot2\\cdot6\\cdot\\varphi(m)=12\\cdot3^a\\cdot7^b\\cdot\\varphi(m)$.",
+      "לכן $12\\mid\\varphi(21n)$."
+     ],
+     "explain": "הצגה, 21n, כפליות, ערכי φ, הוצאת 12, מסקנה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באיזו שורה יש טעות?",
+     "lines": [
+      "נכתוב $n=3^a\\cdot7^b\\cdot m$, כאשר $\\gcd(3,m)=\\gcd(7,m)=1$ ו-$a,b\\ge0$.",
+      "$21n=3^{a+1}\\cdot7^{b+1}\\cdot m$.",
+      "$\\varphi(21n)=\\varphi\\left(3^{a+1}\\right)\\cdot\\varphi\\left(7^{b+1}\\right)\\cdot\\varphi(m)$.",
+      "$\\varphi(21n)=\\left(3^{a+1}-3^a\\right)\\cdot\\left(7^{b+1}-7^b\\right)\\cdot\\varphi(m)$.",
+      "$\\varphi(21n)=3^a\\cdot7^b\\cdot2\\cdot4\\cdot\\varphi(m)=8\\cdot3^a\\cdot7^b\\cdot\\varphi(m)$.",
+      "לכן $12\\mid\\varphi(21n)$."
+     ],
+     "bugIndex": 4,
+     "explain": "$7^{b+1}-7^b=6\\cdot7^b$, ולכן הגורם הוא $2\\cdot6=12$ ולא $2\\cdot4=8$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -103,7 +658,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "סימון $x_1,\\dots,x_4$ והצגת הבעיה כמשוואה עם חסמים תחתונים",
+     "points": 2
+    },
+    {
+     "text": "הורדת המינימום מכל משתנה: $25-4-7-2-3=9$",
+     "points": 3
+    },
+    {
+     "text": "שימוש ב-$D(4,9)=C(12,3)$",
+     "points": 2
+    },
+    {
+     "text": "התוצאה $220$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור סדרים שונים של אותן אותיות: כאן אין חשיבות לסדר.",
+    "לשכוח את החסמים התחתונים ולכתוב $D(4,25)$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה אותיות פנויות נשארות אחרי שמניחים את המינימום הנדרש מכל אות?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$25-4-7-2-3=9$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה ביטוי מייצג את מספר הפתרונות אחרי ההזזה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$C(12,3)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$C(9,4)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$C(25,3)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$C(13,4)$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$D(4,9)=C(9+4-1,\\,4-1)=C(12,3)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מספר המילים?",
+     "answer": 220,
+     "tol": 0,
+     "explain": "$C(12,3)=220$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -115,7 +738,111 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "ג1: $n=2,3$ המשלים לא קשיר ולכן אינו אוילר",
+     "points": 1
+    },
+    {
+     "text": "ג1: $n$ זוגי, $\\deg(v_2)=n-3$ אי-זוגי",
+     "points": 1
+    },
+    {
+     "text": "ג1: $n$ אי-זוגי, $\\deg(v_1)=n-2$ אי-זוגי; מסקנה: אין $n$ כזה",
+     "points": 2
+    },
+    {
+     "text": "ג2: $n=2,3,4$ אינו המילטון",
+     "points": 1
+    },
+    {
+     "text": "ג2: $n=5$ גרף ה\"בית\" הוא המילטון",
+     "points": 1
+    },
+    {
+     "text": "ג2: $n>5$ לפי משפט Dirac",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את המקרים הקטנים $n=2,3$ שבהם המשלים אינו קשיר.",
+    "לטעון ש-$\\overline{P_4}$ המילטון: הוא עצמו מסלול $P_4$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של $v_2$ ב-$\\overline{P_6}$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$n-3=3$, אי-זוגית."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של $v_1$ ב-$\\overline{P_7}$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$n-2=5$, אי-זוגית."
+    },
+    {
+     "type": "choice",
+     "prompt": "עבור אילו $n>1$ המשלים $\\overline{P_n}$ הוא גרף אוילר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "אף $n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כל $n$ זוגי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כל $n$ אי-זוגי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n\\ge5$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "בכל המקרים יש צומת בדרגה אי-זוגית או שהגרף אינו קשיר."
+    },
+    {
+     "type": "choice",
+     "prompt": "עבור אילו $n$ המשלים $\\overline{P_n}$ הוא המילטון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$n\\ge5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$n\\ge4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$n$ זוגי בלבד"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$n\\ge3$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "עבור $n=5$ זה \"בית\", ועבור $n>5$ לפי Dirac."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -127,7 +854,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "$K_{11}$ קשיר וכל דרגותיו זוגיות, ולכן אוילר",
+     "points": 3
+    },
+    {
+     "text": "מספר הצלעות $\\frac{11\\cdot10}{2}=55$",
+     "points": 2
+    },
+    {
+     "text": "המסלול הארוך ביותר הוא מעגל אוילר באורך 55",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את הצמתים (11) במקום את הצלעות.",
+    "לחשוב שמעגל אוילר אינו מסלול: כאן הוא המסלול הארוך ביותר."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$K_{11}$?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "כל צומת מחובר ל-10 האחרים, ו-10 זוגי."
+    },
+    {
+     "type": "choice",
+     "prompt": "מדוע יש ב-$K_{11}$ מעגל אוילר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הוא קשיר וכל הדרגות זוגיות"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "יש בו 11 צמתים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הוא דו-צדדי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הוא עץ"
+      }
+     ],
+     "correctId": "a",
+     "explain": "תנאי אוילר: קשיר ודרגות זוגיות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו אורך המסלול הארוך ביותר ב-$K_{11}$?",
+     "answer": 55,
+     "tol": 0,
+     "explain": "מעגל אוילר עובר בכל 55 הצלעות."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -139,7 +930,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "מחיקת $v_7$ בדרגה 6 וקבלת $2,2,3,3,3,5$",
+     "points": 2
+    },
+    {
+     "text": "מחיקת $v_6$ בדרגה 5 וקבלת $1,1,2,2,2$",
+     "points": 2
+    },
+    {
+     "text": "זיהוי מסלול על 5 צמתים והמסקנה שהגרף קיים",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח להפחית 1 מכל הדרגות הנותרות אחרי מחיקת צומת שמחובר לכולם.",
+    "להסיק שאין גרף בלי לבצע את הצמצום עד סוף."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה הגדולה ביותר אחרי מחיקת $v_7$ (דרגה 6) מהגרף?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$6-1=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הדרגות אחרי מחיקת $v_6$ ו-$v_7$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$1+1+2+2+2=8$, כלומר 4 צלעות."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי הבנייה.",
+     "lines": [
+      "סדרת הדרגות של $G$ היא $3,3,4,4,4,6,6$.",
+      "מוחקים את $v_7$ (דרגה 6, מחובר לכל השאר) ומקבלים $2,2,3,3,3,5$.",
+      "מוחקים את $v_6$ (דרגה 5, מחובר לכל הנותרים) ומקבלים $1,1,2,2,2$.",
+      "$1,1,2,2,2$ היא סדרת הדרגות של מסלול על 5 צמתים, ולכן אפשר להחזיר את $v_6,v_7$ ולקבל גרף: קיים."
+     ],
+     "explain": "מורידים צומת מדרגה מקסימלית שלב אחר שלב עד שמגיעים למסלול."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -151,7 +989,101 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "ג1: משוואת הדרגות $2+3(|V|-1)=2|E|$",
+     "points": 3
+    },
+    {
+     "text": "ג1: $|V|-1=2(|E|-|V|)$ זוגי ולכן $|V|$ אי-זוגי",
+     "points": 3
+    },
+    {
+     "text": "ג2: הנחה בשלילה שהגרף דו-צדדי ו-$v_1\\in A$",
+     "points": 1
+    },
+    {
+     "text": "ג2: סכום הדרגות ב-$A$ שווה לסכום ב-$B$",
+     "points": 3
+    },
+    {
+     "text": "ג2: המשוואה $2+3(|A|-1)=3|B|$",
+     "points": 2
+    },
+    {
+     "text": "ג2: סתירה $3(|A|-|B|)=1$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח לחשב את $\\deg(v_1)=2$ בנפרד משאר הצמתים.",
+    "לא להסביר מדוע סכומי הדרגות בשני הצדדים שווים: כל צלע מחברת $A$ אל $B$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו מספר הצלעות בגרף כזה עם $|V|=5$?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$3\\cdot5-1=2|E|$, ולכן $|E|=7$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מדוע $|V|$ חייב להיות אי-זוגי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כי $3|V|-1=2|E|$ זוגי, ולכן $|V|$ אי-זוגי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי $|V|$ ראשוני"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי יש צומת בדרגה 2"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי $|E|$ אי-זוגי"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$3|V|-1=2|E|$ זוגי."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את הוכחת ג2.",
+     "lines": [
+      "נניח בשלילה ש-$G=(A,B,E)$ דו-צדדי, ו-$v_1\\in A$.",
+      "בגרף דו-צדדי $\\sum_{v\\in A}\\deg(v)=\\sum_{v\\in B}\\deg(v)$ (שניהם שווים למספר הצלעות).",
+      "לכן $2+3(|A|-1)=3|B|$.",
+      "מכאן $3(|A|-|B|)=1$.",
+      "אין שלם $|A|-|B|$ המקיים זאת (סתירה), ולכן $G$ אינו דו-צדדי."
+     ],
+     "explain": "הנחה, שוויון סכומים, משוואה, חישוב, סתירה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באיזו שורה יש טעות?",
+     "lines": [
+      "נניח בשלילה ש-$G=(A,B,E)$ דו-צדדי, ו-$v_1\\in A$.",
+      "בגרף דו-צדדי $\\sum_{v\\in A}\\deg(v)=\\sum_{v\\in B}\\deg(v)$ (שניהם שווים למספר הצלעות).",
+      "לכן $2+3(|A|-1)=3|B|$.",
+      "מכאן $3(|A|-|B|)=0$, כלומר $|A|=|B|$.",
+      "אין שלם $|A|-|B|$ המקיים זאת (סתירה), ולכן $G$ אינו דו-צדדי."
+     ],
+     "bugIndex": 3,
+     "explain": "$2+3|A|-3=3|B|$ נותן $3(|A|-|B|)=1$, לא $0$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -163,7 +1095,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת תמורת אי-סדר מלא: $j_i\\ne i$ לכל $i$",
+     "points": 4
+    },
+    {
+     "text": "שימוש בנוסחה $D_n=n!\\sum_{k=0}^{n}\\frac{(-1)^k}{k!}$",
+     "points": 2
+    },
+    {
+     "text": "התוצאה $D_8=14833$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשתמש ב-$8!$ כאילו כל תמורה היא אי-סדר מלא.",
+    "לטעות בסימנים המתחלפים בסכום."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו מהתמורות של $\\{1,2,3,4\\}$ היא אי-סדר מלא?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(2,1,4,3)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(1,3,2,4)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(3,2,1,4)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(1,2,4,3)$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "אין איבר ששומר על מקומו."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $8!$?",
+     "answer": 40320,
+     "tol": 0,
+     "explain": "$8!=40320$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $D_8$?",
+     "answer": 14833,
+     "tol": 0,
+     "explain": "$8!\\left(1-1+\\frac12-\\dots+\\frac1{8!}\\right)=14833$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -176,7 +1172,84 @@
    "official": true,
    "confidence": "high",
    "verdict": true,
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת גרף פורש: תת-גרף על אותה קבוצת צמתים",
+     "points": 4
+    },
+    {
+     "text": "מקרה בלי מעגלים: $G$ עץ פורש של עצמו",
+     "points": 2
+    },
+    {
+     "text": "מקרה עם מעגלים: מחיקת צלעות מכל מעגל",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: הגרף קשיר וחסר מעגלים",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "למחוק צמתים במקום צלעות: גרף פורש חייב להכיל את כל הצמתים.",
+    "למחוק יותר מדי צלעות ולאבד קשירות."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה מוחקים מכל מעגל כדי לשמור על קשירות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "צלע"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "צומת"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שתי צלעות סמוכות"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "את כל המעגל"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מחיקת צלע ממעגל משאירה את הגרף קשיר."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את ההוכחה.",
+     "lines": [
+      "הטענה נכונה, ונוכיח אותה.",
+      "אם ב-$G$ אין מעגלים, אז $G$ עצמו הוא עץ פורש של עצמו.",
+      "אם ב-$G$ יש מעגלים, מוחקים מכל מעגל צלע, כאשר הצלעות שנמחקות שונות זו מזו.",
+      "הגרף שנשאר קשיר וחסר מעגלים, ולכן הוא עץ פורש של $G$."
+     ],
+     "explain": "הכרעה, מקרה בלי מעגלים, מקרה עם מעגלים, מסקנה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באיזו שורה יש טעות?",
+     "lines": [
+      "הטענה נכונה, ונוכיח אותה.",
+      "אם ב-$G$ אין מעגלים, אז $G$ עצמו הוא עץ פורש של עצמו.",
+      "אם ב-$G$ יש מעגלים, מוחקים מכל מעגל צומת, כאשר הצמתים שנמחקים שונים זה מזה.",
+      "הגרף שנשאר קשיר וחסר מעגלים, ולכן הוא עץ פורש של $G$."
+     ],
+     "bugIndex": 2,
+     "explain": "גרף פורש שומר את כל הצמתים, ולכן מוחקים צלעות."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -188,7 +1261,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "גזירת הבינום $(x+1)^{11}$",
+     "points": 2
+    },
+    {
+     "text": "כפל ב-$x$ והצבת $x=7$: הסכום $11\\cdot7\\cdot2^{30}$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $\\phi$: $10\\cdot6\\cdot2^{29}$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח לכפול ב-$x$ אחרי הגזירה, ולקבל חזקה לא נכונה.",
+    "לחשב $\\phi(2^{30})$ בתור $2^{30}-1$ במקום $2^{29}$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה עושים לשוויון $(x+1)^{11}=\\sum\\binom{11}{k}x^k$ כדי לקבל את $k$ בסכום?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "גוזרים ואז כופלים ב-$x$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מציבים $x=1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מעלים בריבוע"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מחלקים ב-$x$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הנגזרת מורידה את $k$, והכפל ב-$x$ מחזיר את החזקה $x^k$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום $\\sum_{k=0}^{11}\\binom{11}{k}k\\,7^k$?",
+     "answer": 82678120448,
+     "tol": 0,
+     "explain": "$11\\cdot7\\cdot2^{30}=82678120448$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(2^{30})$?",
+     "answer": 536870912,
+     "tol": 0,
+     "explain": "$2^{30}-2^{29}=2^{29}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi\\left(11\\cdot7\\cdot2^{30}\\right)$?",
+     "answer": 32212254720,
+     "tol": 0,
+     "explain": "$10\\cdot6\\cdot2^{29}=32212254720$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
