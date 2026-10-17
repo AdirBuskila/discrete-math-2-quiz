@@ -37,4 +37,9 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Needed: nothing blocking; every final answer is right and transcribed as printed with a bracketed remark.
 - Status: noted
 
+### 24B-C, 23B-A, 22B-A - printed slips fixed under the standing typo ruling (no hold, FYI)
+- 24B-C p.3 Q2b(1): the question says x_k > 4 with sum 19 (no solutions), the key substitutes y = x - 3 and answers 70. 24B-C p.4 Q3b: the question says a_n = O(3^n) but the solution proves O(5^n), which is the true growth. 23B-A p.5 Q2c: the ink uses b >= 2 where the question says 3 (the answer 28 is right for 3). 23B-A p.7 Q4b: the ink stops at P3, the complement of P3 also qualifies. 22B-A p.8 Q4a: the ink bound 2 + (n-1)/2 + (n-1)/2 is written 2n, it is n+1.
+- Needed: nothing blocking; each is shipped with solutionSource "solved", official false, and the fix named in the solution (scripts in tools/verify/<CODE>/).
+- Status: noted
+
 ## Resolved
