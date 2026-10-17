@@ -1,0 +1,163 @@
+{
+ "examCode": "23B-A",
+ "examLabel": "אביב 2023, מועד א'",
+ "year": 2023,
+ "examDate": "12.06.2023",
+ "sourceFile": "23B-A exam (typed, pp.2-8)",
+ "solutionFile": "23B-A handwritten solution (same PDF)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 4 סעיף ג)",
+   "image": "images/exams/23B-A-Q4c.png",
+   "caption": "הגרף G על 13 צמתים"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "**א1.** (4 נק') המונח: חליפה.\n\n**א2.** (4 נק') שאלה: כמה פונקציות חד-חד-ערכיות $f:\\{1,2,3,4,5\\}\\to\\{1,2,3,4,5,6,7,8,9,10\\}$ מקיימות התנאים $f(\\{1,2\\})\\subseteq\\{6,7,8,9,10\\}$ וגם $f(\\{3,4,5\\})\\subseteq\\{1,2,3,4,5\\}$?",
+   "solution": "**א1. הגדרה:** תהי $A$ קבוצה בגודל $n$, ו-$1\\le k\\le n$. כל סדרה של $k$ איברים שונים מ-$A$ נקראת חליפה בגודל $k$ של $A$ (סדרה של $k$ איברים מתוך הקבוצה $A$).\n\n**א2.** בתרגיל: $f$ חד-חד-ערכית, לכן $f(\\{1,2\\})=\\{f(1),f(2)\\}$ היא חליפה של 2 איברים מתוך הקבוצה $\\{6,7,8,9,10\\}$ ולכן יש $P(5,2)=20$ אופציות.\n\nוגם $f(\\{3,4,5\\})=\\{f(3),f(4),f(5)\\}$ היא חליפה של 3 איברים מתוך הקבוצה $\\{1,2,3,4,5\\}$ ולכן יש $P(5,3)=60$ אופציות.\n\nמסקנה: יש $20\\cdot60=1200$ פונקציות $f$ מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "**ב1.** (5 נק') המונח: הפונקציה $\\phi$ של Euler.\n\n**ב2.** (4 נק') שאלה: יהיו $p,n\\in\\mathbb{N}$, $p$ מספר ראשוני כך ש: $p^3=\\gcd(n,p^4)$ וגם לא קיים מספר ראשוני $q$ כך ש: $p<q$ ו: $q\\mid n$. הראו ש: $p\\mid(\\phi\\circ\\phi)(n)$.",
+   "solution": "**ב1. הגדרה:** הפונקציה $\\phi$ של Euler היא $\\phi:\\mathbb{N}^*\\to\\mathbb{N}^*$ כך ש: לכל $n\\in\\mathbb{N}^*$, $\\phi(n)=\\left|\\{k:1\\le k\\le n\\wedge\\gcd(n,k)=1\\}\\right|$.\n\n**ב2.** בתרגיל: $\\gcd(n,p^4)=p^3\\Leftarrow$ קיים $1\\le m\\in\\mathbb{N}$ כך ש: $n=m\\cdot p^3$ וגם $\\gcd(m,p)=1$.\n\nבנוסף, מכיוון ש: $p<q\\Rightarrow q\\nmid m$, נקבל $\\gcd(p,\\phi(m))=1$.\n\n$$(\\phi\\circ\\phi)(n)=\\phi(\\phi(n))=\\phi(\\phi(p^3\\cdot m))\\overset{\\gcd(m,p)=1}{=}\\phi(\\phi(p^3)\\cdot\\phi(m))=\\phi\\left(p^3\\left(1-\\tfrac1p\\right)\\cdot\\phi(m)\\right)=\\phi\\left(p^2(p-1)\\,\\phi(m)\\right)$$\n\nמכיוון ש: $\\gcd\\left(p,(p-1)\\phi(m)\\right)=1$ נשיג ש:\n\n$$=\\phi(p^2)\\,\\phi\\left((p-1)\\cdot\\phi(m)\\right)=p^2\\left(1-\\tfrac1p\\right)\\phi\\left((p-1)\\phi(m)\\right)=p(p-1)\\,\\phi\\left((p-1)\\phi(m)\\right)$$\n\nכאשר $1\\le(p-1)\\phi(m)\\in\\mathbb{N}$, ולכן $p\\mid(\\phi\\circ\\phi)(n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_connectivity",
+   "question": "**ג1.** (4 נק') המונח: הקוטר של גרף לא מכוון.\n\n**ג2.** (4 נק') שאלה: יהי $G=(V,E)$ גרף בלתי מכוון בעל $n=|V|>2$ כך ש: $1<m=|E|<n-1$. חשבו את $\\operatorname{diam}(H)$, כאשר $H$ הוא המשלים של $G$.",
+   "solution": "**ג1. הגדרה:** אם $G=(V,E)$ גרף קשיר, אז $\\operatorname{diam}(G)=\\max\\{\\operatorname{dist}(x,y):x,y\\in V\\}$, כלומר המרחק המקסימלי בין זוג צמתים ב-$G$.\n\n**ג2.** בתרגיל: ב-$G$ יש צלע, לכן $K_n\\ne H$ ולכן $2\\le\\operatorname{diam}(H)$.\n\nמכיוון ש: $|E|<n-1$, הגרף $G$ אינו קשיר (גרף קשיר על $n$ צמתים בעל לפחות $n-1$ צלעות).\n\nעבור $G$ שאינו קשיר, $H$ קשיר ו: $\\operatorname{diam}(H)\\le2$.\n\nמסקנה: $\\operatorname{diam}(H)=2$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "divisibility_primes",
+   "question": "(3+3+3 נק') חשבו את $f(n)=\\sum_{k=0}^{n}\\binom nk\\cdot3^{n-k}\\bullet\\sum_{k=0}^{n}\\binom nk\\cdot3^{n+k}\\cdot7^{n-k}$.\n\nהראו ש: $m=\\Theta(n^5)$, כאשר $m=a\\bullet b$, $a$ הוא מספר המחלקים הזוגיים של $f(n)$ ו: $b$ הוא מספר המחלקים האי-זוגיים של $f(n)$.",
+   "solution": "בתרגיל:\n\n$$f(n)=\\left(\\sum_{k=0}^{n}\\binom nk1^k\\cdot3^{n-k}\\right)\\left(\\sum_{k=0}^{n}\\binom nk3^k\\cdot7^{n-k}\\right)\\cdot3^n=4^n\\cdot10^n\\cdot3^n=2^{3n}\\cdot3^n\\cdot5^n$$\n\n$d\\mid f(n)$ וגם $d$ זוגי $\\iff d=2^\\alpha\\cdot3^\\beta\\cdot5^\\gamma$ כאשר $1\\le\\alpha\\le3n$, $0\\le\\beta,\\gamma\\le n$. לכן $a=3n(n+1)^2$.\n\n$d\\mid f(n)$ וגם $d$ אי-זוגי $\\iff d=3^\\alpha\\cdot5^\\beta$ כאשר $0\\le\\alpha,\\beta\\le n$. לכן $b=(n+1)^2$.\n\nמסקנה: $m=3n(n+1)^4$, פולינום מדרגה 5, ולכן $m=\\Theta(n^5)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(5+4 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=10,\\ a_1=30$ וגם $a_n=4a_{n-1}-4a_{n-2}$ עבור $n>1$.",
+   "solution": "בתרגיל: המשוואה האופיינית: $(x-2)^2=0\\iff x^2=4x-4$, $\\Leftarrow x_1=x_2=2$.\n\nלכן $a_n=C_1\\cdot2^n+C_2\\cdot n\\cdot2^n$.\n\n$$\\begin{cases}a_0=C_1=10\\\\a_1=2C_1+2C_2=30\\end{cases}\\ \\Rightarrow\\ \\begin{cases}C_1=10\\\\C_2=5\\end{cases}\\ \\Rightarrow\\ a_n=10\\cdot2^n+5n\\cdot2^n,\\ n\\in\\mathbb{N}$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "selections_repetition",
+   "question": "(7 נק') תהי $A=\\{a,b,c,d\\}$. כמה מילים באורך 22 אותיות, בלי חשיבות לסדר, ניתן ליצור מ-$A$ כך שבכל מילה: אות $a$ מופיעה יותר מ-6 פעמים, אות $b$ מופיעה לפחות 3 פעמים, ואות $c$ מופיעה יותר מ-3 פעמים ואות $d$ מופיעה בדיוק פעמיים.",
+   "solution": "הפתרון הרשמי עם תיקון: בכתב היד הגבול התחתון של $x_2$ ושל ההצבה $y_2$ כתוב 2, אך השאלה דורשת לפחות 3 (ראו הערה).\n\nבתרגיל: נסמן $x_1$ = מספר ה-$a$-ים במילה, $7\\le x_1\\in\\mathbb{Z}$; $x_2$ = מספר ה-$b$-ים במילה, $3\\le x_2\\in\\mathbb{Z}$; $x_3$ = מספר ה-$c$-ים במילה, $4\\le x_3\\in\\mathbb{Z}$.\n\nאז נקבל $x_1+x_2+x_3+2=22\\iff x_1+x_2+x_3=20$ וגם $7\\le x_1$, $3\\le x_2$, $4\\le x_3$.\n\nנסמן: $y_1=x_1-7$, $y_2=x_2-3$, $y_3=x_3-4$. אז $y_i\\in\\mathbb{N}$ ולכן נקבל שהשאלה שקולה לשאלה: כמה פתרונות שלמים אי-שליליים יש ל-$y_1+y_2+y_3=6$.\n\nמספר הפתרונות הוא $D(3,6)=\\binom82=\\frac{8\\cdot7}{2}=28$.\n\n**הערה:** בפתרון המקורי כתוב $2\\le x_2$ ו-$y_2=x_2-2$ (שלוש פעמים), אך עם הערך 2 הסכום $y_1+y_2+y_3$ היה 7 ולא 6, והתשובה 28 מתאימה ל: $x_2\\ge3$ כפי שבשאלה.",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "med",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(6+6 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,n\\}$, כאשר $n\\in\\mathbb{N}$. ידוע שלקבוצה $A$ יש 1276 תתי-קבוצות בגודל $\\ge n-2$. חשבו את מספר תתי-הקבוצות בגודל 5 של $A$ המכילות **2** מספרים זוגיים וגם **3** מספרים אי-זוגיים.",
+   "solution": "בתרגיל: $\\binom n2+\\binom n1+1=1276\\iff1276=\\binom n{n-2}+\\binom n{n-1}+\\binom nn$.\n\n$\\frac{n(n-1)}{2}+n=1275\\Rightarrow n=50$.\n\nב-$A$ יש 25 מספרים זוגיים ו-25 מספרים אי-זוגיים, ולכן יש $\\binom{25}{2}\\cdot\\binom{25}{3}=\\frac{25\\cdot24}{2}\\cdot\\frac{25\\cdot24\\cdot23}{6}=690000$ תתי-קבוצות מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(6 נק') כמה פונקציות $f:\\{1,2,\\dots,10\\}\\to\\{1,2\\}$ הן **לא** על?",
+   "solution": "בתרגיל: יש $2^{10}$ פונקציות, ומהן $2^{10}-2$ פונקציות על. לכן יש רק 2 פונקציות שאינן על:\n\n1. הפונקציה $f_1$ כך ש: $f_1(x)=1$ לכל $x\\in\\{1,\\dots,10\\}$\n\n2. הפונקציה $f_2$ כך ש: $f_2(x)=2$ לכל $x\\in\\{1,\\dots,10\\}$\n\nמסקנה: התשובה היא $2$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_basics",
+   "question": "(7 נק') יהי $G=(V,E)$ גרף לא מכוון שמוגדר לפי הכללים הבאים: $V=\\{0,1,2,\\dots,20\\}$ וגם $(x,y)\\in E\\iff x,y\\in V\\ \\wedge\\ x\\ne y\\ \\wedge\\ x\\pmod2=y\\pmod2$. המשלים של $G$ מסומן ב-$H$. חשבו את:\n\n**ג1.** מספר תתי-הגרפים המושרים של $G$ שאיזומורפיים ל-$K_4$;\n\n**ג2.** מספר תתי-הגרפים המושרים של $H$ שאיזומורפיים ל-$P_3$.",
+   "solution": "$(x,y)\\in E$ וגם $x\\equiv y\\pmod2=0$ $\\Leftarrow x,y\\in\\{0,2,4,\\dots,20\\}$, כלומר $K_{11}$.\n\n$(x,y)\\in E$ וגם $x\\equiv y\\pmod2=1$ $\\Leftarrow x,y\\in\\{1,3,5,\\dots,19\\}$, כלומר $K_{10}$.\n\nאז $G=K_{11}\\cup K_{10}$ ולכן $H=K_{11,10}$.\n\n**ג1.** תת-גרף מושרה של $G$ שאיזומורפי ל-$K_4$ הוא $K_4$ מתוך $K_{10}$ ($\\binom{10}{4}$) או $K_4$ מתוך $K_{11}$ ($\\binom{11}{4}$). לכן יש $210+330=\\binom{10}4+\\binom{11}4=540$ תתי-גרפים מושרים ל-$K_4$.\n\n**ג2.** נסמן $H=K_{11,10}=(A,B,E)$. תת-גרף מושרה $P_3$ של $H$ הוא:\n\n2 צמתים מ-$A$ ו-צומת אחד מ-$B$: $550=10\\cdot\\binom{11}{2}$ אופציות.\n\n2 צמתים מ-$B$ ו-צומת אחד מ-$A$: $495=11\\cdot\\binom{10}{2}$ אופציות.\n\nמסקנה: ב-$G$ יש $1045$ תתי-גרפים מושרים ל-$P_3$ (כלומר ב-$H$).",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "proof",
+   "topic": "euler_hamilton",
+   "question": "(3+3 נק') יהיו $4\\le r$, $G=(V,E)$ גרף לא מכוון $r$-רגולרי ו: $H=(V,U)$ גרף פורש של $G$ כך ש: $H$ הוא $(r-2)$-רגולרי. הוכיחו או הפריכו:\n\n**א1.** אם $H$ הוא גרף Euler, אז גם $G$ הוא גרף Euler.\n\n**א2.** אם $G$ הוא גרף Euler, אז גם $H$ הוא גרף Euler.",
+   "solution": "**א1.** טענה נכונה. נתון: $H$ הוא גרף Euler, לכן:\n\n- $H$ קשיר $\\Rightarrow$ גם $G$ קשיר ($H$ הוא גרף פורש של $G$)\n\n- $r-2$ הוא מספר זוגי $\\Rightarrow r$ מספר זוגי\n\nלכן $G$ הוא גרף Euler.\n\nמסקנה: הטענה נכונה.\n\n**א2.** טענה לא נכונה. דוגמה נגדית: $G$ גרף Euler: שני עותקים של $K_4$ שמחוברים ביניהם בארבע צלעות של זיווג מושלם (כל הדרגות 4, וקשיר), ו-$H$ אינו גרף Euler: $H$ הוא שני מעגלים $C_4$ (אחד בתוך כל $K_4$), כלומר $(4-2)$-רגולרי אך לא קשיר.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "graph_basics",
+   "question": "(3 נק') מצאו כל גרף לא מכוון $G=(V,E)$ שמקיים התנאי: ב-$G$ קיים צומת $x$ כך שהוא עלה של $G$ וגם של המשלים שלו.",
+   "solution": "הפתרון הרשמי עם תיקון: בכתב היד מופיע רק $G=P_3$; גם המשלים של $P_3$ מתאים (ראו הערה).\n\nבתרגיל: ידוע שלכל $v\\in V$ מתקיים: $\\deg_G(v)+\\deg_{\\overline G}(v)=|V|-1$.\n\nלכן אם $\\deg_G(v)=1=\\deg_{\\overline G}(v)$ אז $2=|V|-1$, כלומר $|V|=3$.\n\nמכיוון ש-$G$ בעל עלה ו-$|V|=3$, נקבל $G=P_3$: $v - u - w$, והמשלים $\\overline G$: הצלע $v - w$ והצומת הבודד $u$.\n\n**הערה:** בכתב היד נעצר הפתרון כאן, אך השאלה מבקשת את כל הגרפים. כל גרף על שלושה צמתים שבו $x$ עלה בו וגם במשלים שלו מתאים: $P_3$ (עם $x$ קצה של המסלול), וגם המשלים שלו, $K_2$ ועוד צומת בודד (עם $x$ אחד מקצוות הצלע). אלו שני הגרפים היחידים (נבדק בכל הגרפים עד 7 צמתים).",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "med",
+   "points": 3
+  },
+  {
+   "num": 4,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(4+4+4+4 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ג1.** האם $G$ הוא גרף Hamilton?\n\n**ג2.** האם המשלים של $G-v_{13}$ הוא גרף EULER?\n\n**ג3.** חשבו את $\\chi(G)$.\n\n**ג4.** הראו ש: $5\\le\\chi(H)$, כאשר $H$ הוא המשלים של $G$.",
+   "solution": "**ג1.** כן. ב-$G$ יש מעגל $C_{13}$: $v_1,v_2,v_3,v_{10},v_4,v_5,v_{11},v_6,v_7,v_8,v_{12},v_{13},v_9,v_1$. לכן $G$ הוא גרף Hamilton.\n\n**ג2.** לא. ב-$G-v_{13}$ מתקיים $\\deg(v_9)=2$, ולכן ב-$\\overline{G-v_{13}}$ מתקיים $\\deg(v_9)=9$, דרגה אי-זוגית. לכן $\\overline{G-v_{13}}$ אינו גרף Euler.\n\n**ג3.** ב-$G$ יש $K_3$ על $v_1,v_2,v_9$, ולכן $3\\le\\chi(G)$. ב-$G$ קיימת צביעה חוקית ב-3 צבעים \"1\",\"2\",\"3\": צבע 1 ל-$v_1,v_3,v_5,v_7,v_{13}$, צבע 2 ל-$v_2,v_4,v_6,v_8$ וצבע 3 ל-$v_9,v_{10},v_{11},v_{12}$. לכן $\\chi(G)\\le3$.\n\nמסקנה: $\\chi(G)=3$.\n\n**ג4.** הצמתים $\\{v_1,v_3,v_5,v_7,v_{13}\\}$ מהווים $K_5$ ב-$H$ (אין צלע ביניהם ב-$G$). לכן $5\\le\\chi(H)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 16,
+   "contextId": "c1"
+  }
+ ]
+}

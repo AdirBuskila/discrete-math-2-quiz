@@ -1,0 +1,151 @@
+{
+ "examCode": "23B-B",
+ "examLabel": "אביב 2023, מועד ב'",
+ "year": 2023,
+ "examDate": "16.07.2023",
+ "sourceFile": "23B-B exam (typed, pp.2-7)",
+ "solutionFile": "23B-B handwritten solution (same PDF)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 4 סעיף ב)",
+   "image": "images/exams/23B-B-Q4b.png",
+   "caption": "הגרף G על 12 צמתים"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "**א1.** (4 נק') המונח: תמורה.\n\n**א2.** (4 נק') שאלה: כמה סדרות באורך 5 של איברי הקבוצה $A=\\{1,2,3,4,5\\}$ הן **לא** תמורות.",
+   "solution": "**א1. הגדרה:** תהי $A$ קבוצה, $|A|=n\\ge1$. כל חליפה בגודל $n$ של $A$ נקראת תמורה של $A$, כלומר כל סידור של $n$ איברים שונים של $A$.\n\n**א2.** בתרגיל: ל-$A$ יש $5!=120$ תמורות. מכל הסדרות באורך 5 מעל $A$ יש $5^5$.\n\nלכן התשובה היא: $5^5-5!=3005$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "**ב1.** (5 נק') המונח: הפונקציה $\\phi$ של Euler.\n\n**ב2.** (4 נק') שאלה: הראו שקיים מספר ראשוני יחיד $p$ שמקיים התנאי: $\\phi(p)\\mid p$.",
+   "solution": "**ב1. הגדרה:** הפונקציה $\\phi$ של Euler היא $\\phi:\\mathbb{N}^*\\to\\mathbb{N}^*$ כך ש: לכל $n\\in\\mathbb{N}^*$, $\\phi(n)=\\left|\\{k:1\\le k\\le n\\wedge\\gcd(n,k)=1\\}\\right|$.\n\n**ב2.** עבור $p=2$ התנאי מתקיים: $\\phi(2)=1$ ולכן $\\phi(2)\\mid2$.\n\nאם $p$ ראשוני ו-$p>2$, אז $\\phi(p)=p-1\\ge2$ ולכן $\\phi(p)\\nmid p$.\n\nמסקנה: $\\phi(p)\\mid p$ וגם $p$ ראשוני, רק עבור $p=2$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "graph_basics",
+   "question": "**ג1.** (4 נק') המונח: דרגה של צומת בגרף לא מכוון.\n\n**ג2.** (4 נק') שאלה: נתון $G=(V,E)$ לא מכוון, כך ש: $|V|\\pmod4=0$ ו: $|E|\\pmod2=1$. הראו כי $G$ לא רגולרי.",
+   "solution": "**ג1. הגדרה:** יהי $G=(V,E)$ גרף לא מכוון ו: $v\\in V$. הדרגה של $v$ היא $|N(v)|$, מספר הצמתים השכנים של $v$ ב-$G$.\n\n**ג2.** בשלילה: נניח ש: $|V|=4k$ (עבור $k\\in\\mathbb{N}$ כלשהו), $|E|=2q+1$ ($q\\in\\mathbb{N}$), ונניח בשלילה ש-$G$ הוא $r$-רגולרי. נקבל\n\n$$4k\\cdot r=\\sum_{v\\in V}\\deg(v)=2|E|=2(2q+1)\\ \\Longrightarrow\\ 2kr=2q+1$$\n\nאגף שמאל זוגי ואגף ימין אי-זוגי: סתירה.\n\nמסקנה: $G$ לא רגולרי.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "asymptotics",
+   "question": "(3+3+3 נק') חשבו את $f(n)=\\sum_{k=0}^{n}\\binom nk\\cdot2^{n-k}\\bullet\\sum_{k=0}^{n}\\binom nk\\cdot3^{n+k}\\cdot2^{n-k}$. הראו ש: $f(n)=O(50^n)$.",
+   "solution": "לפי הבינום של Newton נקבל\n\n$$f(n)=\\left(\\sum_{k=0}^{n}\\binom nk\\cdot1^k\\cdot2^{n-k}\\right)\\cdot3^n\\cdot\\sum_{k=0}^{n}\\binom nk\\cdot3^k\\cdot2^{n-k}=3^n\\cdot3^n\\cdot5^n=45^n\\le1\\cdot50^n$$\n\nלכל $n\\in\\mathbb{N}$, $n\\ge n_0=0$. לכן $f(n)=O(50^n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(4+5 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=3,\\ a_1=14$ וגם $a_n=8a_{n-1}-16a_{n-2}+18$ עבור $n>1$.",
+   "solution": "המשוואה האופיינית: $x^2-8x+16=0\\ \\Leftarrow\\ x_1=x_2=4$, ולכן $a_n^{(h)}=C_1\\cdot4^n+C_2\\cdot n\\cdot4^n$.\n\nפתרון פרטי: $a_n^{(p)}=A\\ \\Rightarrow\\ A=8A-16A+18\\ \\Rightarrow\\ A=2$.\n\nאז $a_n=C_1\\cdot4^n+C_2\\cdot n\\cdot4^n+2$.\n\n$$\\begin{cases}a_0=C_1+2=3\\\\a_1=4C_1+4C_2+2=14\\end{cases}\\ \\Rightarrow\\ \\begin{cases}C_1=1\\\\C_2=2\\end{cases}$$\n\nולכן $a_n=4^n+2n\\cdot4^n+2,\\ n\\in\\mathbb{N}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "selections_repetition",
+   "question": "(7 נק') תהי הקבוצה $A=\\{a,b,c,d\\}$. כמה מילים באורך 30 אותיות, בלי חשיבות לסדר, ניתן ליצור מ-$A$ כך שבכל מילה: האות $a$ מופיעה יותר מ-5 פעמים, האות $b$ מופיעה לפחות 4 פעמים, האות $c$ מופיעה יותר מ-4 פעמים ואות $d$ מופיעה בדיוק 3 או 4 פעמים.",
+   "solution": "נסמן $x_1$ = מספר ה-$a$, $x_2$ = מספר ה-$b$, $x_3$ = מספר ה-$c$.\n\n**מקרה 1:** $d$ מופיעה בדיוק 3 פעמים. אז $x_1+x_2+x_3+3=30$, כלומר $x_1+x_2+x_3=27$ כאשר $x_1\\ge6,\\ x_2\\ge4,\\ x_3\\ge5$.\n\nנסמן $y_1=x_1-6,\\ y_2=x_2-4,\\ y_3=x_3-5$. אז $y_1+y_2+y_3=12$, $y_i\\in\\mathbb{N}$ ויש $D(3,12)=\\binom{14}{2}=\\frac{14\\cdot13}{2}=91$ מילים.\n\n**מקרה 2:** $d$ מופיעה בדיוק 4 פעמים. אז $x_1+x_2+x_3+4=30$, כלומר $x_1+x_2+x_3=26$ כאשר $x_1\\ge6,\\ x_2\\ge4,\\ x_3\\ge5$, ויש $D(3,11)=\\binom{13}{2}=\\frac{13\\cdot12}{2}=78$ מילים.\n\nמסקנה: יש $169=91+78$ מילים מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(6+6 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,n\\}$, כאשר $n\\in\\mathbb{N}$. ידוע שלקבוצה $A$ יש 210 תתי-קבוצות לא ריקות בגודל $\\le2$. חשבו את מספר תתי-הקבוצות בגודל 5 של $A$ המכילות 3 מספרים שמתחלקים ב-3 וגם 2 מספרים שאינם מתחלקים ב-3.",
+   "solution": "מכיוון ש: $n+\\frac{n(n-1)}{2}=210$ נקבל $n^2+n-420=0$ ולכן $n_{1,2}=\\frac{-1\\pm41}{2}\\in\\{20,-21\\}$, כלומר $n=20$ ו-$A=\\{1,2,\\dots,20\\}$.\n\nב-$A$ יש $\\lfloor\\frac{20}{3}\\rfloor=6$ מספרים שמתחלקים ב-3.\n\nכל תת-קבוצה $B=\\{b_1,b_2,b_3,b_4,b_5\\}$ מתאימה היא כך ש: 3 מספרים מ-$B$ מתחלקים ב-3 (מתוך 6) ו-2 מספרים מ-$B$ לא מתחלקים ב-3 (מתוך 14).\n\nלכן יש $1820=91\\cdot20=\\frac{14\\cdot13}{1\\cdot2}\\cdot\\frac{6\\cdot5\\cdot4}{2\\cdot3}=\\binom{14}{2}\\cdot\\binom63$ תתי-קבוצות מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(6 נק') כמה פונקציות $f:\\{1,2,3\\}\\to\\{1,2,3,4,5,6\\}$ הן **לא** חד-חד-ערכיות?",
+   "solution": "בתרגיל: לכל $i=1,2,3$, $f(i)\\in\\{1,\\dots,6\\}$ ולכן יש $6^3$ פונקציות.\n\n$f$ חח\"ע $\\iff f(1),f(2),f(3)$ היא חליפה בגודל 3 של $\\{1,2,\\dots,6\\}$, ויש $P(6,3)=120$ פונקציות חח\"ע.\n\nלכן התשובה היא: $6^3-P(6,3)=216-120=96$ פונקציות שאינן חח\"ע.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_basics",
+   "question": "(7 נק') יהי $G=(V,E)$ גרף לא מכוון שמוגדר לפי הכללים הבאים: $V=\\{1,2,\\dots,15\\}$ וגם $(x,y)\\in E\\iff x,y\\in V\\ \\wedge\\ x\\ne y\\ \\wedge\\ x\\pmod3=y\\pmod3$. המשלים של $G$ מסומן ב-$H$. חשבו את:\n\n**ג1.** מספר הצלעות של $H$, $\\chi(G)$ וגם $\\chi(H)$;\n\n**ג2.** מספר תתי-הגרפים המושרים של $H$ שאיזומורפיים ל-$K_3$.",
+   "solution": "נסמן $A=\\{1,4,7,10,13\\}$ ($x\\pmod3=1$), $B=\\{2,5,8,11,14\\}$ ($x\\pmod3=2$), $C=\\{3,6,9,12,15\\}$ ($x\\pmod3=0$).\n\n$(u,v)\\in E\\iff u,v\\in A$ או $u,v\\in B$ או $u,v\\in C$.\n\n**ג1.** $G=K_5\\cup K_5\\cup K_5$ ולכן $\\chi(G)=5$ (כי ב-$G$ יש $K_5$ ולכן $\\chi(G)\\ge5$, ואפשר לצבוע ב-5 צבעים, ולכן $\\chi(G)\\le5$).\n\nב-$H$: $(x,y)\\in\\overline E$ אם ורק אם $x,y$ שייכים לשתי קבוצות שונות מבין $A$, $B$, $C$. אפשר לצבוע את $H$ ב-3 צבעים (\"1\" ל-$A$, \"2\" ל-$B$ ו-\"3\" ל-$C$), ולכן $\\chi(H)\\le3$. בנוסף, אם $a\\in A,\\ b\\in B,\\ c\\in C$ אז ב-$H$ יש $K_3$ ולכן $3\\le\\chi(H)$.\n\nמסקנה: $\\chi(H)=3$.\n\nכל צומת מ-$A$ מחובר ב-$H$ לכל צומת מ-$B$ ומ-$C$, וכן $B$ ל-$C$: $|E(H)|=3\\cdot5\\cdot5=75$.\n\n**ג2.** כל $K_3$ ב-$H$ מורכב משלושה צמתים, אחד מכל אחת מהקבוצות $A$, $B$, $C$ (שני צמתים מאותה קבוצה אינם שכנים ב-$H$). לכן יש $|A|\\cdot|B|\\cdot|C|=5^3=125$ תתי-גרפים מושרים שאיזומורפיים ל-$K_3$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "proof",
+   "topic": "euler_hamilton",
+   "question": "(4+5 נק') הוכיחו או הפריכו:\n\n**א1.** לא קיים גרף Hamilton $G=(A,B,E)$ (דו-צדדי) כך ש: $|A|+|B|$ הוא מספר אי-זוגי.\n\n**א2.** לא קיים גרף Euler $G=(V,E)$ שמקיים את התנאים הבאים: $G$ הוא רגולרי, $|V|$ מספר זוגי וגם $|E|$ מספר אי-זוגי.",
+   "solution": "**א1.** טענה נכונה. נניח בשלילה ש-$G$ הוא גרף Hamilton, כלומר קיים מעגל Hamilton $C:\\ x_1,x_2,x_3,\\dots,x_k$ ב-$G$. אז $|V(C)|=|A|+|B|=k$.\n\nנניח ש: $x_1\\in A$. אז $x_2\\in B$, $x_3\\in A$, $x_4\\in B,\\dots$ (ב-$G$ דו-צדדי הצמתים לאורך המעגל מתחלפים בין $A$ ל-$B$), וכדי לסגור את המעגל $x_k\\in B$. לכן $k$ הוא זוגי ($k=2|A|$), בסתירה לכך ש-$|A|+|B|$ אי-זוגי.\n\nמסקנה: הטענה נכונה.\n\n**א2.** טענה נכונה. אם $G$ הוא גרף Euler רגולרי, אז דרגת כל הצמתים זוגית: $r=2q$. נניח ש: $2k=|V|$ ו: $|E|=2p+1$. אז\n\n$$2k\\cdot2q=2(2p+1)\\ \\Rightarrow\\ 2kq=2p+1$$\n\nאגף שמאל זוגי ואגף ימין אי-זוגי: סתירה.\n\nמסקנה: הטענה נכונה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(4+4+4+4 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ב1.** האם ב-$G$ קיים עץ פורש בעל 2 עלים?\n\n**ב2.** האם במשלים של $G-(v_1,v_5)$ קיים מסלול Euler או מעגל Euler?\n\n**ב3.** חשבו את $\\chi(G)$.\n\n**ב4.** האם במשלים של $G$ קיימים $C_4,\\ C_5,\\ K_5$ כתתי-גרפים מושרים?",
+   "solution": "**ב1.** כן. ב-$G$ יש מסלול Hamilton $P_{12}:\\ v_1,v_2,v_3,v_4,v_5,v_6,v_7,v_8,v_9,v_{10},v_{11},v_{12}$, והוא עץ פורש בעל 2 עלים.\n\n**ב2.** נסמן $G_1=G-(v_1,v_5)$. הדרגות ב-$\\overline{G_1}$ הן $12-3$ או $12-4$ (כלומר 9 עבור $v_1,v_5$ ו-8 עבור שאר הצמתים), ולפי משפט Dirac $\\overline{G_1}$ הוא גרף Hamilton (ובפרט קשיר). ב-$\\overline{G_1}$ יש רק 2 צמתים בדרגה אי-זוגית: $v_1$ ו-$v_5$. לכן ב-$\\overline{G_1}$ קיים מסלול Euler (ואין מעגל Euler).\n\n**ב3.** ב-$G$ יש $K_3$ ולכן $3=\\chi(K_3)\\le\\chi(G)$. ב-$G$ יש צביעה חוקית ב-3 צבעים \"1\",\"2\",\"3\": צבע 1 ל-$v_1,v_3,v_6,v_8,v_{10}$, צבע 2 ל-$v_2,v_4,v_9,v_{11}$ וצבע 3 ל-$v_5,v_7,v_{12}$. לכן $\\chi(G)\\le3$.\n\nמסקנה: $\\chi(G)=3$.\n\n**ב4.** ב-$\\overline G$ יש $K_5$: על הצמתים $v_2,v_4,v_6,v_9,v_{11}$.\n\nב-$G$ יש $C_5$ מושרה: $v_1,v_2,v_3,v_4,v_5$ ($C_5\\cong\\overline{C_5}$ כי $C_5$ הוא איזומורפי למשלים שלו), ולכן גם ב-$\\overline G$ יש $C_5$ כתת-גרף מושרה.\n\nב-$G$ יש $2K_2$ מושרה: $\\{v_1,v_2\\}$ ו-$\\{v_{10},v_{11}\\}$, ולכן ב-$\\overline G$ יש $C_4$ כתת-גרף מושרה.\n\nמסקנה: כן, כולם קיימים.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 16,
+   "contextId": "c1"
+  }
+ ]
+}
