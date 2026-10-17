@@ -24,7 +24,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת תמורה (לפי ההרצאה)",
+     "points": 4
+    },
+    {
+     "text": "הדבקת \"abc\" לאות אחת $x$: תמורות של $\\{x,d,e,f\\}$, כלומר $4!$",
+     "points": 2
+    },
+    {
+     "text": "חיסור מכלל התמורות והתוצאה $6!-4!=696$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחסר $3!\\cdot4!$ (כל סדרי a,b,c בתוך הבלוק) במקום $4!$, כשהרצף הוא רק 'abc'.",
+    "לענות $4!=24$, שהוא מספר התמורות שכן מכילות את הרצף."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה משמש הפתרון הרשמי לספירת התמורות שבהן **לא** מופיע הרצף?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "סופרים את התמורות שבהן הרצף מופיע (מדביקים אותו לאות אחת) ומחסירים מ-$6!$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בוחרים מקום לאות a ואז מסדרים את שאר האותיות בלי הגבלה"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מחלקים את $6!$ ב-$3!$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "סופרים ישירות רק את התמורות ללא הרצף לפי מיקום האות a"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון מגדיר $x=$\"abc\" ומחסיר את $4!$ מ-$6!$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות של $\\{a,b,c,d,e,f\\}$ מכילות את הרצף \"abc\"?",
+     "answer": 24,
+     "tol": 0,
+     "explain": "הן תמורות של 4 עצמים $\\{x,d,e,f\\}$: $4!=24$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בכמה תמורות לא מופיע הרצף \"abc\"?",
+     "answer": 696,
+     "tol": 0,
+     "explain": "$720-24=696$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -36,7 +100,79 @@
    "solutionSource": "solved",
    "official": false,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת פונקציית Euler: ספירת המספרים $1\\le d\\le n$ הזרים ל-$n$",
+     "points": 4
+    },
+    {
+     "text": "פירוק $n$ לראשוניים וכתיבת כל כפולה $m$ בצורה $p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\cdot q$",
+     "points": 2
+    },
+    {
+     "text": "חישוב היחס $\\frac{\\phi(m)}{\\phi(n)}$ בנוסחת המכפלה",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: היחס שלם, ולכן $\\phi(n)\\mid\\phi(m)$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להגדיר את $\\phi(n)$ כמספר המחלקים של $n$ (כמו בכתב היד) במקום כמספר הזרים ל-$n$.",
+    "להשתמש ב-$\\phi(m)=\\phi(n)\\phi(a)$ ללא התנאי $\\gcd(n,a)=1$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה הפתרון הרשמי מוכיח את הטענה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כותבים את $n$ ואת $m$ כמכפלות חזקות של ראשוניים ומחשבים את היחס $\\frac{\\phi(m)}{\\phi(n)}$ בנוסחת המכפלה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על $m$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "ספירה ישירה של הזרים ל-$m$ מתוך ההגדרה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון מחשב את המנה ומראה שהיא מספר טבעי."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=12,\\ m=60$ מתקיים $12\\mid60$. מהו $\\frac{\\phi(60)}{\\phi(12)}$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$\\phi(60)=16$, $\\phi(12)=4$, וההצגה היא $m=2^2\\cdot3\\cdot5$ עם $q=5$ ו-$\\phi(q)=4$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שורות ההוכחה.",
+     "lines": [
+      "נכתוב $n=p_1^{\\alpha_1}\\cdots p_k^{\\alpha_k}$ כמכפלת ראשוניים.",
+      "כל כפולה $m$ של $n$ היא $m=p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\cdot q$, כאשר $\\gcd(q,p_i)=1$ ו-$\\alpha_i\\le\\beta_i$.",
+      "לפי נוסחת המכפלה, $\\frac{\\phi(m)}{\\phi(n)}=p_1^{\\beta_1-\\alpha_1}\\cdots p_k^{\\beta_k-\\alpha_k}\\cdot\\phi(q)$.",
+      "זהו מספר טבעי חיובי $t$, ולכן $\\phi(n)\\mid\\phi(m)$."
+     ],
+     "explain": "פירוק $n$, צורת הכפולה $m$, חישוב המנה, ואז המסקנה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -48,7 +184,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת עץ ועץ פורש",
+     "points": 4
+    },
+    {
+     "text": "מסירים צלע אחת מכל אחד משני המעגלים ומקבלים עץ פורש $T=(V,E-\\{e_1,e_2\\})$",
+     "points": 2
+    },
+    {
+     "text": "$|E|-2=|V|-1$, ולכן $|E|=n+1$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהפתרון מניח ש-$C_1,C_2$ הם כל המעגלים של $G$.",
+    "להסיר צומת ממעגל במקום צלע, ולפגוע בכך שהעץ יהיה פורש."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה עושה הפתרון הרשמי כדי לקבל עץ פורש?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מסיר צלע אחת מכל מעגל"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מסיר צומת אחד מכל מעגל"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מוסיף צלע בין שני המעגלים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מסיר את כל צלעות המעגלים"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הסרת צלע ממעגל משאירה את הגרף קשיר, והצמתים כולם נשארים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש בעץ פורש של גרף עם $n=10$ צמתים?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$n-1=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש ל-$G$ כאשר $n=10$?",
+     "answer": 11,
+     "tol": 0,
+     "explain": "$|E|=|V|-1+2=n+1=11$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -60,7 +260,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "פתרון $\\binom n2=190$ ומציאת $n=20$",
+     "points": 5
+    },
+    {
+     "text": "10 מספרים זוגיים ב-$A$",
+     "points": 2
+    },
+    {
+     "text": "$\\binom{10}3=120$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשאיר את השורש השלילי $n=-19$.",
+    "לחשב $\\binom{20}3$ (כל תתי-הקבוצות) במקום רק של הזוגיים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$ (נתון $\\binom n2=190$)?",
+     "answer": 20,
+     "tol": 0,
+     "explain": "$n^2-n-380=0\\Rightarrow n=20$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים זוגיים יש ב-$\\{1,\\dots,20\\}$?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "$10$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות בגודל 3 מכילות רק זוגיים?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "$\\binom{10}3=120$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -72,7 +315,50 @@
    "solutionSource": "solved",
    "official": false,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "סך הפונקציות $3^5=243$",
+     "points": 1
+    },
+    {
+     "text": "מספר הפונקציות על: $3^5-3\\cdot2^5+3=150$",
+     "points": 3
+    },
+    {
+     "text": "הפונקציות שאינן על: $243-150=93$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לענות 150, מספר הפונקציות **על**, כשהשאלה מבקשת פונקציות שאינן על.",
+    "לשכוח את האיבר האחרון בנוסחת ההכלה וההדחה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות יש בסך הכול מ-$\\{1,\\dots,5\\}$ אל $\\{1,2,3\\}$?",
+     "answer": 243,
+     "tol": 0,
+     "explain": "$3^5=243$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מהן על?",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$243-3\\cdot32+3=150$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מהן **אינן** על?",
+     "answer": 93,
+     "tol": 0,
+     "explain": "$243-150=93$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -84,7 +370,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "$|E|=|\\overline E|=|V|-1$",
+     "points": 2
+    },
+    {
+     "text": "$|E|+|\\overline E|=\\frac{|V|(|V|-1)}2$",
+     "points": 2
+    },
+    {
+     "text": "המשוואה $(|V|-1)(|V|-4)=0$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $|V|=4$ או $|V|=1$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחלק ב-$|V|-1$ ולאבד את הפתרון $|V|=1$.",
+    "לשכוח שגם המשלים חייב להיות עץ, ולכן יש לו בדיוק $|V|-1$ צלעות."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו משוואה בין $|E|$ ל-$|\\overline E|$ מוליכה לפתרון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|E|+|\\overline E|=\\frac{|V|(|V|-1)}2$ יחד עם $|E|=|\\overline E|=|V|-1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$|E|=|\\overline E|=|V|$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$|E|\\cdot|\\overline E|=|V|-1$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|E|=2|\\overline E|$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "כל זוג צמתים הוא צלע של $T$ או של המשלים, ושניהם עצים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש ל-$T$ ולמשלים שלו יחד כאשר $|V|=4$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\binom42=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה ערכים אפשריים יש ל-$|V|$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$|V|=1$ או $|V|=4$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -96,7 +450,46 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "שימוש בבינום: $\\sum\\binom nk9^k=(9+1)^n=10^n$",
+     "points": 4
+    },
+    {
+     "text": "חסם $5^n+10^n\\le2\\cdot10^n$ ומסקנת $O(10^n)$",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהסכום הוא על $9^k=3^{2k}$ ולכתוב $3^n$.",
+    "להסתפק ב-$5^n\\le10^n$ בלי לציין את הקבוע 2."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום $\\sum_{k=0}^{n}\\binom nk3^{2k}$ עבור $n=3$?",
+     "answer": 1000,
+     "tol": 0,
+     "explain": "$(9+1)^3=1000$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(3)$?",
+     "answer": 1125,
+     "tol": 0,
+     "explain": "$5^3+10^3=125+1000=1125$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "איזה קבוע $c$ מופיע בחסם $f(n)\\le c\\cdot10^n$ בפתרון?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$5^n\\le10^n$, ולכן $f(n)\\le2\\cdot10^n$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -108,7 +501,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית $x^2-4x+4=0$ ושורש כפול $x=2$",
+     "points": 3
+    },
+    {
+     "text": "צורה כללית $a_n=C_12^n+C_2n2^n$",
+     "points": 2
+    },
+    {
+     "text": "פתרון התנאים ההתחלתיים: $C_1=10,\\ C_2=5$",
+     "points": 3
+    },
+    {
+     "text": "הצורה המפורשת $a_n=10\\cdot2^n+5n2^n$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $C_1 2^n+C_2 2^n$ לשורש כפול, בלי הגורם $n$.",
+    "לטעות בחישוב $a_1=2C_1+2C_2$ ולשכוח את הגורם $2^1$ בשני האיברים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו השורש (הכפול) של $x^2-4x+4=0$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$(x-2)^2=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$ אחרי הצבת $a_0=10,\\ a_1=30$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$C_1=10$ ו-$2C_1+2C_2=30$, ולכן $C_2=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $a_2$ לפי הנוסחה המפורשת (וגם לפי הנסיגה)?",
+     "answer": 80,
+     "tol": 0,
+     "explain": "$(10+10)\\cdot4=80=4\\cdot30-4\\cdot10$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -120,7 +560,43 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "סימון $x_1,x_2,x_3$ והצגת הבעיה כמשוואה עם חסמים תחתונים",
+     "points": 2
+    },
+    {
+     "text": "הזזה $y_1=x_1-5,\\ y_2=x_2-1,\\ y_3=x_3-4$ וקבלת סכום 17",
+     "points": 2
+    },
+    {
+     "text": "$D(3,17)=\\binom{19}2=171$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור סדרים שונים של אותן אותיות: בשאלה אין חשיבות לסדר.",
+    "לטעות בסכום החסמים התחתונים ($5+1+4=10$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "לאחר הזזת החסמים התחתונים, מהו סכום המשתנים החדשים?",
+     "answer": 17,
+     "tol": 0,
+     "explain": "$27-(5+1+4)=17$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים אפשריות?",
+     "answer": 171,
+     "tol": 0,
+     "explain": "$\\binom{17+3-1}{3-1}=\\binom{19}2=171$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -132,7 +608,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "מבנה הסדרה: אות מ-$A$, חמש אותיות באמצע, אות מ-$B$",
+     "points": 2
+    },
+    {
+     "text": "4 אפשרויות לאות הראשונה ו-3 לאחרונה",
+     "points": 3
+    },
+    {
+     "text": "$5!$ אפשרויות לחמש האותיות שבאמצע",
+     "points": 2
+    },
+    {
+     "text": "מכפלה: $1440$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהאות הראשונה והאחרונה כבר נבחרו, ולסדר את כל 7 האותיות ב-$7!$.",
+    "לבחור את האות האחרונה מ-$A$ במקום מ-$B$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה אפשרויות יש לאות הראשונה (מ-$A$)?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$|A|=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אפשרויות יש לאות האחרונה (מ-$B$)?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$|B|=3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בכמה סדרים אפשר לסדר את 5 האותיות שנותרו באמצע?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "$5!=120$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה סדרות יש בסך הכול?",
+     "answer": 1440,
+     "tol": 0,
+     "explain": "$4\\cdot120\\cdot3=1440$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -144,7 +674,46 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "$|\\Omega|=5^5=3125$",
+     "points": 4
+    },
+    {
+     "text": "הפיכות = חח\"ע ועל, כלומר $5!=120$, ולכן $3125-120=3005$ לא הפיכות",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את הפונקציות החח\"ע בלבד ולענות $5!=120$.",
+    "לענות 3125 ולשכוח לחסר את ההפיכות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $|\\Omega|$?",
+     "answer": 3125,
+     "tol": 0,
+     "explain": "לכל אחד מ-5 הערכים 5 בחירות: $5^5=3125$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות הפיכות יש?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "הפיכה = חח\"ע ועל, כלומר תמורה: $5!=120$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות **אינן** הפיכות?",
+     "answer": 3005,
+     "tol": 0,
+     "explain": "$3125-120=3005$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -156,7 +725,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "מספר תתי-הקבוצות בגודל זוגי הוא $2^{n-1}=1024$ ולכן $n=11$",
+     "points": 4
+    },
+    {
+     "text": "$\\phi(11)=10$ ו-$11\\nmid10$",
+     "points": 2
+    },
+    {
+     "text": "משפט Fermat: $11\\mid10^{10}-1$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב $2^n=1024$ ולקבל $n=10$, במקום $2^{n-1}=1024$.",
+    "להפעיל את משפט Fermat בלי לבדוק ש-11 אינו מחלק את הבסיס."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$ (נתון $2^{n-1}=1024$)?",
+     "answer": 11,
+     "tol": 0,
+     "explain": "$2^{10}=1024$, ולכן $n=11$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(11)$?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "11 ראשוני: $11-1=10$."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזה משפט משתמש הפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "משפט Fermat הקטן: אם $p$ ראשוני ו-$p\\nmid a$ אז $p\\mid a^{p-1}-1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "משפט Wilson"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "משפט Dirac"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "נוסחת הבינום של Newton"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הבסיס 10 אינו מתחלק ב-11 והחזקה היא $11-1=10$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי השארית של $10^{10}$ בחלוקה ב-11?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$11\\mid10^{10}-1$, ולכן השארית 1."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -169,7 +809,51 @@
    "official": true,
    "confidence": "high",
    "verdict": true,
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "קביעה שהגרף קיים",
+     "points": 1
+    },
+    {
+     "text": "הצומת $v_7$ בדרגה 6 מחובר לכל שאר הצמתים",
+     "points": 1
+    },
+    {
+     "text": "הסרת $v_7$ ויצירת הסדרה $0,0,0,0,1,1$",
+     "points": 1
+    },
+    {
+     "text": "בניית הגרף: $v_7$ מחובר לכולם והצלע $(v_5,v_6)$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לא להראות גרף מפורש: צריך בנייה או הוכחה שהסדרה ניתנת למימוש.",
+    "לשכוח שצומת בדרגה 6 מתוך 7 צמתים מחובר לכל האחרים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש לגרף עם סדרת הדרגות הזו?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "סכום הדרגות $1+1+1+1+2+2+6=14$, ולכן $14/2=7$ צלעות."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את הנימוק.",
+     "lines": [
+      "בסדרה 7 איברים ואחד מהם 6, ולכן הצומת $v_7$ בדרגה 6 מחובר לכל שאר הצמתים.",
+      "אחרי הסרת $v_7$ נשארת הסדרה $0,0,0,0,1,1$.",
+      "גרף עם הסדרה הזו הוא הצלע $(v_5,v_6)$ וארבעה צמתים בודדים.",
+      "מחזירים את $v_7$ ומחברים אותו לכל הצמתים, ומקבלים גרף עם סדרת הדרגות $(1,1,1,1,2,2,6)$."
+     ],
+     "explain": "זיהוי הצומת המחובר לכולם, הסרתו, גרף הנותר, והחזרה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -181,7 +865,64 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 4
+   "points": 4,
+   "rubric": [
+    {
+     "text": "חישוב $\\phi(p^qq^p)=(p-1)(q-1)p^{q-1}q^{p-1}$",
+     "points": 2
+    },
+    {
+     "text": "$p,q$ אי-זוגיים, ולכן $2\\mid p-1$ וגם $2\\mid q-1$",
+     "points": 1
+    },
+    {
+     "text": "מסקנה: $4\\mid\\phi(p^qq^p)$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לטעון ש-$p-1$ מתחלק ב-4 לבדו: למשל $p=3$.",
+    "לשכוח ש-$\\phi(p^q)=p^q\\left(1-\\frac1p\\right)=p^{q-1}(p-1)$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(p^qq^p)$ עבור $p=3,\\ q=5$?",
+     "answer": 16200,
+     "tol": 0,
+     "explain": "$(3-1)(5-1)\\cdot3^4\\cdot5^2=8\\cdot81\\cdot25=16200$."
+    },
+    {
+     "type": "choice",
+     "prompt": "למה $4\\mid(p-1)(q-1)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "שניהם ראשוניים גדולים מ-2, ולכן אי-זוגיים, ו-$p-1,q-1$ זוגיים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי $p-1$ ראשוני"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי $p-1$ תמיד מתחלק ב-4"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי $q-1$ מתחלק ב-$p$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מכפלה של שני מספרים זוגיים מתחלקת ב-4."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -194,7 +935,103 @@
    "official": true,
    "confidence": "high",
    "points": 16,
-   "contextId": "c1"
+   "contextId": "c1",
+   "rubric": [
+    {
+     "text": "ג1: $\\overline G$ הוא 6-רגולרי ו-$6\\ge\\frac{10}2$, ולכן Hamilton (Dirac)",
+     "points": 4
+    },
+    {
+     "text": "ג2: Hamilton ולכן קשיר, וכל הדרגות 6 זוגיות: Euler",
+     "points": 4
+    },
+    {
+     "text": "ג3: $C_5\\subseteq G$ ולכן $\\chi\\ge3$, וצביעה ב-3 צבעים",
+     "points": 4
+    },
+    {
+     "text": "ג4: הקבוצה הבלתי תלויה $\\{a,c,i,j\\}$ ב-$G$ יוצרת $K_4$ ב-$\\overline G$",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבדוק את $\\chi$ של $\\overline G$ במקום של $G$.",
+    "לבחור קבוצה של 4 צמתים שיש ביניהם צלעות ב-$G$ ולטעון שהיא $K_4$ במשלים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$\\overline G$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$G$ הוא 3-רגולרי על 10 צמתים: $10-1-3=6$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה משפט מבטיח ש-$\\overline G$ הוא גרף Hamilton?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "משפט Dirac: כל הדרגות לפחות $\\frac n2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "משפט Fermat"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "נוסחת Euler לגרפים מישוריים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "משפט Kuratowski"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$6\\ge\\frac{10}2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$G$ מכיל $C_5$, ולכן $\\chi\\ge3$, ויש צביעה חוקית ב-3 צבעים."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו קבוצת צמתים יוצרת $K_4$ מושרה ב-$\\overline G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\{a,c,i,j\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\{a,b,c,d\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\{f,g,h,i\\}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\{a,f,g,h\\}$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "אין צלעות של $G$ בין אף שניים מהם; בשאר הקבוצות יש צלע של $G$ (למשל $(a,b)$, $(f,h)$, $(a,f)$)."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
