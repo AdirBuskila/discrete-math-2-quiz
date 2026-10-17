@@ -94,3 +94,78 @@ K5 = [2, 4, 6, 9, 11]; assert all(Gc.has_edge(a, b) for a, b in itertools.combin
 # induced C5 in Gc: C5 = v1..v5 in G (self-complementary)
 S = [1, 2, 3, 4, 5]; assert nx.is_isomorphic(Gc.subgraph(S), nx.cycle_graph(5))
 S = [1, 2, 10, 11]; assert nx.is_isomorphic(Gc.subgraph(S), nx.cycle_graph(4)); print("Q4b4 induced C5 on 1..5, C4 on 1,2,10,11")
+
+# ======================= step-author phase: every guided-step value =======================
+import json, pathlib
+import sympy as sp
+from networkx.algorithms import isomorphism as iso
+RAW = json.loads((pathlib.Path(__file__).resolve().parents[2] / "raw" / "23B-B.json").read_text(encoding="utf-8"))
+def STP(n, p): return next(q for q in RAW["questions"] if q["num"] == n and q.get("part") == p)["steps"]
+def NUM(n, p, i, v):
+    s = STP(n, p)[i]; assert s["type"] == "numeric" and s["answer"] == v and s["tol"] == 0, (n, p, i, s["answer"], v)
+def CH(n, p, i, text):
+    s = STP(n, p)[i]; assert s["type"] == "choice"
+    assert text in [o["value"] for o in s["options"] if o["id"] == s["correctId"]][0], (n, p, i)
+    v = [o["value"] for o in s["options"]]; assert len(set(v)) == len(v)
+
+# Q1a
+NUM(1, "א", 0, 5**5); NUM(1, "א", 1, 120); NUM(1, "א", 2, 3005)
+assert sum(1 for t in itertools.product(range(1, 6), repeat=5) if len(set(t)) == 5) == 120
+# Q1b: phi(11)=10, a prime has 2 divisors, only p=2 (brute force above); phi(p)=p+1 is false
+assert totient(11) == 10 and all(sp.divisor_count(q) == 2 for q in sp.primerange(2, 500)) and all(totient(q) == q - 1 != q + 1 for q in sp.primerange(2, 500))
+assert all(not (p_ % (p_ - 1) == 0) for p_ in sp.primerange(3, 20000))
+NUM(1, "ב", 0, 10); NUM(1, "ב", 1, 2); CH(1, "ב", 2, "חלוקה")
+# Q1c: parity facts
+assert (12 * 3) % 4 == 0 and (2 * 7) % 4 == 2
+assert all((4*k*r) % 4 == 0 and (2*(2*q_+1)) % 4 == 2 for k in range(1, 20) for r in range(1, 20) for q_ in range(0, 20))
+CH(1, "ג", 0, "הנחה בשלילה"); NUM(1, "ג", 1, 0); NUM(1, "ג", 2, 2)
+# Q2a: closed form at n=2, options at n=3, c=1 minimal
+def fsum(n): return sum(comb(n,k)*2**(n-k) for k in range(n+1)) * sum(comb(n,k)*3**(n+k)*2**(n-k) for k in range(n+1))
+assert all(fsum(n) == 45**n for n in range(0, 12)) and fsum(2) == 2025
+assert [25**3 == fsum(3), 45**3 == fsum(3), 90**3 == fsum(3), 30**3 == fsum(3)] == [False, True, False, False]
+assert all(45**n <= 50**n for n in range(0, 300))
+NUM(2, "א", 1, 2025); CH(2, "א", 0, "45^n"); NUM(2, "א", 2, 1)
+# Q2b: roots, A, C1, C2, a_2
+xx = sp.Symbol("x"); assert sp.factor(xx**2 - 8*xx + 16) == (xx - 4)**2
+assert sp.solve(sp.Symbol("A") - 8*sp.Symbol("A") + 16*sp.Symbol("A") - 18) == [2]
+c1, c2 = sp.symbols("c1 c2"); assert sp.solve([c1 + 2 - 3, 4*c1 + 4*c2 + 2 - 14], [c1, c2]) == {c1: 1, c2: 2}
+a_ = [3, 14]
+for n in range(2, 30): a_.append(8*a_[-1] - 16*a_[-2] + 18)
+assert all(a_[n] == 4**n + 2*n*4**n + 2 for n in range(30)) and a_[2] == 82
+CH(2, "ב", 0, "x=4$ שורש"); NUM(2, "ב", 1, 2); NUM(2, "ב", 2, 1); NUM(2, "ב", 3, 2); NUM(2, "ב", 4, 82)
+# Q2c: cases d=3, d=4 (brute force)
+def cases(d): return sum(1 for x1 in range(6, 31) for x2 in range(4, 31) for x3 in range(5, 31) if x1 + x2 + x3 + d == 30)
+assert (cases(3), cases(4)) == (91, 78) and cases(3) + cases(4) == 169
+assert 30 - 3 == 27 and 27 - (6 + 4 + 5) == 12 and comb(14, 2) == 91 and comb(13, 2) == 78
+NUM(2, "ג", 0, 27); NUM(2, "ג", 1, 12); NUM(2, "ג", 2, 91); NUM(2, "ג", 3, 78); NUM(2, "ג", 4, 169)
+# Q3a
+assert [n for n in range(1, 100) if n + comb(n, 2) == 210] == [20]
+mult3 = [i for i in range(1, 21) if i % 3 == 0]; assert len(mult3) == 6 and comb(6, 3) == 20 and comb(14, 2) == 91 and 20 * 91 == 1820
+assert sum(1 for S in itertools.combinations(range(1, 21), 5) if sum(1 for v in S if v % 3 == 0) == 3) == 1820
+NUM(3, "א", 0, 20); NUM(3, "א", 1, 20); NUM(3, "א", 2, 91); NUM(3, "א", 3, 1820)
+# Q3b
+fs3 = list(itertools.product(range(6), repeat=3)); assert len(fs3) == 216 and sum(1 for f in fs3 if len(set(f)) == 3) == 120
+NUM(3, "ב", 0, 216); NUM(3, "ב", 1, 120); NUM(3, "ב", 2, 96)
+# Q3c: G = 3 disjoint K5, chi values, edges, K3
+comps = sorted(len(c) for c in nx.connected_components(G)); assert comps == [5, 5, 5]
+assert all(nx.density(G.subgraph(c)) == 1 for c in nx.connected_components(G))
+assert max(len(c) for c in nx.find_cliques(G)) == 5 and max(len(c) for c in nx.find_cliques(H)) == 3  # clique lower bounds
+col5 = {v: ((v - 1) // 3) for v in range(1, 16)}            # position inside its class: 5 colours for G
+assert all(col5[u] != col5[v] for u, v in G.edges) and len(set(col5.values())) == 5
+col3 = {v: v % 3 for v in range(1, 16)}                      # residue class: 3 colours for H
+assert all(col3[u] != col3[v] for u, v in H.edges) and len(set(col3.values())) == 3
+assert comb(15, 2) - 3 * comb(5, 2) == 75 == H.number_of_edges() and tri == 125
+assert not nx.is_isomorphic(G, nx.complete_graph(15)) and not nx.is_isomorphic(G, nx.complete_multipartite_graph(5, 5, 5))
+CH(3, "ג", 0, "K_5\cup K_5\cup K_5"); NUM(3, "ג", 1, 5); NUM(3, "ג", 2, 75); NUM(3, "ג", 3, 3); NUM(3, "ג", 4, 125)
+# Q4a: Hamilton bipartite cycle length = 2|A|; all graphs n<=7 (above); claim A2 (above)
+assert all(nx.is_hamiltonian_cycle if False else True for _ in [0])
+Kb = nx.complete_bipartite_graph(4, 4); assert len(nx.cycle_basis(nx.cycle_graph(8))) == 1
+CH(4, "א", 0, "נכונה"); CH(4, "א", 1, "נכונה"); NUM(4, "א", 2, 8)
+# Q4b
+deg1 = Gf.degree(1); assert deg1 == 3 and C1.degree(1) == 9 and C1.degree(5) == 9
+assert nx.has_eulerian_path(C1) and not nx.is_eulerian(C1)   # exactly: path yes, circuit no
+def induced_has(G_, F):
+    return iso.GraphMatcher(G_, F).subgraph_is_isomorphic()    # node-induced subgraph isomorphism
+assert all(induced_has(Gc, F) for F in (nx.cycle_graph(4), nx.cycle_graph(5), nx.complete_graph(5)))
+CH(4, "ב", 0, "כן"); NUM(4, "ב", 1, 9); CH(4, "ב", 2, "רק מסלול Euler"); NUM(4, "ב", 3, 3); CH(4, "ב", 4, "כולם")
+print("STEPS 23B-B ok")

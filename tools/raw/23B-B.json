@@ -24,7 +24,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת תמורה",
+     "points": 4
+    },
+    {
+     "text": "מספר הסדרות באורך $5$ מעל $A$: $5^5=3125$",
+     "points": 2
+    },
+    {
+     "text": "מספר התמורות $5!=120$",
+     "points": 1
+    },
+    {
+     "text": "ההפרש $3125-120=3005$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב רק $5^5$ או רק $5!$ ולשכוח לחסר.",
+    "לחשב $5^5-5\\cdot4\\cdot3\\cdot2$ ולשכוח את הגורם האחרון של $5!$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה סדרות באורך $5$ של איברי $A=\\{1,2,3,4,5\\}$ יש בסך הכול (חזרות מותרות)?",
+     "answer": 3125,
+     "tol": 0,
+     "explain": "$5^5=3125$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מהן הן תמורות?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "$5!=120$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אינן תמורות?",
+     "answer": 3005,
+     "tol": 0,
+     "explain": "$3125-120=3005$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -36,7 +83,86 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת הפונקציה $\\phi$ של Euler",
+     "points": 5
+    },
+    {
+     "text": "עבור $p=2$: $\\phi(2)=1\\mid2$",
+     "points": 1
+    },
+    {
+     "text": "עבור $p>2$: $\\phi(p)=p-1\\ge2$",
+     "points": 1
+    },
+    {
+     "text": "המחלקים של $p$ הם $1,p$ בלבד, ו-$2\\le p-1<p$, לכן $\\phi(p)\\nmid p$",
+     "points": 1
+    },
+    {
+     "text": "מסקנה: $p=2$ יחיד",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח לבדוק את $p=2$ בנפרד (התנאי מתקיים שם).",
+    "לכתוב $\\phi(p)=p$ במקום $p-1$ עבור ראשוני."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(11)$?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "$\\phi(p)=p-1$ לראשוני $p$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מחלקים חיוביים יש לראשוני?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$1$ ו-$p$ בלבד."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "אינדוקציה על $p$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בדיקת $p=2$ ופסילת כל ראשוני $p>2$ (חלוקה למקרים)"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הפתרון בודק ישירות את $p=2$, ואז מראה ש-$p>2$ אינו מתאים."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "עבור $p=2$: $\\phi(2)=1$ ו-$1$ מחלק את $2$, ולכן $p=2$ מקיים את התנאי.",
+      "אם $p>2$ ראשוני, אז $\\phi(p)=p+1\\ge2$.",
+      "לראשוני $p$ יש רק המחלקים $1$ ו-$p$, ו-$2\\le p-1<p$, ולכן $\\phi(p)\\nmid p$.",
+      "מסקנה: $p=2$ הוא הראשוני היחיד שמקיים $\\phi(p)\\mid p$."
+     ],
+     "bugIndex": 1,
+     "explain": "לראשוני $p$ מתקיים $\\phi(p)=p-1$ ולא $p+1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -48,7 +174,97 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת דרגה של צומת",
+     "points": 4
+    },
+    {
+     "text": "הנחה בשלילה ש-$G$ הוא $r$-רגולרי עם $|V|=4k$ ו-$|E|=2q+1$",
+     "points": 1
+    },
+    {
+     "text": "משפט הדרגות: $4k\\cdot r=2(2q+1)$",
+     "points": 1
+    },
+    {
+     "text": "חלוקה ב-$2$: $2kr=2q+1$",
+     "points": 1
+    },
+    {
+     "text": "אגף שמאל זוגי ואגף ימין אי-זוגי: סתירה",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח ש-$\\sum\\deg=2|E|$ (לא $|E|$).",
+    "לטעון שהסתירה נובעת מכך ש-$|E|$ אי-זוגי בלבד, בלי הקשר ל-$|V|\\bmod4$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "אינדוקציה על $|V|$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הנחה בשלילה ש-$G$ רגולרי וחישוב סכום הדרגות בשתי דרכים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      }
+     ],
+     "correctId": "b",
+     "explain": "מניחים $r$-רגולרי ומקבלים סתירת זוגיות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "אם $|V|=12$ והגרף $3$-רגולרי, מהו $\\sum\\deg\\bmod4$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$12\\cdot3=36$ מתחלק ב-$4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "אם $|E|=7$, מהו $2|E|\\bmod4$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$14\\bmod4=2$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה.",
+     "lines": [
+      "נניח בשלילה ש-$G$ הוא $r$-רגולרי, $|V|=4k$ ו-$|E|=2q+1$.",
+      "לפי משפט הדרגות: $4k\\cdot r=\\sum\\deg(v)=2|E|=2(2q+1)$.",
+      "נחלק ב-$2$: $2kr=2q+1$.",
+      "אגף שמאל זוגי ואגף ימין אי-זוגי: סתירה, ולכן $G$ אינו רגולרי."
+     ],
+     "explain": "כל שורה נובעת מהקודמת."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בחישוב שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "נניח בשלילה ש-$G$ הוא $r$-רגולרי, $|V|=4k$ ו-$|E|=2q+1$.",
+      "לפי משפט הדרגות: $4k\\cdot r=\\sum\\deg(v)=2|E|=2(2q+1)$.",
+      "נחלק ב-$2$: $kr=2q+1$.",
+      "אגף שמאל זוגי ואגף ימין אי-זוגי: סתירה, ולכן $G$ אינו רגולרי."
+     ],
+     "bugIndex": 2,
+     "explain": "חלוקה של $4kr=2(2q+1)$ ב-$2$ נותנת $2kr=2q+1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -60,7 +276,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הסכום הראשון: $\\sum\\binom nk2^{n-k}=3^n$",
+     "points": 2
+    },
+    {
+     "text": "הסכום השני: $3^n\\cdot\\sum\\binom nk3^k2^{n-k}=3^n\\cdot5^n$",
+     "points": 3
+    },
+    {
+     "text": "$f(n)=45^n$",
+     "points": 1
+    },
+    {
+     "text": "$45^n\\le1\\cdot50^n$ לכל $n\\ge0$, ולכן $f(n)=O(50^n)$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את הגורם $3^n$ שיוצא מהסכום השני.",
+    "להסיק $O(50^n)$ בלי להציג קבוע $c$ ו-$n_0$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה הסגורה של $f(n)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$25^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$45^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$90^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$30^n$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$f(n)=3^n\\cdot3^n\\cdot5^n=45^n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f(2)$ ישירות מהסכומים.",
+     "answer": 2025,
+     "tol": 0,
+     "explain": "$45^2=2025$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המספר השלם החיובי הקטן ביותר $c$ שעבורו $45^n\\le c\\cdot50^n$ לכל $n\\ge0$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$(45/50)^n\\le1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -72,7 +356,93 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית $x^2-8x+16=0$ ושורש כפול $x=4$",
+     "points": 2
+    },
+    {
+     "text": "פתרון הומוגני $C_1\\cdot4^n+C_2\\cdot n\\cdot4^n$",
+     "points": 2
+    },
+    {
+     "text": "פתרון פרטי $A=2$",
+     "points": 2
+    },
+    {
+     "text": "קבועים $C_1=1,\\ C_2=2$",
+     "points": 2
+    },
+    {
+     "text": "$a_n=4^n+2n4^n+2$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להציב תנאי התחלה לפני הוספת הפתרון הפרטי ולקבל קבועים שגויים.",
+    "לשכוח את הגורם $n$ בפתרון ההומוגני כשהשורש כפול."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהם שורשי המשוואה האופיינית של $a_n=8a_{n-1}-16a_{n-2}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$x=2$ שורש כפול"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x=4$ ו-$x=-4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x=4$ שורש כפול"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$x=8$ ו-$x=16$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$(x-4)^2=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מצאו קבוע $A$ כך ש-$a_n=A$ פתרון פרטי של $a_n=8a_{n-1}-16a_{n-2}+18$.",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$A=8A-16A+18$, כלומר $9A=18$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_1$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$a_0=C_1+2=3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$a_1=4C_1+4C_2+2=14$, ולכן $C_2=2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $a_2$ מהצורה המפורשת.",
+     "answer": 82,
+     "tol": 0,
+     "explain": "$16+2\\cdot2\\cdot16+2=82$, וגם $8\\cdot14-16\\cdot3+18=82$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -84,7 +454,72 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "פיצול לשני מקרים לפי מספר ה-$d$ ($3$ או $4$)",
+     "points": 1
+    },
+    {
+     "text": "מקרה $d=3$: $x_1+x_2+x_3=27$ והצבה, סכום $y$ הוא $12$",
+     "points": 2
+    },
+    {
+     "text": "$D(3,12)=\\binom{14}2=91$",
+     "points": 1
+    },
+    {
+     "text": "מקרה $d=4$: סכום $y$ הוא $11$ ו-$D(3,11)=78$",
+     "points": 2
+    },
+    {
+     "text": "סכום המקרים $169$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "«יותר מ-$5$» פירושו $x_1\\ge6$ ו-«יותר מ-$4$» פירושו $x_3\\ge5$.",
+    "לחבר את שני המקרים בלי להתאים את סכום המשוואה לכל מקרה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "אם $d$ מופיעה בדיוק $3$ פעמים, כמה אותיות $a,b,c$ ביחד?",
+     "answer": 27,
+     "tol": 0,
+     "explain": "$30-3=27$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "אחרי הצבת הגבולות התחתונים $6,4,5$: מהו סכום המשתנים החדשים (מקרה $d=3$)?",
+     "answer": 12,
+     "tol": 0,
+     "explain": "$27-15=12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים יש במקרה $d=3$?",
+     "answer": 91,
+     "tol": 0,
+     "explain": "$D(3,12)=\\binom{14}2=91$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים יש במקרה $d=4$?",
+     "answer": 78,
+     "tol": 0,
+     "explain": "סכום ה-$y$ הוא $11$: $\\binom{13}2=78$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים יש בסך הכול?",
+     "answer": 169,
+     "tol": 0,
+     "explain": "$91+78=169$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -96,7 +531,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "התנאי $n+\\binom n2=210$",
+     "points": 3
+    },
+    {
+     "text": "פתרון: $n=20$",
+     "points": 3
+    },
+    {
+     "text": "ב-$\\{1,\\dots,20\\}$ יש $6$ כפולות של $3$ ו-$14$ שאינן",
+     "points": 2
+    },
+    {
+     "text": "$\\binom63\\cdot\\binom{14}2=1820$",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהתנאי כולל גם תתי-קבוצות בגודל $1$ (ולא רק $2$).",
+    "לספור $7$ כפולות של $3$ (הכפולה $21$ אינה ב-$A$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$? (נתון $n+\\binom n2=210$)",
+     "answer": 20,
+     "tol": 0,
+     "explain": "$n^2+n-420=0$, ולכן $n=20$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות לשלושה מספרים שמתחלקים ב-$3$ מתוך $\\{1,\\dots,20\\}$?",
+     "answer": 20,
+     "tol": 0,
+     "explain": "יש $6$ כפולות של $3$, ו-$\\binom63=20$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות לשני מספרים שאינם מתחלקים ב-$3$?",
+     "answer": 91,
+     "tol": 0,
+     "explain": "יש $14$ כאלה, ו-$\\binom{14}2=91$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות מתאימות יש?",
+     "answer": 1820,
+     "tol": 0,
+     "explain": "$20\\cdot91=1820$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -108,7 +597,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "מספר הפונקציות הכולל $6^3=216$",
+     "points": 2
+    },
+    {
+     "text": "פונקציות חד-חד-ערכיות: $P(6,3)=120$",
+     "points": 2
+    },
+    {
+     "text": "מספר הפונקציות שאינן חד-חד-ערכיות $216-120=96$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב $\\binom63=20$ במקום $P(6,3)$ (הסדר קובע בפונקציה).",
+    "לחשב $6\\cdot5\\cdot4$ ולהסיק שזו התשובה (זו כמות הפונקציות החד-חד-ערכיות)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות $f:\\{1,2,3\\}\\to\\{1,\\dots,6\\}$ יש בסך הכול?",
+     "answer": 216,
+     "tol": 0,
+     "explain": "$6^3=216$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מהן חד-חד-ערכיות?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "$P(6,3)=6\\cdot5\\cdot4=120$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אינן חד-חד-ערכיות?",
+     "answer": 96,
+     "tol": 0,
+     "explain": "$216-120=96$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -120,7 +652,89 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "$G=K_5\\cup K_5\\cup K_5$ ו-$\\chi(G)=5$",
+     "points": 2
+    },
+    {
+     "text": "$\\chi(H)=3$ (משולש וצביעה לפי שארית)",
+     "points": 2
+    },
+    {
+     "text": "$|E(H)|=3\\cdot5\\cdot5=75$",
+     "points": 1
+    },
+    {
+     "text": "$K_3$ מושרה ב-$H$: צומת מכל קבוצה, $5^3=125$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור את צלעות $H$ כ-$\\binom{15}2=105$ ולשכוח לחסר את צלעות $G$.",
+    "לספור $K_3$ ב-$H$ עם שני צמתים מאותה קבוצה (אין ביניהם צלע ב-$H$)."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהו הגרף $G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$K_{15}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$K_{5,5,5}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$K_5\\cup K_5\\cup K_5$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$K_3\\cup K_3\\cup K_3$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "שלוש קבוצות שארית (בנות חמישה צמתים כל אחת), וכל קבוצה היא קליקה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "ב-$G$ יש $K_5$, ולכן $\\chi(G)\\ge5$, וצביעה עם $5$ צבעים קיימת."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צלעות יש ב-$H$?",
+     "answer": 75,
+     "tol": 0,
+     "explain": "$\\binom{15}2-3\\binom52=105-30=75$, וגם $3\\cdot5\\cdot5=75$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(H)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "ב-$H$ יש $K_3$ ושלוש קבוצות בלתי תלויות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-גרפים מושרים של $H$ איזומורפיים ל-$K_3$?",
+     "answer": 125,
+     "tol": 0,
+     "explain": "צומת אחד מכל קבוצה: $5^3=125$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -132,7 +746,103 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "א1: קיום מעגל Hamilton גורר שהצמתים מתחלפים בין $A$ ל-$B$",
+     "points": 2
+    },
+    {
+     "text": "$k=2|A|$ זוגי, בסתירה ל-$|A|+|B|$ אי-זוגי",
+     "points": 2
+    },
+    {
+     "text": "א2: גרף Euler רגולרי, ולכן $r=2q$",
+     "points": 2
+    },
+    {
+     "text": "משפט הדרגות: $2k\\cdot2q=2(2p+1)$",
+     "points": 1
+    },
+    {
+     "text": "אגף שמאל זוגי ואגף ימין אי-זוגי: סתירה",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שבגרף דו-צדדי אין מעגלים אי-זוגיים, ולכן אורך מעגל Hamilton זוגי.",
+    "לא להשתמש בכך שדרגות גרף Euler זוגיות."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה א1?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מעגל Hamilton בגרף דו-צדדי הוא באורך זוגי, ולכן $|A|+|B|$ זוגי."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה א2?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "זוגיות הדרגה והזוגיות של $|V|$ גוררות ש-$|E|$ זוגי."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו אורך מעגל Hamilton בגרף דו-צדדי עם $|A|=|B|=4$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "המעגל עובר בכל $8$ הצמתים."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה של א2.",
+     "lines": [
+      "$G$ רגולרי וגם Euler, לכן כל דרגה היא זוגית $r=2q$; נניח $|V|=2k$ ו-$|E|=2p+1$.",
+      "לפי משפט הדרגות: $2k\\cdot2q=2(2p+1)$.",
+      "נחלק ב-$2$: $2kq=2p+1$.",
+      "אגף שמאל זוגי ואגף ימין אי-זוגי: סתירה."
+     ],
+     "explain": "כל שלב נשען על הקודם."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה של א1 שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "נניח בשלילה שקיים מעגל Hamilton $x_1,\\dots,x_k$ ב-$G$, ולכן $k=|A|+|B|$.",
+      "$G$ דו-צדדי ולכן הצמתים לאורך המעגל מתחלפים בין $A$ ל-$B$; אם $x_1\\in A$ אז $x_k\\in B$.",
+      "לכן $k$ אי-זוגי.",
+      "זו סתירה לכך ש-$|A|+|B|$ אי-זוגי."
+     ],
+     "bugIndex": 2,
+     "explain": "החלפה בין שני צדדים וסגירה של המעגל נותנת $k=2|A|$, זוגי."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -145,7 +855,121 @@
    "official": true,
    "confidence": "high",
    "points": 16,
-   "contextId": "c1"
+   "contextId": "c1",
+   "rubric": [
+    {
+     "text": "ב1: מסלול Hamilton הוא עץ פורש בעל $2$ עלים",
+     "points": 4
+    },
+    {
+     "text": "ב2: ב-$\\overline{G_1}$ שני צמתים בדרגה אי-זוגית וקשיר: מסלול Euler ולא מעגל",
+     "points": 4
+    },
+    {
+     "text": "ב3: $K_3$ ו-$3$-צביעה, $\\chi(G)=3$",
+     "points": 4
+    },
+    {
+     "text": "ב4: $K_5$, $C_5$ ו-$C_4$ מושרים במשלים",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבלבל בין מסלול Euler (שני צמתים בדרגה אי-זוגית) לבין מעגל Euler (אין כאלה).",
+    "לחשב את הדרגות במשלים של $G$ במקום במשלים של $G-(v_1,v_5)$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "האם ב-$G$ קיים עץ פורש בעל $2$ עלים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כן"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "לא"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מסלול Hamilton $v_1,\\dots,v_{12}$ הוא עץ פורש בעל שני עלים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של $v_1$ במשלים של $G-(v_1,v_5)$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "ב-$G$ הדרגה $3$, אחרי הסרת הצלע $2$, ובמשלים (על $12$ צמתים) $11-2=9$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה קיים במשלים של $G-(v_1,v_5)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רק מסלול Euler"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "רק מעגל Euler"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "גם מסלול Euler וגם מעגל Euler"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אף אחד מהם"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הוא קשיר ובדיוק שני צמתים ($v_1,v_5$) בדרגה אי-זוגית."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "ב-$G$ יש משולש, וקיימת צביעה חוקית ב-$3$ צבעים."
+    },
+    {
+     "type": "choice",
+     "prompt": "אילו מבין $C_4,\\ C_5,\\ K_5$ קיימים כתתי-גרפים מושרים במשלים של $G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רק $K_5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$K_5$ ו-$C_5$ בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כולם"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אף אחד"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$K_5$ על $v_2,v_4,v_6,v_9,v_{11}$, $C_5$ מושרה (ה-$C_5$ איזומורפי למשלים שלו), ו-$C_4$ ממשלים של $2K_2$ מושרה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
