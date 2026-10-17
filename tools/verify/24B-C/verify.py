@@ -136,7 +136,7 @@ assert [v == m6 for v in optv] == [False, False, True, False]
 ds = [d for d in divisors(m6) if d % 2 == 1 and d % 15 == 0]
 e3 = {factorint(d)[3] for d in ds}; e7 = {factorint(d).get(7, 0) for d in ds}
 assert len(e3) == 6 and e3 == set(range(1, 7)) and len(e7) == 7 and len(ds) == 252
-CH(4, "ב", 0, "2^{4n}\cdot3^n\cdot5^n\cdot7^n"); NUM(4, "ב", 1, 6); NUM(4, "ב", 2, 7); NUM(4, "ב", 3, 252)
+CH(4, "ב", 0, r"2^{4n}\cdot3^n\cdot5^n\cdot7^n"); NUM(4, "ב", 1, 6); NUM(4, "ב", 2, 7); NUM(4, "ב", 3, 252)
 # Q4c: n=6; complement of a tree on 6 vertices has a triangle; max side >= 3 always, min side < 3 for the star
 for T in nx.nonisomorphic_trees(6):
     a, b = nx.bipartite.sets(T); assert max(len(a), len(b)) >= 3

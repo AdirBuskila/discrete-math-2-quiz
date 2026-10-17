@@ -117,7 +117,7 @@ ev = [d for d in divisors(f2) if d % 2 == 0]; assert len(ev) == 30 == 3*n2*(2*n2
 assert {factorint(d)[2] for d in ev} == set(range(1, 7)) and {factorint(d).get(3, 0) for d in ev} == set(range(0, 5))
 fq = lambda n: sum(comb(n,k)*2**(n-k) for k in range(n+1)) * sum(comb(n,k)*3**(n+k)*5**(n-k) for k in range(n+1))
 assert [fq(3) == v for v in (3**3*2**9, 3**6*2**9, 3**6*2**6, 3**9*2**9)] == [False, True, False, False]
-CH(2, "א", 0, "3^{2n}\cdot2^{3n}"); NUM(2, "א", 1, 6); NUM(2, "א", 2, 5); NUM(2, "א", 3, 30)
+CH(2, "א", 0, r"3^{2n}\cdot2^{3n}"); NUM(2, "א", 1, 6); NUM(2, "א", 2, 5); NUM(2, "א", 3, 30)
 # Q2b: double root, constants, a_3, c = 15 (and a_n <= 15 n 2^n for n>=1)
 xx = sp.Symbol("r"); assert sp.factor(xx**2 - 4*xx + 4) == (xx - 2)**2
 assert x[3] == 200 == 10*8 + 5*3*8 and all(x[n] <= 15*n*2**n for n in range(1, 40)) and all(10*2**n <= 10*n*2**n for n in range(1, 40))

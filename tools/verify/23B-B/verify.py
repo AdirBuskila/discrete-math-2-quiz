@@ -156,7 +156,7 @@ col3 = {v: v % 3 for v in range(1, 16)}                      # residue class: 3 
 assert all(col3[u] != col3[v] for u, v in H.edges) and len(set(col3.values())) == 3
 assert comb(15, 2) - 3 * comb(5, 2) == 75 == H.number_of_edges() and tri == 125
 assert not nx.is_isomorphic(G, nx.complete_graph(15)) and not nx.is_isomorphic(G, nx.complete_multipartite_graph(5, 5, 5))
-CH(3, "ג", 0, "K_5\cup K_5\cup K_5"); NUM(3, "ג", 1, 5); NUM(3, "ג", 2, 75); NUM(3, "ג", 3, 3); NUM(3, "ג", 4, 125)
+CH(3, "ג", 0, r"K_5\cup K_5\cup K_5"); NUM(3, "ג", 1, 5); NUM(3, "ג", 2, 75); NUM(3, "ג", 3, 3); NUM(3, "ג", 4, 125)
 # Q4a: Hamilton bipartite cycle length = 2|A|; all graphs n<=7 (above); claim A2 (above)
 assert all(nx.is_hamiltonian_cycle if False else True for _ in [0])
 Kb = nx.complete_bipartite_graph(4, 4); assert len(nx.cycle_basis(nx.cycle_graph(8))) == 1

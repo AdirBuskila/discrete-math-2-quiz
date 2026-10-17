@@ -140,7 +140,7 @@ opts_ = [2**(2*n3)*3**n3*5**n3, 2**(3*n3)*3**(2*n3)*5**n3, 2**(3*n3)*3**n3*5**n3
 assert [o == f3 for o in opts_] == [False, False, True, False]
 d3 = divisors(f3); assert sum(1 for d in d3 if d % 2 == 0) == 144 and sum(1 for d in d3 if d % 2) == 16
 n_s = sp.symbols("n"); assert sp.degree(sp.expand(3*n_s*(n_s+1)**4), n_s) == 5
-CH(2, "א", 0, "2^{3n}\cdot3^n\cdot5^n"); NUM(2, "א", 1, 144); NUM(2, "א", 2, 16); NUM(2, "א", 3, 5)
+CH(2, "א", 0, r"2^{3n}\cdot3^n\cdot5^n"); NUM(2, "א", 1, 144); NUM(2, "א", 2, 16); NUM(2, "א", 3, 5)
 # Q2b: roots, constants, a_2
 assert sp.solve(sp.Symbol("x")**2 - 4*sp.Symbol("x") + 4) == [2]
 assert [sp.Poly(r_, sp.Symbol("x")).degree() for r_ in []] == []
@@ -165,7 +165,7 @@ big = [v for v in range(21) if v % 2 == 0]; small = [v for v in range(21) if v %
 p3a = sum(1 for S in itertools.combinations(range(21), 3) if Hq.subgraph(S).number_of_edges() == 2 and sum(v in big for v in S) == 2)
 p3b = sum(1 for S in itertools.combinations(range(21), 3) if Hq.subgraph(S).number_of_edges() == 2 and sum(v in big for v in S) == 1)
 assert (p3a, p3b) == (550, 495)
-CH(3, "ג", 0, "K_{11}\cup K_{10}"); NUM(3, "ג", 1, 540); NUM(3, "ג", 2, 550); NUM(3, "ג", 3, 495); NUM(3, "ג", 4, 1045)
+CH(3, "ג", 0, r"K_{11}\cup K_{10}"); NUM(3, "ג", 1, 540); NUM(3, "ג", 2, 550); NUM(3, "ג", 3, 495); NUM(3, "ג", 4, 1045)
 # Q4a: counterexample facts (above); degree 4, 2 components in H
 assert G.number_of_nodes() == 8 and nx.number_connected_components(H) == 2
 CH(4, "א", 0, "נכונה"); CH(4, "א", 1, "אינה"); NUM(4, "א", 2, 4); NUM(4, "א", 3, 2)
