@@ -17,7 +17,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת תמורה לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "חישוב $|A|=2!\\cdot2!\\cdot4!=96$ (שני זוגות סמוכים כגושים)",
+     "points": 3
+    },
+    {
+     "text": "חישוב $|B|=2!\\cdot2!\\cdot2!\\cdot3!=48$",
+     "points": 2
+    },
+    {
+     "text": "$B\\subseteq A$ ולכן התשובה $|A|-|B|=48$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שבתוך כל גוש סמוך יש שני סדרים אפשריים ($2!$ לכל גוש).",
+    "לחסר את $|B|$ מ-$6!$ במקום מ-$|A|$, או לשכוח ש-$B\\subseteq A$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כשמדביקים את $1,2$ לגוש אחד ואת $5,6$ לגוש אחד, כמה יחידות מסדרים בתמורה (שני הגושים והמספרים $3,4$)?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "גוש $\\{1,2\\}$, גוש $\\{5,6\\}$, $3$ ו-$4$: ארבע יחידות, ויש $4!$ סידורים שלהן."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $|A|$, מספר התמורות שבהן $1,2$ סמוכים וגם $5,6$ סמוכים?",
+     "answer": 96,
+     "tol": 0,
+     "explain": "$2!\\cdot2!\\cdot4!=96$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $|B|$, מספר התמורות שבהן גם $3,4$ סמוכים?",
+     "answer": 48,
+     "tol": 0,
+     "explain": "שלושה גושים: $2!\\cdot2!\\cdot2!\\cdot3!=48$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מספר התמורות שבהן $3,4$ **לא** סמוכים?",
+     "answer": 48,
+     "tol": 0,
+     "explain": "$B\\subseteq A$, ולכן $|A-B|=96-48=48$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -29,7 +83,109 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת $\\phi$ של Euler לפי ההרצאה",
+     "points": 2
+    },
+    {
+     "text": "הפרכת (1) בדוגמה נגדית $\\phi(4)=2\\mid4=\\phi(5)$ ו-$4\\nmid5$",
+     "points": 2
+    },
+    {
+     "text": "(2) נכונה: מקרה $m=1$ ופירוק $m$ לראשוניים וכתיבת $n=p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\cdot t$",
+     "points": 2
+    },
+    {
+     "text": "חישוב המנה $\\phi(n)/\\phi(m)=p_1^{\\beta_1-\\alpha_1}\\cdots p_k^{\\beta_k-\\alpha_k}\\cdot\\phi(t)\\in\\mathbb{N}^*$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להסיק מ-$\\phi(m)\\mid\\phi(n)$ ש-$m\\mid n$ (הכיוון ההפוך אינו נכון).",
+    "לשכוח את הגורם $t$ שזר ל-$p_j$ בפירוק של $n$, או להתעלם מכך ש-$\\phi$ כפלית רק על זרים."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינה של הטענה (1): אם $\\phi(m)\\mid\\phi(n)$ אז $m\\mid n$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "b",
+     "explain": "קיימת דוגמה נגדית: $\\phi(4)=2$ מחלק את $\\phi(5)=4$, אך $4\\nmid5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בדוגמה הנגדית $m=4,\\ n=5$: מהו $\\phi(5)$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$\\phi(5)=5-1=4$, ו-$\\phi(4)=2$ מחלק אותו."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה משמש הפתרון הרשמי להוכחת טענה (2)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "פירוק $m$ ו-$n$ לראשוניים והצגת $\\phi(n)/\\phi(m)$ כמספר שלם"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על $n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "עקרון שובך היונים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "שימוש במשפט Euler על $a^{\\phi(n)}$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון כותב $m=\\prod p_i^{\\alpha_i}$ ו-$n=\\prod p_i^{\\beta_i}\\cdot t$ ומחשב את המנה."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה של (2), במקרה $m\\ge2$.",
+     "lines": [
+      "נפרק $m=p_1^{\\alpha_1}\\cdots p_k^{\\alpha_k}$ לראשוניים (משפט היסוד של האריתמטיקה).",
+      "מ-$m\\mid n$: $n=p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\cdot t$ כאשר $\\gcd(t,p_j)=1$ וגם $\\alpha_j\\le\\beta_j$.",
+      "נחשב: $\\dfrac{\\phi(n)}{\\phi(m)}=p_1^{\\beta_1-\\alpha_1}\\cdots p_k^{\\beta_k-\\alpha_k}\\cdot\\phi(t)$.",
+      "המנה היא מספר שלם $w\\ge1$, ולכן $\\phi(n)=\\phi(m)\\cdot w$ ו-$\\phi(m)\\mid\\phi(n)$."
+     ],
+     "explain": "כל שורה נשענת על הקודמת: פירוק, הצגת $n$, חישוב המנה, מסקנה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה של (2) שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "נפרק $m=p_1^{\\alpha_1}\\cdots p_k^{\\alpha_k}$ לראשוניים.",
+      "מ-$m\\mid n$: $n=p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\cdot t$ כאשר $\\gcd(t,p_j)=1$ וגם $\\beta_j\\le\\alpha_j$.",
+      "נחשב: $\\dfrac{\\phi(n)}{\\phi(m)}=p_1^{\\beta_1-\\alpha_1}\\cdots p_k^{\\beta_k-\\alpha_k}\\cdot\\phi(t)$.",
+      "המנה היא מספר שלם $w\\ge1$, ולכן $\\phi(m)\\mid\\phi(n)$."
+     ],
+     "bugIndex": 1,
+     "explain": "מ-$m\\mid n$ מקבלים $\\alpha_j\\le\\beta_j$ ולא להפך; אחרת החזקות במנה היו שליליות."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -41,7 +197,109 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת גרף דו-צדדי לפי ההרצאה",
+     "points": 3
+    },
+    {
+     "text": "הפרכת (1): $P_4$ קשיר, דו-צדדי, והמשלים שלו איזומורפי אליו",
+     "points": 2
+    },
+    {
+     "text": "(2): אין צלעות בתוך $A$ או בתוך $B$ ולכן $r|A|=|E|=r|B|$",
+     "points": 3
+    },
+    {
+     "text": "$r\\ge2>0$ ולכן $|B|=|A|$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור דוגמה נגדית שהמשלים שלה אינו קשיר או אינו דו-צדדי (למשל $C_4$ או $K_{1,3}$).",
+    "לספור צלעות פעמיים ולכתוב $r|A|=2|E|$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינה של הטענה (1): לא קיים גרף קשיר ודו-צדדי שגם המשלים שלו קשיר ודו-צדדי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הטענה אינה נכונה: קיים גרף כזה."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה גרף הוא דוגמה נגדית לטענה (1)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$C_4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$K_{1,3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$P_4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$P_3$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$P_4$ קשיר ודו-צדדי, והמשלים שלו איזומורפי ל-$P_4$. המשלים של $C_4$ הוא $2K_2$ (לא קשיר), של $K_{1,3}$ הוא $K_3\\cup K_1$, ושל $P_3$ הוא $K_2\\cup K_1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בגרף דו-צדדי $3$-רגולרי עם $|A|=5$, כמה צלעות יש?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$|E|=r|A|=3\\cdot5=15$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה של (2).",
+     "lines": [
+      "אין צלעות בין צמתי $A$ ואין צלעות בין צמתי $B$.",
+      "לכן לכל צלע בדיוק קצה אחד ב-$A$ וקצה אחד ב-$B$.",
+      "סכום הדרגות ב-$A$ שווה ל-$|E|$ וסכום הדרגות ב-$B$ שווה ל-$|E|$, כלומר $r|A|=|E|=r|B|$.",
+      "מכיוון ש-$r\\ge2$, נחלק ב-$r$ ונקבל $|B|=|A|$."
+     ],
+     "explain": "כל שלב נשען על הקודם."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באחת השורות של ההוכחה של (2) יש טעות. מצאו אותה.",
+     "lines": [
+      "אין צלעות בין צמתי $A$ ואין צלעות בין צמתי $B$.",
+      "לכן לכל צלע בדיוק קצה אחד ב-$A$ וקצה אחד ב-$B$.",
+      "סכום הדרגות ב-$A$ שווה ל-$2|E|$, ולכן $r|A|=2|E|=r|B|$.",
+      "מכיוון ש-$r\\ge2$, נחלק ב-$r$ ונקבל $|B|=|A|$."
+     ],
+     "bugIndex": 2,
+     "explain": "כל צלע תורמת דרגה אחת ל-$A$ ואחת ל-$B$, ולכן הסכום בכל צד הוא $|E|$ ולא $2|E|$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -53,7 +311,82 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "פיצול $B=B_1\\cup B_2$ לזוגיים ולאי-זוגיים",
+     "points": 2
+    },
+    {
+     "text": "$|B_1|=2$ מתוך $50$ זוגיים: $C(50,2)=1225$",
+     "points": 2
+    },
+    {
+     "text": "$|B_2|\\in\\{50,51\\}$ מתוך $51$ אי-זוגיים: $C(51,50)+C(51,51)=52$",
+     "points": 3
+    },
+    {
+     "text": "כלל המכפלה: $1225\\cdot52=63700$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהגדלים $51$ ו-$50$ שניהם מותרים («לפחות $50$»).",
+    "לספור $50$ אי-זוגיים ב-$\\{1,\\dots,101\\}$ במקום $51$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות יש ל-$B_1$, שני המספרים הזוגיים מתוך $\\{2,4,\\dots,100\\}$?",
+     "answer": 1225,
+     "tol": 0,
+     "explain": "$C(50,2)=1225$."
+    },
+    {
+     "type": "choice",
+     "prompt": "אילו גדלים מותרים לקבוצת האי-זוגיים $B_2\\subseteq\\{1,3,\\dots,101\\}$ (ב-$A$ יש $51$ אי-זוגיים)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|B_2|\\in\\{49,50,51\\}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$|B_2|\\in\\{50,51\\}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$|B_2|=50$ בלבד"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|B_2|=51$ בלבד"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הדרישה היא לפחות $50$ מתוך $51$ אי-זוגיים, כלומר $50$ או $51$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות יש ל-$B_2$?",
+     "answer": 52,
+     "tol": 0,
+     "explain": "$C(51,50)+C(51,51)=51+1=52$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות $B$ מתאימות יש בסך הכול?",
+     "answer": 63700,
+     "tol": 0,
+     "explain": "$1225\\cdot52=63700$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -65,7 +398,57 @@
    "solutionSource": "solved",
    "official": false,
    "confidence": "med",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "(1): זיהוי שהתנאי $x_k>4$ נותן סכום מינימלי $25>19$, ולכן אין פתרונות (הפתרון המודפס: הצבה $y_k=x_k-3$ ו-$70$ לתנאי $x_k\\ge3$)",
+     "points": 4
+    },
+    {
+     "text": "(2): הצבה $y_k=x_k-4$ והוספת משתנה השלמה $y_6$",
+     "points": 2
+    },
+    {
+     "text": "(2): $D(6,4)=C(9,5)=126$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להציב $y_k=x_k-3$ כשהתנאי הוא $x_k>4$, כלומר $x_k\\ge5$ (גבול תחתון שגוי).",
+    "להתעלם מאי-השוויון החזק $<25$ ולא להוסיף משתנה השלמה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בסעיף (1) התנאי $x_k>4$ פירושו $x_k\\ge5$. מהו הסכום המינימלי האפשרי של חמשת המשתנים?",
+     "answer": 25,
+     "tol": 0,
+     "explain": "$5\\cdot5=25$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פתרונות שלמים יש לסעיף (1) כפי שהוא מודפס ($x_k>4$, הסכום $19$)?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "הסכום המינימלי $25$ גדול מ-$19$, ולכן אין פתרונות (הערך $70$ הוא עבור $x_k\\ge3$)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בסעיף (2) מציבים $y_k=x_k-4$ ומוסיפים משתנה השלמה. כמה משתנים אי-שליליים יש במשוואה $y_1+\\dots+y_5+y_6=4$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "חמישה משתנים $y_k$ ועוד $y_6$ להשלמה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פתרונות יש לסעיף (2)?",
+     "answer": 126,
+     "tol": 0,
+     "explain": "$D(6,4)=C(9,5)=126$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -77,7 +460,68 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "$\\phi(300)=300\\cdot\\frac12\\cdot\\frac23\\cdot\\frac45=80$",
+     "points": 3
+    },
+    {
+     "text": "$121^{40}\\equiv11^{80}\\equiv1$ ו-$49^{40}\\equiv7^{80}\\equiv1$ לפי משפט Euler",
+     "points": 2
+    },
+    {
+     "text": "$13^{81}=13\\cdot13^{80}\\equiv13\\pmod{300}$",
+     "points": 2
+    },
+    {
+     "text": "סכום הערכים: $15$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להפעיל את משפט Euler בלי לבדוק ש-$\\gcd(a,300)=1$.",
+    "לשכוח ש-$121=11^2$ ו-$49=7^2$ ולכן החזקה $80$ מתקבלת מ-$40$ בהכפלה ב-$2$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $\\phi(300)$.",
+     "answer": 80,
+     "tol": 0,
+     "explain": "$300=2^2\\cdot3\\cdot5^2$ ו-$\\phi(300)=300\\cdot\\frac12\\cdot\\frac23\\cdot\\frac45=80$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $121^{40}\\bmod300$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$121^{40}=11^{80}=11^{\\phi(300)}\\equiv1$ כי $\\gcd(11,300)=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $49^{40}\\bmod300$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$49^{40}=7^{80}=7^{\\phi(300)}\\equiv1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $13^{81}\\bmod300$?",
+     "answer": 13,
+     "tol": 0,
+     "explain": "$13^{81}=13\\cdot13^{80}\\equiv13\\cdot1=13$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום הנדרש?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$1+1+13=15$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -89,7 +533,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "הצבת הכמות המינימלית בכל תא: $1+2+3+4=10$ עצמים",
+     "points": 2
+    },
+    {
+     "text": "הפחתה לפיזור $10$ עצמים זהים ל-$4$ תאים",
+     "points": 2
+    },
+    {
+     "text": "$D(4,10)=C(13,3)=286$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להתעלם מהמינימום בכל תא ולחשב $D(4,20)$.",
+    "להחליף בין הפרמטרים בנוסחה $D(n,k)=C(n+k-1,k)$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה עצמים מניחים מראש בתאים כדי לקיים את התנאי בכל תא?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "$1+2+3+4=10$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה ביטוי נותן את מספר הפיזורים של שאר העצמים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\binom{14}{4}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\binom{13}{3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\binom{10}{4}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$4^{10}$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "נשארים $10$ עצמים זהים ל-$4$ תאים: $D(4,10)=\\binom{13}{10}=\\binom{13}{3}=286$. הערכים האחרים הם $1001$, $210$ ו-$1048576$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אופני פיזור יש?",
+     "answer": 286,
+     "tol": 0,
+     "explain": "$\\binom{13}{3}=286$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -101,7 +609,110 @@
    "solutionSource": "solved",
    "official": false,
    "confidence": "med",
-   "points": 15
+   "points": 15,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית ושורשים $2,3$ והפתרון ההומוגני",
+     "points": 3
+    },
+    {
+     "text": "פתרון פרטי $A\\cdot5^n$ עם $A=25$",
+     "points": 4
+    },
+    {
+     "text": "קבועים מתנאי ההתחלה: $C_1=-1,\\ C_2=2$",
+     "points": 4
+    },
+    {
+     "text": "הצורה המפורשת $a_n=-2^n+2\\cdot3^n+25\\cdot5^n$",
+     "points": 2
+    },
+    {
+     "text": "חסם $a_n=O(5^n)$ (ולא $O(3^n)$)",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לנחש פתרון פרטי $A\\cdot5^n$ ולא להציב אותו במשוואה כדי למצוא את $A$.",
+    "להציב את תנאי ההתחלה לפני הוספת הפתרון הפרטי.",
+    "לטעות בגודל הגידול: הגורם $25\\cdot5^n$ שולט, ולכן החסם $3^n$ אינו נכון."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהם שורשי המשוואה האופיינית $x^2-5x+6=0$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$x=-2,\\ -3$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x=1,\\ 6$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x=2,\\ 3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$x=5,\\ 1$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$(x-2)(x-3)=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בפתרון הפרטי $a_n^{(p)}=A\\cdot5^n$ מציבים במשוואה ומקבלים ערך ל-$A$. מהו?",
+     "answer": 25,
+     "tol": 0,
+     "explain": "מהצבה: $A\\cdot5^n=5A\\cdot5^{n-1}-6A\\cdot5^{n-2}+6\\cdot5^n$. אחרי חלוקה ב-$5^n$: $A=A-\\frac{6A}{25}+6$, ולכן $A=25$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מצאו את $C_1$ (המקדם של $2^n$) מתנאי ההתחלה $a_0=26,\\ a_1=129$.",
+     "answer": -1,
+     "tol": 0,
+     "explain": "$C_1+C_2=1$ ו-$2C_1+3C_2=4$, ולכן $C_2=2,\\ C_1=-1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $a_2$ מהצורה המפורשת (ובדקו מול הרקורסיה).",
+     "answer": 639,
+     "tol": 0,
+     "explain": "$-4+18+625=639$, וגם $5\\cdot129-6\\cdot26+6\\cdot25=645-156+150=639$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו החסם האסימפטוטי ההדוק ביותר מהצורה $O(c^n)$ עבור $a_n$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$O(2^n)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$O(3^n)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$O(5^n)$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$a_n\\sim25\\cdot5^n$, ולכן הוא גדל מהר מ-$3^n$ וחסום ב-$27\\cdot5^n$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -113,7 +724,92 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 5
+   "points": 5,
+   "rubric": [
+    {
+     "text": "(1): הנחה בשלילה ובחירת צומת אחד מכל רכיב",
+     "points": 2
+    },
+    {
+     "text": "(1): הם יוצרים $C_3$ במשלים, ולכן אינו דו-צדדי",
+     "points": 1
+    },
+    {
+     "text": "(2): חייבים בדיוק שני רכיבים (שלושה נותנים $C_3$ במשלים)",
+     "points": 1
+    },
+    {
+     "text": "(2): $F=K_1\\cup K_2$ והמשלים $P_3$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שצומת אחד מכל רכיב הם צמתים לא סמוכים ב-$F$, ולכן סמוכים במשלים.",
+    "לא לבדוק את המקרה של רכיב שהוא צומת בודד."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה (1)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "שלושה צמתים משלושה רכיבים שונים הם משולש במשלים."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי בטענה (1)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הנחה בשלילה ומציאת $C_3$ במשלים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על מספר הצמתים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים על דרגות"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון מניח בשלילה שקיים יער כזה ומוצא במשלים $C_3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בטענה (2): כמה רכיבי קשירות יש ליער $F$ בפתרון?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "שלושה רכיבים נותנים $C_3$ במשלים, ורכיב אחד הוא עץ."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה של (2).",
+     "lines": [
+      "אם ל-$F$ שלושה רכיבים, במשלים יש $C_3$, ולכן המשלים אינו עץ.",
+      "לכן ל-$F$ שני רכיבים בדיוק, $T_1$ ו-$T_2$.",
+      "אם בשניהם יש צלע, במשלים יש $C_4$, ולכן אינו עץ; לכן $T_1=K_1$.",
+      "אם $T_2\\ne K_2$ במשלים יש $C_3$; לכן $F=K_1\\cup K_2$ והמשלים $P_3$."
+     ],
+     "explain": "כל שלב מצמצם את האפשרויות מהשלב הקודם."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -125,7 +821,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "מציאת $n=11$ מהמשוואה $2^{n-1}=1024$",
+     "points": 3
+    },
+    {
+     "text": "ב-$A$ חמישה מספרים זוגיים ושישה אי-זוגיים",
+     "points": 2
+    },
+    {
+     "text": "$C(5,2)\\cdot C(6,3)=10\\cdot20$",
+     "points": 3
+    },
+    {
+     "text": "התשובה $200$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $2^n=1024$ ולקבל $n=10$ (מספר תתי-הקבוצות בגודל אי-זוגי הוא $2^{n-1}$).",
+    "לספור חמישה אי-זוגיים ב-$\\{1,\\dots,11\\}$ במקום שישה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$ אם יש $1024=2^{n-1}$ תתי-קבוצות בגודל אי-זוגי?",
+     "answer": 11,
+     "tol": 0,
+     "explain": "$2^{n-1}=2^{10}$ ולכן $n=11$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים זוגיים יש ב-$A=\\{1,\\dots,11\\}$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$2,4,6,8,10$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות יש לשני המספרים הזוגיים ולשלושת האי-זוגיים ביחד?",
+     "answer": 200,
+     "tol": 0,
+     "explain": "$C(5,2)\\cdot C(6,3)=10\\cdot20=200$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -137,7 +880,82 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "שימוש בבינום של Newton בשני הסכומים",
+     "points": 4
+    },
+    {
+     "text": "$m=2^{4n}\\cdot3^n\\cdot5^n\\cdot7^n$",
+     "points": 2
+    },
+    {
+     "text": "תיאור מחלק אי-זוגי המתחלק ב-$15$ כ-$3\\cdot5\\cdot3^a5^b7^c$",
+     "points": 2
+    },
+    {
+     "text": "מספר המחלקים $(n+1)n^2$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהמחלק חייב להתחלק ב-$15$ ולכן חזקות $3$ ו-$5$ מתחילות מ-$1$ (יש $n$ ערכים ולא $n+1$).",
+    "לכלול חזקות של $2$ במחלק אי-זוגי."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה הסגורה של $m$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{4n}\\cdot3^n\\cdot5^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{2n}\\cdot3^n\\cdot5^n\\cdot7^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{4n}\\cdot3^n\\cdot5^n\\cdot7^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{4n}\\cdot3^{2n}\\cdot5^n\\cdot7^n$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$\\sum\\binom nk7^k5^{n-k}=12^n$ ו-$\\sum\\binom nk2^k8^{n-k}=10^n$, ולכן $m=7^n2^n\\cdot12^n\\cdot10^n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=6$: כמה ערכים אפשריים יש לחזקת $3$ במחלק (חזקה $1$ עד $6$)?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "החזקה היא $3^{1+a}$ עם $a\\in\\{0,\\dots,5\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=6$: כמה ערכים אפשריים יש לחזקת $7$ (מ-$0$ עד $6$)?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$c\\in\\{0,\\dots,6\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=6$: כמה מחלקים אי-זוגיים של $m$ מתחלקים ב-$15$?",
+     "answer": 252,
+     "tol": 0,
+     "explain": "$(n+1)n^2=7\\cdot36=252$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -149,7 +967,87 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "$|E|=n-1$ ו-$\\sum\\deg=2n-2=10$ ולכן $n=6$",
+     "points": 2
+    },
+    {
+     "text": "עץ דו-צדדי $(A,B)$ עם $|A|+|B|=6$, ולכן אחד הצדדים בגודל $\\ge3$",
+     "points": 2
+    },
+    {
+     "text": "שלושה צמתים מאותו צד אינם סמוכים ב-$T$, ולכן יוצרים $C_3$ במשלים",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח ש-$\\sum\\deg=2|E|$ ולכתוב $\\sum\\deg=|E|$.",
+    "לדרוש ששני הצדדים בגודל לפחות $3$ (נכון רק לצד הגדול)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו מספר הצמתים $n$ של העץ?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$2(n-1)=10$ ולכן $n=6$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה תת-גרף מושרה מונע מהמשלים להיות דו-צדדי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$C_4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$P_3$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$C_3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$K_{1,3}$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "בגרף דו-צדדי אין מעגלים אי-זוגיים; כל השאר הם גרפים דו-צדדיים."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה.",
+     "lines": [
+      "בעץ $|E|=n-1$, לכן $\\sum\\deg=2n-2=10$ ו-$n=6$.",
+      "העץ דו-צדדי $T=(A,B,E)$ עם $|A|+|B|=6$, ולכן $\\max\\{|A|,|B|\\}\\ge3$.",
+      "שלושה צמתים מהצד הגדול אינם סמוכים ב-$T$, ולכן הם משולש במשלים.",
+      "במשלים יש $C_3$, ולכן הוא אינו דו-צדדי."
+     ],
+     "explain": "כל שורה נשענת על הקודמת."
+    },
+    {
+     "type": "findbug",
+     "prompt": "אחת השורות שגויה. מצאו אותה.",
+     "lines": [
+      "בעץ $|E|=n-1$, לכן $\\sum\\deg=2n-2=10$ ו-$n=6$.",
+      "העץ דו-צדדי $T=(A,B,E)$ עם $|A|+|B|=6$, ולכן $\\min\\{|A|,|B|\\}\\ge3$.",
+      "שלושה צמתים מהצד הגדול אינם סמוכים ב-$T$, ולכן הם משולש במשלים.",
+      "במשלים יש $C_3$, ולכן הוא אינו דו-צדדי."
+     ],
+     "bugIndex": 1,
+     "explain": "מ-$|A|+|B|=6$ נובע רק $\\max\\ge3$; בכוכב $K_{1,5}$ הצד הקטן הוא בגודל $1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
