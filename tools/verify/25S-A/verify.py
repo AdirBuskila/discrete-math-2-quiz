@@ -155,6 +155,13 @@ K11 = nx.complete_graph(11)
 assert set(dict(K11.degree()).values()) == {10} and K11.number_of_edges() == 55 and nx.is_eulerian(K11)
 assert len(list(nx.eulerian_circuit(K11))) == 55
 # --- Q4b
+K32 = nx.disjoint_union(nx.complete_graph(3), nx.complete_graph(2))
+assert sorted(dict(K32.degree()).values()) == [1, 1, 2, 2, 2]
+_G = nx.disjoint_union(K32, nx.empty_graph(2))
+for h in (5, 6):
+    for u in range(5): _G.add_edge(h, u)
+_G.add_edge(5, 6)
+assert sorted(dict(_G.degree()).values()) == [3, 3, 4, 4, 4, 6, 6]
 assert nx.is_graphical([3, 3, 4, 4, 4, 6, 6])
 G7 = nx.havel_hakimi_graph([3, 3, 4, 4, 4, 6, 6])
 assert sorted(dict(G7.degree()).values()) == [3, 3, 4, 4, 4, 6, 6]
