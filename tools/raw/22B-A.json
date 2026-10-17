@@ -24,7 +24,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת חליפה לפי ההרצאה",
+     "points": 4
+    },
+    {
+     "text": "$f$ על $\\{1,2,3\\}$ היא התאמה חד-חד-ערכית על $\\{5,6,7\\}$: $3!=6$ אפשרויות",
+     "points": 2
+    },
+    {
+     "text": "$(f(4),f(5),f(6))$ חליפה של $3$ איברים מתוך $\\{1,2,3,4,8\\}$: $P(5,3)=60$",
+     "points": 2
+    },
+    {
+     "text": "כלל המכפלה: $6\\cdot60=360$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהתמונה של $\\{1,2,3\\}$ היא בדיוק $\\{5,6,7\\}$ ולכן הסדר בתוכה משנה ($3!$).",
+    "לבחור את ערכי $f(4),f(5),f(6)$ מתוך $\\{1,\\dots,8\\}$ במקום מתוך חמשת האיברים שנותרו."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה אפשרויות יש ל-$(f(1),f(2),f(3))$ כך שהתמונה היא בדיוק $\\{5,6,7\\}$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$3!=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה איברים נותרו בטווח עבור $f(4),f(5),f(6)$ (הפונקציה חד-חד-ערכית)?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\{1,2,3,4,8\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה אפשרויות יש ל-$(f(4),f(5),f(6))$?",
+     "answer": 60,
+     "tol": 0,
+     "explain": "$P(5,3)=5\\cdot4\\cdot3=60$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות מתאימות יש?",
+     "answer": 360,
+     "tol": 0,
+     "explain": "$6\\cdot60=360$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -36,7 +90,82 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת הפונקציה $\\phi$ של Euler",
+     "points": 4
+    },
+    {
+     "text": "עבור $n=1$: $\\phi(1)=1\\mid1$",
+     "points": 1
+    },
+    {
+     "text": "$n\\ge3$ אי-זוגי: קיים ראשוני אי-זוגי $p\\mid n$ ו-$\\phi(n)=p^{\\alpha-1}(p-1)\\phi(m)$ זוגי",
+     "points": 2
+    },
+    {
+     "text": "$n$ אי-זוגי ו-$\\phi(n)$ זוגי, ולכן $\\phi(n)\\nmid n$; הפתרון היחיד $n=1$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את המקרה $n=1$, שבו התנאי מתקיים.",
+    "להסיק ש-$\\phi(n)$ אי-זוגי כי $n$ אי-זוגי (הפונקציה $\\phi$ זוגית לכל $n\\ge3$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(45)$?",
+     "answer": 24,
+     "tol": 0,
+     "explain": "$45=3^2\\cdot5$ ו-$\\phi(45)=6\\cdot4=24$, זוגי."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים אי-זוגיים $n\\le100000$ מקיימים $\\phi(n)\\mid n$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "רק $n=1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "אינדוקציה על $n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בדיקת $n=1$, ולכל $n$ אי-זוגי $\\ge3$ הצגת $\\phi(n)$ כמספר זוגי ו-$n$ אי-זוגי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הפתרון מפרק את $n$ ומראה ש-$\\phi(n)$ זוגי."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "אם $n\\ge3$ אי-זוגי, קיים ראשוני אי-זוגי $p\\mid n$, ו-$n=p^\\alpha\\cdot m$ עם $\\gcd(p^\\alpha,m)=1$.",
+      "$\\phi(n)=p^{\\alpha-1}(p-1)\\cdot\\phi(m)$, ו-$p-1$ אי-זוגי.",
+      "לכן $\\phi(n)$ זוגי, בעוד ש-$n$ אי-זוגי.",
+      "לכן $\\phi(n)\\nmid n$, והפתרון היחיד הוא $n=1$."
+     ],
+     "bugIndex": 1,
+     "explain": "$p$ אי-זוגי ולכן $p-1$ זוגי."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -48,7 +177,90 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת דרגה של צומת",
+     "points": 3
+    },
+    {
+     "text": "בעץ $|E|=|V|-1$, ולכן $|V|$ אי-זוגי",
+     "points": 1
+    },
+    {
+     "text": "מספר הצמתים בדרגה אי-זוגית זוגי, ולכן קיים $v$ בדרגה זוגית (שונה מ-$0$)",
+     "points": 1
+    },
+    {
+     "text": "$v$ אינו עלה, ולכן יש לו שכנים $x,y$",
+     "points": 1
+    },
+    {
+     "text": "המסלול היחיד בין $x$ ל-$y$ עובר דרך $v$, ולכן $v$ צומת הפרדה",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהעץ קשיר ולכן הדרגה הזוגית של $v$ אינה $0$.",
+    "לחשוב שכל צומת בדרגה זוגית הוא עלה (עלה הוא בדרגה $1$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "אם בעץ $|E|=6$, כמה צמתים יש?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$|V|=|E|+1=7$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מדוע קיים בעץ צומת בדרגה זוגית?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כי בכל גרף מספר הצמתים בדרגה אי-זוגית זוגי, ו-$|V|$ אי-זוגי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי סכום הדרגות הוא $2|E|$ ולכן כל הדרגות זוגיות"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי כל עץ שמספר צלעותיו זוגי הוא מסלול"
+      }
+     ],
+     "correctId": "a",
+     "explain": "האפשרות השנייה שגויה (לעלים דרגה $1$); האפשרות השלישית שגויה (הכוכב $K_{1,4}$ אינו מסלול)."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה.",
+     "lines": [
+      "בעץ $|E|=|V|-1$ ו-$|E|$ זוגי, ולכן $|V|$ אי-זוגי.",
+      "מספר הצמתים בדרגה אי-זוגית זוגי ו-$|V|$ אי-זוגי, ולכן קיים צומת $v$ בדרגה זוגית, והיא גדולה מ-$0$.",
+      "$v$ אינו עלה, ולכן יש לו שני שכנים $x,y$.",
+      "המסלול היחיד בין $x$ ל-$y$ ב-$T$ הוא $x,v,y$, ולכן ב-$T-v$ אין מסלול ביניהם ו-$v$ צומת הפרדה."
+     ],
+     "explain": "כל שלב נשען על הקודם."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "בעץ $|E|=|V|-1$ ו-$|E|$ זוגי, ולכן $|V|$ אי-זוגי.",
+      "מספר הצמתים בדרגה אי-זוגית זוגי ו-$|V|$ אי-זוגי, ולכן קיים צומת $v$ בדרגה זוגית, והיא גדולה מ-$0$.",
+      "$v$ אינו עלה, ולכן יש לו שני שכנים $x,y$.",
+      "המסלול היחיד בין $x$ ל-$y$ ב-$T$ אינו עובר דרך $v$, ולכן ב-$T-v$ יש מסלול ביניהם."
+     ],
+     "bugIndex": 3,
+     "explain": "בעץ יש מסלול יחיד בין $x$ ל-$y$, והוא $x,v,y$; לכן $T-v$ מנתק אותם."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -60,7 +272,86 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הסכום הראשון: $\\sum\\binom nk2^{n-k}=3^n$",
+     "points": 2
+    },
+    {
+     "text": "הסכום השני: $3^n\\cdot8^n$",
+     "points": 3
+    },
+    {
+     "text": "$f(n)=3^{2n}\\cdot2^{3n}$",
+     "points": 1
+    },
+    {
+     "text": "מחלק זוגי $2^\\alpha3^\\beta$ עם $1\\le\\alpha\\le3n$ ו-$0\\le\\beta\\le2n$",
+     "points": 2
+    },
+    {
+     "text": "מספר המחלקים הזוגיים $3n(2n+1)$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לספור גם $\\alpha=0$ כשמחפשים מחלקים **זוגיים**.",
+    "לטעות בסכום השני ולשכוח את הגורם $3^n$ שיוצא החוצה."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה הסגורה של $f(n)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$3^{n}\\cdot2^{3n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$3^{2n}\\cdot2^{3n}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$3^{2n}\\cdot2^{2n}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$3^{3n}\\cdot2^{3n}$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$f(n)=3^n\\cdot3^n\\cdot8^n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=2$: $f(2)=2^6\\cdot3^4$. כמה ערכים אפשריים יש לחזקת $2$ במחלק זוגי?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\alpha\\in\\{1,\\dots,6\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=2$: כמה ערכים אפשריים יש לחזקת $3$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\beta\\in\\{0,\\dots,4\\}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=2$: כמה מחלקים זוגיים יש ל-$f(2)$?",
+     "answer": 30,
+     "tol": 0,
+     "explain": "$3n(2n+1)=6\\cdot5=30$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -72,7 +363,97 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית $(r-2)^2=0$, שורש כפול",
+     "points": 1
+    },
+    {
+     "text": "צורה כללית $C_1\\cdot2^n+C_2\\cdot n\\cdot2^n$",
+     "points": 1
+    },
+    {
+     "text": "קבועים $C_1=10,\\ C_2=5$",
+     "points": 2
+    },
+    {
+     "text": "צורה מפורשת $a_n=10\\cdot2^n+5n2^n$",
+     "points": 1
+    },
+    {
+     "text": "$10\\cdot2^n\\le10n\\cdot2^n$ לכל $n\\ge1$",
+     "points": 2
+    },
+    {
+     "text": "$a_n\\le15n\\cdot2^n\\le15n\\cdot3^n$, ולכן $O(n\\cdot3^n)$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהחסם $a_n\\le15n2^n$ נכון רק מ-$n\\ge1$ ($n_0=1$).",
+    "לחשוב שהחסם $O(n\\cdot3^n)$ הדוק, בעוד ש-$3^n$ גדול בהרבה מ-$2^n$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהם שורשי המשוואה האופיינית של $a_n=4a_{n-1}-4a_{n-2}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$r=2$ ו-$r=-2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$r=2$ שורש כפול"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$r=4$ ו-$r=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$r=1$ ו-$r=4$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$(r-2)^2=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_1$?",
+     "answer": 10,
+     "tol": 0,
+     "explain": "$a_0=C_1=10$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$2C_1+2C_2=30$, ולכן $C_2=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $a_3$ מהצורה המפורשת.",
+     "answer": 200,
+     "tol": 0,
+     "explain": "$10\\cdot8+5\\cdot3\\cdot8=200$, וגם $4\\cdot80-4\\cdot30=200$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מתקבל החסם $a_n\\le c\\cdot n\\cdot2^n$ לכל $n\\ge1$. מהו $c$ בפתרון?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$10\\cdot2^n\\le10n2^n$, ולכן $a_n\\le15n2^n$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -84,7 +465,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "הגדרת $x_1\\ge5,\\ x_2\\ge4,\\ x_3\\ge6$ עם $x_1+x_2+x_3=20$",
+     "points": 1
+    },
+    {
+     "text": "הצבת $y_1=x_1-5,\\ y_2=x_2-4,\\ y_3=x_3-6$",
+     "points": 2
+    },
+    {
+     "text": "המשוואה $y_1+y_2+y_3=5$",
+     "points": 1
+    },
+    {
+     "text": "$D(3,5)=\\binom72=21$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחשב $D(3,20)$ ולהתעלם מהגבולות התחתונים.",
+    "לחסר גבולות תחתונים שגויים בהצבה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הגבולות התחתונים?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$5+4+6=15$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום $y_1+y_2+y_3$ לאחר ההצבה?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$20-15=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים יש?",
+     "answer": 21,
+     "tol": 0,
+     "explain": "$D(3,5)=\\binom72=21$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -96,7 +524,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "$\\binom n{n-2}=\\binom n2=120$",
+     "points": 3
+    },
+    {
+     "text": "$n^2-n-240=0$, $n=16$ (ו-$-15$ נפסל)",
+     "points": 3
+    },
+    {
+     "text": "$8$ זוגיים ו-$8$ אי-זוגיים ב-$\\{1,\\dots,16\\}$",
+     "points": 2
+    },
+    {
+     "text": "$\\binom82\\cdot\\binom83=28\\cdot56=1568$",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח לפסול את השורש השלילי $n=-15$.",
+    "לספור $\\binom{16}5$ (בלי לדרוש את חלוקת הזוגיים והאי-זוגיים)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$? (נתון $\\binom n2=120$)",
+     "answer": 16,
+     "tol": 0,
+     "explain": "$n^2-n-240=0$, ולכן $n=16$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות יש לשני המספרים הזוגיים מתוך $8$?",
+     "answer": 28,
+     "tol": 0,
+     "explain": "$\\binom82=28$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה בחירות יש לשלושת האי-זוגיים מתוך $8$?",
+     "answer": 56,
+     "tol": 0,
+     "explain": "$\\binom83=56$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות מתאימות יש?",
+     "answer": 1568,
+     "tol": 0,
+     "explain": "$28\\cdot56=1568$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -108,7 +590,57 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "מספר הפונקציות הכולל $3^5=243$",
+     "points": 2
+    },
+    {
+     "text": "הכלה-הוצאה לפונקציות על: $3^5-3\\cdot2^5+3\\cdot1^5=150$",
+     "points": 3
+    },
+    {
+     "text": "מספר הפונקציות שאינן על $243-150=93$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את האיבר האחרון $+3\\cdot1^5$ בהכלה-הוצאה.",
+    "לחשב את מספר הפונקציות על ולהגיש אותו כתשובה (השאלה היא על אלה שאינן על)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות $f:\\{1,\\dots,5\\}\\to\\{1,2,3\\}$ יש בסך הכול?",
+     "answer": 243,
+     "tol": 0,
+     "explain": "$3^5=243$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בהכלה-הוצאה: מה הערך של $\\binom31\\cdot2^5$?",
+     "answer": 96,
+     "tol": 0,
+     "explain": "$3\\cdot32=96$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות על יש?",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$243-96+3=150$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות אינן על?",
+     "answer": 93,
+     "tol": 0,
+     "explain": "$243-150=93$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -120,7 +652,100 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "ג1: $G$ לא קשיר גורר $\\overline G$ קשיר, ולכן אינם איזומורפיים",
+     "points": 2
+    },
+    {
+     "text": "ג2: דוגמה נגדית (עץ בעל $3$ צלעות או הגרף עם $15$ עצים פורשים)",
+     "points": 2
+    },
+    {
+     "text": "ג3: צלע $e_2\\in E_2-E_1$ סוגרת מעגל על $T_1$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "בג2: להתעלם מכך שעץ הוא דו-צדדי ויש בו עץ פורש יחיד (מספר אי-זוגי).",
+    "בג3: לשכוח ש-$H$ פורש כי $E_1\\cup E_2\\subseteq E$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה ג1 (גרף האיזומורפי למשלים שלו הוא קשיר)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "אם $G$ לא קשיר אז $\\overline G$ קשיר, ולכן הם לא איזומורפיים."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה ג2 (יש צלעות, מספר אי-זוגי של עצים פורשים, ולכן אינו דו-צדדי)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "b",
+     "explain": "כל עץ בעל $3$ צלעות הוא דו-צדדי ויש בו עץ פורש אחד."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה עצים פורשים יש לגרף שבו שני צמתים מחוברים בשלושה מסלולים באורכים $3,3,1$?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$6+3\\cdot3=15$, מספר אי-זוגי."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינה של טענה ג3?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה נכונה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה אינה נכונה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$H$ פורש ומכיל מעגל."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה של ג3.",
+     "lines": [
+      "$T_1\\ne T_2$ ושניהם בעלי $|V|-1$ צלעות, ולכן קיימת צלע $e_2\\in E_2-E_1$.",
+      "הוספת $e_2$ לעץ הפורש $T_1$ יוצרת מעגל.",
+      "$E_1\\cup\\{e_2\\}\\subseteq E_1\\cup E_2\\subseteq E$, ולכן $H$ גרף פורש של $G$ המכיל את המעגל."
+     ],
+     "explain": "כל שלב נשען על הקודם."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -132,7 +757,81 @@
    "solutionSource": "solved",
    "official": false,
    "confidence": "med",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "בניית $H$: הוספת צומת $x$ המחובר לכל $V$",
+     "points": 2
+    },
+    {
+     "text": "תנאי Dirac: $\\deg(x)=n\\ge\\frac{n+1}2$ ו-$\\deg_H(v)\\ge\\frac{n+1}2$",
+     "points": 2
+    },
+    {
+     "text": "$H$ Hamilton ולכן $G$ קשיר",
+     "points": 1
+    },
+    {
+     "text": "$\\operatorname{diam}(G)\\ge2$ כי $G\\ne K_n$",
+     "points": 1
+    },
+    {
+     "text": "אם $\\operatorname{dist}(a,b)\\ge3$ אז $n\\ge2+\\deg a+\\deg b\\ge n+1$, סתירה; $\\operatorname{diam}(G)=2$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "בחישוב החסם לכתוב $2+\\frac{n-1}2+\\frac{n-1}2=2n$ במקום $n+1$.",
+    "לשכוח שהקבוצות $N(a),N(b)$ זרות כאשר המרחק לפחות $3$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי להוכחת הקשירות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "משפט Dirac על הגרף שמתקבל מהוספת צומת המחובר לכל הצמתים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על $n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "משפט Euler על דרגות זוגיות"
+      }
+     ],
+     "correctId": "a",
+     "explain": "ל-$H$ יש $n+1$ צמתים וכל הדרגות לפחות $\\frac{n+1}2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=7$: מהו הסף $\\frac{n+1}2$ של משפט Dirac בגרף $H$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$H$ בעל $8$ צמתים והסף הוא $4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור $n=7$ ו-$\\deg(v)\\ge3$: מהו החסם התחתון ל-$2+\\deg(a)+\\deg(b)$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$2+3+3=8=n+1$, כלומר $>n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\operatorname{diam}(G)$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$2\\le\\operatorname{diam}(G)\\le2$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -145,7 +844,111 @@
    "official": true,
    "confidence": "high",
    "points": 17,
-   "contextId": "c1"
+   "contextId": "c1",
+   "rubric": [
+    {
+     "text": "ב1: מעגל $C_{12}$ ב-$G+(v_4,v_7)$, כלומר גרף פורש איזומורפי ל-$C_{12}$",
+     "points": 4
+    },
+    {
+     "text": "ב2: $\\overline G$ הוא $8$-רגולרי, קשיר (Dirac), ולכן Euler",
+     "points": 5
+    },
+    {
+     "text": "ב3: $\\chi(G)=3$ (מעגל אי-זוגי וצביעה ב-$3$ צבעים)",
+     "points": 4
+    },
+    {
+     "text": "ב4: $K_5,\\ C_4,\\ P_4,\\ C_5$ מושרים במשלים",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבלבל בין מעגל Euler (כל הדרגות זוגיות וקשיר) למעגל Hamilton.",
+    "לחשוב ש-$\\overline G$ 3-רגולרי (הדרגה במשלים היא $11-3=8$)."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "האם ל-$G+(v_4,v_7)$ יש גרף פורש איזומורפי ל-$C_{12}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כן"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "לא"
+      }
+     ],
+     "correctId": "a",
+     "explain": "יש מעגל Hamilton $v_4,v_7,v_8,v_9,v_1,v_2,v_3,v_{11},v_{10},v_{12},v_6,v_5,v_4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$\\overline G$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$G$ $3$-רגולרי על $12$ צמתים: $11-3=8$."
+    },
+    {
+     "type": "choice",
+     "prompt": "האם $\\overline G$ הוא גרף Euler?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כן"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "לא"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הוא קשיר וכל דרגותיו זוגיות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "יש מעגל אי-זוגי ב-$G$, וקיימת צביעה ב-$3$ צבעים."
+    },
+    {
+     "type": "choice",
+     "prompt": "אילו מבין $P_4,\\ C_4,\\ C_5,\\ K_5$ קיימים כתתי-גרפים מושרים ב-$\\overline G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רק $K_5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$K_5$ ו-$C_4$ בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כולם"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אף אחד"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$K_5$ על $v_2,v_4,v_6,v_9,v_{11}$; $C_4$ ממשלים של $2K_2$ מושרה; $P_4$ ו-$C_5$ איזומורפיים למשלימיהם."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
