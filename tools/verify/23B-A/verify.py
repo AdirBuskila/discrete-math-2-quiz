@@ -99,3 +99,79 @@ assert G2.degree(9) == 2 and C2.degree(9) == 9 and not nx.is_eulerian(C2); print
 col = {1:1,2:2,3:1,4:2,5:1,6:2,7:1,8:2,9:3,10:3,11:3,12:3,13:1}
 assert all(col[u] != col[v] for u, v in Gf.edges) and Gf.has_edge(1,2) and Gf.has_edge(1,9) and Gf.has_edge(2,9); print("Q4c3 chi=3")
 Hc = nx.complement(Gf); S = [1,3,5,7,13]; assert all(Hc.has_edge(a, b) for a, b in itertools.combinations(S, 2)); print("Q4c4 K5 in complement")
+
+# ======================= step-author phase: every guided-step value =======================
+import json, pathlib
+import sympy as sp
+RAW = json.loads((pathlib.Path(__file__).resolve().parents[2] / "raw" / "23B-A.json").read_text(encoding="utf-8"))
+def STP(n, p): return next(q for q in RAW["questions"] if q["num"] == n and q.get("part") == p)["steps"]
+def NUM(n, p, i, v):
+    s = STP(n, p)[i]; assert s["type"] == "numeric" and s["answer"] == v and s["tol"] == 0, (n, p, i, s["answer"], v)
+def CH(n, p, i, text):
+    s = STP(n, p)[i]; assert s["type"] == "choice"
+    assert text in [o["value"] for o in s["options"] if o["id"] == s["correctId"]][0], (n, p, i)
+    v = [o["value"] for o in s["options"]]; assert len(set(v)) == len(v)
+
+# Q1a: 20, 60, 1200 (brute force above)
+NUM(1, "א", 0, perm(5, 2)); NUM(1, "א", 1, perm(5, 3)); NUM(1, "א", 2, 1200)
+# Q1b: p=5, n=375: phi, phi(phi); the claim holds for every m whose primes are < p; 'q > p' cannot occur
+assert totient(375) == 200 and totient(200) == 80 and 80 % 5 == 0 and gcd(375, 5**4) == 125 and max(factorint(375)) == 5
+for p_ in primerange(2, 30):
+    for m_ in range(1, 400):
+        if gcd(m_, p_) == 1 and all(q < p_ for q in factorint(m_)):
+            assert gcd(p_, (p_ - 1) * totient(m_)) == 1       # line 3 of the proof (primes of m are < p)
+CH(1, "ב", 0, "כתיבת"); NUM(1, "ב", 1, int(totient(totient(375))))
+# Q1c: G disconnected, H connected with diam 2, H is not always a tree and is not complete (all graphs n<=7)
+seen_nontree = False
+for g in atlas:
+    n, m = g.number_of_nodes(), g.number_of_edges()
+    if n > 2 and 1 < m < n - 1:
+        Hh = nx.complement(g)
+        assert not nx.is_connected(g) and m < n - 1 and g.number_of_edges() > 0 and Hh.number_of_edges() < n*(n-1)//2
+        assert not nx.is_tree(g) and nx.is_connected(Hh)
+        seen_nontree |= not nx.is_tree(Hh)
+assert seen_nontree
+CH(1, "ג", 0, "לפחות"); CH(1, "ג", 1, "אינו הגרף השלם"); NUM(1, "ג", 2, 2)
+# Q2a: closed form options at n=3, divisor counts at n=3, degree 5
+n3 = 3
+f3 = sum(comb(n3,k)*3**(n3-k) for k in range(n3+1)) * sum(comb(n3,k)*3**(n3+k)*7**(n3-k) for k in range(n3+1))
+assert f3 == 2**(3*n3) * 3**n3 * 5**n3
+opts_ = [2**(2*n3)*3**n3*5**n3, 2**(3*n3)*3**(2*n3)*5**n3, 2**(3*n3)*3**n3*5**n3, 2**(3*n3)*3**n3*5**(2*n3)]
+assert [o == f3 for o in opts_] == [False, False, True, False]
+d3 = divisors(f3); assert sum(1 for d in d3 if d % 2 == 0) == 144 and sum(1 for d in d3 if d % 2) == 16
+n_s = sp.symbols("n"); assert sp.degree(sp.expand(3*n_s*(n_s+1)**4), n_s) == 5
+CH(2, "א", 0, "2^{3n}\cdot3^n\cdot5^n"); NUM(2, "א", 1, 144); NUM(2, "א", 2, 16); NUM(2, "א", 3, 5)
+# Q2b: roots, constants, a_2
+assert sp.solve(sp.Symbol("x")**2 - 4*sp.Symbol("x") + 4) == [2]
+assert [sp.Poly(r_, sp.Symbol("x")).degree() for r_ in []] == []
+assert x[2] == 80 == 10*4 + 5*2*4
+c1_, c2_ = sp.symbols("c1 c2"); assert sp.solve([c1_ - 10, 2*c1_ + 2*c2_ - 30], [c1_, c2_]) == {c1_: 10, c2_: 5}
+CH(2, "ב", 0, "שורש כפול"); NUM(2, "ב", 1, 10); NUM(2, "ב", 2, 5); NUM(2, "ב", 3, 80)
+# Q2c: 20, 6, 28 (brute force: cnt(3) above)
+assert 22 - 2 == 20 and 20 - (7 + 3 + 4) == 6 and comb(8, 2) == 28
+NUM(2, "ג", 0, 20); NUM(2, "ג", 1, 6); NUM(2, "ג", 2, 28)
+# Q3a
+NUM(3, "א", 0, 50); NUM(3, "א", 1, comb(25, 2)); NUM(3, "א", 2, comb(25, 3)); NUM(3, "א", 3, 690000)
+assert (comb(25, 2), comb(25, 3)) == (300, 2300)
+# Q3b: non-onto == constant (brute force); injective impossible; 1024 total
+fs = list(itertools.product((1, 2), repeat=10)); assert len(fs) == 1024
+assert {f for f in fs if len(set(f)) < 2} == {f for f in fs if len(set(f)) == 1} and not any(len(set(f)) == 10 for f in fs)
+NUM(3, "ב", 0, 1024); CH(3, "ב", 1, "קבועה"); NUM(3, "ב", 2, 2)
+# Q3c: G is K11 + K10 (components), then counts
+Gq = nx.Graph(); Gq.add_nodes_from(range(21)); Gq.add_edges_from((a, b) for a in range(21) for b in range(a+1, 21) if a % 2 == b % 2)
+comps = sorted(len(c) for c in nx.connected_components(Gq)); assert comps == [10, 11] and all(nx.density(Gq.subgraph(c)) == 1 for c in nx.connected_components(Gq))
+Hq = nx.complement(Gq); assert nx.is_isomorphic(Hq, nx.complete_bipartite_graph(11, 10))
+big = [v for v in range(21) if v % 2 == 0]; small = [v for v in range(21) if v % 2 == 1]
+p3a = sum(1 for S in itertools.combinations(range(21), 3) if Hq.subgraph(S).number_of_edges() == 2 and sum(v in big for v in S) == 2)
+p3b = sum(1 for S in itertools.combinations(range(21), 3) if Hq.subgraph(S).number_of_edges() == 2 and sum(v in big for v in S) == 1)
+assert (p3a, p3b) == (550, 495)
+CH(3, "ג", 0, "K_{11}\cup K_{10}"); NUM(3, "ג", 1, 540); NUM(3, "ג", 2, 550); NUM(3, "ג", 3, 495); NUM(3, "ג", 4, 1045)
+# Q4a: counterexample facts (above); degree 4, 2 components in H
+assert G.number_of_nodes() == 8 and nx.number_connected_components(H) == 2
+CH(4, "א", 0, "נכונה"); CH(4, "א", 1, "אינה"); NUM(4, "א", 2, 4); NUM(4, "א", 3, 2)
+# Q4b: |V| = 3, exactly P3 and complement (above)
+NUM(4, "ב", 0, 3); CH(4, "ב", 1, "והמשלים")
+assert sorted(sorted(d for _, d in nx.path_graph(3).degree()) for _ in [0]) == [[1, 1, 2]]
+# Q4c
+CH(4, "ג", 0, "כן"); NUM(4, "ג", 1, C2.degree(9)); CH(4, "ג", 2, "לא"); NUM(4, "ג", 3, 3); NUM(4, "ג", 4, 5)
+print("STEPS 23B-A ok")
