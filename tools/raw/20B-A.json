@@ -1,0 +1,263 @@
+{
+ "examCode": "20B-A",
+ "examLabel": "אביב 2020, מועד א'",
+ "year": 2020,
+ "examDate": "02.07.2020",
+ "sourceFile": "20B-A exam (typed, solved version, parts 1 and 2)",
+ "solutionFile": "20B-A handwritten solution (parts 1 and 2, same PDFs)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 5 סעיף ג)",
+   "image": "images/exams/20B-A-Q5c.png",
+   "caption": "הגרף G על 10 צמתים a,...,j"
+  },
+  "c2": {
+   "kind": "image",
+   "title": "הגרף (שאלה 6 סעיף ג)",
+   "image": "images/exams/20B-A-Q6c.png",
+   "caption": "הגרף על 10 צמתים a,...,j"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "**א1.** המונח: תמורה של קבוצה.\n\n**א2.** שאלה: כמה תמורות של הקבוצה $\\{1,2,3,4,5\\}$ מתחילות ב: 1 או ב: 2?",
+   "solution": "**א1. הגדרה:** תהי $A$ קבוצה בת $n\\ge1$ איברים. כל סדרה בלי חזרות של כל האיברים של $A$ נקראת תמורה של $A$.\n\nאו: כל חליפה של כל האיברים של $A$ נקראת תמורה של $A$.\n\n**א2.** כל תמורה מתאימה היא בצורה: [אות ראשונה: 1 או 2] ואחריה תמורה של 4 האיברים הנותרים. לאיבר הראשון יש 2 אפשרויות ולארבעת המקומות האחרים $4!$ אפשרויות.\n\nמסקנה: $2\\cdot4!=48$ תמורות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high"
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "euler_phi",
+   "question": "**ב1.** המונח: פונקציית EULER.\n\n**ב2.** שאלה: חשבו את $\\phi(5!)$.",
+   "solution": "**ב1. הגדרה:** פונקציית EULER היא $\\phi:\\mathbb{N}^+\\to\\mathbb{N}^+$ המוגדרת לפי הכלל: לכל $n$\n\n$$\\phi(n)=|\\{m:1\\le m\\le n\\wedge\\gcd(n,m)=1\\}|$$\n\n**ב2.**\n\n$$\\phi(5!)=\\phi(120)=\\phi(2^3\\cdot3\\cdot5)=120\\cdot\\left(1-\\frac12\\right)\\left(1-\\frac13\\right)\\left(1-\\frac15\\right)=120\\cdot\\frac12\\cdot\\frac23\\cdot\\frac45=32$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high"
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_basics",
+   "question": "**ג1.** המונח: גרף דו-צדדי שלם.\n\n**ג2.** שאלה: חשבו את מספר הצלעות של המשלים של $K_{m,n}$.",
+   "solution": "**ג1. הגדרה:** $G=K_{m,n}=(A,B,E)$ כאשר\n\n$$\\begin{cases}A=\\{a_1,\\dots,a_m\\},\\ B=\\{b_1,\\dots,b_n\\}\\\\E=\\{(a_i,b_j):i=1,\\dots,m;\\ j=1,2,\\dots,n\\}\\end{cases}$$\n\n**ג2.** פתרון 1: $\\overline{K_{m,n}}=K_m\\cup K_n$, ולכן\n\n$$|\\overline E|=\\frac{m(m-1)}2+\\frac{n(n-1)}2$$\n\nפתרון 2: $|\\overline E|=\\frac{|V|(|V|-1)}2-|E|=\\frac{(m+n)(m+n-1)}2-m\\cdot n$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high"
+  },
+  {
+   "num": 1,
+   "part": "ד",
+   "kind": "computation",
+   "topic": "graph_connectivity",
+   "question": "**ד1.** המונח: גרף לא מכוון קשיר.\n\n**ד2.** שאלה: מצאו $2\\le n$ עבורו המשלים של $P_n$ הוא קשיר וגם גרף דו-צדדי.",
+   "solution": "**ד1. הגדרה:** גרף $G=(V,E)$ לא מכוון נקרא קשיר אם לכל $x,y\\in V$ קיים ב-$G$ מסלול המחבר אותם.\n\n**ד2.** $\\overline{P_2}\\ne$ קשיר, $\\overline{P_3}\\ne$ קשיר.\n\n$\\overline{P_4}=P_4$ (המשלים של $P_4$ הוא $P_4$ עצמו), והוא קשיר ודו-צדדי.\n\nמסקנה: אפשרי עבור $n=4$.\n\nהערה: בכתב היד לא כתוב הנימוק ל-$n\\ge5$: בכל $\\overline{P_n}$ עם $n\\ge5$ יש משולש $v_1,v_3,v_5$ (אין ביניהם צלעות ב-$P_n$), ולכן הוא אינו דו-צדדי.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high"
+  },
+  {
+   "num": 1,
+   "part": "ה",
+   "kind": "truefalse",
+   "topic": "function_counting",
+   "question": "**ה1.** המונח: קבוצות שוות עוצמה.\n\n**ה2.** שאלה: האם הקבוצות $\\mathbb{Q}$ ו-$A=\\{x:x\\in\\mathbb{Z},\\ x<-5\\}$ שוות עוצמה?",
+   "solution": "**ה1. הגדרה:** הקבוצות $A,B$ נקראות קבוצות שוות עוצמה אם קיימת פונקציה $f:A\\to B$ על וגם חד-חד-ערכית.\n\n**ה2.** כן. $A\\subset\\mathbb{Z}\\Leftarrow|A|\\le|\\mathbb{Z}|$.\n\n$A$ אינסופית $\\Rightarrow$ קיימת $B\\subseteq A$ כך ש: $|B|=|\\mathbb{N}|$.\n\n$\\Leftarrow|\\mathbb{N}|\\le|A|\\le|\\mathbb{Z}|=|\\mathbb{N}|=|\\mathbb{Q}|\\Leftarrow|A|=|\\mathbb{Q}|$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "verdict": true
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "(5+5 נק') מהו מספר התמורות של הקבוצה $\\{1,2,3,4,5,6,7\\}$ שבהן:\n\n**א1.** המספרים 1, 2, 3 נמצאים בסמיכות?\n\n**א2.** המספר 1 נמצא לפני 2?",
+   "solution": "הפתרון הרשמי עם תיקון: בסעיף א2 נכתב בכתב היד $2560$ (בשתי הדרכים), אך $\\binom72\\cdot5!=\\frac{7!}2=2520$.\n\n**א1.** כל תמורה מתאימה היא בצורה: [בלוק של $1,2,3$] ו-$4,5,6,7$, כלומר תמורה של הקבוצה $\\{a,4,5,6,7\\}$ ($5!$ אפשרויות) כאשר $a=$ סידור של $1,2,3$ ($3!$ אפשרויות).\n\nמסקנה: $720=3!\\cdot5!$ תמורות מתאימות.\n\n**א2.** כל תמורה מתאימה היא בצורה הבאה: שני מקומות עבור \"1\" ו-\"2\" ($\\binom72$ אפשרויות, כאשר 1 במקום המוקדם יותר), ובשאר המקומות יש תמורה של $\\{3,\\dots,7\\}$ ($5!$ אפשרויות).\n\nמסקנה: יש $\\binom72\\cdot5!=2520$ תמורות.\n\nובאופן אחר: כל תמורה מתאימה מוגדרת לפי תמורה כלשהי כאשר מחליפים את המקומות של \"1\" ו-\"2\" אם צריך, ולכן התשובה היא $\\frac{7!}2=2520$.",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "(4+4 נק') תהיינה הקבוצות $A=\\{a,b,c,d\\}$ וגם $B=\\{x,y,z\\}$.\n\n**ב1.** כמה סדרות שונות בנות 7 אותיות אפשר ליצור כך שכל סידרה מתחילה ב-4 אותיות מ-$A$ ושאר האותיות מ-$B$?\n\n**ב2.** כמה סדרות מ-(ב1) מקיימות התנאים הבאים: כל אות מופיע פעם אחת בסדרה וכל סידרה מתחילה ב-$a$ או ב-$b$?",
+   "solution": "**ב1.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ ($4!$ אפשרויות) ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $144=3!\\cdot4!$ סדרות.\n\n**ב2.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ שמתחילה ב-$a$ או ב-$b$ (2 אפשרויות לאות הראשונה ו-$3!$ אפשרויות לשלוש הבאות), ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $72=2\\cdot3!\\cdot3!$ סדרות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "**ג1.** (2 נק') האם פונקציית Euler $\\phi$ היא חד-חד-ערכית?\n\n**ג2.** (5 נק') אם $n\\in\\mathbb{N}$ וגם $15\\mid n$, הראו ש: $8\\mid\\phi(n)$.",
+   "solution": "**ג1.** לא. $1\\ne2$ אבל $\\phi(1)=1=\\phi(2)$, ולכן $\\phi$ אינה חד-חד-ערכית.\n\n**ג2.** $15\\mid n\\Rightarrow n=3^\\alpha\\cdot5^\\beta\\cdot m$, כאשר $\\gcd(m,3)=1=\\gcd(m,5)$, $\\alpha\\ge1$, $\\beta\\ge1$ ו-$\\alpha,\\beta\\in\\mathbb{N}$.\n\n$$\\phi(n)=\\phi(3^\\alpha)\\phi(5^\\beta)\\phi(m)=3^\\alpha\\cdot5^\\beta\\cdot\\left(1-\\frac13\\right)\\left(1-\\frac15\\right)\\phi(m)=2\\cdot4\\cdot3^{\\alpha-1}\\cdot5^{\\beta-1}\\cdot\\phi(m)$$\n\nמסקנה: $8\\mid\\phi(n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "sum_product_inclusion",
+   "question": "(10 נק') כמה מספרים מהקבוצה $\\Omega=\\{1,2,3,\\dots,100\\}$ אינם מתחלקים ב-3 או ב-5 או ב-7?",
+   "solution": "נסמן: $A_1=\\{n\\in\\Omega:3\\mid n\\}\\Rightarrow|A_1|=\\left\\lfloor\\frac{100}3\\right\\rfloor=33$\n\n$A_2=\\{n\\in\\Omega:5\\mid n\\}\\Rightarrow|A_2|=\\left\\lfloor\\frac{100}5\\right\\rfloor=20$\n\n$A_3=\\{n\\in\\Omega:7\\mid n\\}\\Rightarrow|A_3|=\\left\\lfloor\\frac{100}7\\right\\rfloor=14$\n\nמספר הפתרונות המבוקש הוא\n\n$|\\Omega-A_1\\cup A_2\\cup A_3|=|\\Omega|-|A_1\\cup A_2\\cup A_3|=100-S_1+S_2-S_3$ כאשר:\n\n$S_1=|A_1|+|A_2|+|A_3|=67$\n\n$S_2=|A_1\\cap A_2|+|A_1\\cap A_3|+|A_2\\cap A_3|=\\left\\lfloor\\frac{100}{15}\\right\\rfloor+\\left\\lfloor\\frac{100}{21}\\right\\rfloor+\\left\\lfloor\\frac{100}{35}\\right\\rfloor=6+4+2=12$\n\n$S_3=|A_1\\cap A_2\\cap A_3|=\\left\\lfloor\\frac{100}{3\\cdot5\\cdot7}\\right\\rfloor=\\left\\lfloor\\frac{100}{105}\\right\\rfloor=0$\n\nמסקנה: $|\\Omega-A_1\\cup A_2\\cup A_3|=100-67+12-0=45$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(10 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=14,\\ a_1=27$ וגם $a_n+a_{n-2}=15\\cdot2^n,\\ n\\ge2$.",
+   "solution": "* המשוואה האופיינית: $x^2+1=0\\Rightarrow x_{1,2}=\\pm i\\Rightarrow x_{1,2}=\\cos\\frac\\pi2\\pm i\\sin\\frac\\pi2$.\n\n* הפתרון הכללי של $a_n+a_{n-2}=0$ הוא: $a_n^{(h)}=C_1\\cos\\frac{n\\pi}2+C_2\\sin\\frac{n\\pi}2$.\n\n* פתרון פרטי של $(**)\\ a_n+a_{n-2}=15\\cdot2^n$ הוא בצורה: $a_n^{(p)}=A\\cdot2^n$. נציב ב-$(**)$:\n\n$$A\\cdot2^n+A\\cdot2^{n-2}=15\\cdot2^n\\ \\Big|\\ :2^{n-2}\\Rightarrow4A+A=15\\cdot4\\Rightarrow A=12\\Rightarrow a_n^{(p)}=12\\cdot2^n$$\n\n* הפתרון הרקורסיבי הוא: $a_n=C_1\\cos\\frac{n\\pi}2+C_2\\sin\\frac{n\\pi}2+12\\cdot2^n$.\n\n$a_0=C_1+12=14\\Rightarrow C_1=2$\n\n$a_1=C_2+24=27\\Rightarrow C_2=3$\n\nלכן: $a_n=2\\cos\\frac{n\\pi}2+3\\sin\\frac{n\\pi}2+12\\cdot2^n$ לכל $n\\in\\mathbb{N}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "euler_hamilton",
+   "question": "(5 נק') הראו שהמשלים של $P_{15}$ הוא גרף בעל מסלול Euler.",
+   "solution": "צריך להראות ש: $\\overline{P_{15}}=$ גרף קשיר ובעל בדיוק 2 צמתים בדרגה אי-זוגית.\n\n$P_{15}$: $v_1,v_2,v_3,\\dots,v_{15}$.\n\n$\\deg_{P_{15}}(v_1)=1=\\deg_{P_{15}}(v_{15})\\Rightarrow\\deg_{\\overline{P_{15}}}(v_1)=\\deg_{\\overline{P_{15}}}(v_{15})=13$\n\n$\\forall i=2,\\dots,14\\Rightarrow\\deg_{P_{15}}(v_i)=2\\Rightarrow\\deg_{\\overline{P_{15}}}(v_i)=12$\n\nלכל $v$: $\\deg_{\\overline{P_{15}}}(v)\\ge\\frac{15}2\\Rightarrow$ (DIRAC) $\\overline{P_{15}}=$ גרף Hamilton, ולכן $\\overline{P_{15}}=$ קשיר $\\wedge$ יש בדיוק 2 צמתים בדרגה אי-זוגית.\n\nמסקנה: ב-$\\overline{P_{15}}$ יש מסלול EULER.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 5
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(8 נק') תהי $A=\\{1,2,3,\\dots,n\\}$, כאשר $2<n$. אם לקבוצה $A$ יש 55 תתי-קבוצות בגודל 2, חשבו כמה תתי-קבוצות בגודל **זוגי** יש לקבוצה $A$.",
+   "solution": "נתון: $\\frac{n(n-1)}2=55\\iff\\binom n2=55$\n\n$n^2-n-110=0\\Rightarrow n_{1,2}=\\frac{1\\pm\\sqrt{441}}2=\\frac{1\\pm21}2\\Rightarrow n=11$\n\nאז $|A|=11$ ולכן יש ל-$A$ $2^{10}=2^{11-1}=1024$ תתי-קבוצות בגודל זוגי.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(6+6 נק') תהי $\\Omega$ קבוצת הפונקציות $f:\\{1,2,3,4\\}\\to\\{1,2,3,4,5,6\\}$.\n\n**ב1.** כמה פונקציות מ-$\\Omega$ הן עולות ממש?\n\n**ב2.** כמה פונקציות מ-$\\Omega$ הן חד-חד-ערכיות?",
+   "solution": "**ב1.** $f$ עולה ממש $\\iff$ $f$ נקבעת על ידי הקבוצה $\\{f(1),f(2),f(3),f(4)\\}$, שהיא תת-קבוצה בגודל 4 של $\\{1,2,\\dots,6\\}$. לכן יש $\\binom64=15$ פונקציות עולות ממש.\n\n**ב2.** $f$ חח\"ע $\\iff$ $f(1),f(2),f(3),f(4)$ היא סדרה ללא חזרות באורך 4 מתוך $\\{1,2,\\dots,6\\}$. לכן יש $P(6,4)=360$ פונקציות חח\"ע.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 12
+  },
+  {
+   "num": 4,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(5 נק') תהי $A=\\{1,2,3,\\dots,n\\}$, כאשר $2<n$. חשבו את המספר $m=\\sum_{B\\in P(A)}|B|$.",
+   "solution": "$$m=\\sum_{k=0}^{n}k\\cdot\\binom nk$$\n\nלכל $A$ יש: $\\binom n1$ תתי-קבוצות בגודל 1, ..., $\\binom nk$ תתי-קבוצות בגודל $k$, ..., $\\binom nn$ תתי-קבוצות בגודל $n$.\n\nלפי הבינום: $(x+1)^n=\\sum_{k=0}^{n}\\binom nkx^k$. נגזור:\n\n$$n(x+1)^{n-1}=\\sum_{k=0}^{n}\\binom nk\\cdot k\\cdot x^{k-1}$$\n\nנציב $x=1$: $n\\cdot2^{n-1}=\\sum_{k=0}^{n}\\binom nk\\cdot k$.\n\nמסקנה: $m=n\\cdot2^{n-1}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 5
+  },
+  {
+   "num": 5,
+   "part": "א",
+   "kind": "truefalse",
+   "topic": "graph_basics",
+   "question": "(6 נק') האם קיים גרף לא מכוון שסדרת הדרגות שלו היא $(1,1,2,3,3,3,6,7,8)$?",
+   "solution": "נניח, בשלילה, שקיים גרף $G=(V,E)$ כזה. אז $V=\\{v_i:1\\le i\\le9\\}$, ויש $v_8,v_9$ כך ש: $\\deg(v_8)=7,\\ \\deg(v_9)=8$.\n\n$v_9$ מחובר לכל שאר הצמתים, ולכן סדרת הדרגות של $G-v_9$ היא: $(0,0,1,2,2,2,5,6)$.\n\nב-$G-v_9$ הצומת $v_8$ הוא בדרגה 6, אבל בגרף הזה יש שני צמתים מבודדים (בדרגה 0), ולכן לצומת $v_8$ יש לכל היותר 5 שכנים. בלתי אפשרי.\n\nמסקנה: לא קיים $G$ שסדרת הדרגות שלו היא $(1,1,\\dots,8)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "verdict": false,
+   "points": 6
+  },
+  {
+   "num": 5,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "selections_repetition",
+   "question": "(10 נק') תהי הקבוצה $A=\\{a,b,c,d\\}$. כמה מלים בנות 22 אותיות, בלי חשיבות לסדר, ניתן ליצור מ-$A$ כך שבכל מילה: אות $a$ מופיעה לפחות 3 פעמים, אות $b$ מופיעה לפחות פעם אחת, אות $c$ מופיעה לפחות 4 פעמים ואות $d$ מופיעה לפחות פעמיים.",
+   "solution": "נסמן: $x_1$ מופיעה פעמים $a$, $x_2$ מופיעה פעמים $b$, $x_3$ מופיעה פעמים $c$, $x_4$ מופיעה פעמים $d$:\n\n$3\\le x_1,\\ 1\\le x_2,\\ 4\\le x_3,\\ 2\\le x_4$ ו-$x_1+x_2+x_3+x_4=22$.\n\nלכן מספר המילים שווה למספר הפתרונות של:\n\n$$\\begin{cases}x_1+x_2+x_3+x_4=22\\\\x_1\\ge3,\\ x_2\\ge1,\\ x_3\\ge4,\\ x_4\\ge2\\end{cases}$$\n\nוהוא שווה ל:\n\n$$D(4,22-3-1-4-2)=D(4,12)=\\binom{4-1+12}{4-1}=\\binom{15}3=\\frac{15\\cdot14\\cdot13}{1\\cdot2\\cdot3}=455$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 5,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(3+3+3 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ג1.** האם המשלים של $G$ הוא גרף Hamilton?\n\n**ג2.** האם המשלים של $G$ הוא גרף Euler?\n\n**ג3.** האם המשלים של $G$ הוא דו-צדדי?",
+   "solution": "$n=|V|=10$.\n\n**ג1.** $G$ הוא 3-רגולרי $\\Rightarrow$ לכל $v\\in V$ מתקיים $\\frac{10}2\\le\\deg_{\\overline G}(v)=6$. לפי משפט DIRAC, $\\overline G$ הוא גרף Hamilton. כן.\n\n**ג2.** $\\overline G$ הוא גרף Hamilton, ולכן $\\overline G$ קשיר, וגם לכל $v\\in V$: $\\deg_{\\overline G}(v)=6$, כלומר כל הדרגות זוגיות. לכן $\\overline G$ הוא גרף Euler. כן.\n\n**ג3.** לא. ב-$\\overline G$ קיים $C_3$ על הצמתים $a,d,g$ (אין ביניהם צלעות ב-$G$), ולכן $\\overline G$ אינו דו-צדדי.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9,
+   "contextId": "c1"
+  },
+  {
+   "num": 6,
+   "part": "א",
+   "kind": "computation",
+   "topic": "euler_phi",
+   "question": "(3+3+6 נק') יהי $4<n\\in\\mathbb{N}$. חשבו את $\\phi(a\\cdot b)$, כאשר $a=\\sum_{k=0}^{n}\\binom nk\\cdot3^k\\cdot5^{n-k}$ וגם $b=\\sum_{k=0}^{n}\\binom nk\\cdot7^k\\cdot5^{n-k}$.",
+   "solution": "לפי הבינום של Newton:\n\n$a=(3+5)^n=8^n$, $b=(7+5)^n=12^n$\n\n$$\\phi(ab)=\\phi(8^n\\cdot12^n)=\\phi(2^{3n}\\cdot2^{2n}\\cdot3^n)=\\phi(2^{5n}\\cdot3^n)=2^{5n}\\cdot3^n\\cdot\\left(1-\\frac12\\right)\\left(1-\\frac13\\right)=2^{5n}\\cdot3^n\\cdot\\frac12\\cdot\\frac23=2^{5n}\\cdot3^{n-1}$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 12
+  },
+  {
+   "num": 6,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "function_counting",
+   "question": "(7 נק') הראו שהקבוצות $(2,7]$ ו-$(0,1)$ שוות עוצמה.",
+   "solution": "הפונקציה $f:(0,1)\\to(2,7]$, $f(x)=x+2$, היא חח\"ע, ולכן $|(0,1)|\\le|(2,7]|$.\n\nבנוסף, $(2,7]\\subset\\mathbb{R}$, ולכן $|(2,7]|\\le|\\mathbb{R}|=|(0,1)|$.\n\nלפי משפט קנטור-שרדר-ברנשטיין, מסקנה: $|(0,1)|=|(2,7]|$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 6,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_connectivity",
+   "question": "(6 נק') מצא את הקוטר של הגרף שבציור הבא:",
+   "solution": "מספיק לחשב את המרחקים מ-$a$ ומ-$f$ ולבחור את הגדול ביותר:\n\n$\\operatorname{dist}(a,b)=\\operatorname{dist}(a,f)=\\operatorname{dist}(a,e)=1$, $\\operatorname{dist}(a,v)=2$ לכל $v\\in\\{j,g,i,h,c,d\\}$\n\n$\\operatorname{dist}(f,a)=\\operatorname{dist}(f,i)=\\operatorname{dist}(f,h)=1$, $\\operatorname{dist}(f,v)=2$ לכל $v\\in\\{j,b,c,d,e,g\\}$\n\nמסקנה: $\\operatorname{diam}(G)=2$ ($=\\max\\{\\operatorname{dist}(x,y):x,y\\in V\\}$).",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6,
+   "contextId": "c2"
+  }
+ ]
+}

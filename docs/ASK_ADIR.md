@@ -42,4 +42,11 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Needed: nothing blocking; each is shipped with solutionSource "solved", official false, and the fix named in the solution (scripts in tools/verify/<CODE>/).
 - Status: noted
 
+### 22B-B, 21B-A, 21B-B, 20B-A - corrections and quiet fixes (FYI, no hold)
+- Labelled corrections (official:false, solved, verified by script): 21B-A p.5 Q2b (question asks "not onto"; ink stops at the onto count 150, correct 93), 21B-A p.2 Q1b (ink defines phi with d | n, which is the divisor count), 20B-A p.5 Q2a (a2 printed 2560, correct 7!/2 = 2520).
+- Quiet fixes of intermediate slips: 22B-B p.7 Q4a (ink sketches have 9 vertices, the printed sequence needs 11; constructions rewritten with 11), 21B-A p.7 Q5a (V listed as v1..v6, should be v1..v7), 21B-B p.9 Q5c.1 (Hamilton cycle skips v10; corrected cycle script-checked), 20B-A p.2 Q1b (definition lacks "=1" in gcd), 20B-A p.6 Q2c (extra factor m in the first phi(n) expression), 20B-A p.6 Q6a ((1-2/3) should be (1-1/3)).
+- Question-text notes: 21B-A p.3 Q1c (the printed question does not say the two cycles are the only ones; solution carries a remark), 21B-B p.5 Q3a (printed relation is a Symbol glyph in an RTL line; read as size >= 6, matching the official 37), 21B-B p.7 Q4a (official answer 2^15-1 excludes the empty set).
+- 20B-A: the file "without solution" is a different version of the paper (different numbers in Q1a, Q1c, Q2); only the solved version is in the bank. Cardinality questions (20B-A Q1e, Q6b) have no topic in course.config.json and are filed under function_counting.
+- Status: noted
+
 ## Resolved

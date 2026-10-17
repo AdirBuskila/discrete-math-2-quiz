@@ -1,0 +1,200 @@
+{
+ "examCode": "21B-B",
+ "examLabel": "אביב 2021, מועד ב'",
+ "year": 2021,
+ "examDate": "20.07.2021",
+ "sourceFile": "21B-B exam (typed, pp.1-10)",
+ "solutionFile": "21B-B handwritten solution (same PDF)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 5 סעיף ג)",
+   "image": "images/exams/21B-B-Q5c.png",
+   "caption": "הגרף G על 12 צמתים"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "**א1.** (4 נק') המונח: תמורת אי-סדר מלא.\n\n**א2.** (3 נק') שאלה: כמה תמורות על הקבוצה $A=\\{1,2,3,4,5\\}$ הן תמורות שאינן אי-סדר מלא.\n\nנשתמש במשפט הבא: מספר התמורות אי סדר מלא של הקבוצה $\\{1,2,\\dots,n\\}$ הוא $D_n=n!\\left(\\frac1{0!}-\\frac1{1!}+\\frac1{2!}-\\dots+(-1)^n\\frac1{n!}\\right)$.",
+   "solution": "**א1. הגדרה:** לפי ההרצאה.\n\n**א2.**\n\n$$D_5=5!\\left(\\frac1{0!}-\\frac1{1!}+\\frac1{2!}-\\frac1{3!}+\\frac1{4!}-\\frac1{5!}\\right)=\\frac{5!}{2!}-\\frac{5!}{3!}+\\frac{5!}{4!}-\\frac{5!}{5!}=60-20+5-1=44$$\n\nתשובה: $5!-44=76$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "divisibility_primes",
+   "question": "**ב1.** (4 נק') המונח: מחלק של מספר שלם.\n\n**ב2.** (6 נק') שאלה: כמה מחלקים משותפים יש למספרים $n=750$ וגם $m=300$?",
+   "solution": "**ב1. הגדרה:** יהיו $k\\in\\mathbb{Z}$ ו-$1\\le m\\in\\mathbb{N}$ כך ש: $m\\mid k$. אזי $m$ נקרא מחלק של $k$.\n\n**ב2.** המחלקים המשותפים של $n$ ושל $m$ הם המחלקים של $\\gcd(m,n)$.\n\n$m=2^2\\cdot3\\cdot5^2$, $n=2\\cdot3\\cdot5^3\\Rightarrow\\gcd(m,n)=2\\cdot3\\cdot5^2=k$.\n\nכל מחלק $d=2^\\alpha\\cdot3^\\beta\\cdot5^\\gamma$ של $k$ מקיים: $\\alpha\\in\\{0,1\\}$, $\\beta\\in\\{0,1\\}$, $\\gamma\\in\\{0,1,2\\}$.\n\nלכן מספר המחלקים המשותפים של $n$ ושל $m$ הוא $12=2\\cdot2\\cdot3$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "**ג1.** (4 נק') המונח: מעגל EULER.\n\n**ג2.** (4 נק') שאלה: יהי $G=C_n$. עבור איזה ערכים של $n$ המשלים של $G$ הוא גרף EULER?",
+   "solution": "**ג1. הגדרה:** יהי $G=(V,E)$ גרף לא מכוון ו-$C=$ מעגל של $G$. נקרא ל-$C$ מעגל EULER אם הוא עובר על כל הצמתים של $G$ ועל כל הצלעות של $G$ כך שכל צלע מופיעה פעם אחת ב-$C$.\n\n**ג2.** $\\overline{C_n}=\\overline G$ הוא גרף Euler $\\iff\\overline G$ קשיר וכל דרגותיו זוגיות.\n\nלכן: $n\\in\\{3,4\\}$: $\\overline{C_3}$ ו-$\\overline{C_4}$ אינם קשירים, ולכן אינם גרפי Euler.\n\n$n=5\\Leftarrow\\overline{C_5}\\cong C_5$, ו-$C_5$ הוא גרף Euler.\n\nעבור $n\\ge6$: לכל צומת $v$ של $C_n$ מתקיים $\\deg_{C_n}(v)=2$, ולכן $\\deg_{\\overline{C_n}}(v)=n-3$. כיוון ש-$n-3\\ge\\frac n2\\iff n\\ge6$, לפי משפט Dirac $\\overline{C_n}$ הוא גרף Hamilton לכל $n\\ge6$, ולכן קשיר. כל הדרגות זוגיות $\\iff n$ אי-זוגי.\n\nמסקנה: $\\overline{C_n}$ הוא גרף Euler $\\iff n\\in\\{5,7,9,\\dots\\}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "asymptotics",
+   "question": "(9 נק') חשבו את $f(n)=\\sum_{k=0}^{n}\\left(\\binom nk\\cdot\\left(7^k+3\\cdot5^k\\right)\\right)$ והראו ש: $f(n)=O(9^n)$.",
+   "solution": "$$f(n)=\\sum_{k=0}^{n}\\binom nk7^k\\cdot1^{n-k}+3\\sum_{k=0}^{n}\\binom nk5^k\\cdot1^{n-k}=8^n+3\\cdot6^n\\le9^n+3\\cdot9^n=4\\cdot9^n,\\ \\forall n\\in\\mathbb{N}$$\n\nמסקנה: $f(n)=O(9^n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(8 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=5,\\ a_1=12$ וגם $a_n=2a_{n-1}-a_{n-2}$ לכל $2\\le n\\in\\mathbb{N}$.",
+   "solution": "המשוואה האופיינית היא: $x^2=2x-1\\Rightarrow x_1=x_2=1$.\n\n$a_n=C_1+C_2n$; $a_0=C_1=5$; $a_1=C_1+C_2=12\\Rightarrow C_2=7$.\n\nלכן: $a_n=5+7n$ לכל $n\\in\\mathbb{N}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "sum_product_inclusion",
+   "question": "(8 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,200\\}$. כמה מספרים מ-$A$ מתחלקים לפחות באחד מן המספרים 2 או 3 או 5?",
+   "solution": "נחשב את $|A_1\\cup A_2\\cup A_3|$, כאשר:\n\n$A_1=\\{n\\in A:2\\mid n\\}\\Rightarrow|A_1|=\\left\\lfloor\\frac{200}2\\right\\rfloor=100$\n\n$A_2=\\{n\\in A:3\\mid n\\}\\Rightarrow|A_2|=\\left\\lfloor\\frac{200}3\\right\\rfloor=66$\n\n$A_3=\\{n\\in A:5\\mid n\\}\\Rightarrow|A_3|=\\left\\lfloor\\frac{200}5\\right\\rfloor=40$\n\n$\\gcd(2,3)=1=\\gcd(2,5)=\\gcd(3,5)\\Rightarrow$\n\n$|A_1\\cap A_2|=\\left\\lfloor\\frac{200}6\\right\\rfloor=33$; $|A_1\\cap A_3|=\\left\\lfloor\\frac{200}{10}\\right\\rfloor=20$; $|A_2\\cap A_3|=\\left\\lfloor\\frac{200}{15}\\right\\rfloor=13$\n\n$|A_1\\cap A_2\\cap A_3|=\\left\\lfloor\\frac{200}{30}\\right\\rfloor=6$\n\n$$|A_1\\cup A_2\\cup A_3|=(100+66+40)-(33+20+13)+6=212-66=146$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(10 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,n\\}$, כאשר $0<n\\in\\mathbb{N}$. ידוע שלקבוצה $A$ יש 105 תתי-קבוצות בגודל 2. חשבו כמה תתי-קבוצות **בגודל** $\\ge6$ של $A$ מכילות רק מספרים אי-זוגיים.",
+   "solution": "נמצא את $n$: $\\binom n2=105\\iff\\frac{n(n-1)}2=105\\iff n^2-n-210=0\\Rightarrow n_{1,2}=\\frac{1\\pm\\sqrt{1+840}}2=\\frac{1\\pm29}2=\\begin{cases}-14\\notin\\mathbb{N}\\\\15\\end{cases}$\n\nכל המספרים האי-זוגיים ב-$A$ הם: $1,3,5,7,9,11,13,15$ (שמונה מספרים).\n\nלכן החישוב הוא:\n\n$$\\binom86+\\binom87+\\binom88=\\binom82+\\binom81+\\binom80=28+8+1=37$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(7 נק') כמה פונקציות $f:\\{1,2,3,4,5\\}\\to\\{1,2,3,4,5\\}$ הן **לא** עולות?",
+   "solution": "נסמן ב-$A$ את קבוצת כל הפונקציות $f:\\{1,\\dots,5\\}\\to\\{1,\\dots,5\\}$.\n\nלכל $i\\in\\{1,\\dots,5\\}$ מתקיים $f(i)\\in\\{1,\\dots,5\\}$, כלומר 5 אפשרויות, ולכן $|A|=5^5=3125$.\n\nפונקציה $f\\in A$ עולה ($f(1)\\le f(2)\\le\\dots\\le f(5)$) $\\iff$ \"$f(1),f(2),f(3),f(4),f(5)$\" נקבעת על ידי בחירה של 5 ערכים מתוך 5 עם חזרות. לכן:\n\n$$D(5,5)=\\binom{5-1+5}{5-1}=\\binom94=\\frac{9\\cdot8\\cdot7\\cdot6}{1\\cdot2\\cdot3\\cdot4}=126$$\n\nפונקציות עולות.\n\nמסקנה: $3125-126=2999$ פונקציות שאינן עולות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "graph_basics",
+   "question": "(8 נק') מצאו כל $3\\le n\\in\\mathbb{N}$ עבור $C_n$ הוא איזומורפי למשלים שלו.",
+   "solution": "נניח $C_n=(V,E)\\cong\\overline{C_n}=(V,\\overline E)$. אז מתקיים:\n\n$$\\begin{cases}|E|=|\\overline E|=n\\\\|E|+|\\overline E|=\\frac{n(n-1)}2\\end{cases}\\Rightarrow2n=\\frac{n(n-1)}2\\Rightarrow n^2-5n=0\\Rightarrow n(n-5)=0$$\n\nלכן $n=0$ (אינו מתאים) או $n=5$.\n\nואכן $\\overline{C_5}\\cong C_5$: אם $C_5$ הוא המעגל $v_1v_2v_3v_4v_5$, המשלים הוא המעגל $v_1,v_3,v_5,v_2,v_4,v_1$.\n\nמסקנה: $C_n\\cong\\overline{C_n}\\iff n=5$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(8 נק') תהיינה הקבוצות $A=\\{1,2,3,4,5,6\\}$ וגם $B=\\{1,2,3,4,5\\}$. חשבו כמה תתי-קבוצות של $A\\times B$ מכילות רק זוגות $(a,b)$ כך ש: $a+b=$ מספר אי-זוגי.",
+   "solution": "נסמן ב-$\\Omega$ את קבוצת הזוגות ב-$A\\times B$ שמקיימים: $a+b=$ מספר אי-זוגי. אז:\n\n$(a,b)\\in\\Omega\\iff(a,b)\\in\\{1,3,5\\}\\times\\{2,4\\}$ או $(a,b)\\in\\{2,4,6\\}\\times\\{1,3,5\\}$\n\nלכן $\\Omega=\\{1,3,5\\}\\times\\{2,4\\}\\cup\\{2,4,6\\}\\times\\{1,3,5\\}$ ו-$|\\Omega|=6+9=15$.\n\nמסקנה: $2^{15}-1=2^{|\\Omega|}-1=|P(\\Omega)|-1$ תתי-קבוצות של $A\\times B$ מכילות רק זוגות מ-$\\Omega$ (לא כולל הקבוצה הריקה).\n\nהערה: הפתרון הרשמי אינו סופר את הקבוצה הריקה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(4+4 נק') תהי $\\Omega=\\{f\\ /\\ f:\\{1,2,3,4\\}\\to\\{1,2,3,4,5,6,7,8,9\\}\\}$. חשבו כמה פונקציות $f\\in\\Omega$ הן עולות ממש ומקיימות התנאי $f(1)=3$.",
+   "solution": "$f$ עולה ממש $\\iff4\\le f(2)<f(3)<f(4)\\le9$.\n\n$\\{f(2),f(3),f(4)\\}$ היא תת-קבוצה בגודל 3 של $\\{4,5,6,7,8,9\\}$, ולכן מספר הפונקציות הוא\n\n$$\\binom63=\\frac{6\\cdot5\\cdot4}{1\\cdot2\\cdot3}=20$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "(9 נק') אם $n$ הוא ראשוני, הראו ש: $n\\mid\\left(\\phi(n)^{\\phi(n\\cdot n)}-1\\right)$.",
+   "solution": "$\\phi(n^2)=n^2\\left(1-\\frac1n\\right)=n(n-1)$, ולכן\n\n$$\\phi(n)^{\\phi(n^2)}-1=(n-1)^{n(n-1)}-1=\\left((n-1)^n\\right)^{n-1}-1$$\n\nמכיוון ש-$n$ ראשוני, $n\\nmid(n-1)^n$, ולכן לפי משפט FERMAT:\n\n$n\\mid\\left(\\left((n-1)^n\\right)^{n-1}-1\\right)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 5,
+   "part": "א",
+   "kind": "truefalse",
+   "topic": "graph_basics",
+   "question": "(5 נק') האם קיים גרף לא מכוון שסדרת הדרגות שלו היא $(1,1,1,1,3,4,5,6,8)$?",
+   "solution": "אם קיים $G=(V,E)$ כזה, אז $|V|=9$, ולכן קיים $v_9\\in V$ בדרגה $\\deg(v_9)=8$. נוכל לראות ש-$v_9$ מחובר לכל שאר הצמתים.\n\nאז סדרת הדרגות של $G-v_9$ היא: $0,0,0,0,2,3,4,5\\Leftarrow$ יש צומת בדרגה 5 ב-$G-v_9$, אך בגרף זה רק שלושה צמתים אחרים אינם מבודדים (ארבעה צמתים בדרגה 0), בלתי אפשרי.\n\nמסקנה: לא קיים $G$ כזה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "verdict": false,
+   "points": 5
+  },
+  {
+   "num": 5,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "(4 נק') אם $p$ הוא מספר ראשוני, הוכיחו: $\\phi(p^2)\\mid(\\phi\\circ\\phi)(p^4)$, כאשר $\\phi$ היא הפונקציה של EULER ו-ה-\\\"$\\circ$\\\" הוא הרכבת פונקציות.",
+   "solution": "$\\phi(p^2)=p^2(1-1/p)=p(p-1)$\n\n$(\\phi\\circ\\phi)(p^4)=\\phi(\\phi(p^4))=\\phi(p^4(1-1/p))=\\phi(p^3(p-1))$\n\nומכיוון ש-$p$ ראשוני וגם $p-1<p$ נשיג ש-$\\gcd(p^3,p-1)=1$ ונקבל:\n\n$(\\phi\\circ\\phi)(p^4)=\\phi(p^3)\\phi(p-1)=p^3(1-1/p)\\phi(p-1)=p^2(p-1)\\phi(p-1)$\n\nמסקנה: $\\phi(p^2)\\mid(\\phi\\circ\\phi)(p^4)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 4
+  },
+  {
+   "num": 5,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(4+4+4+4 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ג1.** האם $G$ הוא גרף Hamilton?\n\n**ג2.** האם המשלים של $G$ הוא גרף Euler?\n\n**ג3.** מהו $\\chi(G)$?\n\n**ג4.** האם במשלים של $G$ קיים $K_5$ כתת-גרף מושרה?",
+   "solution": "**ג1.** $G$ הוא גרף Hamilton $\\Rightarrow$ קיים מעגל $C=$ מעגל Hamilton, כלומר:\n\n$C:\\ v_1,v_2,v_9,v_{10},v_{11},v_{12},v_7,v_3,v_8,v_6,v_5,v_4,(v_1)$\n\n**ג2.** $G$ הוא 3-רגולרי $\\Rightarrow\\overline G$ הוא 8-רגולרי $\\Rightarrow$ לכל $v_i\\in V$: $\\deg_{\\overline G}(v_i)=8\\ge\\frac{12}2\\Rightarrow\\overline G$ הוא גרף Hamilton, ולכן $\\overline G$ קשיר. כל הדרגות ב-$\\overline G$ זוגיות.\n\nמסקנה: $\\overline G$ הוא גרף Euler.\n\n**ג3.** ב-$G$ יש מעגל $C_5$: $v_1,v_4,v_5,v_{11},v_{10}$ $\\Rightarrow\\chi(G)\\ge3$. ב-$G$ יש 3-צביעה (צבע 1: $v_2,v_4,v_6,v_{10},v_{12}$; צבע 2: $v_1,v_7,v_8,v_9,v_{11}$; צבע 3: $v_3,v_5$) $\\Rightarrow\\chi(G)\\le3$.\n\nמסקנה: $\\chi(G)=3$.\n\n**ג4.** כן. אין ב-$G$ צלעות בתוך הקבוצה $A=\\{v_1,v_9,v_{11},v_7,v_8\\}$ (קבוצה בלתי תלויה), ולכן ב-$\\overline G$ הקבוצה $A$ יוצרת $K_5$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 16,
+   "contextId": "c1"
+  }
+ ]
+}

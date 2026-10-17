@@ -1,0 +1,200 @@
+{
+ "examCode": "21B-A",
+ "examLabel": "אביב 2021, מועד א'",
+ "year": 2021,
+ "examDate": "20.06.2021",
+ "sourceFile": "21B-A exam (typed, pp.1-8)",
+ "solutionFile": "21B-A handwritten solution (same PDF)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 5 סעיף ג)",
+   "image": "images/exams/21B-A-Q5c.png",
+   "caption": "הגרף G על 10 צמתים a,...,j"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "**א1.** (4 נק') המונח: תמורה.\n\n**א2.** (2+2 נק') שאלה: בכמה תמורות של הקבוצה $\\{a,b,c,d,e,f\\}$ **לא** מופיע רצף: \"abc\"?",
+   "solution": "**א1. הגדרה:** תהי $A$ קבוצה סופית. תמורה של $A$ היא חליפה של כל איברי הקבוצה $A$.\n\nאו: תמורה של $A$ היא סדרה ללא חזרות של כל האיברים של $A$.\n\n**א2.** לקבוצה $A=\\{a,b,c,d,e,f\\}$ יש $6!$ תמורות. כל תמורה של $A$ שבה מופיע הרצף \"abc\" היא תמורה של הקבוצה $\\{x,d,e,f\\}$ כאשר $x=$\"abc\", ולכן יש $4!$ תמורות מסוג זה.\n\nמסקנה: מספר התמורות של $A$ שבהן לא מופיע הרצף \"abc\" שווה ל: $6!-4!=696$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "**ב1.** (4 נק') המונח: הפונקציה $\\phi$ של Euler.\n\n**ב2.** (5 נק') שאלה: יהיו $m,n\\in\\mathbb{N}$ כך ש: $1<n<m$. הראו שאם $n\\mid m$, אז $\\phi(n)\\mid\\phi(m)$.",
+   "solution": "הפתרון הרשמי עם תיקון: בכתב היד מוגדרת הפונקציה כ-$\\phi(n)=|\\{d:1\\le d\\le n\\wedge d\\mid n\\}|$, אך זוהי ספירת המחלקים של $n$ ולא פונקציית Euler (למשל $\\phi(6)=2$, ול-6 יש 4 מחלקים). ההגדרה הנכונה מופיעה בסעיף ב1 למטה. ההוכחה בסעיף ב2 אינה מושפעת מהתיקון.\n\n**ב1. הגדרה:** פונקציית Euler היא $\\phi:\\mathbb{N}-\\{0\\}\\to\\mathbb{N}$ המוגדרת לכל $n\\in\\mathbb{N}-\\{0\\}$ על ידי\n\n$$\\phi(n)=|\\{d:1\\le d\\le n\\wedge\\gcd(d,n)=1\\}|$$\n\n**ב2.** נניח $n=p_1^{\\alpha_1}p_2^{\\alpha_2}\\cdots p_k^{\\alpha_k}$ (כי $1<n\\in\\mathbb{N}$), כאשר כל $p_i$ ראשוני ו-$\\alpha_i\\in\\mathbb{N}-\\{0\\}$.\n\nכל $m\\in\\mathbb{N}$ שמקיים $n\\mid m$ הוא בצורה $m=p_1^{\\beta_1}p_2^{\\beta_2}\\cdots p_k^{\\beta_k}\\cdot q$, כאשר: $\\gcd(p_i,q)=1$ לכל $i=1,\\dots,k$, וגם $\\alpha_i\\le\\beta_i$.\n\nאז:\n\n$$\\frac{\\phi(m)}{\\phi(n)}=\\frac{p_1^{\\beta_1}\\cdots p_k^{\\beta_k}\\left(1-\\frac1{p_1}\\right)\\cdots\\left(1-\\frac1{p_k}\\right)\\phi(q)}{p_1^{\\alpha_1}\\cdots p_k^{\\alpha_k}\\left(1-\\frac1{p_1}\\right)\\cdots\\left(1-\\frac1{p_k}\\right)}=p_1^{\\beta_1-\\alpha_1}\\cdots p_k^{\\beta_k-\\alpha_k}\\cdot\\phi(q)=t\\in\\mathbb{N}-\\{0\\}$$\n\nמסקנה: $\\phi(n)\\mid\\phi(m)$.\n\n**פתרון נוסף (קטעים כפי שנכתבו):** (1) $m=na\\Leftarrow\\phi(m)=\\phi(a)\\phi(n)$. (2) $m=na\\Leftarrow\\phi(m)=n\\cdot a\\cdot\\left(1-\\frac1{p_1}\\right)\\cdots\\left(1-\\frac1{p_k}\\right)$.\n\nהערה: הפתרון הנוסף כתוב בקיצור בכתב היד; הנוסחה בסעיף (1) נכונה רק כאשר $\\gcd(n,a)=1$.",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "trees",
+   "question": "**ג1.** (4 נק') המונחים: עץ הוא גרף לא מכוון קשיר וללא מעגלים. עץ פורש של גרף לא מכוון $G=(V,E)$ הוא עץ $T=(V,U)$ שמקיים התנאי $U\\subseteq E$.\n\n**ג2.** (4 נק') שאלה: יהי $G=(V,E)$ גרף לא מכוון, קשיר, בעל $n$ צמתים. ידוע ש-$G$ קיימים 2 מעגלים כך שאין להם צמתים משותפים. חשבו את $|E|$ כביטוי של $n$.",
+   "solution": "נתון: $G$ קשיר ובו שני מעגלים $C_1,C_2$ ללא צמתים משותפים.\n\nאם נרצה לבנות עץ פורש נסיר מכל מעגל צלע אחת ($e_1\\in C_1$, $e_2\\in C_2$). נקבל עץ פורש $T=(V,E-\\{e_1,e_2\\})$, ולכן:\n\n$$|E-\\{e_1,e_2\\}|=|V|-1\\Rightarrow|E|=|V|-1+2=|V|+1$$\n\nמסקנה: $|E|=n+1$.\n\nהערה: הפתרון הרשמי מניח ש-$C_1$ ו-$C_2$ הם כל המעגלים של $G$ (אחרת הסרת שתי צלעות אינה מותירה עץ, ו-$|E|$ אינו נקבע על ידי $n$ בלבד).",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(5+5 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,n\\}$, כאשר $7<n\\in\\mathbb{N}$. ידוע שלקבוצה $A$ יש 190 תתי-קבוצות בגודל 2. חשבו כמה תתי-קבוצות בגודל 3 של $A$ מכילות רק מספרים זוגיים.",
+   "solution": "נתון: $\\binom n2=190\\iff\\frac{n(n-1)}2=190\\iff n^2-n-380=0\\Rightarrow n_{1,2}=\\begin{cases}-19\\\\20\\end{cases}\\Rightarrow n=20\\Rightarrow A=\\{1,2,\\dots,20\\}$.\n\nב-$A$ יש 10 מספרים זוגיים, ולכן יש $\\binom{10}3=\\frac{10\\cdot9\\cdot8}{1\\cdot2\\cdot3}=120$ תתי-קבוצות בגודל 3 של $A$ שמכילות רק מספרים זוגיים.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(7 נק') כמה פונקציות $f:\\{1,2,3,4,5\\}\\to\\{1,2,3\\}$ הן **לא** על?\n\nנשתמש במשפט הבא: מספר הפונקציות על $f:\\{1,2,\\dots,m\\}\\to\\{1,2,\\dots,n\\}$ הוא $n^m-\\binom n1(n-1)^m+\\binom n2(n-2)^m-\\dots+(-1)^{n-1}\\binom n{n-1}1^m$.\n\nעבור $m=5,\\ n=3$:",
+   "solution": "הפתרון הרשמי עם תיקון: בכתב היד מחושב מספר הפונקציות **על** ($=150$) והחישוב נעצר שם, אך השאלה מבקשת את מספר הפונקציות שהן **לא** על. התשובה הנכונה היא $3^5-150=93$.\n\nלפי המשפט, מספר הפונקציות על $f:\\{1,2,3,4,5\\}\\to\\{1,2,3\\}$ הוא\n\n$$3^5-\\binom31\\cdot2^5+\\binom32\\cdot1^5=243-3\\cdot32+3=150$$\n\nכל הפונקציות מ-$\\{1,2,3,4,5\\}$ ל-$\\{1,2,3\\}$ הן $3^5=243$, ולכן מספר הפונקציות שאינן על הוא\n\n$$243-150=93$$",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "trees",
+   "question": "(8 נק') מצאו $T=(V,E)$ עץ כך שגם המשלים שלו הוא עץ. מצאו את כל האפשרויות למספר הצמתים של $T$.",
+   "solution": "מכיוון ש-$T=(V,E)$ עץ וגם $\\overline T=(V,\\overline E)$ עץ, נקבל $|E|=|\\overline E|=|V|-1$.\n\nבנוסף: $|E|+|\\overline E|=\\frac{|V|(|V|-1)}2$, ולכן\n\n$$4(|V|-1)=|V|(|V|-1)\\Rightarrow(|V|-1)(|V|-4)=0$$\n\nמסקנה: $|V|=4$ או $|V|=1$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "asymptotics",
+   "question": "(4+4 נק') חשבו את $f(n)=5^n+\\sum_{k=0}^{n}\\left(\\binom nk\\cdot3^{2k}\\right)$ והראו ש: $f(n)=O(10^n)$.",
+   "solution": "$$f(n)=5^n+\\sum_{k=0}^{n}\\binom nk9^k\\cdot1^{n-k}=5^n+10^n\\le2\\cdot10^n$$\n\nלכל $n\\in\\mathbb{N}$.\n\nמסקנה: $f(n)=O(10^n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(5+5 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=10,\\ a_1=30$ וגם $a_n=4a_{n-1}-4a_{n-2}$ עבור $1<n$.",
+   "solution": "המשוואה האופיינית היא: $x^2-4x+4=0\\Rightarrow x_1=x_2=2$.\n\nאז: $a_n=C_1\\cdot2^n+C_2\\cdot n\\cdot2^n$.\n\n$$\\begin{cases}a_0=C_1=10\\\\a_1=C_1\\cdot2+C_2\\cdot2=30\\end{cases}\\Rightarrow C_1=10;\\ C_2=5$$\n\nהצורה המפורשת היא: $a_n=10\\cdot2^n+5n\\cdot2^n$ לכל $n\\in\\mathbb{N}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "selections_repetition",
+   "question": "(7 נק') תהי הקבוצה $A=\\{a,b,c\\}$. כמה מלים באורך 27 אותיות, בלי חשיבות לסדר, ניתן ליצור מ-$A$ כך שבכל מילה: אות $a$ מופיעה לפחות 5 פעמים, אות $b$ מופיעה לפחות פעם אחת ואות $c$ מופיעה לפחות 4 פעמים.",
+   "solution": "נסמן ב-$x_1$ את מספר ה-\"a\" במילה, ב-$x_2$ את מספר ה-\"b\" במילה וב-$x_3$ את מספר ה-\"c\" במילה.\n\nאז מתקיים:\n\n$$\\begin{cases}x_1+x_2+x_3=27\\\\x_i\\in\\mathbb{Z},\\ x_1\\ge5,\\ x_2\\ge1,\\ x_3\\ge4\\end{cases}$$\n\nנסמן: $y_3=x_3-4,\\ y_2=x_2-1,\\ y_1=x_1-5$, ונקבל: $y_1+y_2+y_3=17$ כאשר $y_i\\in\\mathbb{N}$.\n\nאז מספר המילים הוא\n\n$$D(3,17)=\\binom{19}2=\\frac{19\\cdot18}2=171$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "(8 נק') תהיינה נתונות הקבוצות $A=\\{a,b,c,d\\}$, $B=\\{u,v,w\\}$. כמה סדרות שונות בנות 7 אותיות שונות מהקבוצה $A\\cup B$ אפשר ליצור כך שכל סידרה מתחילה באות מ-$A$ ומסתיימת באות מ-$B$?",
+   "solution": "כל סידרה מתאימה היא בצורה: [אות מ-$A$] [חמש אותיות באמצע] [אות מ-$B$].\n\nהאות הראשונה היא מ-$A$: 4 אפשרויות. האות האחרונה היא מ-$B$: 3 אפשרויות. החמש שבאמצע הן תמורה של $A\\cup B-\\{*,\\circ\\}$, כלומר $5!$ אפשרויות.\n\nמסקנה: התשובה היא $1440=4\\cdot5!\\cdot3$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(4+4 נק') תהי $\\Omega=\\{f\\ /\\ f:\\{1,2,3,4,5\\}\\to\\{1,2,3,4,5\\}\\}$. חשבו את $|\\Omega|$. חשבו כמה פונקציות $f\\in\\Omega$ הן **לא** הפיכות.",
+   "solution": "כל $f\\in\\Omega$ נקבעת על ידי הבחירה של $f(i)\\in\\{1,2,3,4,5\\}$ לכל $i\\in\\{1,2,3,4,5\\}$, ולכן $|\\Omega|=5^5=3125$.\n\nהפונקציות ההפיכות הן הפונקציות החח\"ע ועל של הקבוצה $\\{1,2,3,4,5\\}$ על עצמה, כלומר $5!$ פונקציות.\n\nלכן יש $5^5-5!=3125-120=3005$ פונקציות לא הפיכות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_phi",
+   "question": "(4+5 נק') תהי $D$ קבוצה בעלת 1024 תתי-קבוצות בגודל זוגי. חשבו את $n=|D|$ והראו ש: $11\\mid\\left(\\phi(n)^{\\phi(n)}-1\\right)$.\n\nשימו לב: הסימן $\\phi$ מסמל את הפונקציה: \\\"פי של אוילר\\\".",
+   "solution": "נסמן $n=|D|$. מספר תתי-הקבוצות של $D$ בגודל זוגי הוא $2^{n-1}=1024=2^{10}$, ולכן $n=11$.\n\n$11\\nmid\\phi(11)=10$, ולכן לפי משפט FERMAT:\n\n$$11\\mid\\left(10^{11-1}-1\\right)=\\phi(11)^{\\phi(11)}-1$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 5,
+   "part": "א",
+   "kind": "truefalse",
+   "topic": "graph_basics",
+   "question": "(5 נק') האם קיים גרף לא מכוון שסדרת הדרגות שלו היא $(1,1,1,1,2,2,6)$?",
+   "solution": "כן. נראה שקיים גרף $G=(V,E)$ כזה: $V=\\{v_1,v_2,\\dots,v_7\\}$ וגם\n\n$\\deg(v_1)=\\deg(v_2)=\\deg(v_3)=\\deg(v_4)=1$, $\\deg(v_5)=\\deg(v_6)=2$, $\\deg(v_7)=6$.\n\nלכן $v_7$ מחובר לכל הצמתים האחרים. אם נסיר את $v_7$ מ-$G$ נקבל את הסדרה $0,0,0,0,1,1$, כלומר $G-v_7$: הצמתים $v_1,v_2,v_3,v_4$ בודדים והצמתים $v_5,v_6$ מחוברים בצלע.\n\nמסקנה: הגרף $G$ הבא קיים: $v_7$ מחובר לכל אחד מ-$v_1,\\dots,v_6$, ובנוסף קיימת הצלע $(v_5,v_6)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "verdict": true,
+   "points": 5
+  },
+  {
+   "num": 5,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "euler_phi",
+   "question": "(4 נק') יהיו $p,q$ מספרים ראשוניים כך ש: $2<p<q$. הראו ש: $4\\mid\\phi(p^q\\cdot q^p)$.",
+   "solution": "$$\\phi(p^qq^p)=p^q\\cdot q^p\\cdot\\left(1-\\frac1p\\right)\\left(1-\\frac1q\\right)=p^q\\cdot q^p\\cdot\\frac{p-1}p\\cdot\\frac{q-1}q=(p-1)(q-1)p^{q-1}\\cdot q^{p-1}$$\n\nמכיוון ש-$p,q$ ראשוניים גדולים מ-2, הם אי-זוגיים, ולכן $2\\mid(p-1)$ וגם $2\\mid(q-1)$, כלומר $4\\mid(p-1)(q-1)$.\n\nמסקנה: $4\\mid\\phi(p^q\\cdot q^p)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 4
+  },
+  {
+   "num": 5,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(4+4+4+4 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ג1.** האם המשלים של $G$ הוא גרף Hamilton?\n\n**ג2.** האם המשלים של $G$ הוא גרף Euler?\n\n**ג3.** מהו $\\chi(G)$?\n\n**ג4.** האם במשלים של $G$ קיים $K_4$ כתת-גרף מושרה?",
+   "solution": "**ג1.** $G$ הוא 3-רגולרי $\\Rightarrow\\overline G$ הוא כזה: $10-3-1=6$ לכל $v\\in V$, כלומר $\\deg_{\\overline G}(v)=6\\ge\\frac{10}2$.\n\nלפי משפט DIRAC: $\\overline G$ הוא גרף Hamilton. כן.\n\n**ג2.** $\\overline G$ הוא גרף Hamilton, ולכן קשיר. בנוסף, לכל $v\\in V$: $\\deg_{\\overline G}(v)=6$, כלומר כל הדרגות זוגיות.\n\nלכן $\\overline G$ הוא גרף Euler. כן.\n\n**ג3.** ב-$G$ יש תת-גרף $C_5$ (המעגל החיצוני $a,b,c,d,e$), ולכן $3=\\chi(C_5)\\le\\chi(G)$. ב-$G$ יש צביעה חוקית ב-3 צבעים (צבע 1: $a,c,i,j$; צבע 2: $b,d,h$; צבע 3: $e,f,g$), ולכן $\\chi(G)\\le3$.\n\nמסקנה: $\\chi(G)=3$.\n\n**ג4.** כן. ב-$G$ קיימת קבוצה בלתי תלויה $H=\\{a,c,i,j\\}$ (אין צלעות בין אף שני צמתים בה), ולכן ב-$\\overline G$ הצמתים $a,c,i,j$ יוצרים $K_4$ מושרה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 16,
+   "contextId": "c1"
+  }
+ ]
+}

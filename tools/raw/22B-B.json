@@ -1,0 +1,151 @@
+{
+ "examCode": "22B-B",
+ "examLabel": "אביב 2022, מועד ב'",
+ "year": 2022,
+ "examDate": "03.07.2022",
+ "sourceFile": "22B-B exam (typed, pp.1-8)",
+ "solutionFile": "22B-B handwritten solution (same PDF)",
+ "contexts": {
+  "c1": {
+   "kind": "image",
+   "title": "הגרף G (שאלה 4 סעיף ב)",
+   "image": "images/exams/22B-B-Q4b.png",
+   "caption": "הגרף G על 12 צמתים"
+  }
+ },
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "permutations_arrangements",
+   "question": "**א1.** (4 נק') המונח: תמורה.\n\n**א2.** (5 נק') שאלה: בכמה תמורות של הקבוצה $\\{a,b,c,d,e,f\\}$ **לא** מופיע הרצף \"ab\"?",
+   "solution": "**א1. הגדרה:** לפי ההרצאה.\n\n**א2.** לקבוצה $A=\\{a,b,c,d,e,f\\}$ יש $6!$ תמורות. כל תמורה של $A$ שבה מופיע הרצף \"ab\" היא תמורה של הקבוצה $\\{x,c,d,e,f\\}$ כאשר $x=$\"ab\", ולכן יש $5!$ תמורות מסוג זה.\n\nמסקנה: מספר התמורות של $A$ שבהן לא מופיע הרצף \"ab\" שווה ל: $6!-5!=600$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "euler_phi",
+   "question": "**ב1.** (4 נק') המונח: הפונקציה $\\phi$ של Euler.\n\n**ב2.** (4 נק') שאלה: מצאו כל $n\\in\\mathbb{N}-\\{0\\}$ עבורו $n\\mid\\phi(n)$.",
+   "solution": "**ב1. הגדרה:** לפי ההרצאה.\n\n**ב2.** אם $n=1$: $\\phi(1)=1$, ולכן $1\\mid\\phi(1)$.\n\nאם $2\\le n\\in\\mathbb{N}$: $\\phi(n)\\le n-1$, ולכן $n\\nmid\\phi(n)$.\n\nמסקנה: רק $n=1$ הוא פתרון.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 1,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "trees",
+   "question": "**ג1.** (4 נק') המונחים: עץ ויער.\n\n**ג2.** (5 נק') שאלה: יהי $G=(V,E)$ גרף לא מכוון, בעל $n$ צמתים ו-$2\\le k$ רכיבי קשירות. אם $G$ הוא יער, חשבו את $|E|$ כביטוי של $n$ וגם $k$.",
+   "solution": "**ג1. הגדרה:** לפי ההרצאה.\n\n**ג2.** נסמן ב-$T_i=(V_i,E_i)$ $(i=1,2,\\dots,k)$ את רכיבי הקשירות של $G$. מכיוון ש-$G$ יער, כל $T_i$ הוא עץ, ולכן $|E_i|=|V_i|-1$.\n\nאז:\n\n$$|E|=|E_1|+|E_2|+\\dots+|E_k|=(|V_1|-1)+(|V_2|-1)+\\dots+(|V_k|-1)=|V_1|+|V_2|+\\dots+|V_k|-k=|V|-k=n-k$$\n\nמסקנה: $|E|=n-k$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "divisibility_primes",
+   "question": "(3+3+3 נק') חשבו את $f(n)=\\left(\\sum_{k=0}^{n}\\binom nk\\cdot7^k\\cdot3^{n-k}\\right)\\cdot\\left(\\sum_{k=0}^{n}\\binom nk\\cdot5^{n+k}\\cdot3^{n-k}\\right)$.\n\nכמה מחלקים אי-זוגיים יש ל-$f(n)$?",
+   "solution": "לפי הבינום של Newton:\n\n$$f(n)=\\sum_{k=0}^{n}\\binom nk7^k3^{n-k}\\cdot5^n\\cdot\\sum_{k=0}^{n}\\binom nk5^k3^{n-k}=(7+3)^n\\cdot5^n\\cdot(5+3)^n=10^n\\cdot5^n\\cdot8^n=2^{4n}\\cdot5^{2n}$$\n\n$d\\mid f(n)\\wedge d$ אי-זוגי $\\iff0\\le\\alpha\\le2n\\wedge d=5^\\alpha$.\n\nמסקנה: ל-$f(n)$ יש $2n+1$ מחלקים אי-זוגיים.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 9
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "recurrences",
+   "question": "(4+6 נק') מצאו את הצורה המפורשת של $a_n$, כאשר $a_0=5,\\ a_1=36$ וגם $a_n=6a_{n-1}-9a_{n-2}$ עבור $1<n$. הראו ש: $a_n=O(n\\cdot5^n)$.",
+   "solution": "המשוואה האופיינית היא: $r^2=6r-9\\iff(r-3)^2=0\\Rightarrow r_1=r_2=3$, ולכן $a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n$.\n\n$$\\begin{cases}a_0=5\\\\a_1=36\\end{cases}\\iff\\begin{cases}C_1=5\\\\3C_1+3C_2=36\\end{cases}\\Rightarrow\\begin{cases}C_1=5\\\\C_1+C_2=12\\end{cases}\\Rightarrow\\begin{cases}C_1=5\\\\C_2=7\\end{cases}$$\n\nהצורה המפורשת היא: $a_n=5\\cdot3^n+7\\cdot n\\cdot3^n$ לכל $n\\in\\mathbb{N}$.\n\nלכל $n\\ge1$: $a_n\\le5n\\cdot3^n+7n\\cdot3^n=12\\cdot n\\cdot3^n\\le12n\\cdot5^n$.\n\nמסקנה: $a_n=O(n\\cdot5^n)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 10
+  },
+  {
+   "num": 2,
+   "part": "ג",
+   "kind": "computation",
+   "topic": "selections_repetition",
+   "question": "(6 נק') תהי הקבוצה $A=\\{a,b,c,d\\}$. כמה מלים באורך 23 אותיות לכל היותר, בלי חשיבות לסדר, ניתן ליצור מ-$A$ כך שבכל מילה: אות $a$ מופיעה לפחות 3 פעמים, אות $b$ מופיעה לפחות 5 פעמים, אות $c$ מופיעה לפחות 5 פעמים ואות $d$ מופיעה לפחות 4 פעמים.",
+   "solution": "נסמן ב-$x_1$ את מספר הפעמים שהאות $a$ מופיעה בכל מילה, ב-$x_2$ את מספר הפעמים שהאות $b$ מופיעה, ב-$x_3$ את מספר הפעמים שהאות $c$ מופיעה וב-$x_4$ את מספר הפעמים שהאות $d$ מופיעה.\n\nמה מספר המילים (בלי חשיבות לסדר) שווה למספר הפתרונות של:\n\n$$\\begin{cases}x_1+x_2+x_3+x_4\\le23\\\\x_i\\in\\mathbb{Z},\\ i=1,2,3,4\\\\3\\le x_1,\\ 5\\le x_2,\\ 5\\le x_3,\\ 4\\le x_4\\end{cases}$$\n\nנסמן $y=23-(x_1+x_2+x_3+x_4)$, ואז:\n\n$$\\begin{cases}x_1+x_2+x_3+x_4+y=23\\\\y,x_i\\in\\mathbb{Z},\\ y\\ge0\\end{cases}$$\n\nנסמן $y_1=x_1-3,\\ y_2=x_2-5,\\ y_3=x_3-5,\\ y_4=x_4-4$, ואז $y_i\\ge0$ ומתקבל:\n\n$$(y_1+3)+(y_2+5)+(y_3+5)+(y_4+4)+y=23\\iff y_1+y_2+y_3+y_4+y=6,\\ \\forall y_i\\in\\mathbb{N}$$\n\nמספר הפתרונות שווה ל:\n\n$$D(5,6)=\\binom{10}4=\\frac{10\\cdot9\\cdot8\\cdot7}{2\\cdot3\\cdot4}=210$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "combinations_subsets",
+   "question": "(6+6 נק') תהי הקבוצה $A=\\{1,2,3,\\dots,n\\}$, כאשר $n\\in\\mathbb{N}$. ידוע שלקבוצה $A$ יש 190 תתי-קבוצות בגודל 2. חשבו את מספר תתי-הקבוצות בגודל 4 של $A$ המכילות 2 מספרים **זוגיים** וגם 2 מספרים **אי-זוגיים**.",
+   "solution": "נתון: $\\binom n2=190\\iff n(n-1)=2\\cdot190\\iff n^2-n-380=0\\Rightarrow n=20$.\n\nכל תת-קבוצה $B\\subseteq A$ המקיימת את התנאי היא בצורה $B=C\\cup D$, כאשר $|C|=2$ וגם $C\\subseteq\\{2,4,\\dots,20\\}$, וגם $|D|=2$ וגם $D\\subseteq\\{1,3,\\dots,19\\}$.\n\nלכן יש $\\binom{10}2\\cdot\\binom{10}2=45^2=2025$ תתי-קבוצות $B$ מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "function_counting",
+   "question": "(7 נק') כמה פונקציות $f:\\{1,2,3,4,5,6,7,8\\}\\to\\{1,2,3,4,5,6\\}$ הן על וגם מקיימות התנאי $f^{-1}(\\{1,2,3\\})=\\{1,2,3\\}$?",
+   "solution": "הפונקציה $f$ מעבירה את $\\{1,2,3\\}$ על $\\{1,2,3\\}$ בצורה חח\"ע ועל: יש $3!$ אפשרויות.\n\nהפונקציה $f$ מעבירה את $\\{4,5,6,7,8\\}$ על $\\{4,5,6\\}$ (על): מספר האפשרויות הוא\n\n$$a=3^5-\\binom31\\cdot2^5+\\binom32\\cdot1^5=243-3\\cdot32+3=150$$\n\nמסקנה: יש $900=6\\cdot150=3!\\cdot150$ פונקציות מתאימות.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "ג",
+   "kind": "proof",
+   "topic": "graph_connectivity",
+   "question": "(2+2+2 נק') הוכיחו או הפריכו:\n\n**ג1.** אם $\\operatorname{diam}(G)=2$, אז $G$ הוא דו-צדדי שלם.\n\n**ג2.** לא קיים גרף $G$ דו-צדדי שמקיים התנאי $\\operatorname{diam}(\\overline G)=\\operatorname{diam}(G)$.\n\n**ג3.** אם $G=(V,E)$ הוא גרף לא מכוון, קשיר ו-$(x,y)$ היא גשר, אז $(x,y)$ נמצאת בכל עץ פורש של $G$.",
+   "solution": "**ג1.** לא נכון. דוגמה נגדית: $G=C_5$ ($\\operatorname{diam}(C_5)=2$, אך $C_5$ אינו דו-צדדי).\n\n**ג2.** לא נכון. דוגמה נגדית: $\\overline G\\cong G=P_4$:\n\n$\\operatorname{diam}(P_4)=3=\\operatorname{diam}(\\overline{P_4})$ ($P_4$ הוא דו-צדדי, והמשלים של $P_4$ הוא $P_4$ עצמו).\n\n**ג3.** נכון. נניח בשלילה שקיים עץ פורש $T=(V,E_T)$ של $G$ כך ש: $e=(x,y)\\notin E_T$.\n\nב-$T$ קיים מסלול $P_{x,y}$ בין $x$ ל-$y$, ולכן $C=P_{x,y}+(x,y)$ הוא מעגל ב-$G$ שמכיל את הצלע $(x,y)$. אבל צלע היא גשר $\\iff$ היא אינה נמצאת על אף מעגל. לכן $(x,y)$ אינה גשר, בסתירה לנתון.\n\nעוד הוכחה: נניח בשלילה ש-$(x,y)\\notin E_T$. אז $T$ הוא עץ פורש גם של $G-(x,y)$, ולכן $G-(x,y)$ קשיר, כלומר $(x,y)$ אינה גשר ב-$G$. סתירה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 6
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "proof",
+   "topic": "euler_hamilton",
+   "question": "(4+2+2 נק') בנו שני גרפים לא מכוונים: $G_1=(V,E_1)$ גרף קשיר ודו-צדדי, ו-$G_2=(V,E_2)$ גרף דו-צדדי אך לא קשיר, בעלי אותה סדרת דרגות: $3,2,2,2,2,2,2,2,2,2,1$.\n\nהראו שהמשלים של $G_1$ או של $G_2$ הוא בעל מסלול Euler. **אין** לצייר את המשלים של $G_1$ או $G_2$.",
+   "solution": "**בניית $G_1$** (11 צמתים): מעגל באורך זוגי $C_{10}$ על הצמתים $v_1,\\dots,v_{10}$, ובנוסף עלה $v_{11}$ המחובר ל-$v_1$. סדרת הדרגות: $\\deg(v_1)=3$, $\\deg(v_{11})=1$, ושאר 9 הצמתים בדרגה 2. הגרף קשיר, ודו-צדדי כי המעגל היחיד בו הוא $C_{10}$, מעגל זוגי.\n\n**בניית $G_2$** (11 צמתים): $C_4$ עם עלה (דרגות $3,2,2,2,1$) וגרף $C_6$ זר לו (שישה צמתים בדרגה 2). לגרף אותה סדרת דרגות, הוא אינו קשיר, וכל מעגל בו זוגי ($C_4$ ו-$C_6$), ולכן הוא דו-צדדי.\n\n**המשלים.** נבדוק את $\\overline{G_1}$ (אותו חישוב נכון גם ל-$\\overline{G_2}$). מספר הצמתים הוא $n=11$, ולכן $\\deg_{\\overline G}(v)=11-1-\\deg_G(v)$:\n\n$\\deg_G(v_{11})=1\\Rightarrow\\deg_{\\overline G}(v_{11})=11-2=9\\ge\\frac{11}2$\n\n$\\deg_G(v_1)=3\\Rightarrow\\deg_{\\overline G}(v_1)=11-4=7\\ge\\frac{11}2$\n\n$\\forall i\\ne1,11\\Rightarrow\\deg_G(v_i)=2\\Rightarrow\\deg_{\\overline G}(v_i)=11-3=8\\ge\\frac{11}2$\n\nלפי משפט Dirac $\\overline G$ הוא גרף Hamilton, ולכן קשיר. בנוסף יש ב-$\\overline G$ בדיוק 2 צמתים בדרגה אי-זוגית ($v_1$ ו-$v_{11}$).\n\nמסקנה: ב-$\\overline G$ יש מסלול Euler.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 8
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "euler_hamilton",
+   "question": "(4+4+5+4 נק') יהי $G=(V,E)$ גרף לא מכוון שבציור הבא.\n\n**ב1.** (4 נק') האם לגרף $G$ יש גרף פורש איזומורפי ל-$C_{12}$?\n\n**ב2.** (4 נק') האם המשלים של $G$ הוא גרף Euler?\n\n**ב3.** (5 נק') חשבו את $\\chi(G)$.\n\n**ב4.** (4 נק') האם במשלים של $G$ קיימים $P_4,\\ C_4,\\ C_5,\\ K_4$ כתתי-גרפים מושרים?",
+   "solution": "**ב1.** כן. יש ב-$G$ מעגל $C=C_{12}$ שעובר בכל הצמתים, ולכן $G$ הוא גרף Hamilton:\n\n$C:\\ v_1,v_7,v_8,v_2,v_3,v_9,v_{10},v_4,v_5,v_{11},v_{12},v_6,v_1$\n\n**ב2.** $G$ הוא 3-רגולרי $\\Rightarrow\\overline G$ הוא 8-רגולרי $\\Rightarrow$ לכל $v\\in V$: $\\deg_{\\overline G}(v)=8\\ge\\frac{12}2$, ולכן $\\overline G$ הוא גרף Hamilton (Dirac) ובפרט קשיר. כל דרגותיו זוגיות.\n\nמסקנה: $\\overline G$ הוא גרף Euler.\n\n**ב3.** $E\\ne\\phi\\Rightarrow\\chi(G)\\ge2$. ב-$G$ יש צביעה חוקית ב-2 צבעים: צבע 1 ל-$v_1,v_3,v_5,v_8,v_{10},v_{12}$ וצבע 2 ל-$v_2,v_4,v_6,v_7,v_9,v_{11}$. לכן $\\chi(G)\\le2$.\n\nמסקנה: $\\chi(G)=2$.\n\n**ב4.** ב-$\\overline G$ קיימים:\n\n$P_4$: על הצמתים $v_7,v_9,v_1,v_{10}$ (הצלעות $(v_7,v_9),(v_9,v_1),(v_1,v_{10})$ ב-$\\overline G$).\n\n$K_4$: על הצמתים $v_1,v_3,v_5,v_{10}$ (אין ביניהם צלעות ב-$G$).\n\n$C_4$: על הצמתים $v_1,v_4,v_2,v_5$ (ב-$G$ יש $2K_2$ מושרה: $(v_1,v_2)$ ו-$(v_4,v_5)$).\n\n$C_5$: לא קיים. $\\chi(G)=2$, כלומר $G$ דו-צדדי, ולכן אין ב-$G$ $C_5$ כתת-גרף מושרה. מכיוון ש-$\\overline{C_5}\\cong C_5$, גם ב-$\\overline G$ אין $C_5$ כתת-גרף מושרה.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "points": 17,
+   "contextId": "c1"
+  }
+ ]
+}
