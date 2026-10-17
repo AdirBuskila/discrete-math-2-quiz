@@ -1,0 +1,220 @@
+{
+ "examCode": "25S-A",
+ "items": [
+  {
+   "item": "1א",
+   "my_answer": "1560",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "1ב",
+   "my_answer": "limit 1/3 -> theta",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "1ג",
+   "my_answer": "not bipartite (triangle v1v3v5)",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "2א",
+   "my_answer": "122",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "2ב",
+   "my_answer": "a_n=3-2^(n+1)+n2^(n+1) (typo-corrected form verified; a_5=259)",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "2ג",
+   "my_answer": "3n(2n+1)^2",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": "Solution text lists divisor form 2^a 7^b 5^c; third prime of m is 3 (typo, self-flagged in text). Final answer correct."
+  },
+  {
+   "item": "3א",
+   "my_answer": "12 | phi(21n) (phi(3^(a+1))phi(7^(b+1))=12*3^a*7^b)",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "3ב",
+   "my_answer": "220",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "3ג",
+   "my_answer": "no n (circuit); Hamiltonian iff n>=5",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": "Assumes Euler = circuit; with Euler trail n=4,5,7,... would qualify. Course usage is circuit."
+  },
+  {
+   "item": "4א",
+   "my_answer": "55 as trail (Euler circuit); 10 if simple path",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": "Depends on \"path\" = trail (course usage, matches official). Under simple-path reading answer is 10 edges. Unclear-ambiguous, not disagree."
+  },
+  {
+   "item": "4ב",
+   "my_answer": "exists; realizations non-unique: residual 1,1,2,2,2 is P5 or K3+K2 (both verified to give 3,3,4,4,4,6,6)",
+   "solution": "disagree",
+   "rubric": "disagree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "disagree"
+   ],
+   "divergence": "Solution says G-{v6,v7} = v1->v2->v3->v4->v5 and rubric item 3 / order step 4 say 1,1,2,2,2 is the sequence of a path on 5 vertices. First divergence: path v1..v5 has degrees 1,2,2,2,1, not 1,1,2,2,2 as labelled (label mismatch, in the original too), and the sequence is not uniquely a path (K3 + disjoint edge also realizes it). Existence conclusion is correct. Step 4 line should say \"a path (or K3 plus an edge)\" / any realization."
+  },
+  {
+   "item": "4ג",
+   "my_answer": "|V| odd; not bipartite (3(|A|-|B|)=1 impossible)",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "5א",
+   "my_answer": "D8=14833",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  },
+  {
+   "item": "5ב",
+   "my_answer": "true: spanning tree exists",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": "Conclusion true. Proof wording \"delete distinct edges from every cycle\" is loose (cycles overlap; correct form is delete cycle edges one at a time), mirrored in order/findbug steps. Not marked disagree."
+  },
+  {
+   "item": "5ג",
+   "my_answer": "32212254720",
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "notes": ""
+  }
+ ],
+ "summary": {
+  "agree": 13,
+  "disagree": 1,
+  "ambiguous_notes": [
+   "4א",
+   "5ב",
+   "3ג",
+   "2ג"
+  ]
+ }
+}
