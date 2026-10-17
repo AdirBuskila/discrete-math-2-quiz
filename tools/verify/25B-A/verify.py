@@ -54,6 +54,8 @@ P = list(primerange(2, 31)); M4 = [x for x in range(1, 31) if x % 4 == 0]
 assert len(P) == 10 and len(M4) == 7 and not set(P) & set(M4)
 print("Q3c n=%d primes=%d mult4=%d answer=C(7,3)*C(10,6)=%d (handwritten key says 29400 = 35*840)" % (n, len(P), len(M4), comb(7, 3) * comb(10, 6)))
 assert comb(7, 3) * comb(10, 6) == 7350 and comb(10, 4) == 210 and 35 * 840 == 29400
+# Q3c shipped answer (typo-corrected from the printed 29400): C(10,6) = C(10,4) = 210, 10*9*8*7/(1*2*3) = 840 is the dropped-factor slip
+assert comb(7, 3) * comb(10, 6) == comb(7, 3) * comb(10, 4) == 7350 and 10 * 9 * 8 * 7 // 6 == 840 and 29400 != 7350
 
 # Q4a: tree with 4 edges: complement not bipartite
 for T in nx.nonisomorphic_trees(5): assert not nx.is_bipartite(nx.complement(T))

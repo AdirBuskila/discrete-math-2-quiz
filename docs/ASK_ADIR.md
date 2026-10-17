@@ -30,7 +30,7 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Page: 5 (25B-A p.5 Q3c)
 - Question: n=30 (435 subsets of size n-2), exactly 3 multiples of 4 (7 of them) and 6 primes (10 of them). The ink solution computes C(7,3)*C(10,4) = 35*840 = 29400, but 10*9*8*7/(1*2*3*4) = 210, and 6 primes give C(10,6) = 210, so the count is 35*210 = 7350 (tools/verify/25B-A/verify.py).
 - Needed: rule whether to ship Q3c with the corrected 7350 (marked as a correction of the printed key) or leave it out.
-- Status: hold
+- Status: resolved (shipped as 7350 with the "הפתרון הרשמי עם תיקון" label, solved, official:false)
 
 ### 24B-A, 24B-B, 25B-A, 25B-B - small typos in the solutions (no hold, FYI)
 - Pages: 24B-A p.4 Q3b (a_1 printed 131, given 128), 24B-B p.3 Q3.1 (k printed 9, should be 7), p.4 Q3.2 (a_1 printed 60, given 56), p.5 Q4.2 (7^2n should be 7^n), p.2 Q1c (complement of the star printed equal to the star), 25B-A p.4 Q3a (a_1 = 18, a_0 = 8 printed instead of 36, 16).

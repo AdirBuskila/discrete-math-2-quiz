@@ -9,7 +9,7 @@ Each question is split into its printed parts. Parts with numbered sub-questions
 to the lecture only, so the solution says "according to the lecture".
 
 Transcription notes
-- Q3c (p.5): HELD. The ink solution computes C(7,3)*C(10,4) = (7*6*5/(1*2*3)) * (10*9*8*7/(1*2*3*4)) = 35*840 = 29400.
+- Q3c (p.5): UNHELD (final-answer typo rule, shipped as 7350, solved/official:false). The ink solution computes C(7,3)*C(10,4) = (7*6*5/(1*2*3)) * (10*9*8*7/(1*2*3*4)) = 35*840 = 29400.
   The set is "3 multiples of 4 and 6 primes" in {1..30}: 7 multiples of 4, 10 primes, so C(7,3)*C(10,6) = 35*210 = 7350
   (verify.py); the printed 840 is 10*9*8*7/6, the "/4" was dropped. Official key and re-derivation disagree.
 - Q3a (p.4): the line "a_1 = 18 and a_0 = 8" next to the two equations C1+12 = 16 and 3C1+3C2+24 = 36 is a slip
@@ -18,13 +18,14 @@ Transcription notes
 - Q4c (p.6): the handwriting names the complement of G "G-bar" (the question calls it H); written as H.
   The reading of the last line of Q4c(3) (G bipartite, so no odd cycle, so no C5 in G, and C5-bar = C5) is partly
   uncertain; the answer (no induced C5 in H) is confirmed by brute force.
+- Q4c figure cropped to images/exams/25B-A-Q4c.png (handwriting removed).
 - Q4a (p.6): the figure beside the solution (two adjacent degree-3 vertices with two leaves each, plus a vertex joined
   to everything) is described in words; no crop.
 
 Checks (tools/verify/25B-A/verify.py, brute force + sympy + networkx):
 Q1a 37, Q1b 240, Q1c K_{m,n} diameter 2 and C5 counterexample, Q2a 680, Q2b 2n(n^2-1) for n=10..12 by divisor
 enumeration, Q2c C(n-5,7) and 9!/0 (small analogues too), Q3a closed form for n<40, Q3b 21 | phi(n) for all 49|n < 20000,
-Q3c re-derived 7350 (held), Q4a trees on 5 vertices, Q4b degree sequence graphical, Q4c the figure (all claims),
+Q3c re-derived 7350 (asserted), Q4a trees on 5 vertices, Q4b degree sequence graphical, Q4c the figure (all claims),
 Q5a n=50 and 1512, Q5b counterexamples + all connected odd-degree graphs n<=6, Q5c 243, Q6a all trees n=11,13,
 Q6b small-N enumeration and 8!*17 = 685440.
 """
@@ -154,9 +155,13 @@ $$\phi(n)=\phi(7^\alpha)\cdot\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\a
       points=5),
     Q(3, "ג", "computation", "combinations_subsets",
       r"(6 נק') לקבוצה $A=\{1,2,\dots,n\}$ יש 435 תתי-קבוצות בגודל $n-2$. חשבו כמה תתי-קבוצות של $A$ מכילות בדיוק 3 מספרים שמתחלקים ב-4 וגם 6 מספרים ראשוניים.",
-      "",
-      hold="key-arithmetic: the ink solution prints C(7,3)*C(10,4) = 35*840 = 29400, but 10*9*8*7/(1*2*3*4) = 210, and the set asks for 6 primes, so the count is C(7,3)*C(10,6) = 7350; official key and script disagree",
-      confidence="low"),
+      r"""מספרי ההכפלות של 4 ב-$\{1,\dots,30\}$: 7, והראשוניים: 10 (מ-$\binom n2=435$ נובע $n=30$).
+
+הפתרון הרשמי עם תיקון בתשובה הסופית: בכתב היד $\binom{10}4$ חושב כ-$\frac{10\cdot9\cdot8\cdot7}{1\cdot2\cdot3}=840$ (המכנה $4$ נשמט), והתשובה הסופית הודפסה $35\cdot840=29400$. הערך הנכון הוא $\binom{10}6=\binom{10}4=210$.
+
+$$\binom73\cdot\binom{10}6=35\cdot210=7350$$""",
+      solutionSource="solved", official=False, confidence="high",
+      points=6),
 
     # ---------------- Q4 ----------------
     Q(4, "א", "truefalse", "graph_basics",
@@ -181,8 +186,6 @@ $$\phi(n)=\phi(7^\alpha)\cdot\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\a
       points=5),
     Q(4, "ג", "computation", "euler_hamilton",
       "יהיו $G=(V,E)$ הגרף שבציור ו-$H$ המשלים שלו. (16 נק')\n\n"
-      "[הציור: גרף על 8 צמתים $v_1,\\dots,v_8$ עם 12 הצלעות\n"
-      "$v_1v_2,\\ v_1v_6,\\ v_1v_8,\\ v_2v_3,\\ v_2v_7,\\ v_3v_4,\\ v_3v_8,\\ v_4v_5,\\ v_4v_7,\\ v_5v_6,\\ v_5v_8,\\ v_6v_7$]\n\n"
       "**ג1.** (2+4 נק') הראו ש: $H$ הוא גרף EULER. האם $G$ הוא גרף Hamilton?\n\n"
       "**ג2.** (5 נק') הראו ש-$H$ קיים $P_4$ כתת-גרף מושרה. האם ב-$H$ קיים $C_4$ כתת-גרף מושרה?\n\n"
       "**ג3.** (5 נק') הראו ש-$H$ קיים $K_4$ כתת-גרף מושרה. האם ב-$H$ קיים $C_5$ כתת-גרף מושרה?",
@@ -201,7 +204,7 @@ $$\phi(n)=\phi(7^\alpha)\cdot\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\a
 **ג3.** $K_4$ ב-$H$: הצמתים $v_1,v_3,v_5,v_7$ ב-$G$ הם קבוצה בלתי תלויה (אין צלעות ביניהם) $\Rightarrow$ ב-$H$ קיים $K_4$ מושרה.
 
 ב-$H$ לא קיים $C_5$ מושרה: $G$ הוא דו-צדדי ולכן אין בו מעגל אי-זוגי $\Rightarrow$ ב-$G$ לא קיים $C_5$ $\Rightarrow$ ב-$H$ לא קיים $C_5$ (כי $\overline{C_5}\cong C_5$).""",
-      points=16),
+      points=16, image="images/exams/25B-A-Q4c.png"),
 
     # ---------------- Q5 ----------------
     Q(5, "א", "computation", "combinations_subsets",
