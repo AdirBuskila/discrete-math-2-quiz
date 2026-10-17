@@ -1,0 +1,95 @@
+{
+  "slug": "discrete-math-2",
+  "titleHe": "בדידה 2",
+  "descriptionHe": "תרגול מבחנים - בדידה 2",
+  "accent": "#e879f9",
+  "accent2": "#7c3aed",
+  "sourceFolder": "C:/Users/Adir/Desktop/BSC/שנה א/סמסטר ב/בדידה 2",
+  "topics": [
+    [
+      "divisibility_primes",
+      "מחלקים וראשוניים"
+    ],
+    [
+      "euler_phi",
+      "פונקציית אוילר"
+    ],
+    [
+      "sum_product_inclusion",
+      "הכלה והדחה"
+    ],
+    [
+      "permutations_arrangements",
+      "תמורות וחליפות"
+    ],
+    [
+      "combinations_subsets",
+      "צירופים ובינום"
+    ],
+    [
+      "selections_repetition",
+      "בחירה עם חזרות"
+    ],
+    [
+      "function_counting",
+      "ספירת פונקציות"
+    ],
+    [
+      "recurrences",
+      "נוסחאות נסיגה"
+    ],
+    [
+      "asymptotics",
+      "סדרי גודל"
+    ],
+    [
+      "graph_basics",
+      "גרפים: יסודות"
+    ],
+    [
+      "graph_connectivity",
+      "קשירות ומרחק"
+    ],
+    [
+      "trees",
+      "עצים"
+    ],
+    [
+      "euler_hamilton",
+      "גרפי אוילר והמילטון"
+    ]
+  ],
+  "briefs": [],
+  "needHelp": [
+    {
+      "id": "perm_ie",
+      "titleHe": "תמורות, אי-סדר מלא והכלה והדחה",
+      "icon": "🔀",
+      "topic": "permutations_arrangements",
+      "entryLabelHe": "צריך עזרה בתמורות ובהכלה והדחה?"
+    },
+    {
+      "id": "func_count",
+      "titleHe": "ספירת פונקציות וחלוקות",
+      "icon": "🧮",
+      "topic": "function_counting",
+      "entryLabelHe": "צריך עזרה בספירת פונקציות?"
+    },
+    {
+      "id": "recurrence",
+      "titleHe": "נוסחאות נסיגה",
+      "icon": "🔁",
+      "topic": "recurrences",
+      "entryLabelHe": "צריך עזרה בנוסחאות נסיגה?"
+    },
+    {
+      "id": "graphs",
+      "titleHe": "גרפים: עצים, משלים, אוילר והמילטון",
+      "icon": "🕸️",
+      "topic": "graph_basics",
+      "entryLabelHe": "צריך עזרה בגרפים?"
+    }
+  ],
+  "storePrefix": "discrete-math-2",
+  "includeDrafts": false
+}
