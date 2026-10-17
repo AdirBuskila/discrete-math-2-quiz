@@ -24,7 +24,71 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת תמורה (לפי ההרצאה)",
+     "points": 4
+    },
+    {
+     "text": "הדבקת \"ab\" לאות אחת $x$ וקבלת תמורות של $\\{x,c,d,e,f\\}$: $5!$",
+     "points": 3
+    },
+    {
+     "text": "חיסור מכלל התמורות והתוצאה $6!-5!=600$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לחסר $2\\cdot5!$ (שני הסדרים של a ו-b) במקום $5!$, כשהרצף הוא רק \"ab\".",
+    "לענות $5!=120$, שהוא מספר התמורות שכן מכילות את הרצף, ולשכוח לחסר אותו מ-$6!$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו שיטה משמש הפתרון הרשמי לספירת התמורות שבהן **לא** מופיע הרצף?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "סופרים את התמורות שבהן הרצף מופיע (מדביקים אותו לאות אחת) ומחסירים מ-$6!$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בוחרים מקום לאות a ואז מסדרים את שאר האותיות בלי הגבלה"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מחלקים את $6!$ ב-2"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "סופרים ישירות רק את התמורות ללא הרצף לפי מיקום האות a"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון מגדיר $x=$\"ab\" ומחסיר את $5!$ מ-$6!$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תמורות של $\\{a,b,c,d,e,f\\}$ מכילות את הרצף \"ab\"?",
+     "answer": 120,
+     "tol": 0,
+     "explain": "הן תמורות של 5 עצמים $\\{x,c,d,e,f\\}$: $5!=120$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בכמה תמורות לא מופיע הרצף \"ab\"?",
+     "answer": 600,
+     "tol": 0,
+     "explain": "$720-120=600$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -36,7 +100,75 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "הגדרת פונקציית Euler (לפי ההרצאה)",
+     "points": 4
+    },
+    {
+     "text": "המקרה $n=1$: $\\phi(1)=1$ ולכן $1\\mid\\phi(1)$",
+     "points": 1
+    },
+    {
+     "text": "לכל $n\\ge2$: $\\phi(n)\\le n-1$, ולכן $n\\nmid\\phi(n)$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: רק $n=1$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח לבדוק את $n=1$ בנפרד: שם החסם $\\phi(n)\\le n-1$ אינו נכון.",
+    "לחשוב ש-$n\\mid\\phi(n)$ מתקיים עבור $n$ ראשוני, כי $\\phi(p)=p-1$ ו-$p\\nmid p-1$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\phi(1)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "המספר היחיד בין 1 ל-1 הוא 1, והוא זר ל-1."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו טענה משמשת את הפתרון כדי לשלול כל $n\\ge2$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$1\\le\\phi(n)\\le n-1$, ולכן $n$ אינו מחלק את $\\phi(n)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\phi(n)\\ge n$ לכל $n\\ge2$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\phi(n)=n-1$ לכל $n\\ge2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\phi(n)$ תמיד אי-זוגי"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$n$ לא זר לעצמו כש-$n\\ge2$, ולכן $\\phi(n)\\le n-1$; מספר חיובי הקטן מ-$n$ אינו מתחלק ב-$n$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מספרים $n\\ge1$ מקיימים $n\\mid\\phi(n)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "רק $n=1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -48,7 +180,80 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "הגדרת עץ ויער (לפי ההרצאה)",
+     "points": 4
+    },
+    {
+     "text": "כל רכיב קשירות של יער הוא עץ, ולכן $|E_i|=|V_i|-1$",
+     "points": 2
+    },
+    {
+     "text": "סכימה על הרכיבים: $|E|=\\sum|V_i|-k$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה $|E|=n-k$",
+     "points": 1
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $|E|=n-1$ (נוסחת העץ) במקום להחסיר $k$.",
+    "להחסיר 1 פעם אחת בלבד במקום פעם אחת לכל רכיב."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו עובדה על רכיבי הקשירות של יער משמשת בפתרון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כל רכיב קשירות הוא עץ, ולכן $|E_i|=|V_i|-1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כל רכיב קשירות הוא גרף שלם"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "בכל רכיב $|E_i|=|V_i|$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "בכל רכיב $|E_i|=|V_i|+1$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "יער הוא גרף חסר מעגלים, ורכיב קשיר וחסר מעגלים הוא עץ."
+    },
+    {
+     "type": "numeric",
+     "prompt": "ליער על $n=20$ צמתים יש $k=5$ רכיבי קשירות. כמה צלעות יש בו?",
+     "answer": 15,
+     "tol": 0,
+     "explain": "$n-k=20-5=15$."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באיזו שורה של ההוכחה יש טעות?",
+     "lines": [
+      "$G$ יער, ולכן כל רכיב קשירות $T_i=(V_i,E_i)$ שלו הוא עץ.",
+      "בעץ מתקיים $|E_i|=|V_i|-1$.",
+      "הצלעות של $G$ הן האיחוד הזר של $E_1,\\dots,E_k$, ולכן $|E|=|E_1|+\\dots+|E_k|$.",
+      "$|E|=(|V_1|-1)+\\dots+(|V_k|-1)=|V|-1=n-1$."
+     ],
+     "bugIndex": 3,
+     "explain": "מחסירים 1 מכל אחד מ-$k$ הרכיבים, ולכן הסכום הוא $|V|-k$ ולא $|V|-1$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -60,7 +265,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 9
+   "points": 9,
+   "rubric": [
+    {
+     "text": "שימוש בבינום של Newton לסכום הראשון: $(7+3)^n=10^n$",
+     "points": 3
+    },
+    {
+     "text": "הוצאת $5^n$ ושימוש בבינום לסכום השני: $5^n(5+3)^n$, ולכן $f(n)=2^{4n}5^{2n}$",
+     "points": 3
+    },
+    {
+     "text": "מחלק אי-זוגי הוא $5^\\alpha$ עם $0\\le\\alpha\\le2n$, כלומר $2n+1$ מחלקים",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח ש-$5^{n+k}=5^n\\cdot5^k$ ולא להוציא את $5^n$ מחוץ לסכום.",
+    "לספור את כל המחלקים של $f(n)$ במקום רק את האי-זוגיים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום הראשון $\\sum_{k=0}^{n}\\binom nk7^k3^{n-k}$ עבור $n=2$?",
+     "answer": 100,
+     "tol": 0,
+     "explain": "$(7+3)^2=100$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הסכום השני $\\sum_{k=0}^{n}\\binom nk5^{n+k}3^{n-k}$ עבור $n=2$?",
+     "answer": 1600,
+     "tol": 0,
+     "explain": "$5^2\\cdot(5+3)^2=25\\cdot64=1600$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהי הצורה של $f(n)$ אחרי הפישוט?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{4n}\\cdot5^{2n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{3n}\\cdot5^{2n}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{4n}\\cdot5^{n}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$10^{3n}$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$f(n)=10^n\\cdot5^n\\cdot8^n=2^n5^n\\cdot5^n\\cdot2^{3n}=2^{4n}5^{2n}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מחלקים אי-זוגיים יש ל-$f(3)$?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$2n+1=7$ (המחלקים $5^0,\\dots,5^6$)."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -72,7 +348,61 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "משוואה אופיינית $(r-3)^2=0$ ושורש כפול $r=3$",
+     "points": 2
+    },
+    {
+     "text": "צורה כללית $a_n=C_1 3^n+C_2 n3^n$",
+     "points": 2
+    },
+    {
+     "text": "פתרון התנאים ההתחלתיים: $C_1=5,\\ C_2=7$",
+     "points": 3
+    },
+    {
+     "text": "חסם $a_n\\le12n3^n\\le12n5^n$ ומסקנת ה-$O$",
+     "points": 3
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לכתוב $C_1 3^n+C_2 3^n$ לשורש כפול, בלי הגורם $n$.",
+    "להוכיח את ה-$O$ בלי לציין קבוע ו-$n\\ge1$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו השורש (הכפול) של המשוואה האופיינית $r^2=6r-9$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$(r-3)^2=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $C_2$ אחרי הצבת $a_0=5,\\ a_1=36$?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$C_1=5$ ו-$3C_1+3C_2=36$, ולכן $C_2=7$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $a_2$ לפי הנוסחה המפורשת (וגם לפי הנסיגה)?",
+     "answer": 171,
+     "tol": 0,
+     "explain": "$(5+14)\\cdot9=171=6\\cdot36-9\\cdot5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "איזה קבוע $c$ מתקבל בחסם $a_n\\le c\\cdot n\\cdot3^n$ לכל $n\\ge1$ בפתרון?",
+     "answer": 12,
+     "tol": 0,
+     "explain": "$5\\le5n$, ולכן $a_n\\le5n3^n+7n3^n=12n3^n$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -84,7 +414,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "סימון $x_1,\\dots,x_4$ והצגת הבעיה כאי-שוויון עם חסמים תחתונים",
+     "points": 2
+    },
+    {
+     "text": "הוספת משתנה עודף $y$ והזזת המשתנים: סכום $=6$ עם 5 משתנים",
+     "points": 2
+    },
+    {
+     "text": "$D(5,6)=\\binom{10}4=210$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח את המשתנה העודף $y$ (המילה יכולה להיות קצרה מ-23) ולפתור שוויון עם 4 משתנים בלבד.",
+    "לחשב את הצד הימני $23-3-5-5-4$ בצורה שגויה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "לאחר הוספת משתנה עודף והזזת כל החסמים התחתונים, מהו סכום 5 המשתנים החדשים?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$23-(3+5+5+4)=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה משתנים יש במשוואה אחרי הוספת המשתנה העודף?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$y_1,y_2,y_3,y_4,y$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה מילים אפשריות?",
+     "answer": 210,
+     "tol": 0,
+     "explain": "$\\binom{6+5-1}{5-1}=\\binom{10}4=210$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -96,7 +469,54 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "פתרון $\\binom n2=190$ ומציאת $n=20$",
+     "points": 4
+    },
+    {
+     "text": "10 מספרים זוגיים ו-10 אי-זוגיים",
+     "points": 2
+    },
+    {
+     "text": "בחירת זוג זוגי וזוג אי-זוגי: $\\binom{10}2\\cdot\\binom{10}2$",
+     "points": 4
+    },
+    {
+     "text": "התוצאה $2025$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "להשאיר את שורש משוואת הריבוע השלילי $n=-19$.",
+    "לחשב $\\binom{20}{2}\\cdot\\binom{20}{2}$ ולא לפצל לזוגיים ואי-זוגיים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $n$ (נתון $\\binom n2=190$)?",
+     "answer": 20,
+     "tol": 0,
+     "explain": "$n^2-n-380=0\\Rightarrow n=20$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בכמה דרכים בוחרים 2 מספרים זוגיים מ-$\\{2,4,\\dots,20\\}$?",
+     "answer": 45,
+     "tol": 0,
+     "explain": "$\\binom{10}2=45$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה תתי-קבוצות מתאימות יש?",
+     "answer": 2025,
+     "tol": 0,
+     "explain": "$45\\cdot45=2025$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -108,7 +528,50 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "$\\{1,2,3\\}$ מועברת על $\\{1,2,3\\}$ בהתאמה חח\"ע ועל: $3!$",
+     "points": 2
+    },
+    {
+     "text": "$\\{4,\\dots,8\\}$ מועברת על $\\{4,5,6\\}$ על: $3^5-3\\cdot2^5+3=150$",
+     "points": 3
+    },
+    {
+     "text": "מכפלה: $900$",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לשכוח שהפונקציה כולה צריכה להיות על, ולספור רק $3^5$ אפשרויות לחלק השני.",
+    "להשתמש ב-$3^5$ במקום בנוסחת הפונקציות על."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בכמה דרכים $f$ יכולה לפעול על $\\{1,2,3\\}$ (חח\"ע ועל $\\{1,2,3\\}$)?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$3!=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות על יש מ-$\\{4,5,6,7,8\\}$ אל $\\{4,5,6\\}$?",
+     "answer": 150,
+     "tol": 0,
+     "explain": "$3^5-3\\cdot2^5+3\\cdot1^5=243-96+3=150$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה פונקציות מתאימות יש בסך הכול?",
+     "answer": 900,
+     "tol": 0,
+     "explain": "$6\\cdot150=900$."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -120,7 +583,124 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 6
+   "points": 6,
+   "rubric": [
+    {
+     "text": "ג1: דוגמה נגדית $C_5$ עם קוטר 2 שאינו דו-צדדי",
+     "points": 2
+    },
+    {
+     "text": "ג2: דוגמה נגדית $P_4$ שהמשלים שלו איזומורפי אליו וקוטר שניהם 3",
+     "points": 2
+    },
+    {
+     "text": "ג3: הוכחה שגשר נמצא בכל עץ פורש",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבחור דוגמה נגדית ל-ג1 שהיא דו-צדדית שלמה (למשל $C_4$), שאינה מפריכה.",
+    "בהוכחת ג3: לשכוח שגשר הוא צלע שאינה על אף מעגל."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזה גרף הוא דוגמה נגדית לטענה ג1 (קוטר 2 ואינו דו-צדדי שלם)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$C_5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$C_4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$P_4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$K_3$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$\\operatorname{diam}(C_5)=2$ ו-$C_5$ אינו דו-צדדי. $C_4=K_{2,2}$ דו-צדדי שלם; $\\operatorname{diam}(P_4)=3$; $\\operatorname{diam}(K_3)=1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה גרף דו-צדדי מקיים $\\operatorname{diam}(\\overline G)=\\operatorname{diam}(G)$ ומפריך את ג2?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$P_4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$C_5$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$P_3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$C_4$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$\\overline{P_4}\\cong P_4$. $C_5$ אינו דו-צדדי; המשלים של $P_3$ וגם של $C_4$ אינו קשיר."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה הפתרון הרשמי מוכיח את ג3?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "בשלילה: מניחים עץ פורש שאינו מכיל את הגשר ומקבלים מעגל דרך הגשר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינדוקציה על מספר הצמתים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שובך היונים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "ספירה כפולה של הדרגות"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הפתרון מניח שהצלע אינה בעץ פורש $T$ ומגיע לסתירה."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את ההוכחה של ג3.",
+     "lines": [
+      "נניח בשלילה שקיים עץ פורש $T$ של $G$ כך ש-$e=(x,y)\\notin E_T$.",
+      "ב-$T$ קיים מסלול $P_{x,y}$ בין $x$ ל-$y$.",
+      "$C=P_{x,y}+(x,y)$ הוא מעגל ב-$G$ שמכיל את הצלע $(x,y)$.",
+      "צלע היא גשר אם ורק אם היא אינה נמצאת על אף מעגל, ולכן $(x,y)$ אינה גשר, בסתירה לנתון."
+     ],
+     "explain": "ההנחה, מסלול בעץ, המעגל שנוצר ממנו, ואז הסתירה."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -132,7 +712,78 @@
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "בניית $G_1$ קשיר ודו-צדדי עם סדרת הדרגות הנתונה",
+     "points": 4
+    },
+    {
+     "text": "בניית $G_2$ דו-צדדי לא קשיר עם אותה סדרה",
+     "points": 2
+    },
+    {
+     "text": "הצגת דרגות במשלים, משפט Dirac ושני צמתים בדרגה אי-זוגית: מסלול Euler",
+     "points": 2
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לצייר את המשלים, למרות שהשאלה אוסרת זאת.",
+    "לבנות גרף עם פחות מ-11 צמתים: סדרת הדרגות כוללת 11 איברים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה במשלים של צומת שדרגתו ב-$G$ היא 1 (ב-11 צמתים)?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$11-1-1=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה במשלים של הצומת בדרגה 3?",
+     "answer": 7,
+     "tol": 0,
+     "explain": "$11-1-3=7$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה צמתים בדרגה אי-זוגית יש במשלים?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "רק הצמתים בדרגות 7 ו-9; שאר הצמתים בדרגה 8."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזו הלכה מבטיחה מסלול Euler במשלים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הגרף קשיר (לפי Dirac) ובדיוק שני צמתים בו בדרגה אי-זוגית"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הגרף הוא גרף Hamilton בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "יש בגרף ארבעה צמתים בדרגה אי-זוגית"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מספר הצלעות בגרף זוגי"
+      }
+     ],
+     "correctId": "a",
+     "explain": "Hamilton בלבד אינו מספיק (למשל ב-$K_4$ אין מסלול Euler); ארבעה צמתים אי-זוגיים אינם מאפשרים מסלול Euler."
+    }
+   ],
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -145,7 +796,103 @@
    "official": true,
    "confidence": "high",
    "points": 17,
-   "contextId": "c1"
+   "contextId": "c1",
+   "rubric": [
+    {
+     "text": "ב1: מעגל Hamilton ב-$G$, ולכן גרף פורש איזומורפי ל-$C_{12}$",
+     "points": 4
+    },
+    {
+     "text": "ב2: $\\overline G$ הוא 8-רגולרי, Hamilton לפי Dirac (קשיר) וכל הדרגות זוגיות",
+     "points": 4
+    },
+    {
+     "text": "ב3: $\\chi\\ge2$ וצביעה חוקית ב-2 צבעים, ולכן $\\chi=2$",
+     "points": 5
+    },
+    {
+     "text": "ב4: $P_4,K_4,C_4$ מופיעים ו-$C_5$ אינו מופיע (כי $G$ דו-צדדי)",
+     "points": 4
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "pitfalls": [
+    "לבדוק את $\\chi$ של $\\overline G$ במקום של $G$.",
+    "לטעון שיש $C_5$ מושרה במשלים, למרות ש-$\\overline{C_5}\\cong C_5$ ו-$G$ אינו מכיל $C_5$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "ל-$G$ יש גרף פורש איזומורפי ל-$C_{12}$. מהו הנימוק בפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "יש ב-$G$ מעגל Hamilton, כלומר מעגל שעובר בכל 12 הצמתים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$G$ הוא 3-רגולרי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$G$ דו-צדדי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "ל-$G$ יש בדיוק 12 צלעות"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מעגל Hamilton ב-$G$ הוא מעגל על 12 צמתים, כלומר גרף פורש איזומורפי ל-$C_{12}$. ל-$G$ יש 18 צלעות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדרגה של כל צומת ב-$\\overline G$?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$G$ הוא 3-רגולרי על 12 צמתים: $12-1-3=8$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\chi(G)$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "G דו-צדדי: מחלקות הצבעים בפתרון הן 2."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה מבין הגרפים $P_4,\\ C_4,\\ C_5,\\ K_4$ **אינו** מופיע כתת-גרף מושרה ב-$\\overline G$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$C_5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$P_4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$C_4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$K_4$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$G$ דו-צדדי, ולכן אין בו $C_5$ מושרה, ו-$\\overline{C_5}\\cong C_5$, ולכן גם אין במשלים."
+    }
+   ],
+   "stepsSource": "ai-draft"
   }
  ]
 }
