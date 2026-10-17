@@ -59,7 +59,92 @@
       "גרפי אוילר והמילטון"
     ]
   ],
-  "briefs": [],
+  "briefs": [
+    [
+      "01 - divisibility_primes.md",
+      "divisibility_primes",
+      "divisibility_primes",
+      "topic"
+    ],
+    [
+      "02 - euler_phi.md",
+      "euler_phi",
+      "euler_phi",
+      "topic"
+    ],
+    [
+      "03 - sum_product_inclusion.md",
+      "sum_product_inclusion",
+      "sum_product_inclusion",
+      "topic"
+    ],
+    [
+      "04 - permutations_arrangements.md",
+      "permutations_arrangements",
+      "permutations_arrangements",
+      "topic"
+    ],
+    [
+      "05 - combinations_subsets.md",
+      "combinations_subsets",
+      "combinations_subsets",
+      "topic"
+    ],
+    [
+      "06 - selections_repetition.md",
+      "selections_repetition",
+      "selections_repetition",
+      "topic"
+    ],
+    [
+      "07 - function_counting.md",
+      "function_counting",
+      "function_counting",
+      "topic"
+    ],
+    [
+      "08 - recurrences.md",
+      "recurrences",
+      "recurrences",
+      "topic"
+    ],
+    [
+      "09 - asymptotics.md",
+      "asymptotics",
+      "asymptotics",
+      "topic"
+    ],
+    [
+      "10 - graph_basics.md",
+      "graph_basics",
+      "graph_basics",
+      "topic"
+    ],
+    [
+      "11 - graph_connectivity.md",
+      "graph_connectivity",
+      "graph_connectivity",
+      "topic"
+    ],
+    [
+      "12 - trees.md",
+      "trees",
+      "trees",
+      "topic"
+    ],
+    [
+      "13 - euler_hamilton.md",
+      "euler_hamilton",
+      "euler_hamilton",
+      "topic"
+    ],
+    [
+      "14 - cheat_sheet.md",
+      "cheat_sheet",
+      "divisibility_primes",
+      "cheat"
+    ]
+  ],
   "needHelp": [
     {
       "id": "perm_ie",
