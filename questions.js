@@ -17,7 +17,7 @@ window.OPEN_BANK = {
     },
     {
      "id": "func_count",
-     "titleHe": "ספירת פונקציות וחלוקות",
+     "titleHe": "ספירת פונקציות",
      "icon": "🧮",
      "topic": "function_counting",
      "entryLabelHe": "צריך עזרה בספירת פונקציות?"
@@ -97,7 +97,7 @@ window.OPEN_BANK = {
    "proof",
    "truefalse"
   ],
-  "built": "2026-10-18T01:54:47Z",
+  "built": "2026-10-18T06:58:22Z",
   "exams": [
    {
     "examCode": "20B-A",
@@ -2344,7 +2344,7 @@ window.OPEN_BANK = {
    "steps": [
     {
      "type": "choice",
-     "prompt": "באיזו שיטה הפתרון הרשמי מוכיח את הטענה?",
+     "prompt": "באיזו שיטה הפתרון מוכיח את הטענה?",
      "options": [
       {
        "id": "a",
@@ -2373,7 +2373,7 @@ window.OPEN_BANK = {
      ],
      "correctId": "a",
      "explain": "הפתרון מחשב את המנה ומראה שהיא מספר טבעי.",
-     "promptHtml": "באיזו שיטה הפתרון הרשמי מוכיח את הטענה?",
+     "promptHtml": "באיזו שיטה הפתרון מוכיח את הטענה?",
      "explainHtml": "הפתרון מחשב את המנה ומראה שהיא מספר טבעי."
     },
     {
@@ -6060,7 +6060,7 @@ window.OPEN_BANK = {
    "steps": [
     {
      "type": "choice",
-     "prompt": "באיזו שיטה משתמש הפתרון הרשמי להוכחת הקשירות?",
+     "prompt": "באיזו שיטה משתמש הפתרון להוכחת הקשירות?",
      "options": [
       {
        "id": "a",
@@ -6083,7 +6083,7 @@ window.OPEN_BANK = {
      ],
      "correctId": "a",
      "explain": "ל-$H$ יש $n+1$ צמתים וכל הדרגות לפחות $\\frac{n+1}2$.",
-     "promptHtml": "באיזו שיטה משתמש הפתרון הרשמי להוכחת הקשירות?",
+     "promptHtml": "באיזו שיטה משתמש הפתרון להוכחת הקשירות?",
      "explainHtml": "ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>H</mi></mrow><annotation encoding=\"application/x-tex\">H</annotation></semantics></math></span> יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n+1</annotation></semantics></math></span> צמתים וכל הדרגות לפחות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{n+1}2</annotation></semantics></math></span>."
     },
     {

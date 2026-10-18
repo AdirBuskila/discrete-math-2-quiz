@@ -14,6 +14,7 @@
 - **פתרון הומוגני** $a_n^{(h)}$:
   - שני שורשים שונים $r_1\ne r_2$: $a_n^{(h)}=C_1r_1^n+C_2r_2^n$.
   - שורש כפול $r$: $a_n^{(h)}=C_1r^n+C_2\,n\,r^n$.
+  - שורשים מרוכבים (כש-$x^2+1=0$ נותן $x=\pm i$): כותבים בצורה קוטבית $x=r(\cos\theta\pm i\sin\theta)$ ו-$a_n^{(h)}=r^n\left(C_1\cos n\theta+C_2\sin n\theta\right)$. עבור $\pm i$: $r=1$, $\theta=\frac\pi2$ (`20B-A-Q3b`: $a_n+a_{n-2}=15\cdot2^n$ נותן $a_n=2\cos\frac{n\pi}2+3\sin\frac{n\pi}2+12\cdot2^n$).
 - **פתרון פרטי** $a_n^{(p)}$, לפי צורת $g(n)$:
 
 | $g(n)$ | ניחוש | הערה |

@@ -4,6 +4,16 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 
 ## Open
 
+Nothing blocks shipping. Awaiting Adir (decisions, not data questions):
+
+1. Confirm the Gate 1 rulings in course-factory/courses/discrete-math-2/GATE1.md (engine open, scope 20B-A onward, 4 need-help courses). They were made by the orchestrator under the 2026-10-17 autonomy grant.
+2. Try the app in the browser (Gate 2) and OK going public (Gate 3).
+3. Optional: pre-2020 sittings are out of scope for now (harvest later as a bank extension).
+4. FYI: func_count level C05 (Stirling numbers, set partitions) was removed as out of syllabus; the not-onto complement moved into C04.
+
+The entries below are all resolved or FYI; they are kept for the record.
+
+
 <!-- Entry format:
 ### <exam code> Q<number> - <short title>
 - Path: <absolute file path>

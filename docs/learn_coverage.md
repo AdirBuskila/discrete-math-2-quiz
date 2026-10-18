@@ -1,6 +1,6 @@
 # Learn-mode coverage (discrete-math-2)
 
-Built from the 118 live questions in `tools/raw/*.json` (14 sittings 22B-A to 25S-A as transcribed so far; 20B-A, 21B-A, 21B-B and 22B-B are not yet in the bank). Ids below are bank ids. One more question, `25B-A-Q3c`, has no solution and is held, so it is not in the bank (its topic, subset counting by type, is covered anyway).
+Built from the full bank: 180 live questions in `tools/raw/*.json` (13 sittings, 20B-A to 25S-A). Ids below are bank ids. Re-passed against the full bank after the 20B-A, 21B-A, 21B-B and 22B-B sittings were added (see the second table).
 
 | Concept | Brief and section | Example question ids |
 |---|---|---|
@@ -57,10 +57,28 @@ Built from the 118 live questions in `tools/raw/*.json` (14 sittings 22B-A to 25
 | Euler/Hamilton of a complement of a regular graph or a path | 13: Recipe | 22B-A-Q4b, 25B-A-Q4c, 25B-B-Q4c, 25S-A-Q3c |
 | Induced P4, C4, C5, K4 in the complement; chromatic number | 13: Recipe | 22B-A-Q4b, 23B-A-Q4c, 23B-B-Q4b, 25B-A-Q4c, 25B-B-Q4c |
 
+## Re-pass for the sittings added later (20B-A, 21B-A, 21B-B, 22B-B)
+| Concept | Brief and section | Example question ids |
+|---|---|---|
+| Equal cardinality, injection both ways, Cantor-Schroeder-Bernstein, countable sets (ADDED to brief 07 in this pass) | 07: Definitions | 20B-A-Q1e, 20B-A-Q6b |
+| Complex characteristic roots, a_n + a_{n-2} = g(n) (ADDED to brief 08 in this pass) | 08: Definitions | 20B-A-Q3b |
+| Newton binomial folded into a product, phi of such a number, O(c^n) of a binomial sum | 01, 02, 09 | 21B-A-Q3a, 21B-B-Q2a, 22B-B-Q2a, 20B-A-Q6a |
+| phi proofs (divisibility, Euler's theorem exponent, composition) | 02: Recipe B, D | 20B-A-Q2c, 21B-A-Q1b, 21B-A-Q4c, 21B-A-Q5b, 21B-B-Q4c, 21B-B-Q5b, 22B-B-Q1b, 20B-A-Q1b |
+| Subset counts, sum of subset sizes, subsets of A x B by a sum condition | 05, 07 | 20B-A-Q4a, 20B-A-Q4c, 21B-A-Q2a, 21B-B-Q3a, 21B-B-Q4a, 22B-B-Q3a |
+| Arrangements with blocks, derangement definition, two-type words | 04 | 20B-A-Q1a, 20B-A-Q2a, 20B-A-Q2b, 21B-A-Q1a, 21B-A-Q4a, 21B-B-Q1a, 22B-B-Q1a |
+| Inclusion-exclusion on multiples | 03 | 20B-A-Q3a, 21B-B-Q2c |
+| Function counting: onto, injective, bijective, f(1)=3 condition, preimage condition | 07 | 20B-A-Q4b, 21B-A-Q2b, 21B-A-Q4b, 21B-B-Q3b, 21B-B-Q4b, 22B-B-Q3b |
+| Solutions with lower bounds (words/multisets) | 06: Recipe | 20B-A-Q5b, 21B-A-Q3c, 22B-B-Q2c, 21B-B-Q3a |
+| Recurrences: double root, linear, nonhomogeneous, O(n 5^n) | 08, 09 | 21B-A-Q3b, 21B-B-Q2b, 22B-B-Q2b |
+| Degree sequences, C_n bipartite, K(m,n) | 10 | 20B-A-Q1c, 20B-A-Q5a, 21B-A-Q5a, 21B-B-Q3c, 21B-B-Q5a |
+| Connectivity, diameter and complement statements, P_n complement | 11 | 20B-A-Q1d, 20B-A-Q6c, 22B-B-Q3c |
+| Trees: spanning tree, leaves bound, edge count of a forest | 12 | 21B-A-Q1c, 21B-A-Q2c, 22B-B-Q1c |
+| Euler/Hamilton, chromatic number, induced subgraphs in the complement | 13 | 20B-A-Q3c, 20B-A-Q5c, 21B-A-Q5c, 21B-B-Q1c, 21B-B-Q5c, 22B-B-Q4a, 22B-B-Q4b |
+
 Cheat-sheet chapter 14 collects all of the formulas above.
 
 ## Gaps
-- No question uses generating functions, Mobius inversion or Stirling numbers, so they are not taught. (Stirling numbers appear only as a script cross-check.) The course description lists generating functions; if the lecturer tests them in the pre-2020 or 20B-A-21B-B sittings that are not yet in the bank, add a brief section then.
+- No question in the full bank uses generating functions, Mobius inversion, Stirling numbers or set partitions, so they are not taught (the func_count need-help level on partitions was removed for the same reason).
 - The graph figures of `22B-A-Q4b`, `23B-A-Q4c`, `23B-B-Q4b` are images; the brief teaches the method but cannot reproduce those drawings.
 - The exact definition wording of "walk/path/trail" follows the course's formula sheet terms only loosely; students should use their lecture's phrasing in definition parts (Q1 of each sitting). Definition-only subquestions ("the term: X") are answered by the Definitions section of the matching brief, paraphrased.
-- Sittings 20B-A, 21B-A, 21B-B, 22B-B are not transcribed yet: rerun the coverage check after they are added.
+- All 13 sittings are in the bank; nothing is pending.
