@@ -877,6 +877,796 @@ window.COURSES = {
    }
   ]
  },
+ "graphs": {
+  "levels": [
+   {
+    "id": "C01",
+    "order": 1,
+    "icon": "🔢",
+    "title": "דרגות ומשפט הדרגות",
+    "goal": "לחשב מספר צלעות מתוך דרגות, ולזהות מתי סדרת דרגות לא יכולה להתקיים בגלל זוגיות.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p><b>גרף לא מכוון</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mi>V</mi><mo separator=\"true\">,</mo><mi>E</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">G=(V,E)</annotation></semantics></math></span> מורכב מקבוצת <b>צמתים</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">V</annotation></semantics></math></span> ומקבוצת <b>צלעות</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span>, שכל אחת מהן זוג צמתים. בקורס הגרפים <b>פשוטים</b>: בלי לולאות ובלי צלעות כפולות. <b>דרגה</b> של צומת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi></mrow><annotation encoding=\"application/x-tex\">v</annotation></semantics></math></span>, שנכתבת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\deg(v)</annotation></semantics></math></span>, היא מספר הצלעות שנוגעות בו (מספר השכנים שלו). בגרף פשוט על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים תמיד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>≤</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">0\\le\\deg(v)\\le n-1</annotation></semantics></math></span>.</p>\n<div class=\"lesson-rule\">🔑 <b>משפט הדרגות:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mo>∑</mo><mrow><mi>v</mi><mo>∈</mo><mi>V</mi></mrow></msub><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">\\sum_{v\\in V}\\deg(v)=2|E|</annotation></semantics></math></span>. כל צלע נספרת פעמיים, פעם בכל אחד מקצותיה.</div>\n<ul>\n<li><b>מסקנה:</b> מספר הצמתים בעלי דרגה אי-זוגית הוא תמיד זוגי (כי הסכום זוגי).</li>\n<li><b>גרף שלם</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_n</annotation></semantics></math></span>: כל זוג צמתים מחובר, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">|E|=\\binom n2=\\frac{n(n-1)}2</annotation></semantics></math></span>.</li>\n<li><b>גרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>-רגולרי:</b> כל הדרגות שוות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mo>⋅</mo><mi mathvariant=\"normal\">∣</mi><mi>V</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>2</mn><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">r\\cdot|V|=2|E|</annotation></semantics></math></span>.</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> בגרף על 6 צמתים כל הדרגות 3. סכום הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>18</mn></mrow><annotation encoding=\"application/x-tex\">6\\cdot3=18</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">|E|=9</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ סכום דרגות אי-זוגי אי-אפשרי. למשל 5 צמתים בדרגה 3 נותנים סכום 15, ולכן אין גרף כזה.</div>"
+    },
+    "questions": [
+     {
+      "id": "C01-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף יש 8 צמתים וכל צומת בו בדרגה 3. כמה צלעות יש בגרף?",
+       "answer": 12,
+       "tol": 0,
+       "explain": "סכום הדרגות הוא $8\\cdot3=24$, ולפי משפט הדרגות $|E|=24/2=12$.",
+       "promptHtml": "בגרף יש 8 צמתים וכל צומת בו בדרגה 3. כמה צלעות יש בגרף?",
+       "explainHtml": "סכום הדרגות הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>24</mn></mrow><annotation encoding=\"application/x-tex\">8\\cdot3=24</annotation></semantics></math></span>, ולפי משפט הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>24</mn><mi mathvariant=\"normal\">/</mi><mn>2</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">|E|=24/2=12</annotation></semantics></math></span>."
+      },
+      "recap": "$|E|=\\frac12\\sum\\deg(v)$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">|E|=\\frac12\\sum\\deg(v)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C01-Q2",
+      "question": "האם קיים גרף פשוט על 7 צמתים שכל צומת בו בדרגה 3?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, כי 3 קטן מ-7",
+        "type": "text",
+        "html": "כן, כי 3 קטן מ-7"
+       },
+       {
+        "id": "b",
+        "value": "לא, כי סכום הדרגות 21 הוא אי-זוגי",
+        "type": "text",
+        "html": "לא, כי סכום הדרגות 21 הוא אי-זוגי"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי 3 גדול מדי ל-7 צמתים",
+        "type": "text",
+        "html": "לא, כי 3 גדול מדי ל-7 צמתים"
+       },
+       {
+        "id": "d",
+        "value": "כן, לכל מספר צמתים קיים גרף 3-רגולרי",
+        "type": "text",
+        "html": "כן, לכל מספר צמתים קיים גרף 3-רגולרי"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "סכום הדרגות הוא $7\\cdot3=21$, והוא חייב להיות $2|E|$, מספר זוגי. לכן אין גרף כזה. הדרגה 3 לא גדולה מדי (המקסימום הוא $6$). הטענה שלכל מספר צמתים קיים גרף 3-רגולרי שגויה: על 8 צמתים קיים, על 7 לא.",
+      "recap": "סכום הדרגות חייב להיות זוגי.",
+      "questionHtml": "האם קיים גרף פשוט על 7 צמתים שכל צומת בו בדרגה 3?",
+      "explanationHtml": "סכום הדרגות הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>21</mn></mrow><annotation encoding=\"application/x-tex\">7\\cdot3=21</annotation></semantics></math></span>, והוא חייב להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">2|E|</annotation></semantics></math></span>, מספר זוגי. לכן אין גרף כזה. הדרגה 3 לא גדולה מדי (המקסימום הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">6</annotation></semantics></math></span>). הטענה שלכל מספר צמתים קיים גרף 3-רגולרי שגויה: על 8 צמתים קיים, על 7 לא.",
+      "recapHtml": "סכום הדרגות חייב להיות זוגי."
+     },
+     {
+      "id": "C01-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "כמה צלעות יש בגרף השלם $K_9$ ?",
+       "answer": 36,
+       "tol": 0,
+       "explain": "כל זוג צמתים מחובר: $\\binom92=\\frac{9\\cdot8}2=36$.",
+       "promptHtml": "כמה צלעות יש בגרף השלם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>9</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_9</annotation></semantics></math></span> ?",
+       "explainHtml": "כל זוג צמתים מחובר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>9</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>9</mn><mo>⋅</mo><mn>8</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>36</mn></mrow><annotation encoding=\"application/x-tex\">\\binom92=\\frac{9\\cdot8}2=36</annotation></semantics></math></span>."
+      },
+      "recap": "$|E(K_n)|=\\binom n2$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><msub><mi>K</mi><mi>n</mi></msub><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">|E(K_n)|=\\binom n2</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C01-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף 10 צמתים: ארבעה מהם בדרגה 3 ושישה בדרגה 2. כמה צלעות יש בו?",
+       "answer": 12,
+       "tol": 0,
+       "explain": "סכום הדרגות $4\\cdot3+6\\cdot2=24$, ולכן $|E|=12$.",
+       "promptHtml": "בגרף 10 צמתים: ארבעה מהם בדרגה 3 ושישה בדרגה 2. כמה צלעות יש בו?",
+       "explainHtml": "סכום הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo>⋅</mo><mn>2</mn><mo>=</mo><mn>24</mn></mrow><annotation encoding=\"application/x-tex\">4\\cdot3+6\\cdot2=24</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">|E|=12</annotation></semantics></math></span>."
+      },
+      "recap": "מחברים את כל הדרגות ומחלקים ב-2.",
+      "recapHtml": "מחברים את כל הדרגות ומחלקים ב-2."
+     },
+     {
+      "id": "C01-Q5",
+      "question": "איזו מהסדרות הבאות <b>לא</b> יכולה להיות סדרת הדרגות של גרף?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$2,2,2,2$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2,2,2,2</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$3,3,2,2$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3,3,2,2</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$3,3,3,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,3,1,1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$4,2,2,2,2$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">4,2,2,2,2</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "בסדרה $3,3,3,1,1$ סכום הדרגות הוא $11$, אי-זוגי (חמישה צמתים בדרגה אי-זוגית), ולכן אין גרף כזה. את שלוש האחרות אפשר לממש: $C_4$, גרף $K_4$ בלי צלע אחת, ושני משולשים החולקים צומת.",
+      "recap": "סכום אי-זוגי: אין גרף.",
+      "questionHtml": "איזו מהסדרות הבאות &lt;b&gt;לא&lt;/b&gt; יכולה להיות סדרת הדרגות של גרף?",
+      "explanationHtml": "בסדרה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,3,1,1</annotation></semantics></math></span> סכום הדרגות הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">11</annotation></semantics></math></span>, אי-זוגי (חמישה צמתים בדרגה אי-זוגית), ולכן אין גרף כזה. את שלוש האחרות אפשר לממש: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_4</annotation></semantics></math></span>, גרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_4</annotation></semantics></math></span> בלי צלע אחת, ושני משולשים החולקים צומת.",
+      "recapHtml": "סכום אי-זוגי: אין גרף."
+     },
+     {
+      "id": "C01-Q6",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף רגולרי יש 10 צמתים ו-20 צלעות. מהי הדרגה של כל צומת?",
+       "answer": 4,
+       "tol": 0,
+       "explain": "$r\\cdot10=2\\cdot20=40$, ולכן $r=4$.",
+       "promptHtml": "בגרף רגולרי יש 10 צמתים ו-20 צלעות. מהי הדרגה של כל צומת?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mo>⋅</mo><mn>10</mn><mo>=</mo><mn>2</mn><mo>⋅</mo><mn>20</mn><mo>=</mo><mn>40</mn></mrow><annotation encoding=\"application/x-tex\">r\\cdot10=2\\cdot20=40</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">r=4</annotation></semantics></math></span>."
+      },
+      "recap": "$r|V|=2|E|$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mi mathvariant=\"normal\">∣</mi><mi>V</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>2</mn><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">r|V|=2|E|</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C02",
+    "order": 2,
+    "icon": "🔄",
+    "title": "הגרף המשלים",
+    "goal": "לחשב דרגות ומספר צלעות במשלים, ולזהות משלימים של גרפים מוכרים.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>ה<b>משלים</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> של גרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mi>V</mi><mo separator=\"true\">,</mo><mi>E</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">G=(V,E)</annotation></semantics></math></span> הוא גרף על אותם צמתים, שבו שני צמתים שונים מחוברים <b>בדיוק כאשר הם לא מחוברים</b> ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span>. כלומר מוחקים את כל הצלעות הקיימות ומוסיפים את כל החסרות.</p>\n<div class=\"lesson-rule\">🔑 בגרף על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mrow><mi>deg</mi><mo>⁡</mo></mrow><mi>G</mi></msub><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>+</mo><msub><mrow><mi>deg</mi><mo>⁡</mo></mrow><mrow class=\"ovl\"><mi>G</mi></mrow></msub><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\deg_G(v)+\\deg_{\\overline G}(v)=n-1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><mi>G</mi><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>+</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><mrow class=\"ovl\"><mi>G</mi></mrow><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">|E(G)|+|E(\\overline G)|=\\binom n2</annotation></semantics></math></span>.</div>\n<ul>\n<li>המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_n</annotation></semantics></math></span> הוא גרף בלי צלעות (n צמתים מבודדים), ולהפך.</li>\n<li>המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{m,n}</annotation></semantics></math></span> הוא איחוד זר של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>m</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_m</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_n</annotation></semantics></math></span>.</li>\n<li>המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_5</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_5</annotation></semantics></math></span> (כשרושמים את הצמתים בסדר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>5</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">v_1,v_3,v_5,v_2,v_4</annotation></semantics></math></span>).</li>\n<li>אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> <b>לא קשיר</b>, אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> קשיר: שני צמתים מרכיבים שונים לא מחוברים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span>, ולכן מחוברים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span>. ההפך לא נכון: ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> ולמשלים שלו שניהם קשירים.</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> איזומורפי ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span>, אז יש להם אותו מספר צלעות, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">2|E|=\\binom n2</annotation></semantics></math></span>. בגרף כזה על 5 צמתים יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">|E|=5</annotation></semantics></math></span> צלעות.</div>\n<div class=\"lesson-trap\">⚠️ משלים הופך <b>דרגה</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">n-1-d</annotation></semantics></math></span> ולא ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">n-d</annotation></semantics></math></span>. הצומת עצמו לא נספר כשכן.</div>"
+    },
+    "questions": [
+     {
+      "id": "C02-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף $G$ יש 7 צמתים ו-8 צלעות. כמה צלעות יש במשלים $\\overline G$ ?",
+       "answer": 13,
+       "tol": 0,
+       "explain": "$\\binom72=21$, ולכן במשלים $21-8=13$ צלעות.",
+       "promptHtml": "בגרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> יש 7 צמתים ו-8 צלעות. כמה צלעות יש במשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>7</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mn>21</mn></mrow><annotation encoding=\"application/x-tex\">\\binom72=21</annotation></semantics></math></span>, ולכן במשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>21</mn><mo>−</mo><mn>8</mn><mo>=</mo><mn>13</mn></mrow><annotation encoding=\"application/x-tex\">21-8=13</annotation></semantics></math></span> צלעות."
+      },
+      "recap": "$|E(\\overline G)|=\\binom n2-|E|$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><mrow class=\"ovl\"><mi>G</mi></mrow><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>−</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|E(\\overline G)|=\\binom n2-|E|</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C02-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף על 9 צמתים יש צומת $v$ בדרגה 2. מהי הדרגה של $v$ במשלים?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "$\\deg_{\\overline G}(v)=n-1-\\deg_G(v)=9-1-2=6$.",
+       "promptHtml": "בגרף על 9 צמתים יש צומת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi></mrow><annotation encoding=\"application/x-tex\">v</annotation></semantics></math></span> בדרגה 2. מהי הדרגה של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi></mrow><annotation encoding=\"application/x-tex\">v</annotation></semantics></math></span> במשלים?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mrow><mi>deg</mi><mo>⁡</mo></mrow><mrow class=\"ovl\"><mi>G</mi></mrow></msub><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><msub><mrow><mi>deg</mi><mo>⁡</mo></mrow><mi>G</mi></msub><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>9</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">\\deg_{\\overline G}(v)=n-1-\\deg_G(v)=9-1-2=6</annotation></semantics></math></span>."
+      },
+      "recap": "דרגה במשלים: $n-1-d$.",
+      "recapHtml": "דרגה במשלים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">n-1-d</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C02-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "כמה צלעות יש במשלים של $K_{3,4}$ ?",
+       "answer": 9,
+       "tol": 0,
+       "explain": "ל-$K_{3,4}$ יש $12$ צלעות, ו-$\\binom72=21$, ולכן במשלים $9$ צלעות. זה מתאים לכך שהמשלים הוא $K_3\\cup K_4$ עם $3+6=9$ צלעות.",
+       "promptHtml": "כמה צלעות יש במשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span> ?",
+       "explainHtml": "ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span> יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">12</annotation></semantics></math></span> צלעות, ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>7</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mn>21</mn></mrow><annotation encoding=\"application/x-tex\">\\binom72=21</annotation></semantics></math></span>, ולכן במשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">9</annotation></semantics></math></span> צלעות. זה מתאים לכך שהמשלים הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>3</mn></msub><mo>∪</mo><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_3\\cup K_4</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">3+6=9</annotation></semantics></math></span> צלעות."
+      },
+      "recap": "משלים של $K_{m,n}$: $K_m\\cup K_n$.",
+      "recapHtml": "משלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{m,n}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>m</mi></msub><mo>∪</mo><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_m\\cup K_n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C02-Q4",
+      "question": "איזה גרף הוא המשלים של $C_5$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "מסלול על 5 צמתים",
+        "type": "text",
+        "html": "מסלול על 5 צמתים"
+       },
+       {
+        "id": "b",
+        "value": "מעגל באורך 5",
+        "type": "text",
+        "html": "מעגל באורך 5"
+       },
+       {
+        "id": "c",
+        "value": "כוכב עם 4 עלים",
+        "type": "text",
+        "html": "כוכב עם 4 עלים"
+       },
+       {
+        "id": "d",
+        "value": "גרף בלי צלעות",
+        "type": "text",
+        "html": "גרף בלי צלעות"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "ל-$C_5$ יש 5 צלעות והמשלים הוא 2-רגולרי עם $10-5=5$ צלעות, ובאמת מעגל באורך 5. מסלול על 5 צמתים יש לו רק 4 צלעות, לכוכב 4 צלעות ודרגות שונות, וגרף בלי צלעות הוא המשלים של $K_5$.",
+      "recap": "$\\overline{C_5}\\cong C_5$.",
+      "questionHtml": "איזה גרף הוא המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_5</annotation></semantics></math></span> ?",
+      "explanationHtml": "ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_5</annotation></semantics></math></span> יש 5 צלעות והמשלים הוא 2-רגולרי עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mo>−</mo><mn>5</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">10-5=5</annotation></semantics></math></span> צלעות, ובאמת מעגל באורך 5. מסלול על 5 צמתים יש לו רק 4 צלעות, לכוכב 4 צלעות ודרגות שונות, וגרף בלי צלעות הוא המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span>.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><msub><mi>C</mi><mn>5</mn></msub></mrow><mo>≅</mo><msub><mi>C</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\overline{C_5}\\cong C_5</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C02-Q5",
+      "question": "הגרף $G$ אינו קשיר. מה נכון תמיד לגבי $\\overline G$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "אינו קשיר",
+        "type": "text",
+        "html": "אינו קשיר"
+       },
+       {
+        "id": "b",
+        "value": "קשיר תמיד",
+        "type": "text",
+        "html": "קשיר תמיד"
+       },
+       {
+        "id": "c",
+        "value": "הוא עץ",
+        "type": "text",
+        "html": "הוא עץ"
+       },
+       {
+        "id": "d",
+        "value": "הוא דו-צדדי",
+        "type": "text",
+        "html": "הוא דו-צדדי"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "שני צמתים משני רכיבים שונים לא מחוברים ב-$G$ ולכן מחוברים ב-$\\overline G$, וכל צומת מחובר דרכם לכל השאר. המשלים לא חייב להיות עץ או דו-צדדי: משלים של שלושה צמתים מבודדים הוא משולש.",
+      "recap": "$G$ לא קשיר גורר $\\overline G$ קשיר.",
+      "questionHtml": "הגרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> אינו קשיר. מה נכון תמיד לגבי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> ?",
+      "explanationHtml": "שני צמתים משני רכיבים שונים לא מחוברים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> ולכן מחוברים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span>, וכל צומת מחובר דרכם לכל השאר. המשלים לא חייב להיות עץ או דו-צדדי: משלים של שלושה צמתים מבודדים הוא משולש.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> לא קשיר גורר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> קשיר."
+     },
+     {
+      "id": "C02-Q6",
+      "step": {
+       "type": "numeric",
+       "prompt": "גרף $G$ על 13 צמתים איזומורפי למשלים שלו. כמה צלעות יש בו?",
+       "answer": 39,
+       "tol": 0,
+       "explain": "אותו מספר צלעות ב-$G$ וב-$\\overline G$, וסכומם $\\binom{13}2=78$. לכן $|E|=39$.",
+       "promptHtml": "גרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> על 13 צמתים איזומורפי למשלים שלו. כמה צלעות יש בו?",
+       "explainHtml": "אותו מספר צלעות ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> וב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span>, וסכומם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>13</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mn>78</mn></mrow><annotation encoding=\"application/x-tex\">\\binom{13}2=78</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>39</mn></mrow><annotation encoding=\"application/x-tex\">|E|=39</annotation></semantics></math></span>."
+      },
+      "recap": "$G\\cong\\overline G$ גורר $|E|=\\frac12\\binom n2$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi><mo>≅</mo><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">G\\cong\\overline G</annotation></semantics></math></span> גורר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">|E|=\\frac12\\binom n2</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C03",
+    "order": 3,
+    "icon": "🧮",
+    "title": "סדרות דרגות ואלגוריתם Havel-Hakimi",
+    "goal": "להחליט אם סדרת מספרים היא סדרת הדרגות של גרף, ולהסביר למה.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>סדרה של מספרים טבעיים היא <b>גרפית</b> אם קיים גרף פשוט שהדרגות של צמתיו הן בדיוק הסדרה. שני תנאים הכרחיים: הסכום <b>זוגי</b>, והמספר הגדול ביותר <b>קטן מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span></b> (מספר איברי הסדרה). אבל הם לא מספיקים: הסדרה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,1,1</annotation></semantics></math></span> עוברת את שניהם ואינה גרפית.</p>\n<div class=\"lesson-rule\">🔑 <b>אלגוריתם Havel-Hakimi:</b> (1) מסדרים את הסדרה בסדר יורד. (2) מוחקים את האיבר הראשון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> ומפחיתים 1 מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> האיברים הבאים; אם אין מספיק איברים או שמתקבל מספר שלילי, הסדרה לא גרפית. (3) חוזרים על השלבים עד שכל האיברים 0 (הסדרה גרפית) או עד כישלון.</div>\n<p>הרעיון: צומת בדרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> אפשר לחבר לצמתים בעלי הדרגות הגדולות ביותר, ולכן אחרי מחיקתו נשארת בעיה קטנה יותר.</p>\n<div class=\"lesson-ex\"><b>דוגמה:</b> האם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,2,2,2,1</annotation></semantics></math></span> גרפית? מוחקים 3 ומפחיתים משלושת הבאים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1,1,1,1</annotation></semantics></math></span>. מוחקים 1: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">0,1,1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1,1,0</annotation></semantics></math></span>. מוחקים 1: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0,0</annotation></semantics></math></span>. הכול אפס, ולכן הסדרה גרפית.</div>\n<div class=\"lesson-trap\">⚠️ צומת בדרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> מחובר לכל הצמתים האחרים, ולכן לא יכול להיות בגרף אותו צומת בדרגה 0. לכן אין גרף על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span> צמתים שבו כל הדרגות שונות זו מזו.</div>"
+    },
+    "questions": [
+     {
+      "id": "C03-Q1",
+      "question": "איזו מהסדרות הבאות (כולן עם סכום זוגי) היא <b>לא</b> סדרת דרגות של גרף?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$3,3,2,2,2$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3,3,2,2,2</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$4,2,2,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">4,2,2,1,1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$4,4,3,1,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>4</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">4,4,3,1,1,1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$3,3,3,3$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3,3,3,3</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "ב-$4,4,3,1,1,1$ מוחקים 4 ומפחיתים מארבעת הבאים: $3,2,0,0,1$, כלומר $3,2,1,0,0$. מוחקים 3 ומפחיתים משלושת הבאים: $1,0,-1,0$, מספר שלילי, ולכן הסדרה לא גרפית. השאר גרפיות: $3,3,3,3$ הוא $K_4$, ו-$4,2,2,1,1$ מתקבלת מ-$1,1,0,0$ אחרי חיבור צומת לארבעת הצמתים.",
+      "recap": "סכום זוגי לא מספיק: מריצים Havel-Hakimi.",
+      "questionHtml": "איזו מהסדרות הבאות (כולן עם סכום זוגי) היא &lt;b&gt;לא&lt;/b&gt; סדרת דרגות של גרף?",
+      "explanationHtml": "ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>4</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">4,4,3,1,1,1</annotation></semantics></math></span> מוחקים 4 ומפחיתים מארבעת הבאים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,2,0,0,1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">3,2,1,0,0</annotation></semantics></math></span>. מוחקים 3 ומפחיתים משלושת הבאים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mo>−</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1,0,-1,0</annotation></semantics></math></span>, מספר שלילי, ולכן הסדרה לא גרפית. השאר גרפיות: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3,3,3,3</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_4</annotation></semantics></math></span>, ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">4,2,2,1,1</annotation></semantics></math></span> מתקבלת מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1,1,0,0</annotation></semantics></math></span> אחרי חיבור צומת לארבעת הצמתים.",
+      "recapHtml": "סכום זוגי לא מספיק: מריצים Havel-Hakimi."
+     },
+     {
+      "id": "C03-Q2",
+      "question": "מריצים צעד אחד של Havel-Hakimi על הסדרה $4,3,3,2,2,1,1$. מהי הסדרה שמתקבלת (בסדר יורד)?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$2,2,1,1,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2,2,1,1,1,1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$3,2,2,1,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,2,2,1,1,1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$2,2,1,1,1,0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">2,2,1,1,1,0</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$3,3,2,2,1,1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,2,2,1,1</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "מוחקים 4 ומפחיתים 1 מארבעת הבאים $3,3,2,2$: מתקבל $2,2,1,1$, ושני האיברים האחרונים $1,1$ לא משתנים. התוצאה $2,2,1,1,1,1$. בתשובות האחרות הופחת מהצמתים הלא נכונים או במספר לא נכון של צמתים.",
+      "recap": "מוחקים $d$ ומפחיתים 1 מ-$d$ הבאים.",
+      "questionHtml": "מריצים צעד אחד של Havel-Hakimi על הסדרה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">4,3,3,2,2,1,1</annotation></semantics></math></span>. מהי הסדרה שמתקבלת (בסדר יורד)?",
+      "explanationHtml": "מוחקים 4 ומפחיתים 1 מארבעת הבאים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3,3,2,2</annotation></semantics></math></span>: מתקבל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2,2,1,1</annotation></semantics></math></span>, ושני האיברים האחרונים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1,1</annotation></semantics></math></span> לא משתנים. התוצאה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2,2,1,1,1,1</annotation></semantics></math></span>. בתשובות האחרות הופחת מהצמתים הלא נכונים או במספר לא נכון של צמתים.",
+      "recapHtml": "מוחקים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> ומפחיתים 1 מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span> הבאים."
+     },
+     {
+      "id": "C03-Q3",
+      "question": "האם קיים גרף פשוט על 7 צמתים שבו כל הדרגות שונות זו מזו?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, למשל מסלול",
+        "type": "text",
+        "html": "כן, למשל מסלול"
+       },
+       {
+        "id": "b",
+        "value": "לא: הדרגות היו חייבות להיות 0,1,2,3,4,5,6 וצומת בדרגה 6 לא יכול להתקיים יחד עם צומת בדרגה 0",
+        "type": "text",
+        "html": "לא: הדרגות היו חייבות להיות 0,1,2,3,4,5,6 וצומת בדרגה 6 לא יכול להתקיים יחד עם צומת בדרגה 0"
+       },
+       {
+        "id": "c",
+        "value": "כן, אבל רק אם הסכום זוגי",
+        "type": "text",
+        "html": "כן, אבל רק אם הסכום זוגי"
+       },
+       {
+        "id": "d",
+        "value": "לא, כי 7 מספר אי-זוגי",
+        "type": "text",
+        "html": "לא, כי 7 מספר אי-זוגי"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "בגרף על 7 צמתים הדרגות בין 0 ל-6, ולכן 7 דרגות שונות הן בדיוק $0,1,\\dots,6$. אבל צומת בדרגה 6 מחובר לכולם, כולל לצומת בדרגה 0. סתירה. במסלול יש דרגות חוזרות.",
+      "recap": "דרגה $n-1$ ודרגה 0 לא מופיעות יחד.",
+      "questionHtml": "האם קיים גרף פשוט על 7 צמתים שבו כל הדרגות שונות זו מזו?",
+      "explanationHtml": "בגרף על 7 צמתים הדרגות בין 0 ל-6, ולכן 7 דרגות שונות הן בדיוק <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mo>…</mo><mo separator=\"true\">,</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">0,1,\\dots,6</annotation></semantics></math></span>. אבל צומת בדרגה 6 מחובר לכולם, כולל לצומת בדרגה 0. סתירה. במסלול יש דרגות חוזרות.",
+      "recapHtml": "דרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> ודרגה 0 לא מופיעות יחד."
+     },
+     {
+      "id": "C03-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "סדרת הדרגות $5,4,3,3,2,2,2,1$ גרפית. כמה צלעות יש בגרף?",
+       "answer": 11,
+       "tol": 0,
+       "explain": "הסכום $5+4+3+3+2+2+2+1=22$, ולכן $|E|=11$.",
+       "promptHtml": "סדרת הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo separator=\"true\">,</mo><mn>4</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">5,4,3,3,2,2,2,1</annotation></semantics></math></span> גרפית. כמה צלעות יש בגרף?",
+       "explainHtml": "הסכום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>22</mn></mrow><annotation encoding=\"application/x-tex\">5+4+3+3+2+2+2+1=22</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">|E|=11</annotation></semantics></math></span>."
+      },
+      "recap": "$|E|=\\frac12\\sum d_i$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding=\"application/x-tex\">|E|=\\frac12\\sum d_i</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C03-Q5",
+      "question": "האם $7,6,5,5,3,2,2,2$ היא סדרת דרגות של גרף?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, כי הסכום זוגי",
+        "type": "text",
+        "html": "כן, כי הסכום זוגי"
+       },
+       {
+        "id": "b",
+        "value": "לא, אף שהסכום זוגי האלגוריתם נכשל",
+        "type": "text",
+        "html": "לא, אף שהסכום זוגי האלגוריתם נכשל"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי הסכום אי-זוגי",
+        "type": "text",
+        "html": "לא, כי הסכום אי-זוגי"
+       },
+       {
+        "id": "d",
+        "value": "כן, כי הדרגה המקסימלית קטנה מ-8",
+        "type": "text",
+        "html": "כן, כי הדרגה המקסימלית קטנה מ-8"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הסכום $32$ זוגי והמקסימום $7<8$, אבל מוחקים 7: $5,4,4,2,1,1,1$. מוחקים 5: $3,3,1,0,0,1$, כלומר $3,3,1,1,0,0$. מוחקים 3: $2,0,0,0,0$. מוחקים 2: צריך להפחית מהשניים הבאים, שהם 0 ו-0, ומתקבל מספר שלילי. אין גרף כזה.",
+      "recap": "שני התנאים ההכרחיים לא מספיקים.",
+      "questionHtml": "האם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn><mo separator=\"true\">,</mo><mn>6</mn><mo separator=\"true\">,</mo><mn>5</mn><mo separator=\"true\">,</mo><mn>5</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">7,6,5,5,3,2,2,2</annotation></semantics></math></span> היא סדרת דרגות של גרף?",
+      "explanationHtml": "הסכום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>32</mn></mrow><annotation encoding=\"application/x-tex\">32</annotation></semantics></math></span> זוגי והמקסימום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn><mo>&lt;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">7&lt;8</annotation></semantics></math></span>, אבל מוחקים 7: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo separator=\"true\">,</mo><mn>4</mn><mo separator=\"true\">,</mo><mn>4</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">5,4,4,2,1,1,1</annotation></semantics></math></span>. מוחקים 5: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,1,0,0,1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">3,3,1,1,0,0</annotation></semantics></math></span>. מוחקים 3: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">2,0,0,0,0</annotation></semantics></math></span>. מוחקים 2: צריך להפחית מהשניים הבאים, שהם 0 ו-0, ומתקבל מספר שלילי. אין גרף כזה.",
+      "recapHtml": "שני התנאים ההכרחיים לא מספיקים."
+     },
+     {
+      "id": "C03-Q6",
+      "step": {
+       "type": "order",
+       "prompt": "סדרו את שלבי Havel-Hakimi על הסדרה $3,3,2,2,1,1$.",
+       "lines": [
+        "מוחקים 3 ומפחיתים 1 מהשלושה הבאים: $2,1,1,1,1$",
+        "מוחקים 2 ומפחיתים 1 מהשניים הבאים: $1,1,0,0$",
+        "מוחקים 1 ומפחיתים 1 מהבא: $0,0,0$",
+        "כל האיברים אפס, ולכן הסדרה גרפית"
+       ],
+       "explain": "כל שלב מתחיל בסדרה שנוצרה בקודמו, ולכן הסדר קבוע.",
+       "promptHtml": "סדרו את שלבי Havel-Hakimi על הסדרה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3,3,2,2,1,1</annotation></semantics></math></span>.",
+       "explainHtml": "כל שלב מתחיל בסדרה שנוצרה בקודמו, ולכן הסדר קבוע.",
+       "linesHtml": [
+        "מוחקים 3 ומפחיתים 1 מהשלושה הבאים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2,1,1,1,1</annotation></semantics></math></span>",
+        "מוחקים 2 ומפחיתים 1 מהשניים הבאים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1,1,0,0</annotation></semantics></math></span>",
+        "מוחקים 1 ומפחיתים 1 מהבא: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0,0,0</annotation></semantics></math></span>",
+        "כל האיברים אפס, ולכן הסדרה גרפית"
+       ]
+      },
+      "recap": "ממשיכים עד אפסים (גרפית) או עד איבר שלילי.",
+      "recapHtml": "ממשיכים עד אפסים (גרפית) או עד איבר שלילי."
+     }
+    ]
+   },
+   {
+    "id": "C04",
+    "order": 4,
+    "icon": "🔀",
+    "title": "גרפים דו-צדדיים",
+    "goal": "לזהות גרף דו-צדדי, לספור צלעות לפי הצדדים, ולהסביר למה המשלים שלו כמעט אף פעם לא דו-צדדי.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>גרף <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>B</mi><mo separator=\"true\">,</mo><mi>E</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">G=(A,B,E)</annotation></semantics></math></span> הוא <b>דו-צדדי</b> אם אפשר לחלק את הצמתים לשתי קבוצות לא ריקות וזרות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo separator=\"true\">,</mo><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">A,B</annotation></semantics></math></span>, כך שכל צלע מחברת צומת מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> לצומת מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span>. אין צלעות בתוך צד.</p>\n<div class=\"lesson-rule\">🔑 גרף דו-צדדי אם ורק אם אין בו מעגל <b>באורך אי-זוגי</b>. בפרט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> זוגי דו-צדדי, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> אי-זוגי לא, וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_n</annotation></semantics></math></span> עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge3</annotation></semantics></math></span> לא (יש בו משולש).</div>\n<ul>\n<li><b>דו-צדדי שלם</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{m,n}</annotation></semantics></math></span>: כל צומת של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding=\"application/x-tex\">|A|=m</annotation></semantics></math></span>) מחובר לכל צומת של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">|B|=n</annotation></semantics></math></span>). יש בו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>m</mi><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">mn</annotation></semantics></math></span> צלעות.</li>\n<li>בכל גרף דו-צדדי כל צלע נספרת פעם אחת בצד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ופעם אחת בצד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mo>∑</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></msub><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo><mo>=</mo><msub><mo>∑</mo><mrow><mi>b</mi><mo>∈</mo><mi>B</mi></mrow></msub><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>b</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">\\sum_{a\\in A}\\deg(a)=\\sum_{b\\in B}\\deg(b)=|E|</annotation></semantics></math></span>.</li>\n<li>אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">|A|=a</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">|B|=n-a</annotation></semantics></math></span>, יש לכל היותר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a(n-a)</annotation></semantics></math></span> צלעות.</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> בגרף דו-צדדי עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">|A|=3</annotation></semantics></math></span> שבו כל צומת של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בדרגה 4 יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">12</annotation></semantics></math></span> צלעות. אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">|B|=6</annotation></semantics></math></span> וכל דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> שוות, כל צומת של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> בדרגה 2.</div>\n<div class=\"lesson-trap\">⚠️ משלים של גרף דו-צדדי על 5 צמתים או יותר <b>אינו</b> דו-צדדי: לפחות אחד הצדדים מכיל 3 צמתים, ובמקור אין ביניהם צלעות, ולכן במשלים הם יוצרים משולש. משולש הוא מעגל אי-זוגי.</div>"
+    },
+    "questions": [
+     {
+      "id": "C04-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "כמה צלעות יש ב-$K_{5,7}$ ?",
+       "answer": 35,
+       "tol": 0,
+       "explain": "כל אחד מ-5 צמתי $A$ מחובר לכל 7 צמתי $B$: $5\\cdot7=35$.",
+       "promptHtml": "כמה צלעות יש ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>5</mn><mo separator=\"true\">,</mo><mn>7</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{5,7}</annotation></semantics></math></span> ?",
+       "explainHtml": "כל אחד מ-5 צמתי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> מחובר לכל 7 צמתי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>⋅</mo><mn>7</mn><mo>=</mo><mn>35</mn></mrow><annotation encoding=\"application/x-tex\">5\\cdot7=35</annotation></semantics></math></span>."
+      },
+      "recap": "$|E(K_{m,n})|=mn$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>m</mi><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">|E(K_{m,n})|=mn</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C04-Q2",
+      "question": "איזה מהגרפים הבאים דו-צדדי?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$C_7$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>7</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_7</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$C_8$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_8</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$K_4$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_4</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$K_5$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "$C_8$ הוא מעגל באורך זוגי, ולכן אפשר לצבוע את צמתיו לסירוגין בשני צדדים. ב-$C_7$ יש מעגל באורך 7 (אי-זוגי), וב-$K_4$ ו-$K_5$ יש משולשים.",
+      "recap": "אין מעגל אי-זוגי: דו-צדדי.",
+      "questionHtml": "איזה מהגרפים הבאים דו-צדדי?",
+      "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_8</annotation></semantics></math></span> הוא מעגל באורך זוגי, ולכן אפשר לצבוע את צמתיו לסירוגין בשני צדדים. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>7</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_7</annotation></semantics></math></span> יש מעגל באורך 7 (אי-זוגי), וב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_4</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span> יש משולשים.",
+      "recapHtml": "אין מעגל אי-זוגי: דו-צדדי."
+     },
+     {
+      "id": "C04-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף דו-צדדי $|A|=4$ וכל צומת של $A$ בדרגה 3. ב-$B$ יש 6 צמתים, וכולם באותה דרגה. מהי הדרגה של צומת ב-$B$ ?",
+       "answer": 2,
+       "tol": 0,
+       "explain": "מספר הצלעות $4\\cdot3=12$, וגם $6\\cdot d=12$. לכן $d=2$.",
+       "promptHtml": "בגרף דו-צדדי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">|A|=4</annotation></semantics></math></span> וכל צומת של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בדרגה 3. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> יש 6 צמתים, וכולם באותה דרגה. מהי הדרגה של צומת ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> ?",
+       "explainHtml": "מספר הצלעות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">4\\cdot3=12</annotation></semantics></math></span>, וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">6\\cdot d=12</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">d=2</annotation></semantics></math></span>."
+      },
+      "recap": "$\\sum_A\\deg=\\sum_B\\deg=|E|$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mo>∑</mo><mi>A</mi></msub><mi>deg</mi><mo>⁡</mo><mo>=</mo><msub><mo>∑</mo><mi>B</mi></msub><mi>deg</mi><mo>⁡</mo><mo>=</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">\\sum_A\\deg=\\sum_B\\deg=|E|</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C04-Q4",
+      "question": "האם המשלים של $K_{2,5}$ הוא דו-צדדי?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, כי $K_{2,5}$ דו-צדדי",
+        "type": "text",
+        "html": "כן, כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>5</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,5}</annotation></semantics></math></span> דו-צדדי"
+       },
+       {
+        "id": "b",
+        "value": "לא דו-צדדי, כי במשלים יש משולש",
+        "type": "text",
+        "html": "לא דו-צדדי, כי במשלים יש משולש"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי יש בו 7 צמתים",
+        "type": "text",
+        "html": "לא, כי יש בו 7 צמתים"
+       },
+       {
+        "id": "d",
+        "value": "כן, כי הוא קשיר",
+        "type": "text",
+        "html": "כן, כי הוא קשיר"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "המשלים הוא $K_2\\cup K_5$. הצד בן 5 הצמתים הופך לקליקה $K_5$, ובה משולש. תכונה של גרף לא עוברת למשלים שלו. 7 צמתים לבדם לא מונעים דו-צדדיות, והמשלים אף אינו קשיר.",
+      "recap": "צד עם 3 צמתים נהפך למשולש במשלים.",
+      "questionHtml": "האם המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>5</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,5}</annotation></semantics></math></span> הוא דו-צדדי?",
+      "explanationHtml": "המשלים הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_2\\cup K_5</annotation></semantics></math></span>. הצד בן 5 הצמתים הופך לקליקה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span>, ובה משולש. תכונה של גרף לא עוברת למשלים שלו. 7 צמתים לבדם לא מונעים דו-צדדיות, והמשלים אף אינו קשיר.",
+      "recapHtml": "צד עם 3 צמתים נהפך למשולש במשלים."
+     },
+     {
+      "id": "C04-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "מהו מספר הצלעות המרבי בגרף דו-צדדי על 9 צמתים?",
+       "answer": 20,
+       "tol": 0,
+       "explain": "אם $|A|=a$ אז $|B|=9-a$ ומספר הצלעות לכל היותר $a(9-a)$. הערך הגדול ביותר ב-$a=4$ או $a=5$: $4\\cdot5=20$.",
+       "promptHtml": "מהו מספר הצלעות המרבי בגרף דו-צדדי על 9 צמתים?",
+       "explainHtml": "אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">|A|=a</annotation></semantics></math></span> אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>9</mn><mo>−</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">|B|=9-a</annotation></semantics></math></span> ומספר הצלעות לכל היותר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo stretchy=\"false\">(</mo><mn>9</mn><mo>−</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a(9-a)</annotation></semantics></math></span>. הערך הגדול ביותר ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">a=4</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">a=5</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><mn>5</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">4\\cdot5=20</annotation></semantics></math></span>."
+      },
+      "recap": "מקסימום $a(n-a)$, בצדדים שווים ככל האפשר.",
+      "recapHtml": "מקסימום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a(n-a)</annotation></semantics></math></span>, בצדדים שווים ככל האפשר."
+     },
+     {
+      "id": "C04-Q6",
+      "step": {
+       "type": "numeric",
+       "prompt": "בגרף דו-צדדי דרגות הצמתים ב-$A$ הן $4,3,3,2$. ב-$B$ יש חמישה צמתים בדרגות $3,3,2,2,x$. מהו $x$ ?",
+       "answer": 2,
+       "tol": 0,
+       "explain": "בצד $A$ יש $4+3+3+2=12$ צלעות. ב-$B$: $3+3+2+2+x=12$, לכן $x=2$.",
+       "promptHtml": "בגרף דו-צדדי דרגות הצמתים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> הן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">4,3,3,2</annotation></semantics></math></span>. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span> יש חמישה צמתים בדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">3,3,2,2,x</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">x</annotation></semantics></math></span> ?",
+       "explainHtml": "בצד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">4+3+3+2=12</annotation></semantics></math></span> צלעות. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">3+3+2+2+x=12</annotation></semantics></math></span>, לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=2</annotation></semantics></math></span>."
+      },
+      "recap": "סכום הדרגות בכל צד שווה למספר הצלעות.",
+      "recapHtml": "סכום הדרגות בכל צד שווה למספר הצלעות."
+     }
+    ]
+   },
+   {
+    "id": "C05",
+    "order": 5,
+    "icon": "🌳",
+    "title": "עצים ויערות",
+    "goal": "לזהות עץ, ולחשב מספר צלעות, רכיבים ועלים לפי מספר הצמתים.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p><b>עץ</b> הוא גרף קשיר בלי מעגלים. <b>יער</b> הוא גרף בלי מעגלים (איחוד זר של עצים). <b>עלה</b> הוא צומת בדרגה 1.</p>\n<div class=\"lesson-rule\">🔑 בגרף על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים כל אחד מהתנאים הבאים שקול ל\"עץ\": (1) קשיר וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-1</annotation></semantics></math></span>; (2) בלי מעגלים וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-1</annotation></semantics></math></span>; (3) לכל שני צמתים יש מסלול <b>יחיד</b> ביניהם.</div>\n<ul>\n<li>ביער עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi></mrow><annotation encoding=\"application/x-tex\">k</annotation></semantics></math></span> רכיבי קשירות יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>k</mi></mrow><annotation encoding=\"application/x-tex\">|E|=n-k</annotation></semantics></math></span> צלעות, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">k=n-|E|</annotation></semantics></math></span>.</li>\n<li>לכל עץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span> צמתים יש לפחות <b>שני עלים</b>: שני קצות המסלול הארוך ביותר.</li>\n<li>הסרת עלה מעץ משאירה עץ.</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> יער עם 20 צמתים ו-3 רכיבים הוא בעל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>20</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>17</mn></mrow><annotation encoding=\"application/x-tex\">20-3=17</annotation></semantics></math></span> צלעות.</div>\n<div class=\"lesson-trap\">⚠️ התנאי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-1</annotation></semantics></math></span> לבדו לא מספיק: צריך גם קשירות או גם היעדר מעגלים. משולש וצומת מבודד: 4 צמתים, 3 צלעות, אבל זה לא עץ.</div>"
+    },
+    "questions": [
+     {
+      "id": "C05-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "כמה צלעות יש בעץ עם 15 צמתים?",
+       "answer": 14,
+       "tol": 0,
+       "explain": "$|E|=n-1=14$.",
+       "promptHtml": "כמה צלעות יש בעץ עם 15 צמתים?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>14</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-1=14</annotation></semantics></math></span>."
+      },
+      "recap": "עץ על $n$ צמתים: $n-1$ צלעות.",
+      "recapHtml": "עץ על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> צלעות."
+     },
+     {
+      "id": "C05-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "ביער יש 20 צמתים ו-3 רכיבי קשירות. כמה צלעות יש בו?",
+       "answer": 17,
+       "tol": 0,
+       "explain": "$|E|=n-k=20-3=17$.",
+       "promptHtml": "ביער יש 20 צמתים ו-3 רכיבי קשירות. כמה צלעות יש בו?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo>=</mo><mn>20</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>17</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-k=20-3=17</annotation></semantics></math></span>."
+      },
+      "recap": "יער: $|E|=n-k$.",
+      "recapHtml": "יער: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>k</mi></mrow><annotation encoding=\"application/x-tex\">|E|=n-k</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C05-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "ביער יש 30 צמתים ו-24 צלעות. כמה רכיבי קשירות יש בו?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "$k=n-|E|=30-24=6$.",
+       "promptHtml": "ביער יש 30 צמתים ו-24 צלעות. כמה רכיבי קשירות יש בו?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>30</mn><mo>−</mo><mn>24</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">k=n-|E|=30-24=6</annotation></semantics></math></span>."
+      },
+      "recap": "$k=n-|E|$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">k=n-|E|</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C05-Q4",
+      "question": "בגרף 7 צמתים ו-6 צלעות. איזה תנאי נוסף <b>מבטיח</b> שהוא עץ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "אין בו צומת מבודד",
+        "type": "text",
+        "html": "אין בו צומת מבודד"
+       },
+       {
+        "id": "b",
+        "value": "הגרף קשיר",
+        "type": "text",
+        "html": "הגרף קשיר"
+       },
+       {
+        "id": "c",
+        "value": "יש בו צומת בדרגה 3",
+        "type": "text",
+        "html": "יש בו צומת בדרגה 3"
+       },
+       {
+        "id": "d",
+        "value": "הוא דו-צדדי",
+        "type": "text",
+        "html": "הוא דו-צדדי"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "קשיר ו-$|E|=n-1$ הם עץ לפי משפט האפיון. שאר התנאים לא מספיקים: משולש ועוד כוכב $K_{1,3}$ הם גרף עם 7 צמתים ו-6 צלעות, בלי צומת מבודד ועם דרגה 3, ואינו עץ. ו-$C_4$ ועוד מסלול על 3 צמתים הוא דו-צדדי ואינו עץ.",
+      "recap": "$n-1$ צלעות ועוד קשיר (או בלי מעגלים) הם עץ.",
+      "questionHtml": "בגרף 7 צמתים ו-6 צלעות. איזה תנאי נוסף &lt;b&gt;מבטיח&lt;/b&gt; שהוא עץ?",
+      "explanationHtml": "קשיר ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">|E|=n-1</annotation></semantics></math></span> הם עץ לפי משפט האפיון. שאר התנאים לא מספיקים: משולש ועוד כוכב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,3}</annotation></semantics></math></span> הם גרף עם 7 צמתים ו-6 צלעות, בלי צומת מבודד ועם דרגה 3, ואינו עץ. ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_4</annotation></semantics></math></span> ועוד מסלול על 3 צמתים הוא דו-צדדי ואינו עץ.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> צלעות ועוד קשיר (או בלי מעגלים) הם עץ."
+     },
+     {
+      "id": "C05-Q5",
+      "question": "מסירים עלה מעץ עם לפחות 3 צמתים. מה מתקבל?",
+      "options": [
+       {
+        "id": "a",
+        "value": "יער עם שני רכיבים",
+        "type": "text",
+        "html": "יער עם שני רכיבים"
+       },
+       {
+        "id": "b",
+        "value": "מתקבל עץ",
+        "type": "text",
+        "html": "מתקבל עץ"
+       },
+       {
+        "id": "c",
+        "value": "גרף עם מעגל",
+        "type": "text",
+        "html": "גרף עם מעגל"
+       },
+       {
+        "id": "d",
+        "value": "גרף לא קשיר",
+        "type": "text",
+        "html": "גרף לא קשיר"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "העלה נוגע בצלע אחת בלבד, ולכן מסלולים בין שאר הצמתים לא עברו דרכו. הגרף נשאר קשיר, ואין בו מעגלים: עץ עם צומת אחד פחות.",
+      "recap": "הסרת עלה משאירה עץ.",
+      "questionHtml": "מסירים עלה מעץ עם לפחות 3 צמתים. מה מתקבל?",
+      "explanationHtml": "העלה נוגע בצלע אחת בלבד, ולכן מסלולים בין שאר הצמתים לא עברו דרכו. הגרף נשאר קשיר, ואין בו מעגלים: עץ עם צומת אחד פחות.",
+      "recapHtml": "הסרת עלה משאירה עץ."
+     },
+     {
+      "id": "C05-Q6",
+      "question": "מהו מספר העלים המזערי של עץ עם $n\\ge2$ צמתים?",
+      "options": [
+       {
+        "id": "a",
+        "value": "1",
+        "type": "text",
+        "html": "1"
+       },
+       {
+        "id": "b",
+        "value": "2",
+        "type": "text",
+        "html": "2"
+       },
+       {
+        "id": "c",
+        "value": "$n-1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "אין חסם",
+        "type": "text",
+        "html": "אין חסם"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "בעץ יש לפחות שני עלים: המסלול הארוך ביותר מתחיל ומסתיים בצמתים שדרגתם 1. המסלול $P_n$ מראה שיש עץ עם בדיוק שני עלים.",
+      "recap": "לעץ עם $n\\ge2$ לפחות שני עלים.",
+      "questionHtml": "מהו מספר העלים המזערי של עץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span> צמתים?",
+      "explanationHtml": "בעץ יש לפחות שני עלים: המסלול הארוך ביותר מתחיל ומסתיים בצמתים שדרגתם 1. המסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span> מראה שיש עץ עם בדיוק שני עלים.",
+      "recapHtml": "לעץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span> לפחות שני עלים."
+     }
+    ]
+   }
+  ]
+ },
  "perm_ie": {
   "levels": [
    {
@@ -1781,6 +2571,1077 @@ window.COURSES = {
       "bankId": "25B-B-Q1b",
       "recap": "$D_4\\cdot D_3=18$.",
       "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>D</mi><mn>4</mn></msub><mo>⋅</mo><msub><mi>D</mi><mn>3</mn></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding=\"application/x-tex\">D_4\\cdot D_3=18</annotation></semantics></math></span>."
+     }
+    ]
+   }
+  ]
+ },
+ "recurrence": {
+  "levels": [
+   {
+    "id": "C01",
+    "order": 1,
+    "icon": "🔢",
+    "title": "לחשב איברים ולבדוק נוסחה",
+    "goal": "לחשב איברים של נסיגה מתנאי התחלה, ולבדוק אם נוסחה מפורשת נכונה.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>סדרה היא רשימת מספרים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">a_0,a_1,a_2,\\dots</annotation></semantics></math></span>. <b>נוסחת נסיגה</b> אומרת איך מחשבים כל איבר מהאיברים שלפניו. <b>תנאי התחלה</b> הם האיברים הראשונים, שאין מאיפה לחשב אותם.</p>\n<div class=\"lesson-ex\">דוגמה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span>, עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_1=3</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>3</mn><mo>⋅</mo><mn>3</mn><mo>−</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">a_2=3\\cdot3-2\\cdot1=7</annotation></semantics></math></span>, אחר כך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><mo>⋅</mo><mn>7</mn><mo>−</mo><mn>2</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>15</mn></mrow><annotation encoding=\"application/x-tex\">a_3=3\\cdot7-2\\cdot3=15</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub><mo>=</mo><mn>3</mn><mo>⋅</mo><mn>15</mn><mo>−</mo><mn>2</mn><mo>⋅</mo><mn>7</mn><mo>=</mo><mn>31</mn></mrow><annotation encoding=\"application/x-tex\">a_4=3\\cdot15-2\\cdot7=31</annotation></semantics></math></span>. הסדרה היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>7</mn><mo separator=\"true\">,</mo><mn>15</mn><mo separator=\"true\">,</mo><mn>31</mn><mo separator=\"true\">,</mo><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">1,3,7,15,31,\\dots</annotation></semantics></math></span></div>\n<h3>הסוג שנלמד בקורס</h3>\n<p>נסיגה <b>ליניארית מסדר 2 עם מקדמים קבועים</b> נראית כך:</p>\n<div class=\"lesson-formula\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>p</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>q</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=p\\,a_{n-1}+q\\,a_{n-2}+g(n)</annotation></semantics></math></span></div>\n<ul>\n<li><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">q</annotation></semantics></math></span> הם מספרים קבועים (לא תלויים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>).</li>\n<li>\"מסדר 2\" פירושו שכל איבר תלוי בשני הקודמים לו, ולכן צריך <b>שני</b> תנאי התחלה, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_1</annotation></semantics></math></span>.</li>\n<li>אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">g(n)=0</annotation></semantics></math></span> הנסיגה <b>הומוגנית</b>. אחרת יש לה \"אגף ימין\" <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">g(n)</annotation></semantics></math></span>, למשל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">g(n)=5</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">g(n)=3\\cdot2^n</annotation></semantics></math></span>.</li>\n</ul>\n<h3>נוסחה מפורשת</h3>\n<p><b>נוסחה מפורשת</b> (פתרון מפורש) נותנת את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">a_n</annotation></semantics></math></span> ישירות מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>, בלי לחשב את כל האיברים שלפניו. את השיטה למצוא אותה נלמד בשלבים הבאים. כדי לבדוק שנוסחה נכונה, מציבים בה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n=0,1,2</annotation></semantics></math></span> ומשווים לאיברים שחישבנו מהנסיגה.</p>\n<div class=\"lesson-ex\">בדוגמה למעלה נוסחה מועמדת היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=2^{n+1}-1</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n=2</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">7</annotation></semantics></math></span>. אלה בדיוק האיברים שחישבנו.</div>\n<div class=\"lesson-trap\">⚠️ נוסחה שמתאימה ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_0</annotation></semantics></math></span> ול-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_1</annotation></semantics></math></span> בלבד עדיין לא בהכרח נכונה. בודקים גם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span> מהנסיגה, כי רק היא אומרת איך הסדרה ממשיכה.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R01-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=a_{n-1}+2a_{n-2}$ לכל $n\\ge2$, עם $a_0=1$ ו-$a_1=1$. מהו $a_5$ ?",
+       "answer": 21,
+       "tol": 0,
+       "explain": "מחשבים איבר אחר איבר: $a_2=1+2\\cdot1=3$, $a_3=3+2\\cdot1=5$, $a_4=5+2\\cdot3=11$, $a_5=11+2\\cdot5=21$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+2a_{n-2}</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span>, עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_1=1</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_5</annotation></semantics></math></span> ?",
+       "explainHtml": "מחשבים איבר אחר איבר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_2=1+2\\cdot1=3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">a_3=3+2\\cdot1=5</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub><mo>=</mo><mn>5</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">a_4=5+2\\cdot3=11</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub><mo>=</mo><mn>11</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>5</mn><mo>=</mo><mn>21</mn></mrow><annotation encoding=\"application/x-tex\">a_5=11+2\\cdot5=21</annotation></semantics></math></span>."
+      },
+      "recap": "מחשבים איבר אחר איבר מהנסיגה, מתנאי ההתחלה.",
+      "recapHtml": "מחשבים איבר אחר איבר מהנסיגה, מתנאי ההתחלה."
+     },
+     {
+      "id": "R01-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=4a_{n-1}-3a_{n-2}+2$ לכל $n\\ge2$, עם $a_0=0$ ו-$a_1=1$. מהו $a_4$ ?",
+       "answer": 76,
+       "tol": 0,
+       "explain": "$a_2=4\\cdot1-3\\cdot0+2=6$, $a_3=4\\cdot6-3\\cdot1+2=23$, $a_4=4\\cdot23-3\\cdot6+2=76$. את הקבוע $+2$ מוסיפים בכל צעד.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_n=4a_{n-1}-3a_{n-2}+2</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span>, עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">a_0=0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_1=1</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_4</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>1</mn><mo>−</mo><mn>3</mn><mo>⋅</mo><mn>0</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_2=4\\cdot1-3\\cdot0+2=6</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>6</mn><mo>−</mo><mn>3</mn><mo>⋅</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>23</mn></mrow><annotation encoding=\"application/x-tex\">a_3=4\\cdot6-3\\cdot1+2=23</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>23</mn><mo>−</mo><mn>3</mn><mo>⋅</mo><mn>6</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>76</mn></mrow><annotation encoding=\"application/x-tex\">a_4=4\\cdot23-3\\cdot6+2=76</annotation></semantics></math></span>. את הקבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">+2</annotation></semantics></math></span> מוסיפים בכל צעד."
+      },
+      "recap": "אגף ימין קבוע מוסיפים בכל צעד חישוב.",
+      "recapHtml": "אגף ימין קבוע מוסיפים בכל צעד חישוב."
+     },
+     {
+      "id": "R01-Q3",
+      "question": "נתון $a_n=3a_{n-1}-2a_{n-2}$ עם $a_0=1$ ו-$a_1=3$. איזו נוסחה מפורשת מתאימה לסדרה?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=3^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=3^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=2^{n+1}-1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=2^{n+1}-1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=2^n+n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n=2^n+n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=n+1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=n+1</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "מהנסיגה $a_2=3\\cdot3-2\\cdot1=7$. הנוסחה $2^{n+1}-1$ נותנת $1,3,7$ ולכן מתאימה. הנוסחה $3^n$ נותנת $a_2=9$. הנוסחה $2^n+n$ נותנת $a_2=6$. הנוסחה $n+1$ נותנת $a_1=2$ ולא $3$.",
+      "recap": "בודקים נוסחה על $a_0,a_1,a_2$.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_1=3</annotation></semantics></math></span>. איזו נוסחה מפורשת מתאימה לסדרה?",
+      "explanationHtml": "מהנסיגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>3</mn><mo>⋅</mo><mn>3</mn><mo>−</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">a_2=3\\cdot3-2\\cdot1=7</annotation></semantics></math></span>. הנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{n+1}-1</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn><mo separator=\"true\">,</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">1,3,7</annotation></semantics></math></span> ולכן מתאימה. הנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">3^n</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">a_2=9</annotation></semantics></math></span>. הנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">2^n+n</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_2=6</annotation></semantics></math></span>. הנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n+1</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_1=2</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span>.",
+      "recapHtml": "בודקים נוסחה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_0,a_1,a_2</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R01-Q4",
+      "question": "למה בנסיגה מסדר 2 צריך לתת שני תנאי התחלה ולא אחד?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כי כל איבר תלוי בשני הקודמים לו, ובלי שני תנאים יש אינסוף סדרות שמקיימות את אותה נסיגה",
+        "type": "text",
+        "html": "כי כל איבר תלוי בשני הקודמים לו, ובלי שני תנאים יש אינסוף סדרות שמקיימות את אותה נסיגה"
+       },
+       {
+        "id": "b",
+        "value": "כי הנוסחה המפורשת תמיד מכילה את $n$ בשתי חזקות שונות",
+        "type": "text",
+        "html": "כי הנוסחה המפורשת תמיד מכילה את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> בשתי חזקות שונות"
+       },
+       {
+        "id": "c",
+        "value": "כי $a_0$ ו-$a_1$ הם המקדמים $p$ ו-$q$ של הנסיגה",
+        "type": "text",
+        "html": "כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_1</annotation></semantics></math></span> הם המקדמים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">q</annotation></semantics></math></span> של הנסיגה"
+       },
+       {
+        "id": "d",
+        "value": "כי שני תנאי התחלה משנים את הנסיגה עצמה",
+        "type": "text",
+        "html": "כי שני תנאי התחלה משנים את הנסיגה עצמה"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "דוגמה: גם $a_n=2^n$ וגם $a_n=3^n$ מקיימות $a_n=5a_{n-1}-6a_{n-2}$ (אפשר להציב), אבל הן סדרות שונות. רק תנאי ההתחלה קובעים איזו מהן. $p,q$ הם מקדמי הנסיגה ולא קשורים לתנאי ההתחלה, ותנאי התחלה לא משנים את הנסיגה.",
+      "recap": "סדר 2 דורש שני תנאי התחלה.",
+      "questionHtml": "למה בנסיגה מסדר 2 צריך לתת שני תנאי התחלה ולא אחד?",
+      "explanationHtml": "דוגמה: גם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=2^n</annotation></semantics></math></span> וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=3^n</annotation></semantics></math></span> מקיימות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}</annotation></semantics></math></span> (אפשר להציב), אבל הן סדרות שונות. רק תנאי ההתחלה קובעים איזו מהן. <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo separator=\"true\">,</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">p,q</annotation></semantics></math></span> הם מקדמי הנסיגה ולא קשורים לתנאי ההתחלה, ותנאי התחלה לא משנים את הנסיגה.",
+      "recapHtml": "סדר 2 דורש שני תנאי התחלה."
+     },
+     {
+      "id": "R01-Q5",
+      "question": "איזו נסיגה היא ליניארית הומוגנית מסדר 2 עם מקדמים קבועים?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=a_{n-1}\\cdot a_{n-2}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⋅</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}\\cdot a_{n-2}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=2a_{n-1}+a_{n-2}+1$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=2a_{n-1}+a_{n-2}+1</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=2a_{n-1}-5a_{n-2}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=2a_{n-1}-5a_{n-2}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=n\\,a_{n-1}-a_{n-2}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=n\\,a_{n-1}-a_{n-2}</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "במכפלה $a_{n-1}\\cdot a_{n-2}$ האיברים מוכפלים זה בזה, ולכן היא לא ליניארית. בשנייה יש קבוע $+1$ בסוף, ולכן היא לא הומוגנית. בשלישית המקדם $n$ משתנה, ולכן המקדמים לא קבועים.",
+      "recap": "הומוגנית: בלי איבר חופשי. קבועה: המקדמים מספרים.",
+      "questionHtml": "איזו נסיגה היא ליניארית הומוגנית מסדר 2 עם מקדמים קבועים?",
+      "explanationHtml": "במכפלה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⋅</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_{n-1}\\cdot a_{n-2}</annotation></semantics></math></span> האיברים מוכפלים זה בזה, ולכן היא לא ליניארית. בשנייה יש קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">+1</annotation></semantics></math></span> בסוף, ולכן היא לא הומוגנית. בשלישית המקדם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> משתנה, ולכן המקדמים לא קבועים.",
+      "recapHtml": "הומוגנית: בלי איבר חופשי. קבועה: המקדמים מספרים."
+     }
+    ]
+   },
+   {
+    "id": "C02",
+    "order": 2,
+    "icon": "🧩",
+    "title": "משוואה אופיינית ושני שורשים",
+    "goal": "לפתור נסיגה הומוגנית מסדר 2 כשלמשוואה האופיינית שני שורשים שונים.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>נסיגה הומוגנית: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>p</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>q</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=p\\,a_{n-1}+q\\,a_{n-2}</annotation></semantics></math></span>. מחפשים פתרונות מהצורה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=x^n</annotation></semantics></math></span>. הצבה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>p</mi><mtext> </mtext><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mi>q</mi><mtext> </mtext><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">x^n=p\\,x^{n-1}+q\\,x^{n-2}</annotation></semantics></math></span>, ואחרי חלוקה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">x^{n-2}</annotation></semantics></math></span> מקבלים:</p>\n<div class=\"lesson-formula\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mi>p</mi><mtext> </mtext><mi>x</mi><mo>+</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">x^2=p\\,x+q</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mtext> </mtext><mi>x</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-p\\,x-q=0</annotation></semantics></math></span></div>\n<p>זו <b>המשוואה האופיינית</b> של הנסיגה. שימו לב לסימנים: מעבירים אגף, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">q</annotation></semantics></math></span> מקבלים סימן הפוך.</p>\n<div class=\"lesson-rule\">🔑 אם למשוואה האופיינית שני שורשים שונים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo mathvariant=\"normal\">≠</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">r_1\\ne r_2</annotation></semantics></math></span>, הפתרון הכללי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msubsup><mi>r</mi><mn>1</mn><mi>n</mi></msubsup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msubsup><mi>r</mi><mn>2</mn><mi>n</mi></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1r_1^n+C_2r_2^n</annotation></semantics></math></span>. את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1,C_2</annotation></semantics></math></span> קובעים מתנאי ההתחלה.</div>\n<h3>המתכון</h3>\n<ol>\n<li>כותבים את המשוואה האופיינית ומוצאים שורשים.</li>\n<li>כותבים את הפתרון הכללי עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1,C_2</annotation></semantics></math></span>.</li>\n<li>מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>. נוצרת מערכת של שתי משוואות בשני נעלמים.</li>\n<li>פותרים ובודקים את התוצאה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span>.</li>\n</ol>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_0=3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">a_1=8</annotation></semantics></math></span>. המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>6</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-5x+6=0</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">x=3</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot3^n</annotation></semantics></math></span>. מתנאי ההתחלה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=3</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+3C_2=8</annotation></semantics></math></span>. מחסירים פעמיים את הראשונה מהשנייה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_2=2</annotation></semantics></math></span>, ואז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1=1</annotation></semantics></math></span>. התוצאה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=2^n+2\\cdot3^n</annotation></semantics></math></span>. בדיקה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span>: הנסיגה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>⋅</mo><mn>8</mn><mo>−</mo><mn>6</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>22</mn></mrow><annotation encoding=\"application/x-tex\">5\\cdot8-6\\cdot3=22</annotation></semantics></math></span>, והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>+</mo><mn>18</mn><mo>=</mo><mn>22</mn></mrow><annotation encoding=\"application/x-tex\">4+18=22</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ במשוואה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">x^2=7x-12</annotation></semantics></math></span> המשוואה האופיינית היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x+12=0</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2+7x+12=0</annotation></semantics></math></span>. ואם אחד השורשים שלילי, כותבים אותו בסוגריים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo>−</mo><mn>2</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">(-2)^n</annotation></semantics></math></span>.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R02-Q1",
+      "question": "מהי המשוואה האופיינית של $a_n=7a_{n-1}-12a_{n-2}$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$x^2+7x+12=0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2+7x+12=0</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$x^2-7x-12=0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x-12=0</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$x^2-12x+7=0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>7</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-12x+7=0</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$x^2-7x+12=0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x+12=0</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "מ-$x^2=7x-12$ מעבירים אגף ומקבלים $x^2-7x+12=0$. בתשובה $x^2+7x+12$ שני הסימנים הפוכים. בתשובה $x^2-7x-12$ הקבוע לא הועבר אגף נכון. בתשובה $x^2-12x+7$ התחלפו המקדמים $p,q$.",
+      "recap": "$x^2=px+q$, כלומר $x^2-px-q=0$.",
+      "questionHtml": "מהי המשוואה האופיינית של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>7</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>12</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=7a_{n-1}-12a_{n-2}</annotation></semantics></math></span> ?",
+      "explanationHtml": "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">x^2=7x-12</annotation></semantics></math></span> מעבירים אגף ומקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x+12=0</annotation></semantics></math></span>. בתשובה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">x^2+7x+12</annotation></semantics></math></span> שני הסימנים הפוכים. בתשובה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x-12</annotation></semantics></math></span> הקבוע לא הועבר אגף נכון. בתשובה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">x^2-12x+7</annotation></semantics></math></span> התחלפו המקדמים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo separator=\"true\">,</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">p,q</annotation></semantics></math></span>.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mi>p</mi><mi>x</mi><mo>+</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">x^2=px+q</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>x</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-px-q=0</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R02-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "מהו השורש הגדול של המשוואה $x^2=7x-12$ ?",
+       "answer": 4,
+       "tol": 0,
+       "explain": "$x^2-7x+12=(x-3)(x-4)=0$, ולכן השורשים הם $3$ ו-$4$. השורש הגדול הוא $4$.",
+       "promptHtml": "מהו השורש הגדול של המשוואה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">x^2=7x-12</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>4</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x+12=(x-3)(x-4)=0</annotation></semantics></math></span>, ולכן השורשים הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span>. השורש הגדול הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span>."
+      },
+      "recap": "מפרקים את המשוואה האופיינית לגורמים.",
+      "recapHtml": "מפרקים את המשוואה האופיינית לגורמים."
+     },
+     {
+      "id": "R02-Q3",
+      "question": "מהו הפתרון הכללי של $a_n=a_{n-1}+6a_{n-2}$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=C_1\\cdot3^n+C_2\\cdot(-2)^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>2</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot(-2)^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=C_1\\cdot(-3)^n+C_2\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>3</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot(-3)^n+C_2\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=C_1\\cdot3^n+C_2\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=C_1\\cdot 6^n+C_2\\cdot1^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>6</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>1</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot 6^n+C_2\\cdot1^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "המשוואה האופיינית $x^2-x-6=0$ נותנת $(x-3)(x+2)=0$ ולכן $x=3$ ו-$x=-2$. בתשובה השנייה התחלפו סימני השורשים. בשלישית שני השורשים חיוביים, אבל $-2$ שורש ולא $2$. ברביעית המקדמים $p,q$ שימשו כשורשים.",
+      "recap": "שורשים $r_1\\ne r_2$: $C_1r_1^n+C_2r_2^n$.",
+      "questionHtml": "מהו הפתרון הכללי של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+6a_{n-2}</annotation></semantics></math></span> ?",
+      "explanationHtml": "המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>6</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-x-6=0</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">(x-3)(x+2)=0</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">x=3</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=-2</annotation></semantics></math></span>. בתשובה השנייה התחלפו סימני השורשים. בשלישית שני השורשים חיוביים, אבל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">-2</annotation></semantics></math></span> שורש ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span>. ברביעית המקדמים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo separator=\"true\">,</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">p,q</annotation></semantics></math></span> שימשו כשורשים.",
+      "recapHtml": "שורשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo mathvariant=\"normal\">≠</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">r_1\\ne r_2</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msubsup><mi>r</mi><mn>1</mn><mi>n</mi></msubsup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msubsup><mi>r</mi><mn>2</mn><mi>n</mi></msubsup></mrow><annotation encoding=\"application/x-tex\">C_1r_1^n+C_2r_2^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R02-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=5a_{n-1}-6a_{n-2}$, $a_0=1$, $a_1=0$. הפתרון הכללי הוא $a_n=C_1\\cdot2^n+C_2\\cdot3^n$. מהו $C_2$ ?",
+       "answer": -2,
+       "tol": 0,
+       "explain": "מ-$n=0$: $C_1+C_2=1$. מ-$n=1$: $2C_1+3C_2=0$. מחסירים פעמיים את הראשונה: $C_2=-2$ ואז $C_1=3$. בדיקה: $a_2=5\\cdot0-6\\cdot1=-6$, והנוסחה נותנת $3\\cdot4-2\\cdot9=-6$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">a_1=0</annotation></semantics></math></span>. הפתרון הכללי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot3^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_2</annotation></semantics></math></span> ?",
+       "explainHtml": "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=1</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+3C_2=0</annotation></semantics></math></span>. מחסירים פעמיים את הראשונה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_2=-2</annotation></semantics></math></span> ואז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">C_1=3</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>5</mn><mo>⋅</mo><mn>0</mn><mo>−</mo><mn>6</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mo>−</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_2=5\\cdot0-6\\cdot1=-6</annotation></semantics></math></span>, והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo>⋅</mo><mn>4</mn><mo>−</mo><mn>2</mn><mo>⋅</mo><mn>9</mn><mo>=</mo><mo>−</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">3\\cdot4-2\\cdot9=-6</annotation></semantics></math></span>."
+      },
+      "recap": "מציבים $n=0,1$ ופותרים מערכת.",
+      "recapHtml": "מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=0,1</annotation></semantics></math></span> ופותרים מערכת."
+     },
+     {
+      "id": "R02-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=a_{n-1}+2a_{n-2}$, $a_0=2$, $a_1=1$. מצאו נוסחה מפורשת וחשבו את $a_{10}$.",
+       "answer": 1025,
+       "tol": 0,
+       "explain": "המשוואה האופיינית $x^2-x-2=0$ נותנת $x=2$ ו-$x=-1$. אז $a_n=C_1\\cdot2^n+C_2\\cdot(-1)^n$, ומתנאי ההתחלה $C_1+C_2=2$ ו-$2C_1-C_2=1$ מקבלים $C_1=1$, $C_2=1$. לכן $a_n=2^n+(-1)^n$ ו-$a_{10}=1024+1=1025$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+2a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_0=2</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_1=1</annotation></semantics></math></span>. מצאו נוסחה מפורשת וחשבו את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>10</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_{10}</annotation></semantics></math></span>.",
+       "explainHtml": "המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-x-2=0</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">x=-1</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot(-1)^n</annotation></semantics></math></span>, ומתנאי ההתחלה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>−</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2C_1-C_2=1</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_2=1</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=2^n+(-1)^n</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>10</mn></msub><mo>=</mo><mn>1024</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1025</mn></mrow><annotation encoding=\"application/x-tex\">a_{10}=1024+1=1025</annotation></semantics></math></span>."
+      },
+      "recap": "הנוסחה המפורשת מאפשרת לחשב כל איבר ישירות.",
+      "recapHtml": "הנוסחה המפורשת מאפשרת לחשב כל איבר ישירות."
+     },
+     {
+      "id": "R02-Q6",
+      "step": {
+       "type": "order",
+       "prompt": "סדרו את שלבי הפתרון של נסיגה הומוגנית עם שני שורשים שונים.",
+       "lines": [
+        "כותבים את המשוואה האופיינית $x^2-px-q=0$",
+        "פותרים אותה ומקבלים שורשים $r_1\\ne r_2$",
+        "כותבים $a_n=C_1r_1^n+C_2r_2^n$",
+        "מציבים $n=0$ ו-$n=1$ ופותרים את $C_1,C_2$"
+       ],
+       "explain": "כל שלב משתמש בתוצאת הקודם: אי אפשר לכתוב פתרון כללי לפני שיש שורשים, ואי אפשר למצוא קבועים לפני שיש פתרון כללי.",
+       "promptHtml": "סדרו את שלבי הפתרון של נסיגה הומוגנית עם שני שורשים שונים.",
+       "explainHtml": "כל שלב משתמש בתוצאת הקודם: אי אפשר לכתוב פתרון כללי לפני שיש שורשים, ואי אפשר למצוא קבועים לפני שיש פתרון כללי.",
+       "linesHtml": [
+        "כותבים את המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>x</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-px-q=0</annotation></semantics></math></span>",
+        "פותרים אותה ומקבלים שורשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo mathvariant=\"normal\">≠</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">r_1\\ne r_2</annotation></semantics></math></span>",
+        "כותבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msubsup><mi>r</mi><mn>1</mn><mi>n</mi></msubsup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msubsup><mi>r</mi><mn>2</mn><mi>n</mi></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1r_1^n+C_2r_2^n</annotation></semantics></math></span>",
+        "מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span> ופותרים את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1,C_2</annotation></semantics></math></span>"
+       ]
+      },
+      "recap": "אופיינית, שורשים, פתרון כללי, תנאי התחלה.",
+      "recapHtml": "אופיינית, שורשים, פתרון כללי, תנאי התחלה."
+     }
+    ]
+   },
+   {
+    "id": "C03",
+    "order": 3,
+    "icon": "🔁",
+    "title": "שורש כפול",
+    "goal": "לפתור נסיגה הומוגנית כשהמשוואה האופיינית נותנת שורש כפול.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>לפעמים למשוואה האופיינית יש שורש <b>כפול</b>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mtext> </mtext><mi>x</mi><mo>−</mo><mi>q</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mi>r</mi><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2-p\\,x-q=(x-r)^2</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">r^n</annotation></semantics></math></span> הוא פתרון אחד בלבד, וצריך עוד פתרון עצמאי. מתברר ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,r^n</annotation></semantics></math></span> מקיים את הנסיגה גם הוא.</p>\n<div class=\"lesson-rule\">🔑 שורש כפול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>: הפתרון הכללי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\,r^n+C_2\\,n\\,r^n</annotation></semantics></math></span>.</div>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=4a_{n-1}-4a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_1=6</annotation></semantics></math></span>. המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>2</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-4x+4=(x-2)^2=0</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">r=2</annotation></semantics></math></span> כפול. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot n\\cdot2^n</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1=1</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+2C_2=6</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_2=2</annotation></semantics></math></span>. התוצאה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>2</mn><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>=</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>n</mi><mo stretchy=\"false\">)</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=2^n+2n\\cdot2^n=(1+2n)2^n</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>6</mn><mo>−</mo><mn>4</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">a_2=4\\cdot6-4\\cdot1=20</annotation></semantics></math></span> והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">5\\cdot4=20</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ שלוש טעויות נפוצות: (1) לכתוב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>r</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">r^{2n}</annotation></semantics></math></span> במקום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,r^n</annotation></semantics></math></span>. (2) להציב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span> ולשכוח את הגורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>: האיבר השני נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mn>1</mn><mo>⋅</mo><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">C_2\\cdot1\\cdot r</annotation></semantics></math></span>, ולכן המשוואה היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mi>r</mi><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">rC_1+rC_2</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1+C_2</annotation></semantics></math></span>. (3) כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">r=1</annotation></semantics></math></span> הפתרון הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n=C_1+C_2\\,n</annotation></semantics></math></span>, כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>1</mn><mi>n</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1^n=1</annotation></semantics></math></span>.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R03-Q1",
+      "question": "מהו הפתרון הכללי של $a_n=6a_{n-1}-9a_{n-2}$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=C_1\\cdot3^n+C_2\\cdot3^{2n}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>3</mn><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot3^{2n}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=C_1\\cdot3^n+C_2\\cdot9^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>9</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot9^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mi>n</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=C_1\\cdot3^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "המשוואה $x^2-6x+9=(x-3)^2=0$ נותנת שורש כפול $3$, ולכן הפתרון הוא $C_1 3^n+C_2 n 3^n$. הביטוי $3^{2n}=9^n$ אינו פתרון (הצבה בנסיגה לא מתקיימת). והתשובה האחרונה חסרה פתרון עצמאי שני, ואז אי אפשר לעמוד בשני תנאי התחלה.",
+      "recap": "שורש כפול: $r^n$ ו-$n\\,r^n$.",
+      "questionHtml": "מהו הפתרון הכללי של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>9</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=6a_{n-1}-9a_{n-2}</annotation></semantics></math></span> ?",
+      "explanationHtml": "המשוואה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-6x+9=(x-3)^2=0</annotation></semantics></math></span> נותנת שורש כפול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span>, ולכן הפתרון הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mi>n</mi><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C_1 3^n+C_2 n 3^n</annotation></semantics></math></span>. הביטוי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>3</mn><mrow><mn>2</mn><mi>n</mi></mrow></msup><mo>=</mo><msup><mn>9</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">3^{2n}=9^n</annotation></semantics></math></span> אינו פתרון (הצבה בנסיגה לא מתקיימת). והתשובה האחרונה חסרה פתרון עצמאי שני, ואז אי אפשר לעמוד בשני תנאי התחלה.",
+      "recapHtml": "שורש כפול: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">r^n</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,r^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R03-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "מהו השורש של $x^2=10x-25$ ?",
+       "answer": 5,
+       "tol": 0,
+       "explain": "$x^2-10x+25=(x-5)^2=0$, ולכן $x=5$ שורש כפול.",
+       "promptHtml": "מהו השורש של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>10</mn><mi>x</mi><mo>−</mo><mn>25</mn></mrow><annotation encoding=\"application/x-tex\">x^2=10x-25</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>25</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>5</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-10x+25=(x-5)^2=0</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">x=5</annotation></semantics></math></span> שורש כפול."
+      },
+      "recap": "ריבוע שלם במשוואה האופיינית נותן שורש כפול.",
+      "recapHtml": "ריבוע שלם במשוואה האופיינית נותן שורש כפול."
+     },
+     {
+      "id": "R03-Q3",
+      "step": {
+       "type": "findbug",
+       "prompt": "בפתרון של $a_n=6a_{n-1}-9a_{n-2}$ עם $a_0=2$ ו-$a_1=9$ נפלה שגיאה בשורה אחת. מצאו אותה.",
+       "lines": [
+        "המשוואה האופיינית $x^2-6x+9=0$ נותנת שורש כפול $x=3$",
+        "לכן $a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n$",
+        "מ-$a_0=2$ מקבלים $C_1=2$",
+        "מ-$a_1=9$ מקבלים $C_1+C_2=9$, ולכן $C_2=7$"
+       ],
+       "bugIndex": 3,
+       "explain": "בשורה האחרונה הציבו $n=1$ בלי לכפול בשורש. נכון: $a_1=C_1\\cdot3+C_2\\cdot1\\cdot3=3C_1+3C_2=9$, ולכן $C_2=1$. בדיקה: $a_2=6\\cdot9-9\\cdot2=36$, והנוסחה $2\\cdot9+1\\cdot2\\cdot9$ נותנת $36$.",
+       "promptHtml": "בפתרון של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>9</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=6a_{n-1}-9a_{n-2}</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_0=2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">a_1=9</annotation></semantics></math></span> נפלה שגיאה בשורה אחת. מצאו אותה.",
+       "explainHtml": "בשורה האחרונה הציבו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span> בלי לכפול בשורש. נכון: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><mn>3</mn><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mn>1</mn><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">a_1=C_1\\cdot3+C_2\\cdot1\\cdot3=3C_1+3C_2=9</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_2=1</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>6</mn><mo>⋅</mo><mn>9</mn><mo>−</mo><mn>9</mn><mo>⋅</mo><mn>2</mn><mo>=</mo><mn>36</mn></mrow><annotation encoding=\"application/x-tex\">a_2=6\\cdot9-9\\cdot2=36</annotation></semantics></math></span>, והנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>⋅</mo><mn>9</mn><mo>+</mo><mn>1</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">2\\cdot9+1\\cdot2\\cdot9</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>36</mn></mrow><annotation encoding=\"application/x-tex\">36</annotation></semantics></math></span>.",
+       "linesHtml": [
+        "המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-6x+9=0</annotation></semantics></math></span> נותנת שורש כפול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">x=3</annotation></semantics></math></span>",
+        "לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><mi>n</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n</annotation></semantics></math></span>",
+        "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_0=2</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1=2</annotation></semantics></math></span>",
+        "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">a_1=9</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=9</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">C_2=7</annotation></semantics></math></span>"
+       ]
+      },
+      "recap": "$a_1=rC_1+rC_2$ בשורש כפול.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mi>r</mi><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mi>r</mi><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_1=rC_1+rC_2</annotation></semantics></math></span> בשורש כפול."
+     },
+     {
+      "id": "R03-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=4a_{n-1}-4a_{n-2}$, $a_0=1$, $a_1=6$. הנוסחה המפורשת היא $a_n=(1+2n)2^n$. חשבו את $a_5$.",
+       "answer": 352,
+       "tol": 0,
+       "explain": "$a_5=(1+2\\cdot5)\\cdot2^5=11\\cdot32=352$. אפשר לאמת מהנסיגה: $a_2=20$, $a_3=4\\cdot20-4\\cdot6=56$, $a_4=4\\cdot56-4\\cdot20=144$, $a_5=4\\cdot144-4\\cdot56=352$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=4a_{n-1}-4a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_1=6</annotation></semantics></math></span>. הנוסחה המפורשת היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>n</mi><mo stretchy=\"false\">)</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=(1+2n)2^n</annotation></semantics></math></span>. חשבו את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_5</annotation></semantics></math></span>.",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub><mo>=</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>5</mn><mo stretchy=\"false\">)</mo><mo>⋅</mo><msup><mn>2</mn><mn>5</mn></msup><mo>=</mo><mn>11</mn><mo>⋅</mo><mn>32</mn><mo>=</mo><mn>352</mn></mrow><annotation encoding=\"application/x-tex\">a_5=(1+2\\cdot5)\\cdot2^5=11\\cdot32=352</annotation></semantics></math></span>. אפשר לאמת מהנסיגה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">a_2=20</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>20</mn><mo>−</mo><mn>4</mn><mo>⋅</mo><mn>6</mn><mo>=</mo><mn>56</mn></mrow><annotation encoding=\"application/x-tex\">a_3=4\\cdot20-4\\cdot6=56</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>56</mn><mo>−</mo><mn>4</mn><mo>⋅</mo><mn>20</mn><mo>=</mo><mn>144</mn></mrow><annotation encoding=\"application/x-tex\">a_4=4\\cdot56-4\\cdot20=144</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>144</mn><mo>−</mo><mn>4</mn><mo>⋅</mo><mn>56</mn><mo>=</mo><mn>352</mn></mrow><annotation encoding=\"application/x-tex\">a_5=4\\cdot144-4\\cdot56=352</annotation></semantics></math></span>."
+      },
+      "recap": "הנוסחה המפורשת נותנת כל איבר ישירות.",
+      "recapHtml": "הנוסחה המפורשת נותנת כל איבר ישירות."
+     },
+     {
+      "id": "R03-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=2a_{n-1}-a_{n-2}$, $a_0=3$, $a_1=5$. מצאו נוסחה מפורשת וחשבו את $a_{100}$.",
+       "answer": 203,
+       "tol": 0,
+       "explain": "$x^2-2x+1=(x-1)^2=0$, שורש כפול $1$. אז $a_n=C_1+C_2\\,n$. מ-$a_0=3$ מקבלים $C_1=3$, ומ-$a_1=C_1+C_2=5$ מקבלים $C_2=2$. לכן $a_n=3+2n$ ו-$a_{100}=203$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">a_n=2a_{n-1}-a_{n-2}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_0=3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">a_1=5</annotation></semantics></math></span>. מצאו נוסחה מפורשת וחשבו את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>100</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_{100}</annotation></semantics></math></span>.",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-2x+1=(x-1)^2=0</annotation></semantics></math></span>, שורש כפול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n=C_1+C_2\\,n</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">a_0=3</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">C_1=3</annotation></semantics></math></span>, ומ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">a_1=C_1+C_2=5</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_2=2</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><mo>+</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n=3+2n</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>100</mn></msub><mo>=</mo><mn>203</mn></mrow><annotation encoding=\"application/x-tex\">a_{100}=203</annotation></semantics></math></span>."
+      },
+      "recap": "שורש כפול 1: $a_n=C_1+C_2n$.",
+      "recapHtml": "שורש כפול 1: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n=C_1+C_2n</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "21B-A-Q3b",
+      "recap": "שורש כפול 2: $C_1 2^n+C_2 n 2^n$.",
+      "recapHtml": "שורש כפול 2: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mi>n</mi><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C_1 2^n+C_2 n 2^n</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C04",
+    "order": 4,
+    "icon": "➕",
+    "title": "אגף ימין קבוע",
+    "goal": "למצוא פתרון פרטי קבוע, או $A\\,n$ כש-1 שורש, ולהשלים לפתרון כללי.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>כשיש אגף ימין, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>p</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>q</mi><mtext> </mtext><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=p\\,a_{n-1}+q\\,a_{n-2}+g(n)</annotation></semantics></math></span>, הפתרון הכללי הוא סכום של שני חלקים:</p>\n<div class=\"lesson-formula\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n=a_n^{(h)}+a_n^{(p)}</annotation></semantics></math></span></div>\n<ul>\n<li><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n^{(h)}</annotation></semantics></math></span> הוא <b>הפתרון ההומוגני</b>: הפתרון של הנסיגה בלי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">g(n)</annotation></semantics></math></span>, כמו בשלבים הקודמים, עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1,C_2</annotation></semantics></math></span>.</li>\n<li><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}</annotation></semantics></math></span> הוא <b>פתרון פרטי</b>: פתרון אחד כלשהו של הנסיגה המלאה, בלי קבועים לא ידועים.</li>\n</ul>\n<h3>אגף ימין קבוע</h3>\n<p>כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">g(n)=c</annotation></semantics></math></span> מנחשים פתרון פרטי קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A</annotation></semantics></math></span>. הצבה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>p</mi><mi>A</mi><mo>+</mo><mi>q</mi><mi>A</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">A=pA+qA+c</annotation></semantics></math></span>, ולכן:</p>\n<div class=\"lesson-formula\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mi>c</mi><mrow><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi></mrow></mfrac></mstyle></mrow><annotation encoding=\"application/x-tex\">A=\\dfrac{c}{1-p-q}</annotation></semantics></math></span></div>\n<p>זה עובד כל עוד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1-p-q\\ne0</annotation></semantics></math></span>, כלומר כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> <b>אינו</b> שורש של המשוואה האופיינית (הצבת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">x=1</annotation></semantics></math></span> ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>x</mi><mo>−</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">x^2-px-q</annotation></semantics></math></span> נותנת בדיוק <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">1-p-q</annotation></semantics></math></span>).</p>\n<div class=\"lesson-rule\">🔑 אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> <b>כן</b> שורש של המשוואה האופיינית, הניחוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> לא עובד (מגיעים לסתירה כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span>). מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n</annotation></semantics></math></span>.</div>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>7</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>12</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_n=7a_{n-1}-12a_{n-2}+6</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_0=2</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">a_1=7</annotation></semantics></math></span>. שורשי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-7x+12=0</annotation></semantics></math></span> הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">3,4</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(h)}=C_1\\cdot3^n+C_2\\cdot4^n</annotation></semantics></math></span>. כאן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><mn>7</mn><mo>+</mo><mn>12</mn><mo>=</mo><mn>6</mn><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">1-7+12=6\\ne0</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mn>6</mn><mn>6</mn></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{6}{6}=1</annotation></semantics></math></span>. הפתרון הכללי: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot4^n+1</annotation></semantics></math></span>. <b>רק עכשיו</b> מציבים תנאי התחלה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2+1=2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">3C_1+4C_2+1=7</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">3C_1+4C_2=6</annotation></semantics></math></span>. מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">C_2=3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1=-2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>3</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=-2\\cdot3^n+3\\cdot4^n+1</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1,C_2</annotation></semantics></math></span> קובעים מתנאי ההתחלה רק אחרי שהוספנו את הפתרון הפרטי. הצבה בפתרון ההומוגני בלבד נותנת קבועים שגויים.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R04-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=5a_{n-1}-6a_{n-2}+12$. מהו המקדם $A$ בפתרון פרטי קבוע $a_n^{(p)}=A$ ?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "$1-p-q=1-5+6=2$, ולכן $A=\\frac{12}{2}=6$. בדיקה: $6=5\\cdot6-6\\cdot6+12$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}+12</annotation></semantics></math></span>. מהו המקדם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בפתרון פרטי קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>5</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">1-p-q=1-5+6=2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mn>12</mn><mn>2</mn></mfrac><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{12}{2}=6</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>=</mo><mn>5</mn><mo>⋅</mo><mn>6</mn><mo>−</mo><mn>6</mn><mo>⋅</mo><mn>6</mn><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">6=5\\cdot6-6\\cdot6+12</annotation></semantics></math></span>."
+      },
+      "recap": "$A=c/(1-p-q)$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=c/(1-p-q)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R04-Q2",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=a_{n-1}+6a_{n-2}+12$. מהו המקדם $A$ בפתרון פרטי קבוע $a_n^{(p)}=A$ ?",
+       "answer": -2,
+       "tol": 0,
+       "explain": "$1-p-q=1-1-6=-6$, ולכן $A=\\frac{12}{-6}=-2$. בדיקה: $-2=-2+6\\cdot(-2)+12$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+6a_{n-2}+12</annotation></semantics></math></span>. מהו המקדם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בפתרון פרטי קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>6</mn><mo>=</mo><mo>−</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">1-p-q=1-1-6=-6</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mn>12</mn><mrow><mo>−</mo><mn>6</mn></mrow></mfrac><mo>=</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{12}{-6}=-2</annotation></semantics></math></span>. בדיקה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>2</mn><mo>=</mo><mo>−</mo><mn>2</mn><mo>+</mo><mn>6</mn><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">-2=-2+6\\cdot(-2)+12</annotation></semantics></math></span>."
+      },
+      "recap": "$A=c/(1-p-q)$, גם כשהמכנה שלילי.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=c/(1-p-q)</annotation></semantics></math></span>, גם כשהמכנה שלילי."
+     },
+     {
+      "id": "R04-Q3",
+      "question": "נתון $a_n=3a_{n-1}-2a_{n-2}+4$. איזה ניחוש לפתרון הפרטי נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n^{(p)}=A$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n^{(p)}=A\\,n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n^{(p)}=A\\,n^2$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n^{(p)}=A\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot2^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "המשוואה האופיינית $x^2-3x+2=0$ נותנת $x=1$ ו-$x=2$. כי $1$ שורש, ניחוש קבוע $A$ נותן $A=3A-2A+4$, כלומר $0=4$, סתירה. לכן מנחשים $A\\,n$. הניחוש $A\\,n^2$ נדרש רק כש-$1$ שורש כפול. והניחוש $A\\cdot2^n$ מתאים לאגף ימין מעריכי, לא לקבוע.",
+      "recap": "1 שורש של האופיינית: מנחשים $A\\,n$.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}+4</annotation></semantics></math></span>. איזה ניחוש לפתרון הפרטי נכון?",
+      "explanationHtml": "המשוואה האופיינית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-3x+2=0</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">x=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=2</annotation></semantics></math></span>. כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> שורש, ניחוש קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mn>3</mn><mi>A</mi><mo>−</mo><mn>2</mn><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">A=3A-2A+4</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span>, סתירה. לכן מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">A\\,n</annotation></semantics></math></span>. הניחוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n^2</annotation></semantics></math></span> נדרש רק כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> שורש כפול. והניחוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot2^n</annotation></semantics></math></span> מתאים לאגף ימין מעריכי, לא לקבוע.",
+      "recapHtml": "1 שורש של האופיינית: מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">A\\,n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R04-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "באותה נסיגה, $a_n=3a_{n-1}-2a_{n-2}+4$, מנחשים $a_n^{(p)}=A\\,n$. מהו $A$ ?",
+       "answer": -4,
+       "tol": 0,
+       "explain": "הצבה: $An=3A(n-1)-2A(n-2)+4=An+A+4$. מחסרים $An$ משני האגפים: $0=A+4$, ולכן $A=-4$. הפתרון הפרטי הוא $-4n$.",
+       "promptHtml": "באותה נסיגה, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}+4</annotation></semantics></math></span>, מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ?",
+       "explainHtml": "הצבה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>n</mi><mo>=</mo><mn>3</mn><mi>A</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>−</mo><mn>2</mn><mi>A</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mn>4</mn><mo>=</mo><mi>A</mi><mi>n</mi><mo>+</mo><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">An=3A(n-1)-2A(n-2)+4=An+A+4</annotation></semantics></math></span>. מחסרים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">An</annotation></semantics></math></span> משני האגפים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=A+4</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mo>−</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">A=-4</annotation></semantics></math></span>. הפתרון הפרטי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>4</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">-4n</annotation></semantics></math></span>."
+      },
+      "recap": "מצמצמים $A\\,n$ משני האגפים ומשאירים משוואה ב-$A$.",
+      "recapHtml": "מצמצמים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">A\\,n</annotation></semantics></math></span> משני האגפים ומשאירים משוואה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R04-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=7a_{n-1}-12a_{n-2}+6$, $a_0=1$, $a_1=2$. הפתרון הכללי הוא $a_n=C_1\\cdot3^n+C_2\\cdot4^n+1$. מהו $C_1$ ?",
+       "answer": -1,
+       "tol": 0,
+       "explain": "מ-$n=0$: $C_1+C_2+1=1$, כלומר $C_1+C_2=0$. מ-$n=1$: $3C_1+4C_2+1=2$, כלומר $3C_1+4C_2=1$. אז $C_2=1$ ו-$C_1=-1$. אם שוכחים את הפתרון הפרטי מקבלים $C_1+C_2=1$ ו-$3C_1+4C_2=2$, כלומר $C_1=2$, וזו שגיאה.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>7</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>12</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">a_n=7a_{n-1}-12a_{n-2}+6</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">a_1=2</annotation></semantics></math></span>. הפתרון הכללי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot3^n+C_2\\cdot4^n+1</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_1</annotation></semantics></math></span> ?",
+       "explainHtml": "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2+1=1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=0</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3C_1+4C_2+1=2</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">3C_1+4C_2=1</annotation></semantics></math></span>. אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_2=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1=-1</annotation></semantics></math></span>. אם שוכחים את הפתרון הפרטי מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3C_1+4C_2=2</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1=2</annotation></semantics></math></span>, וזו שגיאה."
+      },
+      "recap": "תנאי התחלה מציבים בפתרון הכללי השלם.",
+      "recapHtml": "תנאי התחלה מציבים בפתרון הכללי השלם."
+     },
+     {
+      "bankId": "23B-B-Q2b",
+      "recap": "אגף ימין קבוע ושורש כפול: $A=c/(1-p-q)$.",
+      "recapHtml": "אגף ימין קבוע ושורש כפול: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=c/(1-p-q)</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C05",
+    "order": 5,
+    "icon": "📈",
+    "title": "אגף ימין מעריכי",
+    "goal": "למצוא פתרון פרטי $A\\,s^n$ כש-$s$ אינו שורש של המשוואה האופיינית.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>g</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">g(n)=c\\cdot s^n</annotation></semantics></math></span> (מספר קבוע כפול חזקה) מנחשים פתרון פרטי מאותה צורה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,s^n</annotation></semantics></math></span>. זה עובד כל עוד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> <b>אינו</b> שורש של המשוואה האופיינית.</p>\n<h3>איך מוצאים את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span></h3>\n<p>מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,s^n</annotation></semantics></math></span> בנסיגה המלאה ומחלקים בחזקה הנמוכה ביותר, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">s^{n-2}</annotation></semantics></math></span>. נשארים רק <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">s^2</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> ומספרים:</p>\n<div class=\"lesson-formula\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>p</mi><mtext> </mtext><mi>A</mi><mtext> </mtext><mi>s</mi><mo>+</mo><mi>q</mi><mtext> </mtext><mi>A</mi><mo>+</mo><mi>c</mi><mtext> </mtext><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">A\\,s^2=p\\,A\\,s+q\\,A+c\\,s^2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mrow><mi>c</mi><mtext> </mtext><msup><mi>s</mi><mn>2</mn></msup></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mtext> </mtext><mi>s</mi><mo>−</mo><mi>q</mi></mrow></mfrac></mstyle></mrow><annotation encoding=\"application/x-tex\">A=\\dfrac{c\\,s^2}{s^2-p\\,s-q}</annotation></semantics></math></span></div>\n<p>המכנה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>s</mi><mo>−</mo><mi>q</mi></mrow><annotation encoding=\"application/x-tex\">s^2-ps-q</annotation></semantics></math></span> הוא המשוואה האופיינית עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">x=s</annotation></semantics></math></span>. הוא שונה מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span> בדיוק כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> אינו שורש.</p>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}+4^n</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">a_0=10</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>35</mn></mrow><annotation encoding=\"application/x-tex\">a_1=35</annotation></semantics></math></span>. שורשי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">x^2-5x+6</annotation></semantics></math></span> הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">2,3</annotation></semantics></math></span>. כאן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">s=4</annotation></semantics></math></span> אינו שורש, ולכן מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot4^n</annotation></semantics></math></span>. הצבה וחלוקה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">4^{n-2}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi><mo>=</mo><mn>20</mn><mi>A</mi><mo>−</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16A=20A-6A+16</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>A</mi><mo>=</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">2A=16</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">A=8</annotation></semantics></math></span>. הפתרון הכללי: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>8</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot3^n+8\\cdot4^n</annotation></semantics></math></span>. תנאי התחלה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>8</mn><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2+8=10</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>32</mn><mo>=</mo><mn>35</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+3C_2+32=35</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_2=-1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">C_1=3</annotation></semantics></math></span>. בדיקה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span>: הנסיגה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>⋅</mo><mn>35</mn><mo>−</mo><mn>6</mn><mo>⋅</mo><mn>10</mn><mo>+</mo><mn>16</mn><mo>=</mo><mn>131</mn></mrow><annotation encoding=\"application/x-tex\">5\\cdot35-6\\cdot10+16=131</annotation></semantics></math></span>, והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12</mn><mo>−</mo><mn>9</mn><mo>+</mo><mn>128</mn><mo>=</mo><mn>131</mn></mrow><annotation encoding=\"application/x-tex\">12-9+128=131</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ מחלקים את <b>כל</b> האיברים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">s^{n-2}</annotation></semantics></math></span>, כולל אגף הימין: באגף הימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">c\\cdot s^n</annotation></semantics></math></span> הופך ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mtext> </mtext><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">c\\,s^2</annotation></semantics></math></span>, ולא נשאר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span> לבדו.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R05-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=4a_{n-1}-3a_{n-2}+5\\cdot 2^n$. מנחשים $a_n^{(p)}=A\\cdot2^n$. מהו $A$ ?",
+       "answer": -20,
+       "tol": 0,
+       "explain": "השורשים של $x^2-4x+3$ הם $1,3$, ולכן $2$ אינו שורש. הצבה וחלוקה ב-$2^{n-2}$: $4A=8A-3A+5\\cdot4$, כלומר $4A=5A+20$ ו-$A=-20$. לפי הנוסחה: $\\frac{5\\cdot4}{4-8+3}=\\frac{20}{-1}=-20$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=4a_{n-1}-3a_{n-2}+5\\cdot 2^n</annotation></semantics></math></span>. מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot2^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ?",
+       "explainHtml": "השורשים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">x^2-4x+3</annotation></semantics></math></span> הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">1,3</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> אינו שורש. הצבה וחלוקה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{n-2}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mo>=</mo><mn>8</mn><mi>A</mi><mo>−</mo><mn>3</mn><mi>A</mi><mo>+</mo><mn>5</mn><mo>⋅</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4A=8A-3A+5\\cdot4</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mo>=</mo><mn>5</mn><mi>A</mi><mo>+</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">4A=5A+20</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mo>−</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">A=-20</annotation></semantics></math></span>. לפי הנוסחה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mn>5</mn><mo>⋅</mo><mn>4</mn></mrow><mrow><mn>4</mn><mo>−</mo><mn>8</mn><mo>+</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mfrac><mn>20</mn><mrow><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mo>−</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{5\\cdot4}{4-8+3}=\\frac{20}{-1}=-20</annotation></semantics></math></span>."
+      },
+      "recap": "$A=cs^2/(s^2-ps-q)$ כש-$s$ אינו שורש.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><msup><mi>s</mi><mn>2</mn></msup><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>s</mi><mo>−</mo><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=cs^2/(s^2-ps-q)</annotation></semantics></math></span> כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> אינו שורש."
+     },
+     {
+      "id": "R05-Q2",
+      "question": "נתון $a_n=a_{n-1}+6a_{n-2}+7\\cdot 4^n$. איזה ניחוש לפתרון הפרטי נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n^{(p)}=A\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot4^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n^{(p)}=A\\,n\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\cdot4^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n^{(p)}=A\\cdot7^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>7</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot7^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n^{(p)}=A\\,n^2\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot4^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "השורשים של $x^2-x-6$ הם $3,-2$, ולכן $4$ אינו שורש ואין צורך להכפיל ב-$n$. הבסיס של הניחוש הוא הבסיס של אגף הימין, $4$, ולא המקדם $7$. הכפלה ב-$n^2$ נדרשת רק לשורש כפול.",
+      "recap": "בסיס הניחוש הוא בסיס אגף הימין; כופלים ב-$n$ רק אם הוא שורש.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>7</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+6a_{n-2}+7\\cdot 4^n</annotation></semantics></math></span>. איזה ניחוש לפתרון הפרטי נכון?",
+      "explanationHtml": "השורשים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">x^2-x-6</annotation></semantics></math></span> הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">3,-2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span> אינו שורש ואין צורך להכפיל ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>. הבסיס של הניחוש הוא הבסיס של אגף הימין, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span>, ולא המקדם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">7</annotation></semantics></math></span>. הכפלה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">n^2</annotation></semantics></math></span> נדרשת רק לשורש כפול.",
+      "recapHtml": "בסיס הניחוש הוא בסיס אגף הימין; כופלים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> רק אם הוא שורש."
+     },
+     {
+      "id": "R05-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=a_{n-1}+6a_{n-2}+6\\cdot 4^n$. מהו $A$ בפתרון הפרטי $A\\cdot4^n$ ?",
+       "answer": 16,
+       "tol": 0,
+       "explain": "המכנה הוא $s^2-ps-q=16-1\\cdot4-6=6$, ולכן $A=\\frac{6\\cdot16}{6}=16$. בדיקה אחרי חלוקה ב-$4^{n-2}$: $16A=4A+6A+96$, כלומר $256=64+96+96$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>6</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=a_{n-1}+6a_{n-2}+6\\cdot 4^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בפתרון הפרטי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot4^n</annotation></semantics></math></span> ?",
+       "explainHtml": "המכנה הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>s</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>16</mn><mo>−</mo><mn>1</mn><mo>⋅</mo><mn>4</mn><mo>−</mo><mn>6</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">s^2-ps-q=16-1\\cdot4-6=6</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mn>6</mn><mo>⋅</mo><mn>16</mn></mrow><mn>6</mn></mfrac><mo>=</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{6\\cdot16}{6}=16</annotation></semantics></math></span>. בדיקה אחרי חלוקה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">4^{n-2}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi><mo>=</mo><mn>4</mn><mi>A</mi><mo>+</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>96</mn></mrow><annotation encoding=\"application/x-tex\">16A=4A+6A+96</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>256</mn><mo>=</mo><mn>64</mn><mo>+</mo><mn>96</mn><mo>+</mo><mn>96</mn></mrow><annotation encoding=\"application/x-tex\">256=64+96+96</annotation></semantics></math></span>."
+      },
+      "recap": "במכנה $ps$ ולא $p$ לבדו.",
+      "recapHtml": "במכנה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">ps</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> לבדו."
+     },
+     {
+      "id": "R05-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=6a_{n-1}-8a_{n-2}+3^n$, $a_0=-1$, $a_1=1$. הפתרון הכללי הוא $a_n=C_1\\cdot2^n+C_2\\cdot4^n-9\\cdot3^n$. מהו $C_2$ ?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "מ-$n=0$: $C_1+C_2-9=-1$, כלומר $C_1+C_2=8$. מ-$n=1$: $2C_1+4C_2-27=1$, כלומר $C_1+2C_2=14$. מחסירים: $C_2=6$ ו-$C_1=2$. בדיקה על $a_2$: הנסיגה נותנת $6\\cdot1-8\\cdot(-1)+9=23$, והנוסחה נותנת $8+96-81=23$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>8</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=6a_{n-1}-8a_{n-2}+3^n</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=-1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_1=1</annotation></semantics></math></span>. הפתרון הכללי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup><mo>−</mo><mn>9</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot4^n-9\\cdot3^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">C_2</annotation></semantics></math></span> ?",
+       "explainHtml": "מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n=0</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>−</mo><mn>9</mn><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2-9=-1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=8</annotation></semantics></math></span>. מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>C</mi><mn>2</mn></msub><mo>−</mo><mn>27</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+4C_2-27=1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>14</mn></mrow><annotation encoding=\"application/x-tex\">C_1+2C_2=14</annotation></semantics></math></span>. מחסירים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">C_2=6</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1=2</annotation></semantics></math></span>. בדיקה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span>: הנסיגה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>⋅</mo><mn>1</mn><mo>−</mo><mn>8</mn><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mn>9</mn><mo>=</mo><mn>23</mn></mrow><annotation encoding=\"application/x-tex\">6\\cdot1-8\\cdot(-1)+9=23</annotation></semantics></math></span>, והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mo>+</mo><mn>96</mn><mo>−</mo><mn>81</mn><mo>=</mo><mn>23</mn></mrow><annotation encoding=\"application/x-tex\">8+96-81=23</annotation></semantics></math></span>."
+      },
+      "recap": "הפתרון הפרטי נכנס לתנאי ההתחלה.",
+      "recapHtml": "הפתרון הפרטי נכנס לתנאי ההתחלה."
+     },
+     {
+      "id": "R05-Q5",
+      "question": "מציבים $A\\cdot4^n$ בנסיגה $a_n=5a_{n-1}-6a_{n-2}+4^n$ ומחלקים ב-$4^{n-2}$. איזו משוואה מתקבלת?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$4A=5A-6A+4$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mo>=</mo><mn>5</mn><mi>A</mi><mo>−</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4A=5A-6A+4</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$16A=5A-6A+16$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi><mo>=</mo><mn>5</mn><mi>A</mi><mo>−</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16A=5A-6A+16</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$16A=20A-6A+16$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi><mo>=</mo><mn>20</mn><mi>A</mi><mo>−</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16A=20A-6A+16</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$16A=20A-6A+4$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi><mo>=</mo><mn>20</mn><mi>A</mi><mo>−</mo><mn>6</mn><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">16A=20A-6A+4</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "ב-$A\\cdot4^n$ מחלקים ב-$4^{n-2}$ ומקבלים $16A$. האיבר $5A\\cdot4^{n-1}$ נותן $20A$, והאיבר $6A\\cdot4^{n-2}$ נותן $6A$. האיבר $4^n$ נותן $16$. בתשובות האחרות מחלקים רק חלק מהאיברים, ולכן הן נותנות $A$ שגוי (במקום $A=8$).",
+      "recap": "מחלקים כל איבר ב-$s^{n-2}$, כולל אגף הימין.",
+      "questionHtml": "מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot4^n</annotation></semantics></math></span> בנסיגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}+4^n</annotation></semantics></math></span> ומחלקים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">4^{n-2}</annotation></semantics></math></span>. איזו משוואה מתקבלת?",
+      "explanationHtml": "ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot4^n</annotation></semantics></math></span> מחלקים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">4^{n-2}</annotation></semantics></math></span> ומקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">16A</annotation></semantics></math></span>. האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">5A\\cdot4^{n-1}</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>20</mn><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">20A</annotation></semantics></math></span>, והאיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">6A\\cdot4^{n-2}</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">6A</annotation></semantics></math></span>. האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">4^n</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16</annotation></semantics></math></span>. בתשובות האחרות מחלקים רק חלק מהאיברים, ולכן הן נותנות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> שגוי (במקום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">A=8</annotation></semantics></math></span>).",
+      "recapHtml": "מחלקים כל איבר ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">s^{n-2}</annotation></semantics></math></span>, כולל אגף הימין."
+     }
+    ]
+   },
+   {
+    "id": "C06",
+    "order": 6,
+    "icon": "🔔",
+    "title": "רזוננס: כשהבסיס הוא שורש",
+    "goal": "לזהות שבסיס אגף הימין הוא שורש של המשוואה האופיינית, ולנחש $A\\,n\\,s^n$ או $A\\,n^2\\,s^n$.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>מה קורה כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> של אגף הימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">c\\cdot s^n</annotation></semantics></math></span> <b>כן</b> שורש של המשוואה האופיינית? הניחוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,s^n</annotation></semantics></math></span> כבר פתרון של החלק ההומוגני, ולכן ההצבה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mi>c</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">0=c\\,s^n</annotation></semantics></math></span>, סתירה. זו <b>תופעת הרזוננס</b> (התאמה). התיקון: מכפילים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>.</p>\n<table>\n<thead><tr><th><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> ביחס למשוואה האופיינית</th><th>ניחוש לפתרון פרטי</th></tr></thead>\n<tbody>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> אינו שורש</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,s^n</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> שורש פשוט (אחד משני שורשים שונים)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,s^n</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> שורש כפול</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n^2\\,s^n</annotation></semantics></math></span></td></tr>\n</tbody></table>\n<p>אחרי הניחוש מציבים בנסיגה ומחלקים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">s^{n-2}</annotation></semantics></math></span> כמו קודם. המקדמים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> (או של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">n^2</annotation></semantics></math></span>) מצטמצמים משני האגפים, ונשארת משוואה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> בלבד. התוצאה:</p>\n<ul>\n<li>שורש פשוט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mrow><mi>c</mi><mtext> </mtext><msup><mi>s</mi><mn>2</mn></msup></mrow><mrow><mi>p</mi><mtext> </mtext><mi>s</mi><mo>+</mo><mn>2</mn><mi>q</mi></mrow></mfrac></mstyle></mrow><annotation encoding=\"application/x-tex\">A=\\dfrac{c\\,s^2}{p\\,s+2q}</annotation></semantics></math></span>.</li>\n<li>שורש כפול: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mstyle scriptlevel=\"0\" displaystyle=\"true\"><mfrac><mi>c</mi><mn>2</mn></mfrac></mstyle></mrow><annotation encoding=\"application/x-tex\">A=\\dfrac{c}{2}</annotation></semantics></math></span>.</li>\n</ul>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}+3^n</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">a_0=1</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">a_1=10</annotation></semantics></math></span>. השורשים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">2,3</annotation></semantics></math></span>. כאן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">s=3</annotation></semantics></math></span> שורש פשוט, ולכן מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,3^n</annotation></semantics></math></span>. לפי הנוסחה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mn>9</mn><mrow><mn>15</mn><mo>−</mo><mn>12</mn></mrow></mfrac><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{9}{15-12}=3</annotation></semantics></math></span>. הפתרון הכללי: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>3</mn><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=C_1\\cdot2^n+C_2\\cdot3^n+3\\,n\\,3^n</annotation></semantics></math></span>. מתנאי ההתחלה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_1+C_2=1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>C</mi><mn>2</mn></msub><mo>+</mo><mn>9</mn><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">2C_1+3C_2+9=10</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">C_2=-1</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">C_1=2</annotation></semantics></math></span>. בדיקה על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_2</annotation></semantics></math></span>: הנסיגה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mo>⋅</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo>⋅</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>53</mn></mrow><annotation encoding=\"application/x-tex\">5\\cdot10-6\\cdot1+9=53</annotation></semantics></math></span>, והנוסחה נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mo>−</mo><mn>9</mn><mo>+</mo><mn>54</mn><mo>=</mo><mn>53</mn></mrow><annotation encoding=\"application/x-tex\">8-9+54=53</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ מזהים רזוננס <b>לפני</b> שמנחשים: קודם מוצאים את השורשים של המשוואה האופיינית, ואז משווים אליהם את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span>. סימן שניחשתם לא נכון הוא משוואה כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span>.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R06-Q1",
+      "question": "נתון $a_n=3a_{n-1}-2a_{n-2}+5\\cdot 2^n$. איזה ניחוש לפתרון הפרטי נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n^{(p)}=A\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n^{(p)}=A\\,n^2\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n^{(p)}=A\\,n\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n^{(p)}=A\\,n\\cdot5^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\cdot5^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "השורשים של $x^2-3x+2$ הם $1,2$. הבסיס $2$ של אגף הימין הוא שורש פשוט, ולכן מנחשים $A\\,n\\,2^n$. הניחוש $A\\,2^n$ נכשל ברזוננס, $n^2$ מיועד לשורש כפול, והבסיס $5$ הוא המקדם ולא הבסיס.",
+      "recap": "שורש פשוט: $A\\,n\\,s^n$.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}+5\\cdot 2^n</annotation></semantics></math></span>. איזה ניחוש לפתרון הפרטי נכון?",
+      "explanationHtml": "השורשים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x^2-3x+2</annotation></semantics></math></span> הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">1,2</annotation></semantics></math></span>. הבסיס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> של אגף הימין הוא שורש פשוט, ולכן מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,2^n</annotation></semantics></math></span>. הניחוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,2^n</annotation></semantics></math></span> נכשל ברזוננס, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">n^2</annotation></semantics></math></span> מיועד לשורש כפול, והבסיס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">5</annotation></semantics></math></span> הוא המקדם ולא הבסיס.",
+      "recapHtml": "שורש פשוט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,s^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R06-Q2",
+      "question": "נתון $a_n=4a_{n-1}-4a_{n-2}+7\\cdot 2^n$. איזה ניחוש לפתרון הפרטי נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n^{(p)}=A\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n^{(p)}=A\\,n^2\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n^{(p)}=A\\,n\\cdot2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\cdot2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n^{(p)}=A\\,n^2\\cdot7^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>7</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot7^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "המשוואה $x^2-4x+4=(x-2)^2$ נותנת $2$ כפול, וגם אגף הימין הוא $2^n$. גם ב-$A\\,n\\,2^n$ ההצבה נותנת סתירה, כי $n\\,2^n$ הוא כבר פתרון הומוגני. לכן מנחשים $A\\,n^2\\,2^n$.",
+      "recap": "שורש כפול: $A\\,n^2\\,s^n$.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>4</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>7</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=4a_{n-1}-4a_{n-2}+7\\cdot 2^n</annotation></semantics></math></span>. איזה ניחוש לפתרון הפרטי נכון?",
+      "explanationHtml": "המשוואה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>2</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2-4x+4=(x-2)^2</annotation></semantics></math></span> נותנת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> כפול, וגם אגף הימין הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>. גם ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,2^n</annotation></semantics></math></span> ההצבה נותנת סתירה, כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,2^n</annotation></semantics></math></span> הוא כבר פתרון הומוגני. לכן מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n^2\\,2^n</annotation></semantics></math></span>.",
+      "recapHtml": "שורש כפול: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n^2\\,s^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R06-Q3",
+      "question": "נתון $a_n=5a_{n-1}-6a_{n-2}+7\\cdot 4^n$. איזה ניחוש לפתרון הפרטי נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n^{(p)}=A\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot4^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n^{(p)}=A\\,n\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\cdot4^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n^{(p)}=A\\,n^2\\cdot4^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot4^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n^{(p)}=A\\cdot 2^n+B\\cdot3^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mi>B</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\cdot 2^n+B\\cdot3^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "השורשים הם $2,3$ ו-$4$ אינו אחד מהם, ולכן אין רזוננס והניחוש הרגיל $A\\cdot4^n$ מספיק. הכפלה ב-$n$ היא רק כשהבסיס שורש. והניחוש האחרון הוא הפתרון ההומוגני, שאינו תלוי באגף הימין.",
+      "recap": "קודם בודקים אם הבסיס שורש.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>5</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>7</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=5a_{n-1}-6a_{n-2}+7\\cdot 4^n</annotation></semantics></math></span>. איזה ניחוש לפתרון הפרטי נכון?",
+      "explanationHtml": "השורשים הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">2,3</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span> אינו אחד מהם, ולכן אין רזוננס והניחוש הרגיל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot4^n</annotation></semantics></math></span> מספיק. הכפלה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> היא רק כשהבסיס שורש. והניחוש האחרון הוא הפתרון ההומוגני, שאינו תלוי באגף הימין.",
+      "recapHtml": "קודם בודקים אם הבסיס שורש."
+     },
+     {
+      "id": "R06-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=3a_{n-1}-2a_{n-2}+3\\cdot 2^n$. מנחשים $a_n^{(p)}=A\\,n\\,2^n$. מהו $A$ ?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "הצבה וחלוקה ב-$2^{n-2}$: $4An=6A(n-1)-2A(n-2)+12$, כלומר $4An=4An-2A+12$, ולכן $A=6$. לפי הנוסחה: $\\frac{3\\cdot4}{3\\cdot2+2\\cdot(-2)}=\\frac{12}{2}=6$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}+3\\cdot 2^n</annotation></semantics></math></span>. מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\,2^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ?",
+       "explainHtml": "הצבה וחלוקה ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{n-2}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mi>n</mi><mo>=</mo><mn>6</mn><mi>A</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>−</mo><mn>2</mn><mi>A</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">4An=6A(n-1)-2A(n-2)+12</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mi>n</mi><mo>=</mo><mn>4</mn><mi>A</mi><mi>n</mi><mo>−</mo><mn>2</mn><mi>A</mi><mo>+</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">4An=4An-2A+12</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">A=6</annotation></semantics></math></span>. לפי הנוסחה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>4</mn></mrow><mrow><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></mfrac><mo>=</mo><mfrac><mn>12</mn><mn>2</mn></mfrac><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{3\\cdot4}{3\\cdot2+2\\cdot(-2)}=\\frac{12}{2}=6</annotation></semantics></math></span>."
+      },
+      "recap": "שורש פשוט: $A=cs^2/(ps+2q)$.",
+      "recapHtml": "שורש פשוט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><msup><mi>s</mi><mn>2</mn></msup><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><mi>p</mi><mi>s</mi><mo>+</mo><mn>2</mn><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=cs^2/(ps+2q)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R06-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=7a_{n-1}-12a_{n-2}+5\\cdot 4^n$. מנחשים $a_n^{(p)}=A\\,n\\,4^n$. מהו $A$ ?",
+       "answer": 20,
+       "tol": 0,
+       "explain": "השורשים הם $3,4$, ולכן $4$ שורש פשוט. $A=\\frac{5\\cdot16}{7\\cdot4+2\\cdot(-12)}=\\frac{80}{4}=20$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>7</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>12</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=7a_{n-1}-12a_{n-2}+5\\cdot 4^n</annotation></semantics></math></span>. מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>4</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n\\,4^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ?",
+       "explainHtml": "השורשים הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">3,4</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4</annotation></semantics></math></span> שורש פשוט. <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mn>5</mn><mo>⋅</mo><mn>16</mn></mrow><mrow><mn>7</mn><mo>⋅</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>12</mn><mo stretchy=\"false\">)</mo></mrow></mfrac><mo>=</mo><mfrac><mn>80</mn><mn>4</mn></mfrac><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{5\\cdot16}{7\\cdot4+2\\cdot(-12)}=\\frac{80}{4}=20</annotation></semantics></math></span>."
+      },
+      "recap": "שורש פשוט: $A=cs^2/(ps+2q)$.",
+      "recapHtml": "שורש פשוט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><msup><mi>s</mi><mn>2</mn></msup><mi mathvariant=\"normal\">/</mi><mo stretchy=\"false\">(</mo><mi>p</mi><mi>s</mi><mo>+</mo><mn>2</mn><mi>q</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">A=cs^2/(ps+2q)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R06-Q6",
+      "step": {
+       "type": "numeric",
+       "prompt": "$a_n=6a_{n-1}-9a_{n-2}+10\\cdot 3^n$. מנחשים $a_n^{(p)}=A\\,n^2\\cdot3^n$. מהו $A$ ?",
+       "answer": 5,
+       "tol": 0,
+       "explain": "$x^2-6x+9=(x-3)^2$, שורש כפול $3$ והבסיס של אגף הימין הוא $3$. לפי $A=\\frac{c}{2}$ מקבלים $A=\\frac{10}{2}=5$.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>6</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>9</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>10</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=6a_{n-1}-9a_{n-2}+10\\cdot 3^n</annotation></semantics></math></span>. מנחשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>=</mo><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n^{(p)}=A\\,n^2\\cdot3^n</annotation></semantics></math></span>. מהו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><msup><mo stretchy=\"false\">)</mo><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">x^2-6x+9=(x-3)^2</annotation></semantics></math></span>, שורש כפול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span> והבסיס של אגף הימין הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span>. לפי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mi>c</mi><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">A=\\frac{c}{2}</annotation></semantics></math></span> מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mn>10</mn><mn>2</mn></mfrac><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">A=\\frac{10}{2}=5</annotation></semantics></math></span>."
+      },
+      "recap": "שורש כפול: $A=c/2$.",
+      "recapHtml": "שורש כפול: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mi>c</mi><mi mathvariant=\"normal\">/</mi><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">A=c/2</annotation></semantics></math></span>."
+     },
+     {
+      "id": "R06-Q7",
+      "question": "מציבים $A\\cdot2^n$ בנסיגה $a_n=3a_{n-1}-2a_{n-2}+2^n$ ומחלקים ב-$2^{n-2}$. מתקבלת $4A=6A-2A+4$, כלומר $0=4$. מה זה אומר?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$2$ שורש של המשוואה האופיינית, ולכן צריך לנחש $A\\,n\\,2^n$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> שורש של המשוואה האופיינית, ולכן צריך לנחש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "יש טעות בנסיגה ואין לה פתרון",
+        "type": "text",
+        "html": "יש טעות בנסיגה ואין לה פתרון"
+       },
+       {
+        "id": "c",
+        "value": "$A$ שווה לאפס ולכן הפתרון הפרטי הוא $0$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> שווה לאפס ולכן הפתרון הפרטי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "צריך לנחש $A\\cdot3^n$",
+        "type": "text",
+        "html": "צריך לנחש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot3^n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "סתירה מהצורה $0=c$ עבור $c\\ne0$ היא הסימן לרזוננס: $2$ שורש של $x^2-3x+2$. הנסיגה תקינה ויש לה פתרון, אבל הוא מצורה אחרת. אם $A=0$ היינו מקבלים $0=4$ גם כן, כלומר $0$ אינו פתרון פרטי. והבסיס $3$ אינו קשור לאגף הימין.",
+      "recap": "סתירה כמו $0=4$: להכפיל ב-$n$.",
+      "questionHtml": "מציבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot2^n</annotation></semantics></math></span> בנסיגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>3</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=3a_{n-1}-2a_{n-2}+2^n</annotation></semantics></math></span> ומחלקים ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{n-2}</annotation></semantics></math></span>. מתקבלת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>A</mi><mo>=</mo><mn>6</mn><mi>A</mi><mo>−</mo><mn>2</mn><mi>A</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4A=6A-2A+4</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span>. מה זה אומר?",
+      "explanationHtml": "סתירה מהצורה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">0=c</annotation></semantics></math></span> עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">c\\ne0</annotation></semantics></math></span> היא הסימן לרזוננס: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> שורש של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x^2-3x+2</annotation></semantics></math></span>. הנסיגה תקינה ויש לה פתרון, אבל הוא מצורה אחרת. אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">A=0</annotation></semantics></math></span> היינו מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span> גם כן, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span> אינו פתרון פרטי. והבסיס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">3</annotation></semantics></math></span> אינו קשור לאגף הימין.",
+      "recapHtml": "סתירה כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">0=4</annotation></semantics></math></span>: להכפיל ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C07",
+    "order": 7,
+    "icon": "📏",
+    "title": "סדר גודל: להראות $O(c^n)$",
+    "goal": "לזהות את האיבר הדומיננטי ולהוכיח או להפריך טענת $O(c^n)$.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "\n<p>הנוסחה המפורשת היא סכום של איברים כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi><mo>⋅</mo><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C\\cdot r^n</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C\\,n\\,r^n</annotation></semantics></math></span>. לפעמים התרגיל מבקש להראות ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mi>c</mi><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(c^n)</annotation></semantics></math></span>, כלומר שקיימים קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi></mrow><annotation encoding=\"application/x-tex\">K</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">n_0</annotation></semantics></math></span> כך ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mi>K</mi><mo>⋅</mo><msup><mi>c</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le K\\cdot c^n</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">n\\ge n_0</annotation></semantics></math></span>.</p>\n<h3>מי שולט בסכום</h3>\n<p>האיבר הדומיננטי הוא זה עם <b>הבסיס הגדול ביותר</b>. אם הבסיסים שווים, זה עם החזקה הגדולה יותר של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>. כך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">5^n</annotation></semantics></math></span> שולט ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n+3^n+5^n</annotation></semantics></math></span>, ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,2^n</annotation></semantics></math></span> שולט ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n+n\\,2^n</annotation></semantics></math></span>.</p>\n<h3>איך מוכיחים</h3>\n<ol>\n<li>מחליפים כל איבר בחסם גדול יותר מהצורה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>⋅</mo><msup><mi>c</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">K\\cdot c^n</annotation></semantics></math></span>, כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span> הוא הבסיס הדומיננטי. משתמשים באי-שוויונות כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>≤</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n\\le3^n</annotation></semantics></math></span> (נכון לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge0</annotation></semantics></math></span>) או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">1\\le n</annotation></semantics></math></span> (נכון לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge1</annotation></semantics></math></span>).</li>\n<li>איבר שלילי אפשר להשמיט, כי השמטתו רק מגדילה את הסכום.</li>\n<li>מסכמים את המקדמים ומקבלים את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi></mrow><annotation encoding=\"application/x-tex\">K</annotation></semantics></math></span>.</li>\n</ol>\n<div class=\"lesson-ex\"><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">a_n=2\\cdot3^n+5\\cdot2^n-4</annotation></semantics></math></span>. לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge0</annotation></semantics></math></span> מתקיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>≤</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n\\le3^n</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>4</mn><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">-4&lt;0</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>=</mo><mn>7</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le2\\cdot3^n+5\\cdot3^n=7\\cdot3^n</annotation></semantics></math></span>. מצאנו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">K=7</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>.</div>\n<div class=\"lesson-rule\">🔑 איבר עם גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> מוסיף את הגורם הזה לסדר הגודל: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>n</mi><mo stretchy=\"false\">)</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=(1+2n)2^n</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n\\,2^n)</annotation></semantics></math></span>, והוא <b>לא</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(2^n)</annotation></semantics></math></span>. אבל הוא כן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(3^n)</annotation></semantics></math></span>, כי בסיס גדול ממש מהדומיננטי מכסה גם את הגורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>.</div>\n<div class=\"lesson-trap\">⚠️ התרגיל יכול לבקש חסם שגוי. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>25</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=-2^n+2\\cdot3^n+25\\cdot5^n</annotation></semantics></math></span> הטענה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(3^n)</annotation></semantics></math></span> שקרית, כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>25</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">25\\cdot5^n</annotation></semantics></math></span> גדל מהר יותר מכל מכפלה קבועה של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">3^n</annotation></semantics></math></span>. תמיד בודקים מי הדומיננטי לפני שמוכיחים.</div>\n"
+    },
+    "questions": [
+     {
+      "id": "R07-Q1",
+      "question": "נתון $a_n=7\\cdot2^n+4\\cdot3^n-10$. איזו טענה נכונה ומדויקת (החסם הקטן ביותר מהצורה $O(c^n)$ עם $c$ שלם)?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=O(3^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=O(2^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(2^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=O(10^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>10</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(10^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=O(n\\cdot3^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(n\\cdot3^n)</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "האיבר הדומיננטי הוא $4\\cdot3^n$, ולכן $a_n=O(3^n)$, למשל עם $K=11$. הטענה $O(2^n)$ שקרית כי $4\\cdot3^n$ גדל מהר יותר. הטענה $O(10^n)$ נכונה אבל לא מדויקת. והטענה $O(n\\cdot3^n)$ נכונה אך רופפת, כי אין בביטוי גורם $n$.",
+      "recap": "הבסיס הגדול ביותר שולט.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>7</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>4</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>−</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">a_n=7\\cdot2^n+4\\cdot3^n-10</annotation></semantics></math></span>. איזו טענה נכונה ומדויקת (החסם הקטן ביותר מהצורה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mi>c</mi><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(c^n)</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span> שלם)?",
+      "explanationHtml": "האיבר הדומיננטי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">4\\cdot3^n</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>, למשל עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">K=11</annotation></semantics></math></span>. הטענה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(2^n)</annotation></semantics></math></span> שקרית כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">4\\cdot3^n</annotation></semantics></math></span> גדל מהר יותר. הטענה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>10</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(10^n)</annotation></semantics></math></span> נכונה אבל לא מדויקת. והטענה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n\\cdot3^n)</annotation></semantics></math></span> נכונה אך רופפת, כי אין בביטוי גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>.",
+      "recapHtml": "הבסיס הגדול ביותר שולט."
+     },
+     {
+      "id": "R07-Q2",
+      "question": "נתון $a_n=(1+2n)2^n$. איזו מהטענות הבאות <b>שגויה</b>?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$a_n=O(n\\cdot2^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(n\\cdot2^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$a_n=O(3^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$a_n=O(4^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>4</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(4^n)</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$a_n=O(2^n)$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(2^n)</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "היחס $a_n/2^n=1+2n$ לא חסום, ולכן $a_n\\ne O(2^n)$. לעומת זאת $a_n\\le3n\\,2^n$ לכל $n\\ge1$. וגם $a_n=O(3^n)$ ו-$a_n=O(4^n)$ נכונות, כי $n\\,(2/3)^n$ חסום.",
+      "recap": "גורם $n$ לא נבלע בתוך אותו בסיס.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>n</mi><mo stretchy=\"false\">)</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=(1+2n)2^n</annotation></semantics></math></span>. איזו מהטענות הבאות &lt;b&gt;שגויה&lt;/b&gt;?",
+      "explanationHtml": "היחס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant=\"normal\">/</mi><msup><mn>2</mn><mi>n</mi></msup><mo>=</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">a_n/2^n=1+2n</annotation></semantics></math></span> לא חסום, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo mathvariant=\"normal\">≠</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n\\ne O(2^n)</annotation></semantics></math></span>. לעומת זאת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mn>3</mn><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le3n\\,2^n</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge1</annotation></semantics></math></span>. וגם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>4</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(4^n)</annotation></semantics></math></span> נכונות, כי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><mo stretchy=\"false\">(</mo><mn>2</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,(2/3)^n</annotation></semantics></math></span> חסום.",
+      "recapHtml": "גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> לא נבלע בתוך אותו בסיס."
+     },
+     {
+      "id": "R07-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "נתון $a_n=10\\cdot2^n+5\\,n\\cdot2^n$. מהו הקבוע הקטן ביותר $K$ כך ש-$a_n\\le K\\cdot n\\cdot2^n$ לכל $n\\ge1$ ?",
+       "answer": 15,
+       "tol": 0,
+       "explain": "$\\frac{a_n}{n\\,2^n}=\\frac{10}{n}+5$. הביטוי הזה יורד עם $n$, ולכן הגדול ביותר הוא ב-$n=1$: $10+5=15$. אותו $K=15$ מתקבל מחיבור המקדמים אחרי הערכה $2^n\\le n\\,2^n$.",
+       "promptHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>10</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>5</mn><mtext> </mtext><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=10\\cdot2^n+5\\,n\\cdot2^n</annotation></semantics></math></span>. מהו הקבוע הקטן ביותר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi></mrow><annotation encoding=\"application/x-tex\">K</annotation></semantics></math></span> כך ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mi>K</mi><mo>⋅</mo><mi>n</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le K\\cdot n\\cdot2^n</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge1</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><msub><mi>a</mi><mi>n</mi></msub><mrow><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow></mfrac><mo>=</mo><mfrac><mn>10</mn><mi>n</mi></mfrac><mo>+</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{a_n}{n\\,2^n}=\\frac{10}{n}+5</annotation></semantics></math></span>. הביטוי הזה יורד עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>, ולכן הגדול ביותר הוא ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>15</mn></mrow><annotation encoding=\"application/x-tex\">10+5=15</annotation></semantics></math></span>. אותו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding=\"application/x-tex\">K=15</annotation></semantics></math></span> מתקבל מחיבור המקדמים אחרי הערכה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>≤</mo><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n\\le n\\,2^n</annotation></semantics></math></span>."
+      },
+      "recap": "בודקים את $n$ הקטן ביותר שמותר.",
+      "recapHtml": "בודקים את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> הקטן ביותר שמותר."
+     },
+     {
+      "id": "R07-Q4",
+      "step": {
+       "type": "order",
+       "prompt": "סדרו את ההוכחה ש-$a_n=2\\cdot3^n+5\\cdot2^n-4$ מקיים $a_n=O(3^n)$.",
+       "lines": [
+        "לכל $n\\ge0$ מתקיים $2^n\\le3^n$ ו-$-4<0$",
+        "לכן $a_n\\le2\\cdot3^n+5\\cdot3^n$",
+        "כלומר $a_n\\le7\\cdot3^n$ לכל $n\\ge0$",
+        "לפי ההגדרה, עם $K=7$ ו-$n_0=0$, מתקיים $a_n=O(3^n)$"
+       ],
+       "explain": "כל שורה נשענת על הקודמת: קודם אי-שוויונות בסיסיים, אחר כך הצבה, אחר כך חיבור מקדמים, ובסוף המסקנה מההגדרה.",
+       "promptHtml": "סדרו את ההוכחה ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">a_n=2\\cdot3^n+5\\cdot2^n-4</annotation></semantics></math></span> מקיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>.",
+       "explainHtml": "כל שורה נשענת על הקודמת: קודם אי-שוויונות בסיסיים, אחר כך הצבה, אחר כך חיבור מקדמים, ובסוף המסקנה מההגדרה.",
+       "linesHtml": [
+        "לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge0</annotation></semantics></math></span> מתקיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>≤</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n\\le3^n</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>4</mn><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">-4&lt;0</annotation></semantics></math></span>",
+        "לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>5</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le2\\cdot3^n+5\\cdot3^n</annotation></semantics></math></span>",
+        "כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mn>7</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n\\le7\\cdot3^n</annotation></semantics></math></span> לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge0</annotation></semantics></math></span>",
+        "לפי ההגדרה, עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">K=7</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">n_0=0</annotation></semantics></math></span>, מתקיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>"
+       ]
+      },
+      "recap": "מחליפים כל איבר בחסם, מחברים מקדמים.",
+      "recapHtml": "מחליפים כל איבר בחסם, מחברים מקדמים."
+     },
+     {
+      "id": "R07-Q5",
+      "question": "נתון $a_n=-2^n+2\\cdot3^n+25\\cdot5^n$, ומבקשים להראות $a_n=O(3^n)$. מה נכון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "הטענה שגויה, כי האיבר $25\\cdot5^n$ גדל מהר יותר מכל מכפלה קבועה של $3^n$",
+        "type": "text",
+        "html": "הטענה שגויה, כי האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>25</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">25\\cdot5^n</annotation></semantics></math></span> גדל מהר יותר מכל מכפלה קבועה של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">3^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "הטענה נכונה, כי יש בביטוי איבר $2\\cdot3^n$",
+        "type": "text",
+        "html": "הטענה נכונה, כי יש בביטוי איבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2\\cdot3^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "הטענה נכונה, כי האיבר $-2^n$ שלילי ומקזז את $5^n$",
+        "type": "text",
+        "html": "הטענה נכונה, כי האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">-2^n</annotation></semantics></math></span> שלילי ומקזז את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">5^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "הטענה שגויה, כי חסר בביטוי איבר עם גורם $n$",
+        "type": "text",
+        "html": "הטענה שגויה, כי חסר בביטוי איבר עם גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "היחס $a_n/3^n$ גדל ללא גבול בגלל $25\\,(5/3)^n$, ולכן הטענה שקרית; החסם הנכון הוא $O(5^n)$. עצם קיום האיבר $2\\cdot3^n$ לא מספיק. האיבר $-2^n$ קטן מדי מכדי לקזז את $5^n$. וגורם $n$ לא נדרש.",
+      "recap": "בודקים מי הדומיננטי לפני שמוכיחים.",
+      "questionHtml": "נתון <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup><mo>+</mo><mn>25</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n=-2^n+2\\cdot3^n+25\\cdot5^n</annotation></semantics></math></span>, ומבקשים להראות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>3</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a_n=O(3^n)</annotation></semantics></math></span>. מה נכון?",
+      "explanationHtml": "היחס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant=\"normal\">/</mi><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">a_n/3^n</annotation></semantics></math></span> גדל ללא גבול בגלל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>25</mn><mtext> </mtext><mo stretchy=\"false\">(</mo><mn>5</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn><msup><mo stretchy=\"false\">)</mo><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">25\\,(5/3)^n</annotation></semantics></math></span>, ולכן הטענה שקרית; החסם הנכון הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mn>5</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(5^n)</annotation></semantics></math></span>. עצם קיום האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2\\cdot3^n</annotation></semantics></math></span> לא מספיק. האיבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">-2^n</annotation></semantics></math></span> קטן מדי מכדי לקזז את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">5^n</annotation></semantics></math></span>. וגורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> לא נדרש.",
+      "recapHtml": "בודקים מי הדומיננטי לפני שמוכיחים."
+     },
+     {
+      "bankId": "22B-A-Q2b",
+      "recap": "פתרון עם $n\\,2^n$ ואחר כך חסם של כל איבר.",
+      "recapHtml": "פתרון עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">n\\,2^n</annotation></semantics></math></span> ואחר כך חסם של כל איבר."
+     }
+    ]
+   },
+   {
+    "id": "C08",
+    "order": 8,
+    "icon": "🏆",
+    "title": "אתגר: שאלות מבחן אמיתיות",
+    "goal": "לפתור נסיגות מסדר 2 בסגנון המבחן, עם אגף ימין וחסם אסימפטוטי.",
+    "source": "ai-verified",
+    "boss": true,
+    "lesson": {
+     "html": "\n<p>זה שלב האתגר: שאלות אמיתיות ממבחנים. כל התרגילים עוקבים אחרי אותו מתכון, ובו שלוש החלטות.</p>\n<ol>\n<li><b>שורשי המשוואה האופיינית</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>p</mi><mi>x</mi><mo>−</mo><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x^2-px-q=0</annotation></semantics></math></span>: שני שורשים שונים (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msubsup><mi>r</mi><mn>1</mn><mi>n</mi></msubsup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msubsup><mi>r</mi><mn>2</mn><mi>n</mi></msubsup></mrow><annotation encoding=\"application/x-tex\">C_1r_1^n+C_2r_2^n</annotation></semantics></math></span>) או שורש כפול (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msup><mi>r</mi><mi>n</mi></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C_1r^n+C_2\\,n\\,r^n</annotation></semantics></math></span>).</li>\n<li><b>ניחוש הפתרון הפרטי</b> לפי אגף הימין, כפי שבטבלה.</li>\n<li><b>תנאי התחלה</b> מציבים רק בפתרון הכללי השלם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>h</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>a</mi><mi>n</mi><mrow><mo stretchy=\"false\">(</mo><mi>p</mi><mo stretchy=\"false\">)</mo></mrow></msubsup></mrow><annotation encoding=\"application/x-tex\">a_n^{(h)}+a_n^{(p)}</annotation></semantics></math></span>.</li>\n</ol>\n<table>\n<thead><tr><th>אגף ימין</th><th>ניחוש</th></tr></thead>\n<tbody>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> אינו שורש)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">c</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span> שורש)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">A\\,n</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">c\\cdot s^n</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> אינו שורש)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,s^n</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">c\\cdot s^n</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> שורש פשוט)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n\\,s^n</annotation></semantics></math></span></td></tr>\n<tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>c</mi><mo>⋅</mo><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">c\\cdot s^n</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">s</annotation></semantics></math></span> שורש כפול)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mtext> </mtext><msup><mi>n</mi><mn>2</mn></msup><mtext> </mtext><msup><mi>s</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">A\\,n^2\\,s^n</annotation></semantics></math></span></td></tr>\n</tbody></table>\n<p>ואם מבקשים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><msup><mi>c</mi><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(c^n)</annotation></semantics></math></span>: מחליפים כל איבר בחסם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>⋅</mo><msup><mi>c</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">K\\cdot c^n</annotation></semantics></math></span> (או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mtext> </mtext><mi>n</mi><mtext> </mtext><msup><mi>c</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">K\\,n\\,c^n</annotation></semantics></math></span> כשיש גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>), ומשמיטים איברים שליליים.</p>\n<div class=\"lesson-trap\">⚠️ בסוף תמיד מציבים בחזרה את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">a_0,a_1,a_2</annotation></semantics></math></span>. בשאלות אמיתיות יש לפעמים נתון שגוי או חסם שגוי; לכן בודקים לפני שמוכיחים.</div>\n"
+    },
+    "questions": [
+     {
+      "bankId": "24B-A-Q3b",
+      "recap": "שורש כפול 3 עם אגף ימין $4\\cdot5^n$.",
+      "recapHtml": "שורש כפול 3 עם אגף ימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">4\\cdot5^n</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "25B-B-Q3a",
+      "recap": "שני שורשים ואגף ימין $6\\cdot5^n$.",
+      "recapHtml": "שני שורשים ואגף ימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">6\\cdot5^n</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "24B-B-Q3b",
+      "recap": "שורש כפול 2 עם אגף ימין $2\\cdot3^n$.",
+      "recapHtml": "שורש כפול 2 עם אגף ימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2\\cdot3^n</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "25B-A-Q3a",
+      "recap": "שורש כפול 3 עם אגף ימין $3\\cdot2^n$.",
+      "recapHtml": "שורש כפול 3 עם אגף ימין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">3\\cdot2^n</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "22B-B-Q2b",
+      "recap": "שורש כפול 3, חסם $O(n\\cdot5^n)$.",
+      "recapHtml": "שורש כפול 3, חסם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>O</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>⋅</mo><msup><mn>5</mn><mi>n</mi></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">O(n\\cdot5^n)</annotation></semantics></math></span>."
      }
     ]
    }

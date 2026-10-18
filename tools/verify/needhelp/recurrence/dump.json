@@ -1,0 +1,681 @@
+{
+ "courseId": "recurrence",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R01-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=a_{n-1}+2a_{n-2}$ לכל $n\\ge2$, עם $a_0=1$ ו-$a_1=1$. מהו $a_5$ ?"
+     }
+    },
+    {
+     "id": "R01-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=4a_{n-1}-3a_{n-2}+2$ לכל $n\\ge2$, עם $a_0=0$ ו-$a_1=1$. מהו $a_4$ ?"
+     }
+    },
+    {
+     "id": "R01-Q3",
+     "question": "נתון $a_n=3a_{n-1}-2a_{n-2}$ עם $a_0=1$ ו-$a_1=3$. איזו נוסחה מפורשת מתאימה לסדרה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=3^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=2^{n+1}-1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=2^n+n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=n+1$"
+      }
+     ]
+    },
+    {
+     "id": "R01-Q4",
+     "question": "למה בנסיגה מסדר 2 צריך לתת שני תנאי התחלה ולא אחד?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כי כל איבר תלוי בשני הקודמים לו, ובלי שני תנאים יש אינסוף סדרות שמקיימות את אותה נסיגה"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כי הנוסחה המפורשת תמיד מכילה את $n$ בשתי חזקות שונות"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כי $a_0$ ו-$a_1$ הם המקדמים $p$ ו-$q$ של הנסיגה"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כי שני תנאי התחלה משנים את הנסיגה עצמה"
+      }
+     ]
+    },
+    {
+     "id": "R01-Q5",
+     "question": "איזו נסיגה היא ליניארית הומוגנית מסדר 2 עם מקדמים קבועים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=a_{n-1}\\cdot a_{n-2}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=2a_{n-1}+a_{n-2}+1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=2a_{n-1}-5a_{n-2}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=n\\,a_{n-1}-a_{n-2}$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R02-Q1",
+     "question": "מהי המשוואה האופיינית של $a_n=7a_{n-1}-12a_{n-2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$x^2+7x+12=0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x^2-7x-12=0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x^2-12x+7=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$x^2-7x+12=0$"
+      }
+     ]
+    },
+    {
+     "id": "R02-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו השורש הגדול של המשוואה $x^2=7x-12$ ?"
+     }
+    },
+    {
+     "id": "R02-Q3",
+     "question": "מהו הפתרון הכללי של $a_n=a_{n-1}+6a_{n-2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n+C_2\\cdot(-2)^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot(-3)^n+C_2\\cdot2^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n+C_2\\cdot2^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot 6^n+C_2\\cdot1^n$"
+      }
+     ]
+    },
+    {
+     "id": "R02-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=5a_{n-1}-6a_{n-2}$, $a_0=1$, $a_1=0$. הפתרון הכללי הוא $a_n=C_1\\cdot2^n+C_2\\cdot3^n$. מהו $C_2$ ?"
+     }
+    },
+    {
+     "id": "R02-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=a_{n-1}+2a_{n-2}$, $a_0=2$, $a_1=1$. מצאו נוסחה מפורשת וחשבו את $a_{10}$."
+     }
+    },
+    {
+     "id": "R02-Q6",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את שלבי הפתרון של נסיגה הומוגנית עם שני שורשים שונים.",
+      "lines": [
+       "פותרים אותה ומקבלים שורשים $r_1\\ne r_2$",
+       "כותבים $a_n=C_1r_1^n+C_2r_2^n$",
+       "מציבים $n=0$ ו-$n=1$ ופותרים את $C_1,C_2$",
+       "כותבים את המשוואה האופיינית $x^2-px-q=0$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R03-Q1",
+     "question": "מהו הפתרון הכללי של $a_n=6a_{n-1}-9a_{n-2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n+C_2\\cdot3^{2n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n+C_2\\cdot9^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=C_1\\cdot3^n$"
+      }
+     ]
+    },
+    {
+     "id": "R03-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו השורש של $x^2=10x-25$ ?"
+     }
+    },
+    {
+     "id": "R03-Q3",
+     "step": {
+      "type": "findbug",
+      "prompt": "בפתרון של $a_n=6a_{n-1}-9a_{n-2}$ עם $a_0=2$ ו-$a_1=9$ נפלה שגיאה בשורה אחת. מצאו אותה.",
+      "lines": [
+       "המשוואה האופיינית $x^2-6x+9=0$ נותנת שורש כפול $x=3$",
+       "לכן $a_n=C_1\\cdot3^n+C_2\\cdot n\\cdot3^n$",
+       "מ-$a_0=2$ מקבלים $C_1=2$",
+       "מ-$a_1=9$ מקבלים $C_1+C_2=9$, ולכן $C_2=7$"
+      ]
+     }
+    },
+    {
+     "id": "R03-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=4a_{n-1}-4a_{n-2}$, $a_0=1$, $a_1=6$. הנוסחה המפורשת היא $a_n=(1+2n)2^n$. חשבו את $a_5$."
+     }
+    },
+    {
+     "id": "R03-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=2a_{n-1}-a_{n-2}$, $a_0=3$, $a_1=5$. מצאו נוסחה מפורשת וחשבו את $a_{100}$."
+     }
+    },
+    {
+     "id": "bank:21B-A-Q3b",
+     "bankId": "21B-A-Q3b"
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R04-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=5a_{n-1}-6a_{n-2}+12$. מהו המקדם $A$ בפתרון פרטי קבוע $a_n^{(p)}=A$ ?"
+     }
+    },
+    {
+     "id": "R04-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=a_{n-1}+6a_{n-2}+12$. מהו המקדם $A$ בפתרון פרטי קבוע $a_n^{(p)}=A$ ?"
+     }
+    },
+    {
+     "id": "R04-Q3",
+     "question": "נתון $a_n=3a_{n-1}-2a_{n-2}+4$. איזה ניחוש לפתרון הפרטי נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n^{(p)}=A$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot2^n$"
+      }
+     ]
+    },
+    {
+     "id": "R04-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "באותה נסיגה, $a_n=3a_{n-1}-2a_{n-2}+4$, מנחשים $a_n^{(p)}=A\\,n$. מהו $A$ ?"
+     }
+    },
+    {
+     "id": "R04-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=7a_{n-1}-12a_{n-2}+6$, $a_0=1$, $a_1=2$. הפתרון הכללי הוא $a_n=C_1\\cdot3^n+C_2\\cdot4^n+1$. מהו $C_1$ ?"
+     }
+    },
+    {
+     "id": "bank:23B-B-Q2b",
+     "bankId": "23B-B-Q2b"
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R05-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=4a_{n-1}-3a_{n-2}+5\\cdot 2^n$. מנחשים $a_n^{(p)}=A\\cdot2^n$. מהו $A$ ?"
+     }
+    },
+    {
+     "id": "R05-Q2",
+     "question": "נתון $a_n=a_{n-1}+6a_{n-2}+7\\cdot 4^n$. איזה ניחוש לפתרון הפרטי נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot4^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n\\cdot4^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot7^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2\\cdot4^n$"
+      }
+     ]
+    },
+    {
+     "id": "R05-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=a_{n-1}+6a_{n-2}+6\\cdot 4^n$. מהו $A$ בפתרון הפרטי $A\\cdot4^n$ ?"
+     }
+    },
+    {
+     "id": "R05-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=6a_{n-1}-8a_{n-2}+3^n$, $a_0=-1$, $a_1=1$. הפתרון הכללי הוא $a_n=C_1\\cdot2^n+C_2\\cdot4^n-9\\cdot3^n$. מהו $C_2$ ?"
+     }
+    },
+    {
+     "id": "R05-Q5",
+     "question": "מציבים $A\\cdot4^n$ בנסיגה $a_n=5a_{n-1}-6a_{n-2}+4^n$ ומחלקים ב-$4^{n-2}$. איזו משוואה מתקבלת?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$4A=5A-6A+4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$16A=5A-6A+16$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$16A=20A-6A+16$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$16A=20A-6A+4$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R06-Q1",
+     "question": "נתון $a_n=3a_{n-1}-2a_{n-2}+5\\cdot 2^n$. איזה ניחוש לפתרון הפרטי נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot2^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2\\cdot2^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n\\cdot2^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n\\cdot5^n$"
+      }
+     ]
+    },
+    {
+     "id": "R06-Q2",
+     "question": "נתון $a_n=4a_{n-1}-4a_{n-2}+7\\cdot 2^n$. איזה ניחוש לפתרון הפרטי נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot2^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2\\cdot2^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n\\cdot2^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2\\cdot7^n$"
+      }
+     ]
+    },
+    {
+     "id": "R06-Q3",
+     "question": "נתון $a_n=5a_{n-1}-6a_{n-2}+7\\cdot 4^n$. איזה ניחוש לפתרון הפרטי נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot4^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n\\cdot4^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\,n^2\\cdot4^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n^{(p)}=A\\cdot 2^n+B\\cdot3^n$"
+      }
+     ]
+    },
+    {
+     "id": "R06-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=3a_{n-1}-2a_{n-2}+3\\cdot 2^n$. מנחשים $a_n^{(p)}=A\\,n\\,2^n$. מהו $A$ ?"
+     }
+    },
+    {
+     "id": "R06-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=7a_{n-1}-12a_{n-2}+5\\cdot 4^n$. מנחשים $a_n^{(p)}=A\\,n\\,4^n$. מהו $A$ ?"
+     }
+    },
+    {
+     "id": "R06-Q6",
+     "step": {
+      "type": "numeric",
+      "prompt": "$a_n=6a_{n-1}-9a_{n-2}+10\\cdot 3^n$. מנחשים $a_n^{(p)}=A\\,n^2\\cdot3^n$. מהו $A$ ?"
+     }
+    },
+    {
+     "id": "R06-Q7",
+     "question": "מציבים $A\\cdot2^n$ בנסיגה $a_n=3a_{n-1}-2a_{n-2}+2^n$ ומחלקים ב-$2^{n-2}$. מתקבלת $4A=6A-2A+4$, כלומר $0=4$. מה זה אומר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2$ שורש של המשוואה האופיינית, ולכן צריך לנחש $A\\,n\\,2^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "יש טעות בנסיגה ואין לה פתרון"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$A$ שווה לאפס ולכן הפתרון הפרטי הוא $0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "צריך לנחש $A\\cdot3^n$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "R07-Q1",
+     "question": "נתון $a_n=7\\cdot2^n+4\\cdot3^n-10$. איזו טענה נכונה ומדויקת (החסם הקטן ביותר מהצורה $O(c^n)$ עם $c$ שלם)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=O(3^n)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=O(2^n)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=O(10^n)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=O(n\\cdot3^n)$"
+      }
+     ]
+    },
+    {
+     "id": "R07-Q2",
+     "question": "נתון $a_n=(1+2n)2^n$. איזו מהטענות הבאות <b>שגויה</b>?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$a_n=O(n\\cdot2^n)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$a_n=O(3^n)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$a_n=O(4^n)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$a_n=O(2^n)$"
+      }
+     ]
+    },
+    {
+     "id": "R07-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתון $a_n=10\\cdot2^n+5\\,n\\cdot2^n$. מהו הקבוע הקטן ביותר $K$ כך ש-$a_n\\le K\\cdot n\\cdot2^n$ לכל $n\\ge1$ ?"
+     }
+    },
+    {
+     "id": "R07-Q4",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את ההוכחה ש-$a_n=2\\cdot3^n+5\\cdot2^n-4$ מקיים $a_n=O(3^n)$.",
+      "lines": [
+       "לכן $a_n\\le2\\cdot3^n+5\\cdot3^n$",
+       "כלומר $a_n\\le7\\cdot3^n$ לכל $n\\ge0$",
+       "לפי ההגדרה, עם $K=7$ ו-$n_0=0$, מתקיים $a_n=O(3^n)$",
+       "לכל $n\\ge0$ מתקיים $2^n\\le3^n$ ו-$-4<0$"
+      ]
+     }
+    },
+    {
+     "id": "R07-Q5",
+     "question": "נתון $a_n=-2^n+2\\cdot3^n+25\\cdot5^n$, ומבקשים להראות $a_n=O(3^n)$. מה נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטענה שגויה, כי האיבר $25\\cdot5^n$ גדל מהר יותר מכל מכפלה קבועה של $3^n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטענה נכונה, כי יש בביטוי איבר $2\\cdot3^n$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הטענה נכונה, כי האיבר $-2^n$ שלילי ומקזז את $5^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הטענה שגויה, כי חסר בביטוי איבר עם גורם $n$"
+      }
+     ]
+    },
+    {
+     "id": "bank:22B-A-Q2b",
+     "bankId": "22B-A-Q2b"
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:24B-A-Q3b",
+     "bankId": "24B-A-Q3b"
+    },
+    {
+     "id": "bank:25B-B-Q3a",
+     "bankId": "25B-B-Q3a"
+    },
+    {
+     "id": "bank:24B-B-Q3b",
+     "bankId": "24B-B-Q3b"
+    },
+    {
+     "id": "bank:25B-A-Q3a",
+     "bankId": "25B-A-Q3a"
+    },
+    {
+     "id": "bank:22B-B-Q2b",
+     "bankId": "22B-B-Q2b"
+    }
+   ]
+  }
+ ]
+}
