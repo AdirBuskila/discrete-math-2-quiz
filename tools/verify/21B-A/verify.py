@@ -29,6 +29,7 @@ assert ok == {1, 4}; print("Q2c", sorted(ok))
 # Q3a
 for n in range(1, 8):
     f = 5**n + sum(comb(n, k) * 3**(2*k) for k in range(n+1)); assert f == 5**n + 10**n <= 2*10**n
+assert min(c for c in range(1,10) if all(5**n+10**n <= c*10**n for n in range(0,30))) == 2
 # Q3b
 a = [10, 30]
 for n in range(2, 40): a.append(4*a[-1] - 4*a[-2])

@@ -26,7 +26,7 @@ print("Q2a ok")
 # Q2b: a_n = (5+7n) 3^n, a_n <= 12 n 5^n for n>=1
 a = [5, 36]
 for n in range(2, 40): a.append(6*a[-1] - 9*a[-2])
-assert all(a[n] == (5 + 7*n) * 3**n for n in range(40)) and all(a[n] <= 12*n*5**n for n in range(1, 40)); print("Q2b ok")
+assert all(a[n] == (5 + 7*n) * 3**n for n in range(40)) and all(a[n] <= 12*n*5**n for n in range(1, 40)); assert min(c for c in range(1,30) if all(a[n] <= c*n*3**n for n in range(1,40))) == 12; print("Q2b ok")
 # Q2c: x1>=3,x2>=5,x3>=5,x4>=4, x1+..+x4 <= 23
 c = sum(1 for x in itertools.product(range(3, 24), range(5, 24), range(5, 24), range(4, 24)) if sum(x) <= 23)
 assert c == comb(10, 4) == 210; print("Q2c", c)

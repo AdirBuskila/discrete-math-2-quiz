@@ -44,7 +44,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $2\\cdot5!$ במקום $2\\cdot4!$, כי האיבר הראשון כבר נבחר.",
     "לספור רק את התמורות שמתחילות ב-1."
@@ -72,7 +72,7 @@
      "explain": "$2\\cdot24=48$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -98,7 +98,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהפירוק של $5!$ כולל $2^3$ ולא רק $2$.",
     "לחשב $\\phi(n)=n-1$, נכון רק לראשוני."
@@ -147,7 +147,7 @@
      "explain": "$120\\cdot\\frac12\\cdot\\frac23\\cdot\\frac45=32$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -173,7 +173,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון שהמשלים של $K_{m,n}$ הוא גרף דו-צדדי גם הוא.",
     "לשכוח שאין צלעות במשלים בין שתי הקבוצות $A,B$."
@@ -215,7 +215,7 @@
      "explain": "$\\binom32+\\binom42=3+6=9=\\binom72-12$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -241,7 +241,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הבדיקה של $n=2,3$ ולהגיע ישר ל-$n=4$.",
     "לטעון ש-$n=5$ מתאים: המשלים של $P_5$ מכיל משולש."
@@ -283,7 +283,7 @@
      "explain": "$\\binom42-3=3$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -314,7 +314,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון שקבוצה שהיא תת-קבוצה ממש של $\\mathbb{Z}$ חייבת להיות בעוצמה קטנה יותר.",
     "לבלבל בין עוצמת $\\mathbb{Q}$ לעוצמת $\\mathbb{R}$."
@@ -359,7 +359,7 @@
      "explain": "תחילה שתי העובדות על $A$, אחר כך הסנדוויץ', ואז המסקנה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -390,7 +390,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $2560$ ל-א2; $\\binom72\\cdot5!=21\\cdot120=2520$.",
     "בא1: לשכוח את $3!$ הסידורים בתוך הבלוק."
@@ -425,7 +425,7 @@
      "explain": "$21\\cdot120=2520=\\frac{7!}2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -433,7 +433,7 @@
    "kind": "computation",
    "topic": "permutations_arrangements",
    "question": "(4+4 נק') תהיינה הקבוצות $A=\\{a,b,c,d\\}$ וגם $B=\\{x,y,z\\}$.\n\n**ב1.** כמה סדרות שונות בנות 7 אותיות אפשר ליצור כך שכל סידרה מתחילה ב-4 אותיות מ-$A$ ושאר האותיות מ-$B$?\n\n**ב2.** כמה סדרות מ-(ב1) מקיימות התנאים הבאים: כל אות מופיע פעם אחת בסדרה וכל סידרה מתחילה ב-$a$ או ב-$b$?",
-   "solution": "**ב1.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ ($4!$ אפשרויות) ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $144=3!\\cdot4!$ סדרות.\n\n**ב2.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ שמתחילה ב-$a$ או ב-$b$ (2 אפשרויות לאות הראשונה ו-$3!$ אפשרויות לשלוש הבאות), ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $72=2\\cdot3!\\cdot3!$ סדרות.",
+   "solution": "הערה: בניסוח המילולי של ב1 לא נאמר שהאותיות שונות זו מזו, ולכן הקריאה המילולית מאפשרת חזרות ונותנת $4^4\\cdot3^3=6912$. הפתרון מניח שכל אות משמשת פעם אחת, ולכן התשובה במפתח היא $144$ (וב2: $72$).\n\n**ב1.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ ($4!$ אפשרויות) ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $144=3!\\cdot4!$ סדרות.\n\n**ב2.** כל סדרה מתאימה מורכבת על ידי 2 תמורות: 4 המקומות הראשונים הם תמורה של $A$ שמתחילה ב-$a$ או ב-$b$ (2 אפשרויות לאות הראשונה ו-$3!$ אפשרויות לשלוש הבאות), ו-3 המקומות האחרונים הם תמורה של $B$ ($3!$ אפשרויות).\n\nמסקנה: $72=2\\cdot3!\\cdot3!$ סדרות.",
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
@@ -456,7 +456,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "בב2: לשכוח שהאות הראשונה מוגבלת רק בתמורה של $A$.",
     "לסדר את כל 7 האותיות יחד ב-$7!$."
@@ -491,7 +491,7 @@
      "explain": "$12\\cdot3!=72$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -522,7 +522,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להניח ש-$\\phi$ חח\"ע כי היא מוגדרת על הטבעיים.",
     "לשכוח שהפירוק דורש $\\alpha,\\beta\\ge1$ כדי שהנוסחה תתן את הגורמים 2 ו-4."
@@ -554,7 +554,7 @@
      "explain": "פירוק $n$, כפליות $\\phi$, הצבת הערכים, ואז המסקנה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -585,7 +585,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהחיתוך המשולש הוא $\\lfloor100/105\\rfloor=0$.",
     "לענות 55 (מספר המספרים שמתחלקים באחד מהם) במקום המשלים."
@@ -620,7 +620,7 @@
      "explain": "$100-67+12-0=45$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -651,7 +651,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב את $A$ בלי לחלק ב-$2^{n-2}$ ולקבל $5A=15$ במקום $5A=15\\cdot4$.",
     "להציב את התנאים ההתחלתיים לפני שמוסיפים את הפתרון הפרטי."
@@ -686,7 +686,7 @@
      "explain": "$-2+0+48=46=15\\cdot4-14$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -717,7 +717,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שדרגות הקצוות של $P_{15}$ הן 1 ולא 2.",
     "לדרוש שכל הדרגות זוגיות; זה תנאי למעגל Euler."
@@ -766,7 +766,7 @@
      "explain": "ארבעה צמתים אי-זוגיים אינם מאפשרים מסלול Euler; Hamilton בלבד אינו מספיק (למשל $K_4$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -793,7 +793,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לענות $2^{11}=2048$, מספר כל תתי-הקבוצות.",
     "להשאיר את השורש השלילי של משוואת הריבוע."
@@ -842,7 +842,7 @@
      "explain": "$2^{10}=1024$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -873,7 +873,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור עם חזרות ($6^4$) כשהפונקציה עולה ממש או חח\"ע.",
     "לבלבל בין עולה ממש (קבוצה, בלי סדר) לבין חח\"ע (סדרה, עם סדר)."
@@ -922,7 +922,7 @@
      "explain": "$P(6,4)=6\\cdot5\\cdot4\\cdot3=360$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -953,7 +953,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הגזירה ולהציב $x=1$ בבינום עצמו, ולקבל $2^n$.",
     "לחשב את גזירת $(x+1)^n$ ללא הגורם $n$."
@@ -995,7 +995,7 @@
      "explain": "$4\\cdot2^3=32$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1027,7 +1027,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק לא-גרפיות מסכום דרגות אי-זוגי: כאן הסכום $1+1+2+3+3+3+6+7+8=34$ זוגי.",
     "לשכוח להפחית 1 מדרגות כל הצמתים אחרי הסרת $v_9$."
@@ -1059,7 +1059,7 @@
      "explain": "ההנחה, הסרת הצומת המחובר לכולם, מניית המבודדים, והסתירה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1090,7 +1090,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב את הסכום החדש בצורה שגויה ($22-10=12$ ולא 22).",
     "לספור סדרים שונים של אותן אותיות: אין חשיבות לסדר."
@@ -1118,7 +1118,7 @@
      "explain": "$\\binom{12+4-1}{4-1}=\\binom{15}3=455$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1146,7 +1146,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש בדרגות של $G$ (3) במקום של המשלים (6) בקריטריון של Dirac.",
     "לטעון שהמשלים דו-צדדי כי $G$ עצמו כזה."
@@ -1188,7 +1188,7 @@
      "explain": "בין $a,d,g$ אין צלעות של $G$; בשאר השלישיות יש צלע של $G$ (למשל $(a,b)$, $(f,h)$, $(e,a)$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1215,7 +1215,7 @@
      "points": 6
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$12^n=2^{2n}3^n$ ולהניח $ab=2^{5n}$ בלבד.",
     "לחשב $(1-\\frac13)$ כ-$\\frac23$ ולהכפיל פעמיים באותו גורם $\\frac12$."
@@ -1271,7 +1271,7 @@
      "explain": "$2^{10}\\cdot3^{1}=3072$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1302,7 +1302,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לתת רק פונקציה חח\"ע בכיוון אחד ולהסיק שוויון עוצמות.",
     "לבחור פונקציה שתמונתה אינה בתוך $(2,7]$."
@@ -1348,7 +1348,7 @@
      "explain": "הפונקציה $x+7$ מעבירה את $(0,1)$ אל $(7,8)$, שאינו תת-קבוצה של $(2,7]$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1356,7 +1356,7 @@
    "kind": "computation",
    "topic": "graph_connectivity",
    "question": "(6 נק') מצא את הקוטר של הגרף שבציור הבא:",
-   "solution": "מספיק לחשב את המרחקים מ-$a$ ומ-$f$ ולבחור את הגדול ביותר:\n\n$\\operatorname{dist}(a,b)=\\operatorname{dist}(a,f)=\\operatorname{dist}(a,e)=1$, $\\operatorname{dist}(a,v)=2$ לכל $v\\in\\{j,g,i,h,c,d\\}$\n\n$\\operatorname{dist}(f,a)=\\operatorname{dist}(f,i)=\\operatorname{dist}(f,h)=1$, $\\operatorname{dist}(f,v)=2$ לכל $v\\in\\{j,b,c,d,e,g\\}$\n\nמסקנה: $\\operatorname{diam}(G)=2$ ($=\\max\\{\\operatorname{dist}(x,y):x,y\\in V\\}$).",
+   "solution": "מספיק לחשב את המרחקים מ-$a$ ומ-$f$ ולבחור את הגדול ביותר:\n\n$\\operatorname{dist}(a,b)=\\operatorname{dist}(a,f)=\\operatorname{dist}(a,e)=1$, $\\operatorname{dist}(a,v)=2$ לכל $v\\in\\{j,g,i,h,c,d\\}$\n\n$\\operatorname{dist}(f,a)=\\operatorname{dist}(f,i)=\\operatorname{dist}(f,h)=1$, $\\operatorname{dist}(f,v)=2$ לכל $v\\in\\{j,b,c,d,e,g\\}$\n\nהמרחקים משני הצמתים הללו מספיקים כי הגרף הוא גרף פטרסן, שהוא סימטרי-צמתים (לכל שני צמתים יש אוטומורפיזם שמעביר את האחד לשני), ולכן לכל הצמתים אותו פרופיל מרחקים.\n\nמסקנה: $\\operatorname{diam}(G)=2$ ($=\\max\\{\\operatorname{dist}(x,y):x,y\\in V\\}$).",
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
@@ -1380,7 +1380,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק מרחקים מצומת אחד בלבד בלי לנמק שזה מספיק.",
     "לענות 3: בגרף שלושה שכנים לכל צומת, אך כל צומת אחר נמצא במרחק 2."
@@ -1408,7 +1408,7 @@
      "explain": "המרחק הגדול ביותר בין שני צמתים הוא 2."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

@@ -39,7 +39,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחסר $2\\cdot5!$ (שני הסדרים של a ו-b) במקום $5!$, כשהרצף הוא רק \"ab\".",
     "לענות $5!=120$, שהוא מספר התמורות שכן מכילות את הרצף, ולשכוח לחסר אותו מ-$6!$."
@@ -88,7 +88,7 @@
      "explain": "$720-120=600$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -119,7 +119,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח לבדוק את $n=1$ בנפרד: שם החסם $\\phi(n)\\le n-1$ אינו נכון.",
     "לחשוב ש-$n\\mid\\phi(n)$ מתקיים עבור $n$ ראשוני, כי $\\phi(p)=p-1$ ו-$p\\nmid p-1$."
@@ -168,7 +168,7 @@
      "explain": "רק $n=1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -199,7 +199,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $|E|=n-1$ (נוסחת העץ) במקום להחסיר $k$.",
     "להחסיר 1 פעם אחת בלבד במקום פעם אחת לכל רכיב."
@@ -253,7 +253,7 @@
      "explain": "מחסירים 1 מכל אחד מ-$k$ הרכיבים, ולכן הסכום הוא $|V|-k$ ולא $|V|-1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -280,7 +280,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$5^{n+k}=5^n\\cdot5^k$ ולא להוציא את $5^n$ מחוץ לסכום.",
     "לספור את כל המחלקים של $f(n)$ במקום רק את האי-זוגיים."
@@ -336,7 +336,7 @@
      "explain": "$2n+1=7$ (המחלקים $5^0,\\dots,5^6$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -367,7 +367,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $C_1 3^n+C_2 3^n$ לשורש כפול, בלי הגורם $n$.",
     "להוכיח את ה-$O$ בלי לציין קבוע ו-$n\\ge1$."
@@ -396,13 +396,13 @@
     },
     {
      "type": "numeric",
-     "prompt": "איזה קבוע $c$ מתקבל בחסם $a_n\\le c\\cdot n\\cdot3^n$ לכל $n\\ge1$ בפתרון?",
+     "prompt": "מהו הקבוע $c$ הקטן ביותר שהטיעון בפתרון נותן בחסם $a_n\\le c\\cdot n\\cdot3^n$ לכל $n\\ge1$?",
      "answer": 12,
      "tol": 0,
      "explain": "$5\\le5n$, ולכן $a_n\\le5n3^n+7n3^n=12n3^n$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -429,7 +429,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את המשתנה העודף $y$ (המילה יכולה להיות קצרה מ-23) ולפתור שוויון עם 4 משתנים בלבד.",
     "לחשב את הצד הימני $23-3-5-5-4$ בצורה שגויה."
@@ -457,7 +457,7 @@
      "explain": "$\\binom{6+5-1}{5-1}=\\binom{10}4=210$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -488,7 +488,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשאיר את שורש משוואת הריבוע השלילי $n=-19$.",
     "לחשב $\\binom{20}{2}\\cdot\\binom{20}{2}$ ולא לפצל לזוגיים ואי-זוגיים."
@@ -516,7 +516,7 @@
      "explain": "$45\\cdot45=2025$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -543,7 +543,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהפונקציה כולה צריכה להיות על, ולספור רק $3^5$ אפשרויות לחלק השני.",
     "להשתמש ב-$3^5$ במקום בנוסחת הפונקציות על."
@@ -571,7 +571,7 @@
      "explain": "$6\\cdot150=900$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -598,7 +598,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור דוגמה נגדית ל-ג1 שהיא דו-צדדית שלמה (למשל $C_4$), שאינה מפריכה.",
     "בהוכחת ג3: לשכוח שגשר הוא צלע שאינה על אף מעגל."
@@ -700,7 +700,7 @@
      "explain": "ההנחה, מסלול בעץ, המעגל שנוצר ממנו, ואז הסתירה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -727,7 +727,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לצייר את המשלים, למרות שהשאלה אוסרת זאת.",
     "לבנות גרף עם פחות מ-11 צמתים: סדרת הדרגות כוללת 11 איברים."
@@ -783,7 +783,7 @@
      "explain": "Hamilton בלבד אינו מספיק (למשל ב-$K_4$ אין מסלול Euler); ארבעה צמתים אי-זוגיים אינם מאפשרים מסלול Euler."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -815,7 +815,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק את $\\chi$ של $\\overline G$ במקום של $G$.",
     "לטעון שיש $C_5$ מושרה במשלים, למרות ש-$\\overline{C_5}\\cong C_5$ ו-$G$ אינו מכיל $C_5$."
@@ -892,7 +892,7 @@
      "explain": "$G$ דו-צדדי, ולכן אין בו $C_5$ מושרה, ו-$\\overline{C_5}\\cong C_5$, ולכן גם אין במשלים."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

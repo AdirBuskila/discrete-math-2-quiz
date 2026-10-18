@@ -39,7 +39,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לענות $D_5=44$, מספר תמורות אי-הסדר, כשהשאלה מבקשת את התמורות שאינן כאלה.",
     "לשכוח את הסימנים המתחלפים בנוסחה."
@@ -67,7 +67,7 @@
      "explain": "$120-44=76$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -98,7 +98,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את המחלקים של $\\operatorname{lcm}$ או של המכפלה במקום של ה-$\\gcd$.",
     "לשכוח שמעריך כל ראשוני במחלק נע מ-0 עד המעריך ב-$\\gcd$."
@@ -147,7 +147,7 @@
      "explain": "$(1+1)(1+1)(2+1)=12$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -178,7 +178,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכלול את $n=3$ שבו המשלים הוא שלושה צמתים בודדים.",
     "לכלול את $n=6$: דרגות המשלים הן 3, אי-זוגיות."
@@ -227,7 +227,7 @@
      "explain": "$n=6$ נכשל (דרגות 3), $n=3$ נכשל (המשלים אינו קשיר), ו-$n$ זוגי נכשל כי $n-3$ אי-זוגי."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -258,7 +258,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הגורם 3 מחוץ לסכום השני.",
     "להסתפק בטענה ש-$8^n$ קטן מ-$9^n$ בלי לטפל גם באיבר השני."
@@ -280,13 +280,13 @@
     },
     {
      "type": "numeric",
-     "prompt": "איזה קבוע $c$ מופיע בחסם $f(n)\\le c\\cdot9^n$ בפתרון?",
+     "prompt": "מהו הקבוע $c$ הקטן ביותר שהטיעון בפתרון נותן בחסם $f(n)\\le c\\cdot9^n$ (לכל $n\\ge0$)?",
      "answer": 4,
      "tol": 0,
      "explain": "$8^n\\le9^n$ ו-$3\\cdot6^n\\le3\\cdot9^n$, ולכן $c=4$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -317,7 +317,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $C_1+C_2$ בלי הגורם $n$ לשורש כפול.",
     "להציב $a_1=C_1\\cdot1+C_2\\cdot1$ ולשכוח את הגורם $n=1$."
@@ -345,7 +345,7 @@
      "explain": "$5+7\\cdot5=40$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -376,7 +376,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב את חיתוך זוג כמכפלת הגדלים ולא כ-$\\lfloor200/\\operatorname{lcm}\\rfloor$.",
     "לשכוח את החיתוך המשולש בסימן חיובי."
@@ -404,7 +404,7 @@
      "explain": "$206-66+6=146$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -435,7 +435,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לקרוא את התנאי כ\"גודל לכל היותר 6\" ולקבל 247.",
     "להשאיר את השורש השלילי של משוואת הריבוע."
@@ -463,7 +463,7 @@
      "explain": "$28+8+1=37$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -494,7 +494,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור פונקציות עולות ממש ($\\binom55=1$) במקום עולות חלש.",
     "לענות 126, מספר הפונקציות העולות, כשהשאלה מבקשת את אלה שאינן עולות."
@@ -522,7 +522,7 @@
      "explain": "$3125-126=2999$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -553,7 +553,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשאיר את הפתרון $n=0$ שאינו מתאים.",
     "להסתפק בהגעה ל-$n=5$ בלי להראות שאכן $C_5$ איזומורפי למשלים שלו."
@@ -602,7 +602,7 @@
      "explain": "$\\binom52-5=5$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -610,7 +610,7 @@
    "kind": "computation",
    "topic": "combinations_subsets",
    "question": "(8 נק') תהיינה הקבוצות $A=\\{1,2,3,4,5,6\\}$ וגם $B=\\{1,2,3,4,5\\}$. חשבו כמה תתי-קבוצות של $A\\times B$ מכילות רק זוגות $(a,b)$ כך ש: $a+b=$ מספר אי-זוגי.",
-   "solution": "נסמן ב-$\\Omega$ את קבוצת הזוגות ב-$A\\times B$ שמקיימים: $a+b=$ מספר אי-זוגי. אז:\n\n$(a,b)\\in\\Omega\\iff(a,b)\\in\\{1,3,5\\}\\times\\{2,4\\}$ או $(a,b)\\in\\{2,4,6\\}\\times\\{1,3,5\\}$\n\nלכן $\\Omega=\\{1,3,5\\}\\times\\{2,4\\}\\cup\\{2,4,6\\}\\times\\{1,3,5\\}$ ו-$|\\Omega|=6+9=15$.\n\nמסקנה: $2^{15}-1=2^{|\\Omega|}-1=|P(\\Omega)|-1$ תתי-קבוצות של $A\\times B$ מכילות רק זוגות מ-$\\Omega$ (לא כולל הקבוצה הריקה).\n\nהערה: הפתרון הרשמי אינו סופר את הקבוצה הריקה.",
+   "solution": "הערה: בניסוח המילולי של השאלה הקבוצה הריקה מכילה רק זוגות מ-$\\Omega$ באופן ריק, ולכן הקריאה המילולית נותנת $2^{15}=32768$. הפתרון הרשמי (והמפתח כאן) מניח שהתת-קבוצה אינה ריקה, ולכן $2^{15}-1=32767$.\n\nנסמן ב-$\\Omega$ את קבוצת הזוגות ב-$A\\times B$ שמקיימים: $a+b=$ מספר אי-זוגי. אז:\n\n$(a,b)\\in\\Omega\\iff(a,b)\\in\\{1,3,5\\}\\times\\{2,4\\}$ או $(a,b)\\in\\{2,4,6\\}\\times\\{1,3,5\\}$\n\nלכן $\\Omega=\\{1,3,5\\}\\times\\{2,4\\}\\cup\\{2,4,6\\}\\times\\{1,3,5\\}$ ו-$|\\Omega|=6+9=15$.\n\nמסקנה: $2^{15}-1=2^{|\\Omega|}-1=|P(\\Omega)|-1$ תתי-קבוצות של $A\\times B$ מכילות רק זוגות מ-$\\Omega$ (לא כולל הקבוצה הריקה).\n\n(הפתרון הרשמי אינו סופר את הקבוצה הריקה.)",
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
@@ -629,7 +629,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכלול את הקבוצה הריקה ולכתוב $2^{15}$; הפתרון הרשמי חיסר אותה.",
     "לשכוח שסכום אי-זוגי דורש זוגיות שונה של $a$ ושל $b$."
@@ -664,7 +664,7 @@
      "explain": "$2^{15}-1=32767$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -691,7 +691,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור מתוך $\\{1,\\dots,9\\}$ במקום מתוך $\\{4,\\dots,9\\}$.",
     "להשתמש בספירה עם חזרות ($D$) כשהפונקציה עולה ממש."
@@ -712,7 +712,7 @@
      "explain": "$\\binom63=20$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -739,9 +739,9 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
-    "להפעיל את Fermat על הבסיס $n-1$ עם חזקה $n(n-1)$ ולהתעלם מכך שהחזקה צריכה להיות $n-1$.",
+    "לחשב $\\phi(n^2)=n^2-1$ (כמו $\\phi(p)=p-1$) במקום $\\phi(n^2)=n(n-1)$.",
     "לשכוח לבדוק ש-$n$ אינו מחלק את הבסיס."
    ],
    "steps": [
@@ -792,7 +792,7 @@
      "explain": "חישוב $\\phi(n^2)$, שכתוב הביטוי, בדיקת התנאי של Fermat ואז המסקנה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -824,7 +824,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק שהסדרה אינה גרפית רק כי סכום הדרגות אי-זוגי: כאן הסכום הוא 30, זוגי.",
     "לשכוח להפחית 1 מדרגות כל הצמתים אחרי הסרת הצומת בדרגה 8."
@@ -849,7 +849,7 @@
      "explain": "ההנחה, הסרת הצומת בדרגה 8, מניית הצמתים המבודדים, והסתירה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -880,7 +880,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להפריד את $\\phi(p^3(p-1))$ למכפלה בלי לבדוק ש-$\\gcd(p^3,p-1)=1$.",
     "לחשב $(\\phi\\circ\\phi)(p^4)$ כ-$\\phi(p^4)^2$."
@@ -901,7 +901,7 @@
      "explain": "$\\frac{18}{6}=3=p\\cdot\\phi(p-1)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -933,7 +933,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לדלג על צומת ברשימת מעגל Hamilton: חייבים לעבור בכל 12 הצמתים.",
     "לבחור 5 צמתים שיש ביניהם צלע ב-$G$ ולטעון שהם $K_5$ במשלים."
@@ -1010,7 +1010,7 @@
      "explain": "בקבוצה הראשונה אין צלעות של $G$; בכל אחת מהאחרות יש צלע של $G$ (למשל $(v_1,v_2)$, $(v_3,v_7)$, $(v_1,v_{10})$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

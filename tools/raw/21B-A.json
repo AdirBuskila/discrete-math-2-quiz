@@ -39,7 +39,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחסר $3!\\cdot4!$ (כל סדרי a,b,c בתוך הבלוק) במקום $4!$, כשהרצף הוא רק 'abc'.",
     "לענות $4!=24$, שהוא מספר התמורות שכן מכילות את הרצף."
@@ -88,7 +88,7 @@
      "explain": "$720-24=696$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -119,7 +119,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להגדיר את $\\phi(n)$ כמספר המחלקים של $n$ (כמו בכתב היד) במקום כמספר הזרים ל-$n$.",
     "להשתמש ב-$\\phi(m)=\\phi(n)\\phi(a)$ ללא התנאי $\\gcd(n,a)=1$."
@@ -172,7 +172,7 @@
      "explain": "פירוק $n$, צורת הכפולה $m$, חישוב המנה, ואז המסקנה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -180,7 +180,7 @@
    "kind": "computation",
    "topic": "trees",
    "question": "**ג1.** (4 נק') המונחים: עץ הוא גרף לא מכוון קשיר וללא מעגלים. עץ פורש של גרף לא מכוון $G=(V,E)$ הוא עץ $T=(V,U)$ שמקיים התנאי $U\\subseteq E$.\n\n**ג2.** (4 נק') שאלה: יהי $G=(V,E)$ גרף לא מכוון, קשיר, בעל $n$ צמתים. ידוע ש-$G$ קיימים 2 מעגלים כך שאין להם צמתים משותפים. חשבו את $|E|$ כביטוי של $n$.",
-   "solution": "נתון: $G$ קשיר ובו שני מעגלים $C_1,C_2$ ללא צמתים משותפים.\n\nאם נרצה לבנות עץ פורש נסיר מכל מעגל צלע אחת ($e_1\\in C_1$, $e_2\\in C_2$). נקבל עץ פורש $T=(V,E-\\{e_1,e_2\\})$, ולכן:\n\n$$|E-\\{e_1,e_2\\}|=|V|-1\\Rightarrow|E|=|V|-1+2=|V|+1$$\n\nמסקנה: $|E|=n+1$.\n\nהערה: הפתרון הרשמי מניח ש-$C_1$ ו-$C_2$ הם כל המעגלים של $G$ (אחרת הסרת שתי צלעות אינה מותירה עץ, ו-$|E|$ אינו נקבע על ידי $n$ בלבד).",
+   "solution": "הערה: בניסוח המילולי של השאלה נאמר רק שקיימים ב-$G$ שני מעגלים ללא צמתים משותפים; הפתרון מניח שאלה המעגלים היחידים, ואחרת $|E|$ אינו נקבע על ידי $n$ (הקריאה המילולית: אין תשובה יחידה). התשובה במפתח היא $n+1$ לפי ההנחה הזו.\n\nנתון: $G$ קשיר ובו שני מעגלים $C_1,C_2$ ללא צמתים משותפים.\n\nאם נרצה לבנות עץ פורש נסיר מכל מעגל צלע אחת ($e_1\\in C_1$, $e_2\\in C_2$). נקבל עץ פורש $T=(V,E-\\{e_1,e_2\\})$, ולכן:\n\n$$|E-\\{e_1,e_2\\}|=|V|-1\\Rightarrow|E|=|V|-1+2=|V|+1$$\n\nמסקנה: $|E|=n+1$.\n\nהערה: הפתרון הרשמי מניח ש-$C_1$ ו-$C_2$ הם כל המעגלים של $G$ (אחרת הסרת שתי צלעות אינה מותירה עץ, ו-$|E|$ אינו נקבע על ידי $n$ בלבד).",
    "solutionSource": "lecturer-solution",
    "official": true,
    "confidence": "high",
@@ -199,7 +199,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהפתרון מניח ש-$C_1,C_2$ הם כל המעגלים של $G$.",
     "להסיר צומת ממעגל במקום צלע, ולפגוע בכך שהעץ יהיה פורש."
@@ -242,13 +242,13 @@
     },
     {
      "type": "numeric",
-     "prompt": "כמה צלעות יש ל-$G$ כאשר $n=10$?",
+     "prompt": "בהנחה שהמעגלים $C_1,C_2$ הם המעגלים היחידים ב-$G$, כמה צלעות יש ל-$G$ כאשר $n=10$?",
      "answer": 11,
      "tol": 0,
      "explain": "$|E|=|V|-1+2=n+1=11$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -275,7 +275,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשאיר את השורש השלילי $n=-19$.",
     "לחשב $\\binom{20}3$ (כל תתי-הקבוצות) במקום רק של הזוגיים."
@@ -303,7 +303,7 @@
      "explain": "$\\binom{10}3=120$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -330,7 +330,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לענות 150, מספר הפונקציות **על**, כשהשאלה מבקשת פונקציות שאינן על.",
     "לשכוח את האיבר האחרון בנוסחת ההכלה וההדחה."
@@ -358,7 +358,7 @@
      "explain": "$243-150=93$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -389,7 +389,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחלק ב-$|V|-1$ ולאבד את הפתרון $|V|=1$.",
     "לשכוח שגם המשלים חייב להיות עץ, ולכן יש לו בדיוק $|V|-1$ צלעות."
@@ -438,7 +438,7 @@
      "explain": "$|V|=1$ או $|V|=4$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -461,7 +461,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהסכום הוא על $9^k=3^{2k}$ ולכתוב $3^n$.",
     "להסתפק ב-$5^n\\le10^n$ בלי לציין את הקבוע 2."
@@ -483,13 +483,13 @@
     },
     {
      "type": "numeric",
-     "prompt": "איזה קבוע $c$ מופיע בחסם $f(n)\\le c\\cdot10^n$ בפתרון?",
+     "prompt": "מהו הקבוע $c$ הקטן ביותר שהטיעון בפתרון נותן בחסם $f(n)\\le c\\cdot10^n$ (לכל $n\\ge0$)?",
      "answer": 2,
      "tol": 0,
      "explain": "$5^n\\le10^n$, ולכן $f(n)\\le2\\cdot10^n$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -520,7 +520,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $C_1 2^n+C_2 2^n$ לשורש כפול, בלי הגורם $n$.",
     "לטעות בחישוב $a_1=2C_1+2C_2$ ולשכוח את הגורם $2^1$ בשני האיברים."
@@ -548,7 +548,7 @@
      "explain": "$(10+10)\\cdot4=80=4\\cdot30-4\\cdot10$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -575,7 +575,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור סדרים שונים של אותן אותיות: בשאלה אין חשיבות לסדר.",
     "לטעות בסכום החסמים התחתונים ($5+1+4=10$)."
@@ -596,7 +596,7 @@
      "explain": "$\\binom{17+3-1}{3-1}=\\binom{19}2=171$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -627,7 +627,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהאות הראשונה והאחרונה כבר נבחרו, ולסדר את כל 7 האותיות ב-$7!$.",
     "לבחור את האות האחרונה מ-$A$ במקום מ-$B$."
@@ -662,7 +662,7 @@
      "explain": "$4\\cdot120\\cdot3=1440$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -685,7 +685,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את הפונקציות החח\"ע בלבד ולענות $5!=120$.",
     "לענות 3125 ולשכוח לחסר את ההפיכות."
@@ -713,7 +713,7 @@
      "explain": "$3125-120=3005$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -740,7 +740,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $2^n=1024$ ולקבל $n=10$, במקום $2^{n-1}=1024$.",
     "להפעיל את משפט Fermat בלי לבדוק ש-11 אינו מחלק את הבסיס."
@@ -796,7 +796,7 @@
      "explain": "$11\\mid10^{10}-1$, ולכן השארית 1."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -828,7 +828,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לא להראות גרף מפורש: צריך בנייה או הוכחה שהסדרה ניתנת למימוש.",
     "לשכוח שצומת בדרגה 6 מתוך 7 צמתים מחובר לכל האחרים."
@@ -853,7 +853,7 @@
      "explain": "זיהוי הצומת המחובר לכולם, הסרתו, גרף הנותר, והחזרה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -880,7 +880,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון ש-$p-1$ מתחלק ב-4 לבדו: למשל $p=3$.",
     "לשכוח ש-$\\phi(p^q)=p^q\\left(1-\\frac1p\\right)=p^{q-1}(p-1)$."
@@ -922,7 +922,7 @@
      "explain": "מכפלה של שני מספרים זוגיים מתחלקת ב-4."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -954,7 +954,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק את $\\chi$ של $\\overline G$ במקום של $G$.",
     "לבחור קבוצה של 4 צמתים שיש ביניהם צלעות ב-$G$ ולטעון שהיא $K_4$ במשלים."
@@ -1031,7 +1031,7 @@
      "explain": "אין צלעות של $G$ בין אף שניים מהם; בשאר הקבוצות יש צלע של $G$ (למשל $(a,b)$, $(f,h)$, $(a,f)$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

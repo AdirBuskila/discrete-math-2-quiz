@@ -15,6 +15,7 @@ assert good == list(range(5, 40, 2)); print("Q1c", good[:5])
 # Q2a
 for n in range(1, 8):
     f = sum(comb(n, k) * (7**k + 3 * 5**k) for k in range(n+1)); assert f == 8**n + 3 * 6**n <= 4 * 9**n
+assert min(c for c in range(1,10) if all(8**n+3*6**n <= c*9**n for n in range(0,30))) == 4
 # Q2b
 a = [5, 12]
 for n in range(2, 40): a.append(2*a[-1] - a[-2])
