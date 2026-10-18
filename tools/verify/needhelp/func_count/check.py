@@ -20,20 +20,18 @@ E = {
  "C03-Q4": count(4,5,lambda f:winc(f) and not inc(f)), "C03-Q5": count(2,6,wdec),
  "C04-Q1": count(4,2,onto(2)), "C04-Q2": count(4,3,onto(3)), "C04-Q3": count(5,3,onto(3)), "C04-Q4": count(3,4,onto(4)),
  "C04-Q5": count(5,5,onto(5)),
- "C05-Q1": stirling_bf(5,2), "C05-Q2": stirling_bf(4,3), "C05-Q3": count(5,3,onto(3)), "C05-Q4": stirling_bf(6,3),
- "C05-Q5": stirling_bf(5,3),
- "C06-Q1": count(4,7,lambda f:inj(f) and set(f[:2])=={6,7}),
- "C06-Q2": count(5,8,lambda f:inj(f) and set(f[:3])=={6,7,8}),
- "C06-Q3": count(4,5,lambda f:set(f[:2])<={4,5}),
- "C06-Q4": count(5,4,lambda f:{i+1 for i in range(5) if f[i] in (1,2)}=={1,2,3}),
- "C06-Q5": count(4,6,lambda f:inj(f) and set(f[:2])<={1,2,3} and set(f[2:])<={4,5,6}),
- "C07-Q1": count(6,6,lambda f:inj(f) and (f[0]==1 or f[5]==6)), "C07-Q2": count(4,9,lambda f:inc(f) and f[0]==7 and f[3]==8),
- "C07-Q3": count(4,7,lambda f:inj(f) and f[0]==1), "C07-Q4": count(4,9,lambda f:inc(f) and f[1]==5),
- "C08-Q1": sum(1 for _ in combinations(range(12),5)),
- "C08-Q2": sum(1 for s in combinations([(x,y) for x in range(3) for y in range(4)],5) if all(p[1]!=3 for p in s)),
- "C08-Q3": sum(1 for s in combinations([(x,y) for x in range(3) for y in range(4)],3) if len({p[0] for p in s})==3),
- "C08-Q4": sum(1 for s in permutations("abcdef",4) if s[0] in "ab"),
- "C08-Q5": sum(1 for s in permutations("abcdef",4) if "".join(s[:2]) in ("ab","cd")),
+ "C05-Q1": count(4,7,lambda f:inj(f) and set(f[:2])=={6,7}),
+ "C05-Q2": count(5,8,lambda f:inj(f) and set(f[:3])=={6,7,8}),
+ "C05-Q3": count(4,5,lambda f:set(f[:2])<={4,5}),
+ "C05-Q4": count(5,4,lambda f:{i+1 for i in range(5) if f[i] in (1,2)}=={1,2,3}),
+ "C05-Q5": count(4,6,lambda f:inj(f) and set(f[:2])<={1,2,3} and set(f[2:])<={4,5,6}),
+ "C06-Q1": count(6,6,lambda f:inj(f) and (f[0]==1 or f[5]==6)), "C06-Q2": count(4,9,lambda f:inc(f) and f[0]==7 and f[3]==8),
+ "C06-Q3": count(4,7,lambda f:inj(f) and f[0]==1), "C06-Q4": count(4,9,lambda f:inc(f) and f[1]==5),
+ "C07-Q1": sum(1 for _ in combinations(range(12),5)),
+ "C07-Q2": sum(1 for s in combinations([(x,y) for x in range(3) for y in range(4)],5) if all(p[1]!=3 for p in s)),
+ "C07-Q3": sum(1 for s in combinations([(x,y) for x in range(3) for y in range(4)],3) if len({p[0] for p in s})==3),
+ "C07-Q4": sum(1 for s in permutations("abcdef",4) if s[0] in "ab"),
+ "C07-Q5": sum(1 for s in permutations("abcdef",4) if "".join(s[:2]) in ("ab","cd")),
 }
 # mcq option value (TeX) -> number, evaluated independently of gen.py
 OPT = {
@@ -62,7 +60,7 @@ for k in E:
     assert k in seen, ("question missing from files", k)
 assert seen == set(E), seen ^ set(E)
 # closed-form spot checks used in the lessons
-assert count(4,2,onto(2))==14 and count(5,3,onto(3))==150 and 243-150==93 and stirling_bf(4,2)==7
+assert count(4,2,onto(2))==14 and count(5,3,onto(3))==150 and 243-150==93
 assert count(3,3,onto(3))==6 and count(2,3,winc)==6 and count(5,5,lambda f:inj(f) and (f[0]==1 or f[4]==5))==42
 assert count(3,5,inc)==10 and count(3,5,inj)==60 and count(5,7,lambda f:inj(f) and set(f[:2])=={6,7})==120
 assert count(6,3,onto(3))==540

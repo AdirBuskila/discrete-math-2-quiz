@@ -155,7 +155,7 @@
     },
     {
       "id": "func_count",
-      "titleHe": "ספירת פונקציות וחלוקות",
+      "titleHe": "ספירת פונקציות",
       "icon": "🧮",
       "topic": "function_counting",
       "entryLabelHe": "צריך עזרה בספירת פונקציות?"
