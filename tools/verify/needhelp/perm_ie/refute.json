@@ -1,0 +1,17 @@
+{
+ "course": "perm_ie",
+ "refuter": "blind re-solve (brute force/sympy/networkx), compared via course_dump --compare",
+ "questions_checked": 40,
+ "disagree": [],
+ "mcq_unique_answer": "checked, one defensible option each",
+ "distractors": "each fails",
+ "order_steps": "forced",
+ "teach_before_ask": "ok",
+ "lesson_numbers": "all recomputed, correct",
+ "boss_bank": "ids exist, not held, on topic",
+ "verdict": "agree",
+ "notes": [
+  "C02-Q4/Q5 'חליפה' read as ordered (P(n,k)), consistent with lesson",
+  "C07-Q4..Q6 'prefix' read as set of first k places holding 1..k, consistent with lesson"
+ ]
+}

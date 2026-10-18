@@ -1,0 +1,16 @@
+{
+ "course": "recurrence",
+ "refuter": "blind re-solve (brute force/sympy/networkx), compared via course_dump --compare",
+ "questions_checked": 38,
+ "disagree": [],
+ "mcq_unique_answer": "checked, one defensible option each",
+ "distractors": "each fails",
+ "order_steps": "forced",
+ "teach_before_ask": "ok",
+ "lesson_numbers": "all recomputed, correct",
+ "boss_bank": "ids exist, not held, on topic",
+ "verdict": "agree",
+ "notes": [
+  "R02-Q6 compare disagree was only my JSON escaping of \\ne; order matches"
+ ]
+}

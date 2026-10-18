@@ -1,0 +1,17 @@
+{
+ "course": "graphs",
+ "refuter": "blind re-solve (brute force/sympy/networkx), compared via course_dump --compare",
+ "questions_checked": 53,
+ "disagree": [],
+ "mcq_unique_answer": "checked, one defensible option each",
+ "distractors": "each fails",
+ "order_steps": "forced",
+ "teach_before_ask": "ok",
+ "lesson_numbers": "all recomputed, correct",
+ "boss_bank": "ids exist, not held, on topic",
+ "verdict": "agree",
+ "notes": [
+  "C06-Q6 bug is line index 1 (sum should be 2*16=32); unique",
+  "C03-Q6 order forced"
+ ]
+}

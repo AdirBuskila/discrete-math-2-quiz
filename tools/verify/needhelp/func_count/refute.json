@@ -1,0 +1,16 @@
+{
+ "course": "func_count",
+ "refuter": "blind re-solve (brute force/sympy/networkx), compared via course_dump --compare",
+ "questions_checked": 39,
+ "disagree": [],
+ "mcq_unique_answer": "checked, one defensible option each",
+ "distractors": "each fails",
+ "order_steps": "forced",
+ "teach_before_ask": "ok",
+ "lesson_numbers": "all recomputed, correct",
+ "boss_bank": "ids exist, not held, on topic",
+ "verdict": "agree",
+ "flags": [
+  "C05 (Stirling numbers / set partitions, Q1,Q2,Q4,Q5 and lesson) is OUTSIDE the syllabus: docs/briefs/07 does not mention it, no bank question uses it (docs/learn_coverage.md: Stirling not taught), the brief only used it as a script cross-check. Values are correct (S(5,2)=15,S(4,3)=6,S(6,3)=90,S(5,3)=25) but the content is extra; recommend replacing with on-syllabus practice or marking optional. Not changed."
+ ]
+}
