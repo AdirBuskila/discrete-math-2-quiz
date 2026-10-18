@@ -1,5 +1,5 @@
 COURSE_LEVEL("func_count", {
-  id: "C06", order: 6, icon: "⚖️", title: "ערכים קבועים, \"או\" ופרמטר $n$",
+  id: "C06", order: 6, icon: "⚖️", title: "ערכים קבועים, \"או\" ופרמטר n",
   goal: "להתמודד עם $f(i)=c$, עם \"או\" (הכלה-והדחה), עם סתירה בין תנאים ועם טווח בגודל $n$ כללי.",
   source: "ai-verified",
   lesson: { html: String.raw`
