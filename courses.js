@@ -1664,6 +1664,725 @@ window.COURSES = {
       "recapHtml": "לעץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge2</annotation></semantics></math></span> לפחות שני עלים."
      }
     ]
+   },
+   {
+    "id": "C06",
+    "order": 6,
+    "icon": "🍃",
+    "title": "כמה עלים יש בעץ?",
+    "goal": "לחשב מספר עלים בעץ שדרגותיו מוגבלות, בעזרת סכום הדרגות $2(n-1)$.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>בעץ על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> צלעות, ולכן משפט הדרגות נותן <b>סכום דרגות קבוע</b>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>∑</mo><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\sum\\deg(v)=2(n-1)</annotation></semantics></math></span>. כשכל הדרגות בעץ הן 1 או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span>, זה משוואה במשתנה אחד.</p>\n<div class=\"lesson-rule\">🔑 <b>מתכון:</b> נסמן ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> את מספר העלים; שאר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">n-p</annotation></semantics></math></span> הצמתים בדרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d</annotation></semantics></math></span>. אז\n<span class=\"math-block\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>p</mi><mo>+</mo><mi>d</mi><mtext> </mtext><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">.</mi></mrow><annotation encoding=\"application/x-tex\">p+d\\,(n-p)=2(n-1).</annotation></semantics></math></span>\nפותרים ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> ובודקים שהתוצאה <b>מספר שלם</b> בין 2 ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span>. אם לא, אין עץ כזה.</div>\n<div class=\"lesson-ex\"><b>דוגמה:</b> עץ עם 20 צמתים שכל דרגותיו 1 או 3. <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>3</mn><mo stretchy=\"false\">(</mo><mn>20</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>38</mn></mrow><annotation encoding=\"application/x-tex\">p+3(20-p)=38</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>60</mn><mo>−</mo><mn>2</mn><mi>p</mi><mo>=</mo><mn>38</mn></mrow><annotation encoding=\"application/x-tex\">60-2p=38</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">p=11</annotation></semantics></math></span> עלים ו-9 צמתים בדרגה 3.</div>\n<div class=\"lesson-trap\">⚠️ מספר העלים הוא משתנה, לא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span>. ואם יוצא שבר, אין עץ כזה: למשל דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>4</mn><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{1,4\\}</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding=\"application/x-tex\">n=25</annotation></semantics></math></span> נותנות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>52</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">p=52/3</annotation></semantics></math></span>.</div>\n<p>אם יש כמה דרגות שונות, מסכמים על כל הצמתים: למשל צומת אחד בדרגה 4, אחד בדרגה 3 והשאר עלים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>p</mi><mo>+</mo><mn>2</mn><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">p+4+3=2(p+2-1)</annotation></semantics></math></span>.</p>"
+    },
+    "questions": [
+     {
+      "id": "C06-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "בעץ עם 14 צמתים כל הדרגות הן 1 או 3. כמה עלים יש בו?",
+       "answer": 8,
+       "tol": 0,
+       "explain": "$p+3(14-p)=2\\cdot13=26$, כלומר $42-2p=26$ ולכן $p=8$.",
+       "promptHtml": "בעץ עם 14 צמתים כל הדרגות הן 1 או 3. כמה עלים יש בו?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>3</mn><mo stretchy=\"false\">(</mo><mn>14</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo>⋅</mo><mn>13</mn><mo>=</mo><mn>26</mn></mrow><annotation encoding=\"application/x-tex\">p+3(14-p)=2\\cdot13=26</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>42</mn><mo>−</mo><mn>2</mn><mi>p</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding=\"application/x-tex\">42-2p=26</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">p=8</annotation></semantics></math></span>."
+      },
+      "recap": "$p+d(n-p)=2(n-1)$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mi>d</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">p+d(n-p)=2(n-1)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C06-Q2",
+      "question": "האם קיים עץ עם 25 צמתים שכל דרגותיו הן 1 או 4?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, עם 16 עלים",
+        "type": "text",
+        "html": "כן, עם 16 עלים"
+       },
+       {
+        "id": "b",
+        "value": "לא, כי מתקבל מספר עלים לא שלם",
+        "type": "text",
+        "html": "לא, כי מתקבל מספר עלים לא שלם"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי 25 אי-זוגי",
+        "type": "text",
+        "html": "לא, כי 25 אי-זוגי"
+       },
+       {
+        "id": "d",
+        "value": "כן, עם 7 צמתים בדרגה 4",
+        "type": "text",
+        "html": "כן, עם 7 צמתים בדרגה 4"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "$p+4(25-p)=48$ נותן $100-3p=48$, ולכן $p=52/3$, לא שלם. אין עץ כזה. אי-זוגיות של $n$ לא מפריעה כאן. ו-16 עלים נותנים סכום $16+36=52\\ne48$.",
+      "recap": "פתרון לא שלם: אין עץ כזה.",
+      "questionHtml": "האם קיים עץ עם 25 צמתים שכל דרגותיו הן 1 או 4?",
+      "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>4</mn><mo stretchy=\"false\">(</mo><mn>25</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>48</mn></mrow><annotation encoding=\"application/x-tex\">p+4(25-p)=48</annotation></semantics></math></span> נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>100</mn><mo>−</mo><mn>3</mn><mi>p</mi><mo>=</mo><mn>48</mn></mrow><annotation encoding=\"application/x-tex\">100-3p=48</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>52</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">p=52/3</annotation></semantics></math></span>, לא שלם. אין עץ כזה. אי-זוגיות של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> לא מפריעה כאן. ו-16 עלים נותנים סכום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mo>+</mo><mn>36</mn><mo>=</mo><mn>52</mn><mo mathvariant=\"normal\">≠</mo><mn>48</mn></mrow><annotation encoding=\"application/x-tex\">16+36=52\\ne48</annotation></semantics></math></span>.",
+      "recapHtml": "פתרון לא שלם: אין עץ כזה."
+     },
+     {
+      "id": "C06-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "בעץ עם 26 צמתים כל הדרגות הן 1 או 5. כמה עלים יש בו?",
+       "answer": 20,
+       "tol": 0,
+       "explain": "$p+5(26-p)=2\\cdot25=50$, כלומר $130-4p=50$ ולכן $p=20$ (ו-6 צמתים בדרגה 5).",
+       "promptHtml": "בעץ עם 26 צמתים כל הדרגות הן 1 או 5. כמה עלים יש בו?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>5</mn><mo stretchy=\"false\">(</mo><mn>26</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo>⋅</mo><mn>25</mn><mo>=</mo><mn>50</mn></mrow><annotation encoding=\"application/x-tex\">p+5(26-p)=2\\cdot25=50</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>130</mn><mo>−</mo><mn>4</mn><mi>p</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding=\"application/x-tex\">130-4p=50</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding=\"application/x-tex\">p=20</annotation></semantics></math></span> (ו-6 צמתים בדרגה 5)."
+      },
+      "recap": "$p+d(n-p)=2(n-1)$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mi>d</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">p+d(n-p)=2(n-1)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C06-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "בעץ יש צומת אחד בדרגה 4, צומת אחד בדרגה 3, וכל שאר הצמתים עלים. כמה עלים יש בעץ?",
+       "answer": 5,
+       "tol": 0,
+       "explain": "אם $p$ עלים אז $n=p+2$ וסכום הדרגות $p+4+3=2(n-1)=2(p+1)$. לכן $p+7=2p+2$ ו-$p=5$.",
+       "promptHtml": "בעץ יש צומת אחד בדרגה 4, צומת אחד בדרגה 3, וכל שאר הצמתים עלים. כמה עלים יש בעץ?",
+       "explainHtml": "אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> עלים אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mi>p</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n=p+2</annotation></semantics></math></span> וסכום הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>p</mi><mo>+</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">p+4+3=2(n-1)=2(p+1)</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>7</mn><mo>=</mo><mn>2</mn><mi>p</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">p+7=2p+2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">p=5</annotation></semantics></math></span>."
+      },
+      "recap": "סוכמים את הדרגות של כל הצמתים.",
+      "recapHtml": "סוכמים את הדרגות של כל הצמתים."
+     },
+     {
+      "id": "C06-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "בעץ כל הדרגות הן 1 או 3, ויש בו 15 עלים. כמה צמתים יש בעץ?",
+       "answer": 28,
+       "tol": 0,
+       "explain": "אם $x$ צמתים בדרגה 3 אז $n=15+x$ ו-$15+3x=2(14+x)$, כלומר $x=13$. לכן $n=28$.",
+       "promptHtml": "בעץ כל הדרגות הן 1 או 3, ויש בו 15 עלים. כמה צמתים יש בעץ?",
+       "explainHtml": "אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">x</annotation></semantics></math></span> צמתים בדרגה 3 אז <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>15</mn><mo>+</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">n=15+x</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>15</mn><mo>+</mo><mn>3</mn><mi>x</mi><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mn>14</mn><mo>+</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">15+3x=2(14+x)</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>13</mn></mrow><annotation encoding=\"application/x-tex\">x=13</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>28</mn></mrow><annotation encoding=\"application/x-tex\">n=28</annotation></semantics></math></span>."
+      },
+      "recap": "בעץ עם דרגות $\\{1,3\\}$: $x=p-2$.",
+      "recapHtml": "בעץ עם דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{1,3\\}</annotation></semantics></math></span>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mi>p</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">x=p-2</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C06-Q6",
+      "step": {
+       "type": "findbug",
+       "prompt": "בפתרון הבא של השאלה ״מצאו כמה עלים יש בעץ עם 17 צמתים שדרגותיו 1 או 4״ יש טעות בשורה אחת. מצאו אותה.",
+       "lines": [
+        "נסמן ב-$p$ את מספר העלים. שאר $17-p$ הצמתים בדרגה 4.",
+        "סכום הדרגות בעץ על 17 צמתים הוא $2\\cdot17=34$.",
+        "לכן $p+4(17-p)=32$.",
+        "כלומר $68-3p=32$ ולכן $p=12$."
+       ],
+       "bugIndex": 1,
+       "explain": "בעץ על $n$ צמתים יש $n-1$ צלעות, ולכן סכום הדרגות הוא $2(n-1)=32$ ולא $2n$.",
+       "promptHtml": "בפתרון הבא של השאלה ״מצאו כמה עלים יש בעץ עם 17 צמתים שדרגותיו 1 או 4״ יש טעות בשורה אחת. מצאו אותה.",
+       "explainHtml": "בעץ על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> צלעות, ולכן סכום הדרגות הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>32</mn></mrow><annotation encoding=\"application/x-tex\">2(n-1)=32</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">2n</annotation></semantics></math></span>.",
+       "linesHtml": [
+        "נסמן ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">p</annotation></semantics></math></span> את מספר העלים. שאר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>17</mn><mo>−</mo><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">17-p</annotation></semantics></math></span> הצמתים בדרגה 4.",
+        "סכום הדרגות בעץ על 17 צמתים הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>⋅</mo><mn>17</mn><mo>=</mo><mn>34</mn></mrow><annotation encoding=\"application/x-tex\">2\\cdot17=34</annotation></semantics></math></span>.",
+        "לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>4</mn><mo stretchy=\"false\">(</mo><mn>17</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>32</mn></mrow><annotation encoding=\"application/x-tex\">p+4(17-p)=32</annotation></semantics></math></span>.",
+        "כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>68</mn><mo>−</mo><mn>3</mn><mi>p</mi><mo>=</mo><mn>32</mn></mrow><annotation encoding=\"application/x-tex\">68-3p=32</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding=\"application/x-tex\">p=12</annotation></semantics></math></span>."
+       ]
+      },
+      "recap": "סכום הדרגות בעץ: $2(n-1)$, לא $2n$.",
+      "recapHtml": "סכום הדרגות בעץ: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2(n-1)</annotation></semantics></math></span>, לא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">2n</annotation></semantics></math></span>."
+     }
+    ]
+   },
+   {
+    "id": "C07",
+    "order": 7,
+    "icon": "🔁",
+    "title": "עצים והמשלים שלהם",
+    "goal": "לחשב צלעות במשלים של עץ, ולהוכיח שהמשלים של עץ גדול איננו עץ ואיננו דו-צדדי.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>לעץ על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> צמתים יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span> צלעות, ולכן למשלים שלו יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>−</mo><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\binom n2-(n-1)</annotation></semantics></math></span> צלעות.</p>\n<div class=\"lesson-rule\">🔑 <b>מתי המשלים של עץ הוא עץ?</b> צריך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>−</mo><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\binom n2-(n-1)=n-1</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mi>n</mi><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\frac{n(n-1)}2=2(n-1)</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">n=4</annotation></semantics></math></span> (או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n=1</annotation></semantics></math></span>). על 4 צמתים יש שני עצים: ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> המשלים הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> (עץ), ול-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,3}</annotation></semantics></math></span> המשלים הוא משולש ועוד צומת מבודד (לא עץ).</div>\n<div class=\"lesson-rule\">🔑 <b>עץ גדול:</b> עץ הוא דו-צדדי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>B</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(A,B)</annotation></semantics></math></span>. אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span> אז אחד הצדדים מכיל לפחות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⌈</mo><mi>n</mi><mi mathvariant=\"normal\">/</mi><mn>2</mn><mo stretchy=\"false\">⌉</mo><mo>≥</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">\\lceil n/2\\rceil\\ge3</annotation></semantics></math></span> צמתים. בעץ אין ביניהם צלעות, ולכן במשלים הם קליקה, ובפרט משולש. לכן המשלים של עץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span> צמתים אינו דו-צדדי ובוודאי אינו עץ.</div>\n<div class=\"lesson-ex\"><b>דוגמה:</b> המשלים של הכוכב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,4}</annotation></semantics></math></span> (5 צמתים): ארבעת העלים נהפכים לקליקה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_4</annotation></semantics></math></span>, והמרכז מבודד. יש בו משולשים, ולכן אינו דו-צדדי.</div>\n<div class=\"lesson-trap\">⚠️ הטיעון \"משולש במשלים\" דורש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span>. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">n=4</annotation></semantics></math></span> הצד הגדול הוא בגודל 2 לפחות, ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> הוא דוגמה נגדית.</div>"
+    },
+    "questions": [
+     {
+      "id": "C07-Q1",
+      "step": {
+       "type": "numeric",
+       "prompt": "בעץ $T$ יש 8 צמתים. כמה צלעות יש במשלים $\\overline T$ ?",
+       "answer": 21,
+       "tol": 0,
+       "explain": "$\\binom82=28$ ו-$|E(T)|=7$, ולכן $28-7=21$.",
+       "promptHtml": "בעץ <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>T</mi></mrow><annotation encoding=\"application/x-tex\">T</annotation></semantics></math></span> יש 8 צמתים. כמה צלעות יש במשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>T</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline T</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>8</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mn>28</mn></mrow><annotation encoding=\"application/x-tex\">\\binom82=28</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><mi>T</mi><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">|E(T)|=7</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>28</mn><mo>−</mo><mn>7</mn><mo>=</mo><mn>21</mn></mrow><annotation encoding=\"application/x-tex\">28-7=21</annotation></semantics></math></span>."
+      },
+      "recap": "$|E(\\overline T)|=\\binom n2-(n-1)$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mo stretchy=\"false\">(</mo><mrow class=\"ovl\"><mi>T</mi></mrow><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>−</mo><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">|E(\\overline T)|=\\binom n2-(n-1)</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C07-Q2",
+      "question": "על 4 צמתים יש שני עצים: $P_4$ ו-$K_{1,3}$. למי מהם המשלים הוא עץ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$P_4$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$K_{1,3}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,3}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "לשניהם",
+        "type": "text",
+        "html": "לשניהם"
+       },
+       {
+        "id": "d",
+        "value": "לאף אחד מהם",
+        "type": "text",
+        "html": "לאף אחד מהם"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "המשלים של $P_4=v_1v_2v_3v_4$ הוא המסלול $v_3,v_1,v_4,v_2$, עץ. המשלים של $K_{1,3}$ הוא משולש על שלושת העלים וצומת מבודד, ולכן יש בו מעגל והוא לא קשיר.",
+      "recap": "רק $P_4$ (ו-$n=4$ היחיד).",
+      "questionHtml": "על 4 צמתים יש שני עצים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,3}</annotation></semantics></math></span>. למי מהם המשלים הוא עץ?",
+      "explanationHtml": "המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub><mo>=</mo><msub><mi>v</mi><mn>1</mn></msub><msub><mi>v</mi><mn>2</mn></msub><msub><mi>v</mi><mn>3</mn></msub><msub><mi>v</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4=v_1v_2v_3v_4</annotation></semantics></math></span> הוא המסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>4</mn></msub><mo separator=\"true\">,</mo><msub><mi>v</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">v_3,v_1,v_4,v_2</annotation></semantics></math></span>, עץ. המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,3}</annotation></semantics></math></span> הוא משולש על שלושת העלים וצומת מבודד, ולכן יש בו מעגל והוא לא קשיר.",
+      "recapHtml": "רק <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_4</annotation></semantics></math></span> (ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">n=4</annotation></semantics></math></span> היחיד)."
+     },
+     {
+      "id": "C07-Q3",
+      "question": "מהו המשלים של הכוכב $K_{1,5}$ (מרכז וחמישה עלים)?",
+      "options": [
+       {
+        "id": "a",
+        "value": "עץ עם 6 צמתים",
+        "type": "text",
+        "html": "עץ עם 6 צמתים"
+       },
+       {
+        "id": "b",
+        "value": "$K_6$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_6</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$K_5$ ועוד צומת מבודד",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span> ועוד צומת מבודד"
+       },
+       {
+        "id": "d",
+        "value": "מסלול על 6 צמתים",
+        "type": "text",
+        "html": "מסלול על 6 צמתים"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "בכוכב המרכז מחובר לכולם, ולכן במשלים הוא מבודד. החמישה האחרים לא היו מחוברים זה לזה, ולכן במשלים הם מחוברים כולם: $K_5$.",
+      "recap": "משלים של כוכב: קליקה ועוד צומת מבודד.",
+      "questionHtml": "מהו המשלים של הכוכב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>5</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{1,5}</annotation></semantics></math></span> (מרכז וחמישה עלים)?",
+      "explanationHtml": "בכוכב המרכז מחובר לכולם, ולכן במשלים הוא מבודד. החמישה האחרים לא היו מחוברים זה לזה, ולכן במשלים הם מחוברים כולם: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span>.",
+      "recapHtml": "משלים של כוכב: קליקה ועוד צומת מבודד."
+     },
+     {
+      "id": "C07-Q4",
+      "step": {
+       "type": "numeric",
+       "prompt": "$T$ עץ עם 9 צמתים והוא דו-צדדי $(A,B)$. מהו הגודל הקטן ביותר שהצד הגדול יכול להיות?",
+       "answer": 5,
+       "tol": 0,
+       "explain": "$|A|+|B|=9$, ולכן הצד הגדול לפחות $\\lceil9/2\\rceil=5$. הצמתים האלה יוצרים $K_5$ במשלים.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>T</mi></mrow><annotation encoding=\"application/x-tex\">T</annotation></semantics></math></span> עץ עם 9 צמתים והוא דו-צדדי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>B</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(A,B)</annotation></semantics></math></span>. מהו הגודל הקטן ביותר שהצד הגדול יכול להיות?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>+</mo><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">|A|+|B|=9</annotation></semantics></math></span>, ולכן הצד הגדול לפחות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⌈</mo><mn>9</mn><mi mathvariant=\"normal\">/</mi><mn>2</mn><mo stretchy=\"false\">⌉</mo><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">\\lceil9/2\\rceil=5</annotation></semantics></math></span>. הצמתים האלה יוצרים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_5</annotation></semantics></math></span> במשלים."
+      },
+      "recap": "הצד הגדול לפחות $\\lceil n/2\\rceil$.",
+      "recapHtml": "הצד הגדול לפחות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⌈</mo><mi>n</mi><mi mathvariant=\"normal\">/</mi><mn>2</mn><mo stretchy=\"false\">⌉</mo></mrow><annotation encoding=\"application/x-tex\">\\lceil n/2\\rceil</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C07-Q5",
+      "question": "$T$ הוא עץ כלשהו עם 6 צמתים. מה נכון לגבי המשלים $\\overline T$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "המשלים תמיד דו-צדדי",
+        "type": "text",
+        "html": "המשלים תמיד דו-צדדי"
+       },
+       {
+        "id": "b",
+        "value": "המשלים אינו דו-צדדי, לכל עץ כזה",
+        "type": "text",
+        "html": "המשלים אינו דו-צדדי, לכל עץ כזה"
+       },
+       {
+        "id": "c",
+        "value": "המשלים דו-צדדי רק אם העץ הוא מסלול",
+        "type": "text",
+        "html": "המשלים דו-צדדי רק אם העץ הוא מסלול"
+       },
+       {
+        "id": "d",
+        "value": "המשלים הוא תמיד עץ",
+        "type": "text",
+        "html": "המשלים הוא תמיד עץ"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "אחד הצדדים של העץ מכיל לפחות 3 צמתים, והם יוצרים משולש במשלים, ולכן המשלים אינו דו-צדדי. הוא גם לא עץ, כי ל-$\\overline T$ יש $15-5=10$ צלעות ולעץ על 6 צמתים יש 5.",
+      "recap": "עץ עם $n\\ge5$: המשלים לא דו-צדדי.",
+      "questionHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>T</mi></mrow><annotation encoding=\"application/x-tex\">T</annotation></semantics></math></span> הוא עץ כלשהו עם 6 צמתים. מה נכון לגבי המשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>T</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline T</annotation></semantics></math></span> ?",
+      "explanationHtml": "אחד הצדדים של העץ מכיל לפחות 3 צמתים, והם יוצרים משולש במשלים, ולכן המשלים אינו דו-צדדי. הוא גם לא עץ, כי ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>T</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline T</annotation></semantics></math></span> יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>15</mn><mo>−</mo><mn>5</mn><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">15-5=10</annotation></semantics></math></span> צלעות ולעץ על 6 צמתים יש 5.",
+      "recapHtml": "עץ עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span>: המשלים לא דו-צדדי."
+     }
+    ]
+   },
+   {
+    "id": "C08",
+    "order": 8,
+    "icon": "♾️",
+    "title": "גרפי אוילר",
+    "goal": "להחליט אם בגרף יש מעגל אוילר או מסלול אוילר לפי הדרגות והקשירות.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p><b>מעגל אוילר</b> הוא טיול סגור שעובר בכל צלע של הגרף בדיוק פעם אחת (מותר לחזור לצמתים). <b>גרף אוילר</b> הוא גרף עם צלעות שיש בו מעגל אוילר. בקורס \"מסלול\" פירושו טיול בלי חזרה על צלע.</p>\n<div class=\"lesson-rule\">🔑 <b>משפט אוילר:</b> לגרף עם צלעות יש מעגל אוילר אם ורק אם הוא <b>קשיר</b> וכל הדרגות <b>זוגיות</b>. מסלול אוילר פתוח (מצומת אחד לאחר) קיים אם ורק אם הגרף קשיר ויש בו בדיוק <b>שני</b> צמתים בדרגה אי-זוגית.</div>\n<ul>\n<li><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_n</annotation></semantics></math></span> הוא גרף אוילר אם ורק אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> אי-זוגי (כל הדרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n-1</annotation></semantics></math></span>). אורך המעגל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\binom n2</annotation></semantics></math></span>.</li>\n<li><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{m,n}</annotation></semantics></math></span> הוא גרף אוילר אם ורק אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">m,n</annotation></semantics></math></span> שניהם זוגיים.</li>\n<li>המשלים של מסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span>: הקצוות מקבלים דרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n-2</annotation></semantics></math></span> והצמתים הפנימיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n-3</annotation></semantics></math></span>. אחד המספרים אי-זוגי, ולכן המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span> לעולם אינו גרף אוילר (עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=2,3</annotation></semantics></math></span> הוא גם אינו קשיר).</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,3}</annotation></semantics></math></span> שני צמתים בדרגה 3 ושלושה בדרגה 2. יש בדיוק שני צמתים אי-זוגיים, ולכן יש מסלול אוילר פתוח ואין מעגל אוילר.</div>\n<div class=\"lesson-trap\">⚠️ דרגות זוגיות לא מספיקות: צריך גם קשירות. שני משולשים זרים: כל הדרגות 2, אבל אין מעגל אוילר.</div>"
+    },
+    "questions": [
+     {
+      "id": "C08-Q1",
+      "question": "איזה מהגרפים הבאים הוא גרף אוילר?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$K_6$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_6</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$K_8$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_8</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$K_7$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>7</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_7</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$K_{3,4}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "ב-$K_7$ כל הדרגות 6, זוגיות, והגרף קשיר. ב-$K_6$ וב-$K_8$ הדרגות 5 ו-7, אי-זוגיות. ב-$K_{3,4}$ ארבעה צמתים בדרגה 3.",
+      "recap": "אוילר: קשיר וכל הדרגות זוגיות.",
+      "questionHtml": "איזה מהגרפים הבאים הוא גרף אוילר?",
+      "explanationHtml": "ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>7</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_7</annotation></semantics></math></span> כל הדרגות 6, זוגיות, והגרף קשיר. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_6</annotation></semantics></math></span> וב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_8</annotation></semantics></math></span> הדרגות 5 ו-7, אי-זוגיות. ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span> ארבעה צמתים בדרגה 3.",
+      "recapHtml": "אוילר: קשיר וכל הדרגות זוגיות."
+     },
+     {
+      "id": "C08-Q2",
+      "question": "מה נכון לגבי $K_{2,3}$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "יש בו מעגל אוילר",
+        "type": "text",
+        "html": "יש בו מעגל אוילר"
+       },
+       {
+        "id": "b",
+        "value": "יש מסלול אוילר שאינו סגור, אבל אין מעגל אוילר",
+        "type": "text",
+        "html": "יש מסלול אוילר שאינו סגור, אבל אין מעגל אוילר"
+       },
+       {
+        "id": "c",
+        "value": "אין בו מסלול אוילר בכלל",
+        "type": "text",
+        "html": "אין בו מסלול אוילר בכלל"
+       },
+       {
+        "id": "d",
+        "value": "יש בו מעגל אוילר רק אם מוסיפים צלע",
+        "type": "text",
+        "html": "יש בו מעגל אוילר רק אם מוסיפים צלע"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הדרגות: שני צמתים בדרגה 3 ושלושה בדרגה 2. בדיוק שני צמתים אי-זוגיים, ולכן קיים מסלול אוילר פתוח (בין שני הצמתים האלה), אבל מעגל אוילר דורש שאין צמתים אי-זוגיים.",
+      "recap": "שני צמתים אי-זוגיים: מסלול אוילר פתוח.",
+      "questionHtml": "מה נכון לגבי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,3}</annotation></semantics></math></span> ?",
+      "explanationHtml": "הדרגות: שני צמתים בדרגה 3 ושלושה בדרגה 2. בדיוק שני צמתים אי-זוגיים, ולכן קיים מסלול אוילר פתוח (בין שני הצמתים האלה), אבל מעגל אוילר דורש שאין צמתים אי-זוגיים.",
+      "recapHtml": "שני צמתים אי-זוגיים: מסלול אוילר פתוח."
+     },
+     {
+      "id": "C08-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "מהו אורך מעגל אוילר ב-$K_9$ ?",
+       "answer": 36,
+       "tol": 0,
+       "explain": "בכל צומת דרגה 8, זוגית, והגרף קשיר, ולכן יש מעגל אוילר. הוא עובר בכל צלע פעם אחת, ולכן אורכו $|E|=\\binom92=36$.",
+       "promptHtml": "מהו אורך מעגל אוילר ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mn>9</mn></msub></mrow><annotation encoding=\"application/x-tex\">K_9</annotation></semantics></math></span> ?",
+       "explainHtml": "בכל צומת דרגה 8, זוגית, והגרף קשיר, ולכן יש מעגל אוילר. הוא עובר בכל צלע פעם אחת, ולכן אורכו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mn>9</mn><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mn>36</mn></mrow><annotation encoding=\"application/x-tex\">|E|=\\binom92=36</annotation></semantics></math></span>."
+      },
+      "recap": "אורך מעגל אוילר שווה ל-$|E|$.",
+      "recapHtml": "אורך מעגל אוילר שווה ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|E|</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C08-Q4",
+      "question": "הגרף הוא איחוד זר של שני משולשים (6 צמתים, כל הדרגות 2). האם הוא גרף אוילר?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, כי כל הדרגות זוגיות",
+        "type": "text",
+        "html": "כן, כי כל הדרגות זוגיות"
+       },
+       {
+        "id": "b",
+        "value": "לא, כי הגרף אינו קשיר",
+        "type": "text",
+        "html": "לא, כי הגרף אינו קשיר"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי יש צומת בדרגה אי-זוגית",
+        "type": "text",
+        "html": "לא, כי יש צומת בדרגה אי-זוגית"
+       },
+       {
+        "id": "d",
+        "value": "כן, כי יש בו מעגלים",
+        "type": "text",
+        "html": "כן, כי יש בו מעגלים"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הדרגות אכן זוגיות, אבל מעגל אוילר חייב לעבור בכל הצלעות, וזה בלתי אפשרי כשהגרף מורכב משני רכיבים: אי אפשר לעבור מהמשולש הראשון לשני.",
+      "recap": "אוילר דורש קשירות.",
+      "questionHtml": "הגרף הוא איחוד זר של שני משולשים (6 צמתים, כל הדרגות 2). האם הוא גרף אוילר?",
+      "explanationHtml": "הדרגות אכן זוגיות, אבל מעגל אוילר חייב לעבור בכל הצלעות, וזה בלתי אפשרי כשהגרף מורכב משני רכיבים: אי אפשר לעבור מהמשולש הראשון לשני.",
+      "recapHtml": "אוילר דורש קשירות."
+     },
+     {
+      "id": "C08-Q5",
+      "step": {
+       "type": "numeric",
+       "prompt": "עבור כמה ערכי $n$ בין 5 ל-10 (כולל) המשלים של $C_n$ הוא גרף אוילר?",
+       "answer": 3,
+       "tol": 0,
+       "explain": "המשלים של $C_n$ הוא $(n-3)$-רגולרי וקשיר לכל $n\\ge5$. הדרגה $n-3$ זוגית בדיוק כאשר $n$ אי-זוגי: $n=5,7,9$. התשובה 3.",
+       "promptHtml": "עבור כמה ערכי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> בין 5 ל-10 (כולל) המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span> הוא גרף אוילר?",
+       "explainHtml": "המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>3</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(n-3)</annotation></semantics></math></span>-רגולרי וקשיר לכל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span>. הדרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n-3</annotation></semantics></math></span> זוגית בדיוק כאשר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span> אי-זוגי: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn><mo separator=\"true\">,</mo><mn>7</mn><mo separator=\"true\">,</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">n=5,7,9</annotation></semantics></math></span>. התשובה 3."
+      },
+      "recap": "משלים של $C_n$: דרגה $n-3$.",
+      "recapHtml": "משלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span>: דרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n-3</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C08-Q6",
+      "question": "האם המשלים של $P_6$ הוא גרף אוילר?",
+      "options": [
+       {
+        "id": "a",
+        "value": "כן, כי הוא קשיר",
+        "type": "text",
+        "html": "כן, כי הוא קשיר"
+       },
+       {
+        "id": "b",
+        "value": "לא, כי אינו קשיר",
+        "type": "text",
+        "html": "לא, כי אינו קשיר"
+       },
+       {
+        "id": "c",
+        "value": "לא, כי יש בו צומת בדרגה אי-זוגית",
+        "type": "text",
+        "html": "לא, כי יש בו צומת בדרגה אי-זוגית"
+       },
+       {
+        "id": "d",
+        "value": "כן, כי כל הדרגות שוות",
+        "type": "text",
+        "html": "כן, כי כל הדרגות שוות"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "ב-$P_6$ הצמתים הפנימיים בדרגה 2, ולכן במשלים בדרגה $6-1-2=3$, אי-זוגית. המשלים קשיר, אבל יש בו צמתים בדרגה אי-זוגית.",
+      "recap": "משלים של $P_n$ אף פעם אינו אוילר.",
+      "questionHtml": "האם המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_6</annotation></semantics></math></span> הוא גרף אוילר?",
+      "explanationHtml": "ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_6</annotation></semantics></math></span> הצמתים הפנימיים בדרגה 2, ולכן במשלים בדרגה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">6-1-2=3</annotation></semantics></math></span>, אי-זוגית. המשלים קשיר, אבל יש בו צמתים בדרגה אי-זוגית.",
+      "recapHtml": "משלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span> אף פעם אינו אוילר."
+     }
+    ]
+   },
+   {
+    "id": "C09",
+    "order": 9,
+    "icon": "🔗",
+    "title": "גרפי המילטון",
+    "goal": "להחליט אם בגרף יש מעגל המילטון או מסלול המילטון, בעזרת משפט Dirac ותנאים הכרחיים.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p><b>מעגל המילטון</b> הוא מעגל פשוט שעובר בכל צומת של הגרף בדיוק פעם אחת. <b>גרף המילטון</b> הוא גרף שיש בו מעגל המילטון. <b>מסלול המילטון</b> הוא מסלול פשוט שעובר בכל הצמתים (לא בהכרח נסגר). קל להתבלבל עם אוילר: אוילר עוסק בצלעות והמילטון בצמתים, ושני התנאים בלתי תלויים.</p>\n<div class=\"lesson-rule\">🔑 <b>משפט Dirac (תנאי מספיק):</b> אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge3</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>≥</mo><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\deg(v)\\ge\\frac n2</annotation></semantics></math></span> לכל צומת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi></mrow><annotation encoding=\"application/x-tex\">v</annotation></semantics></math></span>, אז הגרף המילטון. אם התנאי לא מתקיים אי אפשר להסיק כלום: צריך להציג מעגל או להפריך בדרך אחרת.</div>\n<ul>\n<li><b>להפריך:</b> צומת בדרגה 1 (כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge3</annotation></semantics></math></span>), או צומת הפרדה (אחרי הסרתו הגרף לא קשיר).</li>\n<li><b>דו-צדדי:</b> מעגל המילטון מתחלף בין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span> ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span>, ולכן דרוש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|A|=|B|</annotation></semantics></math></span>. מסלול המילטון דורש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo fence=\"false\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">∣</mo><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>−</mo><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi><mo fence=\"false\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">∣</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\big||A|-|B|\\big|\\le1</annotation></semantics></math></span>. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mi>m</mi><mo separator=\"true\">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{m,n}</annotation></semantics></math></span> המילטוני אם ורק אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>m</mi><mo>=</mo><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">m=n\\ge2</annotation></semantics></math></span>.</li>\n<li>המשלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span> הוא גרף המילטון עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge6</annotation></semantics></math></span>: הדרגות הן לפחות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>3</mn><mo>≥</mo><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">n-3\\ge\\frac n2</annotation></semantics></math></span>, ו-Dirac חל.</li>\n</ul>\n<div class=\"lesson-ex\"><b>דוגמה:</b> ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,3}</annotation></semantics></math></span> יש 2 צמתים בצד אחד ו-3 בצד השני. מסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi><mo separator=\"true\">,</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi><mo separator=\"true\">,</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b,a,b,a,b</annotation></semantics></math></span> עובר בכל הצמתים, אבל מעגל המילטון דורש צדדים שווים, ולכן אין.</div>\n<div class=\"lesson-trap\">⚠️ משפט Dirac הוא תנאי מספיק בלבד. מעגל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">C_n</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n\\ge5</annotation></semantics></math></span> הוא המילטון אף שדרגותיו 2, קטנות מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mi mathvariant=\"normal\">/</mi><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n/2</annotation></semantics></math></span>.</div>"
+    },
+    "questions": [
+     {
+      "id": "C09-Q1",
+      "question": "איזה מהגרפים הבאים הוא גרף המילטון?",
+      "options": [
+       {
+        "id": "a",
+        "value": "$K_{3,4}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "$K_{2,5}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mo separator=\"true\">,</mo><mn>5</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{2,5}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "$K_{3,3}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,3}</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "$K_{4,6}$",
+        "type": "text",
+        "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>6</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{4,6}</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "בגרף דו-צדדי מעגל המילטון מתחלף בין הצדדים ולכן דורש צדדים שווים. רק ב-$K_{3,3}$ מתקיים $|A|=|B|$.",
+      "recap": "דו-צדדי המילטוני: $|A|=|B|$.",
+      "questionHtml": "איזה מהגרפים הבאים הוא גרף המילטון?",
+      "explanationHtml": "בגרף דו-צדדי מעגל המילטון מתחלף בין הצדדים ולכן דורש צדדים שווים. רק ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,3}</annotation></semantics></math></span> מתקיים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|A|=|B|</annotation></semantics></math></span>.",
+      "recapHtml": "דו-צדדי המילטוני: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>A</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mi mathvariant=\"normal\">∣</mi><mi>B</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|A|=|B|</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C09-Q2",
+      "question": "בגרף על 10 צמתים כל הצמתים בדרגה 5 לפחות. מה אפשר להסיק?",
+      "options": [
+       {
+        "id": "a",
+        "value": "יש בו מעגל המילטון",
+        "type": "text",
+        "html": "יש בו מעגל המילטון"
+       },
+       {
+        "id": "b",
+        "value": "יש בו מעגל אוילר",
+        "type": "text",
+        "html": "יש בו מעגל אוילר"
+       },
+       {
+        "id": "c",
+        "value": "הוא דו-צדדי",
+        "type": "text",
+        "html": "הוא דו-צדדי"
+       },
+       {
+        "id": "d",
+        "value": "אי אפשר להסיק דבר",
+        "type": "text",
+        "html": "אי אפשר להסיק דבר"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "$\\deg(v)\\ge5=\\frac{10}2$ לכל צומת, ולכן לפי Dirac הגרף המילטון. מעגל אוילר דורש דרגות זוגיות וקשירות, ואין לנו מידע על זוגיות. דו-צדדיות לא נובעת.",
+      "recap": "Dirac: $\\deg\\ge n/2$ מספיק להמילטון.",
+      "questionHtml": "בגרף על 10 צמתים כל הצמתים בדרגה 5 לפחות. מה אפשר להסיק?",
+      "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>deg</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi>v</mi><mo stretchy=\"false\">)</mo><mo>≥</mo><mn>5</mn><mo>=</mo><mfrac><mn>10</mn><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\deg(v)\\ge5=\\frac{10}2</annotation></semantics></math></span> לכל צומת, ולכן לפי Dirac הגרף המילטון. מעגל אוילר דורש דרגות זוגיות וקשירות, ואין לנו מידע על זוגיות. דו-צדדיות לא נובעת.",
+      "recapHtml": "Dirac: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>deg</mi><mo>⁡</mo><mo>≥</mo><mi>n</mi><mi mathvariant=\"normal\">/</mi><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">\\deg\\ge n/2</annotation></semantics></math></span> מספיק להמילטון."
+     },
+     {
+      "id": "C09-Q3",
+      "step": {
+       "type": "numeric",
+       "prompt": "$G$ גרף 3-רגולרי על 10 צמתים. מהי הדרגה של כל צומת במשלים $\\overline G$ ?",
+       "answer": 6,
+       "tol": 0,
+       "explain": "$10-1-3=6\\ge\\frac{10}2$, ולכן לפי Dirac המשלים הוא גרף המילטון.",
+       "promptHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span> גרף 3-רגולרי על 10 צמתים. מהי הדרגה של כל צומת במשלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mi>G</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\overline G</annotation></semantics></math></span> ?",
+       "explainHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>6</mn><mo>≥</mo><mfrac><mn>10</mn><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">10-1-3=6\\ge\\frac{10}2</annotation></semantics></math></span>, ולכן לפי Dirac המשלים הוא גרף המילטון."
+      },
+      "recap": "דרגה במשלים: $n-1-r$.",
+      "recapHtml": "דרגה במשלים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">n-1-r</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C09-Q4",
+      "question": "מה נכון לגבי המסלול $P_5$ (5 צמתים בשורה)?",
+      "options": [
+       {
+        "id": "a",
+        "value": "יש בו מעגל המילטון",
+        "type": "text",
+        "html": "יש בו מעגל המילטון"
+       },
+       {
+        "id": "b",
+        "value": "יש מסלול המילטון, אבל אין מעגל המילטון",
+        "type": "text",
+        "html": "יש מסלול המילטון, אבל אין מעגל המילטון"
+       },
+       {
+        "id": "c",
+        "value": "אין בו מסלול המילטון",
+        "type": "text",
+        "html": "אין בו מסלול המילטון"
+       },
+       {
+        "id": "d",
+        "value": "יש בו מעגל המילטון אבל אין מסלול המילטון",
+        "type": "text",
+        "html": "יש בו מעגל המילטון אבל אין מסלול המילטון"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "המסלול עצמו עובר בכל הצמתים. אין מעגל המילטון: הקצוות הם עלים (דרגה 1), ומעגל דורש שני שכנים לכל צומת.",
+      "recap": "עלה מונע מעגל המילטון.",
+      "questionHtml": "מה נכון לגבי המסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">P_5</annotation></semantics></math></span> (5 צמתים בשורה)?",
+      "explanationHtml": "המסלול עצמו עובר בכל הצמתים. אין מעגל המילטון: הקצוות הם עלים (דרגה 1), ומעגל דורש שני שכנים לכל צומת.",
+      "recapHtml": "עלה מונע מעגל המילטון."
+     },
+     {
+      "id": "C09-Q5",
+      "question": "הגרף מורכב משני משולשים החולקים צומת אחד (5 צמתים, דרגות $4,2,2,2,2$). מה נכון לגביו?",
+      "options": [
+       {
+        "id": "a",
+        "value": "אוילר כן, המילטון כן",
+        "type": "text",
+        "html": "אוילר כן, המילטון כן"
+       },
+       {
+        "id": "b",
+        "value": "אוילר כן, המילטון לא",
+        "type": "text",
+        "html": "אוילר כן, המילטון לא"
+       },
+       {
+        "id": "c",
+        "value": "אוילר לא, המילטון כן",
+        "type": "text",
+        "html": "אוילר לא, המילטון כן"
+       },
+       {
+        "id": "d",
+        "value": "אוילר לא, המילטון לא",
+        "type": "text",
+        "html": "אוילר לא, המילטון לא"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "כל הדרגות זוגיות והגרף קשיר, ולכן יש מעגל אוילר. אבל הצומת המשותף הוא צומת הפרדה: אחרי הסרתו נשארים שני רכיבים, ולכן אין מעגל המילטון.",
+      "recap": "אוילר והמילטון בלתי תלויים.",
+      "questionHtml": "הגרף מורכב משני משולשים החולקים צומת אחד (5 צמתים, דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn><mo separator=\"true\">,</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">4,2,2,2,2</annotation></semantics></math></span>). מה נכון לגביו?",
+      "explanationHtml": "כל הדרגות זוגיות והגרף קשיר, ולכן יש מעגל אוילר. אבל הצומת המשותף הוא צומת הפרדה: אחרי הסרתו נשארים שני רכיבים, ולכן אין מעגל המילטון.",
+      "recapHtml": "אוילר והמילטון בלתי תלויים."
+     },
+     {
+      "id": "C09-Q6",
+      "question": "מה נכון לגבי $K_{3,4}$ ?",
+      "options": [
+       {
+        "id": "a",
+        "value": "יש בו מעגל המילטון",
+        "type": "text",
+        "html": "יש בו מעגל המילטון"
+       },
+       {
+        "id": "b",
+        "value": "יש מסלול המילטון, אבל אין מעגל המילטון",
+        "type": "text",
+        "html": "יש מסלול המילטון, אבל אין מעגל המילטון"
+       },
+       {
+        "id": "c",
+        "value": "אין בו מסלול המילטון",
+        "type": "text",
+        "html": "אין בו מסלול המילטון"
+       },
+       {
+        "id": "d",
+        "value": "יש בו מעגל המילטון אבל אין מסלול המילטון",
+        "type": "text",
+        "html": "יש בו מעגל המילטון אבל אין מסלול המילטון"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הצדדים הם 3 ו-4, והפרש הגדלים 1: מסלול $b,a,b,a,b,a,b$ עובר בכל הצמתים. מעגל המילטון דורש צדדים שווים, ולכן אין.",
+      "recap": "הפרש 1 בין הצדדים: מסלול כן, מעגל לא.",
+      "questionHtml": "מה נכון לגבי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mrow><mn>3</mn><mo separator=\"true\">,</mo><mn>4</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">K_{3,4}</annotation></semantics></math></span> ?",
+      "explanationHtml": "הצדדים הם 3 ו-4, והפרש הגדלים 1: מסלול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>b</mi><mo separator=\"true\">,</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi><mo separator=\"true\">,</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi><mo separator=\"true\">,</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">b,a,b,a,b,a,b</annotation></semantics></math></span> עובר בכל הצמתים. מעגל המילטון דורש צדדים שווים, ולכן אין.",
+      "recapHtml": "הפרש 1 בין הצדדים: מסלול כן, מעגל לא."
+     }
+    ]
+   },
+   {
+    "id": "C10",
+    "order": 10,
+    "icon": "🏆",
+    "title": "מבחן: גרפים",
+    "goal": "לפתור שאלות אמיתיות ממבחנים: סדרות דרגות, משלים, עצים, אוילר והמילטון.",
+    "source": "ai-verified",
+    "boss": true,
+    "lesson": {
+     "html": "<p>השלב האחרון הוא שאלות אמיתיות ממבחנים בנושא. לפני שמתחילים, סיכום הכלים:</p>\n<table><thead><tr><th>סוג השאלה</th><th>הכלי</th></tr></thead><tbody>\n<tr><td>קיים גרף עם סדרת דרגות?</td><td>סכום זוגי, ואז Havel-Hakimi</td></tr>\n<tr><td>גרף שווה או איזומורפי למשלים</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>E</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">|E|=\\frac12\\binom n2</annotation></semantics></math></span>, ודרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi><mo>↔</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">d\\leftrightarrow n-1-d</annotation></semantics></math></span></td></tr>\n<tr><td>עץ עם דרגות מוגבלות</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>∑</mo><mi>deg</mi><mo>⁡</mo><mo>=</mo><mn>2</mn><mo stretchy=\"false\">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\sum\\deg=2(n-1)</annotation></semantics></math></span></td></tr>\n<tr><td>משלים של עץ או דו-צדדי</td><td>צד עם 3 צמתים נהפך למשולש</td></tr>\n<tr><td>אוילר</td><td>קשיר וכל הדרגות זוגיות</td></tr>\n<tr><td>המילטון</td><td>Dirac, צדדים שווים בדו-צדדי, עלה או צומת הפרדה מפריכים</td></tr>\n</tbody></table>\n<div class=\"lesson-rule\">🔑 בהוכחה מציינים כל שימוש במשפט: משפט הדרגות, Dirac, אפיון העץ. ובהפרכה מביאים דוגמה נגדית מפורשת.</div>"
+    },
+    "questions": [
+     {
+      "bankId": "25B-A-Q4a",
+      "recap": "סדרת דרגות: Havel-Hakimi, והסרת הצומת מדרגה 6 המחובר לכולם.",
+      "recapHtml": "סדרת דרגות: Havel-Hakimi, והסרת הצומת מדרגה 6 המחובר לכולם."
+     },
+     {
+      "bankId": "21B-B-Q3c",
+      "recap": "$C_n\\cong\\overline{C_n}$ גורר $2n=\\binom n2$, ולכן $n=5$.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>≅</mo><mrow class=\"ovl\"><msub><mi>C</mi><mi>n</mi></msub></mrow></mrow><annotation encoding=\"application/x-tex\">C_n\\cong\\overline{C_n}</annotation></semantics></math></span> גורר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>n</mi><mo>=</mo><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mn>2</mn></mfrac><mo fence=\"true\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">2n=\\binom n2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">n=5</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "24B-A-Q3c",
+      "recap": "שני גרפים $r$-רגולריים משלימים: $|V|=2r+1$, אבל $r$ אי-זוגי דורש $|V|$ זוגי.",
+      "recapHtml": "שני גרפים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span>-רגולריים משלימים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>V</mi><mi mathvariant=\"normal\">∣</mi><mo>=</mo><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">|V|=2r+1</annotation></semantics></math></span>, אבל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>r</mi></mrow><annotation encoding=\"application/x-tex\">r</annotation></semantics></math></span> אי-זוגי דורש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∣</mi><mi>V</mi><mi mathvariant=\"normal\">∣</mi></mrow><annotation encoding=\"application/x-tex\">|V|</annotation></semantics></math></span> זוגי."
+     },
+     {
+      "bankId": "25B-A-Q4b",
+      "recap": "עץ עם 5 צמתים: צד עם 3 צמתים נהפך למשולש במשלים.",
+      "recapHtml": "עץ עם 5 צמתים: צד עם 3 צמתים נהפך למשולש במשלים."
+     },
+     {
+      "bankId": "25B-B-Q1c",
+      "recap": "דרגות $\\{1,5\\}$ ו-30 צמתים: $p+5(30-p)=58$ ולכן $p=23$.",
+      "recapHtml": "דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>5</mn><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{1,5\\}</annotation></semantics></math></span> ו-30 צמתים: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>+</mo><mn>5</mn><mo stretchy=\"false\">(</mo><mn>30</mn><mo>−</mo><mi>p</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>58</mn></mrow><annotation encoding=\"application/x-tex\">p+5(30-p)=58</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>23</mn></mrow><annotation encoding=\"application/x-tex\">p=23</annotation></semantics></math></span>."
+     },
+     {
+      "bankId": "25S-A-Q3c",
+      "recap": "משלים של $P_n$: דרגות $n-2$ ו-$n-3$, אחת מהן אי-זוגית. והמילטון לפי Dirac.",
+      "recapHtml": "משלים של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\">P_n</annotation></semantics></math></span>: דרגות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">n-2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n-3</annotation></semantics></math></span>, אחת מהן אי-זוגית. והמילטון לפי Dirac."
+     }
+    ]
    }
   ]
  },

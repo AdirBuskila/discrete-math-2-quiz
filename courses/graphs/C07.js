@@ -1,0 +1,45 @@
+/* graphs, level 7: עצים והמשלים שלהם */
+COURSE_LEVEL("graphs", {
+  id: "C07", order: 7, icon: "🔁", title: String.raw`עצים והמשלים שלהם`,
+  goal: String.raw`לחשב צלעות במשלים של עץ, ולהוכיח שהמשלים של עץ גדול איננו עץ ואיננו דו-צדדי.`,
+  source: "ai-verified",
+  lesson: { html: String.raw`<p>לעץ על $n$ צמתים יש $n-1$ צלעות, ולכן למשלים שלו יש $\binom n2-(n-1)$ צלעות.</p>
+<div class="lesson-rule">🔑 <b>מתי המשלים של עץ הוא עץ?</b> צריך $\binom n2-(n-1)=n-1$, כלומר $\frac{n(n-1)}2=2(n-1)$, ולכן $n=4$ (או $n=1$). על 4 צמתים יש שני עצים: ל-$P_4$ המשלים הוא $P_4$ (עץ), ול-$K_{1,3}$ המשלים הוא משולש ועוד צומת מבודד (לא עץ).</div>
+<div class="lesson-rule">🔑 <b>עץ גדול:</b> עץ הוא דו-צדדי $(A,B)$. אם $n\ge5$ אז אחד הצדדים מכיל לפחות $\lceil n/2\rceil\ge3$ צמתים. בעץ אין ביניהם צלעות, ולכן במשלים הם קליקה, ובפרט משולש. לכן המשלים של עץ עם $n\ge5$ צמתים אינו דו-צדדי ובוודאי אינו עץ.</div>
+<div class="lesson-ex"><b>דוגמה:</b> המשלים של הכוכב $K_{1,4}$ (5 צמתים): ארבעת העלים נהפכים לקליקה $K_4$, והמרכז מבודד. יש בו משולשים, ולכן אינו דו-צדדי.</div>
+<div class="lesson-trap">⚠️ הטיעון "משולש במשלים" דורש $n\ge5$. ב-$n=4$ הצד הגדול הוא בגודל 2 לפחות, ו-$P_4$ הוא דוגמה נגדית.</div>` },
+  questions: [
+    { id: "C07-Q1",
+      step: { type: "numeric", prompt: String.raw`בעץ $T$ יש 8 צמתים. כמה צלעות יש במשלים $\overline T$ ?`, answer: 21, tol: 0,
+              explain: String.raw`$\binom82=28$ ו-$|E(T)|=7$, ולכן $28-7=21$.` },
+      recap: String.raw`$|E(\overline T)|=\binom n2-(n-1)$.` },
+    { id: "C07-Q2", question: String.raw`על 4 צמתים יש שני עצים: $P_4$ ו-$K_{1,3}$. למי מהם המשלים הוא עץ?`,
+      options: [{ id: "a", value: String.raw`$P_4$` },
+         { id: "b", value: String.raw`$K_{1,3}$` },
+         { id: "c", value: String.raw`לשניהם` },
+         { id: "d", value: String.raw`לאף אחד מהם` }],
+      correctId: "a",
+      explanation: String.raw`המשלים של $P_4=v_1v_2v_3v_4$ הוא המסלול $v_3,v_1,v_4,v_2$, עץ. המשלים של $K_{1,3}$ הוא משולש על שלושת העלים וצומת מבודד, ולכן יש בו מעגל והוא לא קשיר.`,
+      recap: String.raw`רק $P_4$ (ו-$n=4$ היחיד).` },
+    { id: "C07-Q3", question: String.raw`מהו המשלים של הכוכב $K_{1,5}$ (מרכז וחמישה עלים)?`,
+      options: [{ id: "a", value: String.raw`עץ עם 6 צמתים` },
+         { id: "b", value: String.raw`$K_6$` },
+         { id: "c", value: String.raw`$K_5$ ועוד צומת מבודד` },
+         { id: "d", value: String.raw`מסלול על 6 צמתים` }],
+      correctId: "c",
+      explanation: String.raw`בכוכב המרכז מחובר לכולם, ולכן במשלים הוא מבודד. החמישה האחרים לא היו מחוברים זה לזה, ולכן במשלים הם מחוברים כולם: $K_5$.`,
+      recap: String.raw`משלים של כוכב: קליקה ועוד צומת מבודד.` },
+    { id: "C07-Q4",
+      step: { type: "numeric", prompt: String.raw`$T$ עץ עם 9 צמתים והוא דו-צדדי $(A,B)$. מהו הגודל הקטן ביותר שהצד הגדול יכול להיות?`, answer: 5, tol: 0,
+              explain: String.raw`$|A|+|B|=9$, ולכן הצד הגדול לפחות $\lceil9/2\rceil=5$. הצמתים האלה יוצרים $K_5$ במשלים.` },
+      recap: String.raw`הצד הגדול לפחות $\lceil n/2\rceil$.` },
+    { id: "C07-Q5", question: String.raw`$T$ הוא עץ כלשהו עם 6 צמתים. מה נכון לגבי המשלים $\overline T$ ?`,
+      options: [{ id: "a", value: String.raw`המשלים תמיד דו-צדדי` },
+         { id: "b", value: String.raw`המשלים אינו דו-צדדי, לכל עץ כזה` },
+         { id: "c", value: String.raw`המשלים דו-צדדי רק אם העץ הוא מסלול` },
+         { id: "d", value: String.raw`המשלים הוא תמיד עץ` }],
+      correctId: "b",
+      explanation: String.raw`אחד הצדדים של העץ מכיל לפחות 3 צמתים, והם יוצרים משולש במשלים, ולכן המשלים אינו דו-צדדי. הוא גם לא עץ, כי ל-$\overline T$ יש $15-5=10$ צלעות ולעץ על 6 צמתים יש 5.`,
+      recap: String.raw`עץ עם $n\ge5$: המשלים לא דו-צדדי.` },
+  ],
+});
