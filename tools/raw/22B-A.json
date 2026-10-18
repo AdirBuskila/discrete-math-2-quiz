@@ -43,7 +43,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהתמונה של $\\{1,2,3\\}$ היא בדיוק $\\{5,6,7\\}$ ולכן הסדר בתוכה משנה ($3!$).",
     "לבחור את ערכי $f(4),f(5),f(6)$ מתוך $\\{1,\\dots,8\\}$ במקום מתוך חמשת האיברים שנותרו."
@@ -78,7 +78,7 @@
      "explain": "$6\\cdot60=360$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -109,7 +109,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את המקרה $n=1$, שבו התנאי מתקיים.",
     "להסיק ש-$\\phi(n)$ אי-זוגי כי $n$ אי-זוגי (הפונקציה $\\phi$ זוגית לכל $n\\ge3$)."
@@ -165,7 +165,7 @@
      "explain": "$p$ אי-זוגי ולכן $p-1$ זוגי."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -200,7 +200,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהעץ קשיר ולכן הדרגה הזוגית של $v$ אינה $0$.",
     "לחשוב שכל צומת בדרגה זוגית הוא עלה (עלה הוא בדרגה $1$)."
@@ -260,7 +260,7 @@
      "explain": "בעץ יש מסלול יחיד בין $x$ ל-$y$, והוא $x,v,y$; לכן $T-v$ מנתק אותם."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -295,7 +295,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור גם $\\alpha=0$ כשמחפשים מחלקים **זוגיים**.",
     "לטעות בסכום השני ולשכוח את הגורם $3^n$ שיוצא החוצה."
@@ -351,7 +351,7 @@
      "explain": "$3n(2n+1)=6\\cdot5=30$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -390,7 +390,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהחסם $a_n\\le15n2^n$ נכון רק מ-$n\\ge1$ ($n_0=1$).",
     "לחשוב שהחסם $O(n\\cdot3^n)$ הדוק, בעוד ש-$3^n$ גדול בהרבה מ-$2^n$."
@@ -453,7 +453,7 @@
      "explain": "$10\\cdot2^n\\le10n2^n$, ולכן $a_n\\le15n2^n$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -484,7 +484,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $D(3,20)$ ולהתעלם מהגבולות התחתונים.",
     "לחסר גבולות תחתונים שגויים בהצבה."
@@ -512,7 +512,7 @@
      "explain": "$D(3,5)=\\binom72=21$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -543,7 +543,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח לפסול את השורש השלילי $n=-15$.",
     "לספור $\\binom{16}5$ (בלי לדרוש את חלוקת הזוגיים והאי-זוגיים)."
@@ -578,7 +578,7 @@
      "explain": "$28\\cdot56=1568$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -605,7 +605,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את האיבר האחרון $+3\\cdot1^5$ בהכלה-הוצאה.",
     "לחשב את מספר הפונקציות על ולהגיש אותו כתשובה (השאלה היא על אלה שאינן על)."
@@ -640,7 +640,7 @@
      "explain": "$243-150=93$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -667,7 +667,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "בג2: להתעלם מכך שעץ הוא דו-צדדי ויש בו עץ פורש יחיד (מספר אי-זוגי).",
     "בג3: לשכוח ש-$H$ פורש כי $E_1\\cup E_2\\subseteq E$."
@@ -745,7 +745,7 @@
      "explain": "כל שלב נשען על הקודם."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -780,7 +780,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "בחישוב החסם לכתוב $2+\\frac{n-1}2+\\frac{n-1}2=2n$ במקום $n+1$.",
     "לשכוח שהקבוצות $N(a),N(b)$ זרות כאשר המרחק לפחות $3$."
@@ -831,7 +831,7 @@
      "explain": "$2\\le\\operatorname{diam}(G)\\le2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -863,7 +863,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבלבל בין מעגל Euler (כל הדרגות זוגיות וקשיר) למעגל Hamilton.",
     "לחשוב ש-$\\overline G$ 3-רגולרי (הדרגה במשלים היא $11-3=8$)."
@@ -948,7 +948,7 @@
      "explain": "$K_5$ על $v_2,v_4,v_6,v_9,v_{11}$; $C_4$ ממשלים של $2K_2$ מושרה; $P_4$ ו-$C_5$ איזומורפיים למשלימיהם."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

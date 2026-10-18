@@ -36,7 +36,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שבתוך כל גוש סמוך יש שני סדרים אפשריים ($2!$ לכל גוש).",
     "לחסר את $|B|$ מ-$6!$ במקום מ-$|A|$, או לשכוח ש-$B\\subseteq A$."
@@ -71,7 +71,7 @@
      "explain": "$B\\subseteq A$, ולכן $|A-B|=96-48=48$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -102,7 +102,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק מ-$\\phi(m)\\mid\\phi(n)$ ש-$m\\mid n$ (הכיוון ההפוך אינו נכון).",
     "לשכוח את הגורם $t$ שזר ל-$p_j$ בפירוק של $n$, או להתעלם מכך ש-$\\phi$ כפלית רק על זרים."
@@ -185,7 +185,7 @@
      "explain": "מ-$m\\mid n$ מקבלים $\\alpha_j\\le\\beta_j$ ולא להפך; אחרת החזקות במנה היו שליליות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -216,7 +216,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור דוגמה נגדית שהמשלים שלה אינו קשיר או אינו דו-צדדי (למשל $C_4$ או $K_{1,3}$).",
     "לספור צלעות פעמיים ולכתוב $r|A|=2|E|$."
@@ -299,7 +299,7 @@
      "explain": "כל צלע תורמת דרגה אחת ל-$A$ ואחת ל-$B$, ולכן הסכום בכל צד הוא $|E|$ ולא $2|E|$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -330,7 +330,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהגדלים $51$ ו-$50$ שניהם מותרים («לפחות $50$»).",
     "לספור $50$ אי-זוגיים ב-$\\{1,\\dots,101\\}$ במקום $51$."
@@ -386,7 +386,7 @@
      "explain": "$1225\\cdot52=63700$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -413,7 +413,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להציב $y_k=x_k-3$ כשהתנאי הוא $x_k>4$, כלומר $x_k\\ge5$ (גבול תחתון שגוי).",
     "להתעלם מאי-השוויון החזק $<25$ ולא להוסיף משתנה השלמה."
@@ -448,7 +448,7 @@
      "explain": "$D(6,4)=C(9,5)=126$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -479,7 +479,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להפעיל את משפט Euler בלי לבדוק ש-$\\gcd(a,300)=1$.",
     "לשכוח ש-$121=11^2$ ו-$49=7^2$ ולכן החזקה $80$ מתקבלת מ-$40$ בהכפלה ב-$2$."
@@ -521,7 +521,7 @@
      "explain": "$1+1+13=15$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -548,7 +548,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להתעלם מהמינימום בכל תא ולחשב $D(4,20)$.",
     "להחליף בין הפרמטרים בנוסחה $D(n,k)=C(n+k-1,k)$."
@@ -597,7 +597,7 @@
      "explain": "$\\binom{13}{3}=286$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -632,7 +632,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לנחש פתרון פרטי $A\\cdot5^n$ ולא להציב אותו במשוואה כדי למצוא את $A$.",
     "להציב את תנאי ההתחלה לפני הוספת הפתרון הפרטי.",
@@ -712,7 +712,7 @@
      "explain": "$a_n\\sim25\\cdot5^n$, ולכן הוא גדל מהר מ-$3^n$ וחסום ב-$27\\cdot5^n$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -743,7 +743,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שצומת אחד מכל רכיב הם צמתים לא סמוכים ב-$F$, ולכן סמוכים במשלים.",
     "לא לבדוק את המקרה של רכיב שהוא צומת בודד."
@@ -809,7 +809,7 @@
      "explain": "כל שלב מצמצם את האפשרויות מהשלב הקודם."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -840,7 +840,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $2^n=1024$ ולקבל $n=10$ (מספר תתי-הקבוצות בגודל אי-זוגי הוא $2^{n-1}$).",
     "לספור חמישה אי-זוגיים ב-$\\{1,\\dots,11\\}$ במקום שישה."
@@ -868,7 +868,7 @@
      "explain": "$C(5,2)\\cdot C(6,3)=10\\cdot20=200$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -899,7 +899,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהמחלק חייב להתחלק ב-$15$ ולכן חזקות $3$ ו-$5$ מתחילות מ-$1$ (יש $n$ ערכים ולא $n+1$).",
     "לכלול חזקות של $2$ במחלק אי-זוגי."
@@ -955,7 +955,7 @@
      "explain": "$(n+1)n^2=7\\cdot36=252$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -982,7 +982,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$\\sum\\deg=2|E|$ ולכתוב $\\sum\\deg=|E|$.",
     "לדרוש ששני הצדדים בגודל לפחות $3$ (נכון רק לצד הגדול)."
@@ -1047,7 +1047,7 @@
      "explain": "מ-$|A|+|B|=6$ נובע רק $\\max\\ge3$; בכוכב $K_{1,5}$ הצד הקטן הוא בגודל $1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

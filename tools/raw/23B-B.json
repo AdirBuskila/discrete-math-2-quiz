@@ -43,7 +43,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב רק $5^5$ או רק $5!$ ולשכוח לחסר.",
     "לחשב $5^5-5\\cdot4\\cdot3\\cdot2$ ולשכוח את הגורם האחרון של $5!$."
@@ -71,7 +71,7 @@
      "explain": "$3125-120=3005$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -106,7 +106,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח לבדוק את $p=2$ בנפרד (התנאי מתקיים שם).",
     "לכתוב $\\phi(p)=p$ במקום $p-1$ עבור ראשוני."
@@ -162,7 +162,7 @@
      "explain": "לראשוני $p$ מתקיים $\\phi(p)=p-1$ ולא $p+1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -197,7 +197,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$\\sum\\deg=2|E|$ (לא $|E|$).",
     "לטעון שהסתירה נובעת מכך ש-$|E|$ אי-זוגי בלבד, בלי הקשר ל-$|V|\\bmod4$."
@@ -264,7 +264,7 @@
      "explain": "חלוקה של $4kr=2(2q+1)$ ב-$2$ נותנת $2kr=2q+1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -295,7 +295,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הגורם $3^n$ שיוצא מהסכום השני.",
     "להסיק $O(50^n)$ בלי להציג קבוע $c$ ו-$n_0$."
@@ -344,7 +344,7 @@
      "explain": "$(45/50)^n\\le1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -379,7 +379,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להציב תנאי התחלה לפני הוספת הפתרון הפרטי ולקבל קבועים שגויים.",
     "לשכוח את הגורם $n$ בפתרון ההומוגני כשהשורש כפול."
@@ -442,7 +442,7 @@
      "explain": "$16+2\\cdot2\\cdot16+2=82$, וגם $8\\cdot14-16\\cdot3+18=82$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -477,7 +477,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "«יותר מ-$5$» פירושו $x_1\\ge6$ ו-«יותר מ-$4$» פירושו $x_3\\ge5$.",
     "לחבר את שני המקרים בלי להתאים את סכום המשוואה לכל מקרה."
@@ -519,7 +519,7 @@
      "explain": "$91+78=169$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -550,7 +550,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהתנאי כולל גם תתי-קבוצות בגודל $1$ (ולא רק $2$).",
     "לספור $7$ כפולות של $3$ (הכפולה $21$ אינה ב-$A$)."
@@ -585,7 +585,7 @@
      "explain": "$20\\cdot91=1820$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -612,7 +612,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $\\binom63=20$ במקום $P(6,3)$ (הסדר קובע בפונקציה).",
     "לחשב $6\\cdot5\\cdot4$ ולהסיק שזו התשובה (זו כמות הפונקציות החד-חד-ערכיות)."
@@ -640,7 +640,7 @@
      "explain": "$216-120=96$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -671,7 +671,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את צלעות $H$ כ-$\\binom{15}2=105$ ולשכוח לחסר את צלעות $G$.",
     "לספור $K_3$ ב-$H$ עם שני צמתים מאותה קבוצה (אין ביניהם צלע ב-$H$)."
@@ -734,7 +734,7 @@
      "explain": "צומת אחד מכל קבוצה: $5^3=125$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -769,7 +769,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שבגרף דו-צדדי אין מעגלים אי-זוגיים, ולכן אורך מעגל Hamilton זוגי.",
     "לא להשתמש בכך שדרגות גרף Euler זוגיות."
@@ -842,7 +842,7 @@
      "explain": "החלפה בין שני צדדים וסגירה של המעגל נותנת $k=2|A|$, זוגי."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -874,7 +874,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבלבל בין מסלול Euler (שני צמתים בדרגה אי-זוגית) לבין מעגל Euler (אין כאלה).",
     "לחשב את הדרגות במשלים של $G$ במקום במשלים של $G-(v_1,v_5)$."
@@ -969,7 +969,7 @@
      "explain": "$K_5$ על $v_2,v_4,v_6,v_9,v_{11}$, $C_5$ מושרה (ה-$C_5$ איזומורפי למשלים שלו), ו-$C_4$ ממשלים של $2K_2$ מושרה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

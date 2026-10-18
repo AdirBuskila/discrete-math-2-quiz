@@ -43,7 +43,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור את הערכים של $f$ על $\\{1,2\\}$ כתת-קבוצה בלי לסדר אותם, במקום חליפה (הסדר קובע).",
     "לשכוח שהפונקציה חד-חד-ערכית ולספור $5^2\\cdot5^3$."
@@ -71,7 +71,7 @@
      "explain": "$20\\cdot60=1200$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -106,7 +106,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להפעיל את הכפליות $\\phi(ab)=\\phi(a)\\phi(b)$ בלי לוודא שהגורמים זרים.",
     "לשכוח שהתנאי על ראשוניים גדולים מ-$p$ נדרש כדי להבטיח $\\gcd(p,\\phi(m))=1$."
@@ -171,7 +171,7 @@
      "explain": "לפי הנתון אין ראשוני גדול מ-$p$ המחלק את $n$; הראשוניים של $m$ קטנים מ-$p$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -206,7 +206,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשוב שמשלים של גרף לא קשיר הוא גם לא קשיר.",
     "לשכוח לבדוק את הגבול התחתון $\\operatorname{diam}(H)\\ge2$ (כאשר $H$ אינו שלם)."
@@ -271,7 +271,7 @@
      "explain": "$2\\le\\operatorname{diam}(H)\\le2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -306,7 +306,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור גם את $\\alpha=0$ בחזקת $2$ כשמחפשים מחלקים **זוגיים** ($1\\le\\alpha\\le3n$).",
     "לטעות בדרגת הפולינום: $3n(n+1)^4$ היא מדרגה $5$."
@@ -362,7 +362,7 @@
      "explain": "$1+4=5$, ולכן $m=\\Theta(n^5)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -397,7 +397,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב את הפתרון הכללי לשורש כפול כ-$C_1\\cdot2^n+C_2\\cdot2^n$ (חסר הגורם $n$).",
     "לחשב את $C_2$ מ-$a_1=2C_1+2C_2$ בלי להציב קודם $C_1=a_0$."
@@ -453,7 +453,7 @@
      "explain": "$10\\cdot4+5\\cdot2\\cdot4=80$, וגם $4\\cdot30-4\\cdot10=80$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -484,7 +484,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "«יותר מ-$6$» פירושו $x_1\\ge7$ ולא $x_1\\ge6$ (וכך גם «יותר מ-$3$» פירושו $\\ge4$).",
     "בכתב היד הגבול התחתון של $b$ נכתב $2$ במקום $3$; יש להקפיד על התנאי שבשאלה."
@@ -512,7 +512,7 @@
      "explain": "$D(3,6)=\\binom82=28$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -543,7 +543,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור תתי-קבוצות בגודל בדיוק $n-2$ ולא «לפחות $n-2$» (חסרות הגדלים $n-1$ ו-$n$).",
     "לטעות בחישוב $\\binom{25}{3}=2300$."
@@ -578,7 +578,7 @@
      "explain": "$300\\cdot2300=690000$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -605,7 +605,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $2^{10}$ כתשובה (זה מספר כל הפונקציות, לא שאינן על).",
     "לספור גם פונקציות שאינן קבועות (כל פונקציה שאינה קבועה היא על)."
@@ -649,7 +649,7 @@
      "explain": "הקבועה $1$ והקבועה $2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -676,7 +676,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור $K_4$ גם בין שני הרכיבים (אין צלעות ביניהם ב-$G$).",
     "לספור רק צורת $P_3$ אחת (שני צמתים מ-$A$ ואחד מ-$B$) ולשכוח את הצורה ההפוכה."
@@ -739,7 +739,7 @@
      "explain": "$550+495=1045$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -778,7 +778,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$H$ גרף פורש, ולכן קשירות של $H$ גוררת קשירות של $G$ (ולא להפך).",
     "לבחור דוגמה נגדית ש-$H$ בה קשיר."
@@ -835,7 +835,7 @@
      "explain": "אין צלעות בין שני ה-$C_4$ ב-$H$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -862,7 +862,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לעצור ב-$P_3$ ולשכוח את המשלים שלו (השאלה מבקשת את כל הגרפים).",
     "לחשוב שהצומת $x$ חייב להיות באותו מצב בשני הגרפים: ב-$P_3$ הוא קצה, ובמשלים הוא קצה של $K_2$."
@@ -904,7 +904,7 @@
      "explain": "על שלושה צמתים: ב-$P_3$ הקצה הוא עלה, ובמשלים (צלע ועוד צומת בודד) קצה הצלע הוא עלה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -936,7 +936,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהמשלים מוגדר על $12$ הצמתים של $G-v_{13}$, ולכן הדרגה היא $11-\\deg$.",
     "לצבוע ב-$3$ צבעים בלי לבדוק שכל צלע חוקית."
@@ -1000,7 +1000,7 @@
      "explain": "$K_5$ דורש $5$ צבעים."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }
