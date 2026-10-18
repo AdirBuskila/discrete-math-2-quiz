@@ -1,0 +1,163 @@
+{
+ "examCode": "23B-B",
+ "refuter": "refute_23B-B.py",
+ "items": {
+  "23B-B-Q1a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q1b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q1c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q2a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q2b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q2c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q3a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q3b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q3c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q4a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-B-Q4b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  }
+ }
+}

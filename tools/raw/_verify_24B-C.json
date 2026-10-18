@@ -1,0 +1,176 @@
+{
+ "examCode": "24B-C",
+ "refuter": "refute_24B-C.py",
+ "items": {
+  "24B-C-Q1a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q1b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q1c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q2a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q2b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": "agree; transcription flag: page prints x_k>4 for (1) (answer 0 as printed) but official solution uses y=x-3 giving 70; claim handles this explicitly"
+  },
+  "24B-C-Q2c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q3a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q3b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": "agree; exam typo flag: printed 'show a_n=O(3^n)' is false (a_n ~ 25*5^n); official concludes O(5^n); claim corrects"
+  },
+  "24B-C-Q3c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": "agree; 'unique forest' holds up to isomorphism (K1 U K2), verified exhaustively n<=7"
+  },
+  "24B-C-Q4a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q4b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "24B-C-Q4c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  }
+ }
+}

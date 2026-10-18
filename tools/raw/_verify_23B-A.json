@@ -1,0 +1,170 @@
+{
+ "examCode": "23B-A",
+ "refuter": "refute_23B-A.py",
+ "items": {
+  "23B-A-Q1a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q1b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q1c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q2a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q2b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q2c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": "agree; handwritten solution had x2>=2 typo, claim uses question's >=3 (28 verified)"
+  },
+  "23B-A-Q3a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q3b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q3c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q4a": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  },
+  "23B-A-Q4b": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": "agree; question asks all graphs: P3 and K2+K1 (n=3 forced), verified labeled n<=6"
+  },
+  "23B-A-Q4c": {
+   "verdict": "agree",
+   "solution": "agree",
+   "rubric": "agree (points sum to item points)",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "firstDivergence": null,
+   "note": ""
+  }
+ }
+}
