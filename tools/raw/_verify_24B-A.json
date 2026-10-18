@@ -1,0 +1,278 @@
+{
+ "examCode": "24B-A",
+ "verifier": "refuter",
+ "items": {
+  "1א": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "1ב": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "1ג": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "order",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "findbug",
+     "verdict": "agree"
+    },
+    "3": {
+     "type": "choice",
+     "verdict": "agree"
+    }
+   }
+  },
+  "2א": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "2ב": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "2ג": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "disagree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "choice",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   },
+   "notes": [
+    "pitfalls[1] is not an error: 2^(p-1)*3^(q-1)*2 equals 2^p*3^(q-1), the correct phi. Disagree on that pitfall only (first divergence: pitfall text)."
+   ]
+  },
+  "3א": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "3ב": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "choice",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "3": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "4": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "3ג": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "choice",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "findbug",
+     "verdict": "agree"
+    }
+   }
+  },
+  "4א": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "3": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "4": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "4ב": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "choice",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "3": {
+     "type": "numeric",
+     "verdict": "agree"
+    }
+   }
+  },
+  "4ג": {
+   "solution": "agree",
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "item": "agree",
+   "steps": {
+    "0": {
+     "type": "numeric",
+     "verdict": "agree"
+    },
+    "1": {
+     "type": "choice",
+     "verdict": "agree"
+    },
+    "2": {
+     "type": "order",
+     "verdict": "agree"
+    },
+    "3": {
+     "type": "findbug",
+     "verdict": "agree"
+    }
+   }
+  }
+ },
+ "rubricSplitJudgement": "Q1 split 8/8/9 (total 25): reasonable; mirrors official 8/8/9 split of 24B-B Q1, part c is a proof, part b is a 3-step count."
+}
