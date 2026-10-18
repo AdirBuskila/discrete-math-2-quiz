@@ -155,7 +155,9 @@ $$\phi(n)=\phi(7^\alpha)\cdot\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\a
       points=5),
     Q(3, "ג", "computation", "combinations_subsets",
       r"(6 נק') לקבוצה $A=\{1,2,\dots,n\}$ יש 435 תתי-קבוצות בגודל $n-2$. חשבו כמה תתי-קבוצות של $A$ מכילות בדיוק 3 מספרים שמתחלקים ב-4 וגם 6 מספרים ראשוניים.",
-      r"""מספרי ההכפלות של 4 ב-$\{1,\dots,30\}$: 7, והראשוניים: 10 (מ-$\binom n2=435$ נובע $n=30$).
+      r"""הערה: בניסוח המילולי של השאלה (בדיוק 3 כפולות של 4 ובדיוק 6 ראשוניים, ושאר האיברים חופשיים) נשארים 13 איברים חופשיים ב-$\{1,\dots,30\}$, והמספר הוא $7350\cdot2^{13}=60211200$. המפתח הרשמי $7350$ מניח שהתת-קבוצה כוללת רק את 9 האיברים האלה ($|B|=9$), וזו הקריאה המכוונת.
+
+מספרי ההכפלות של 4 ב-$\{1,\dots,30\}$: 7, והראשוניים: 10 (מ-$\binom n2=435$ נובע $n=30$).
 
 הפתרון הרשמי עם תיקון בתשובה הסופית: בכתב היד $\binom{10}4$ חושב כ-$\frac{10\cdot9\cdot8\cdot7}{1\cdot2\cdot3}=840$ (המכנה $4$ נשמט), והתשובה הסופית הודפסה $35\cdot840=29400$. הערך הנכון הוא $\binom{10}6=\binom{10}4=210$.
 
@@ -209,7 +211,9 @@ $$\binom73\cdot\binom{10}6=35\cdot210=7350$$""",
     # ---------------- Q5 ----------------
     Q(5, "א", "computation", "combinations_subsets",
       r"(7 נק') לקבוצה $A=\{1,2,\dots,n\}$ יש 1276 תתי-קבוצות בגודל 2 לכל היותר. חשבו את מספר תתי-הקבוצות של $A$ המכילות בדיוק 5 מספרים שמתחלקים ב-5 וגם 2 מספרים שמתחלקים ב-11.",
-      r"""נתון ש: $1+n+\binom n2=1276\iff n^2+n-2550=0$
+      r"""הערה: בניסוח המילולי של השאלה (בדיוק 5 כפולות של 5 ובדיוק 2 כפולות של 11, ושאר האיברים חופשיים) נשארים 36 איברים חופשיים ב-$\{1,\dots,50\}$, והמספר הוא $1512\cdot2^{36}=103903848824832$. המפתח הרשמי $1512$ מניח שהתת-קבוצה כוללת רק את 7 האיברים האלה ($|B|=7$), וזו הקריאה המכוונת.
+
+נתון ש: $1+n+\binom n2=1276\iff n^2+n-2550=0$
 
 $$n_{1,2}=\frac{-1\pm101}{2}=\begin{cases}-51\\50\end{cases}$$
 
@@ -309,8 +313,8 @@ STEPS = {}
 
 
 def S(num_, part, rubric, pitfalls, steps):
-    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-draft", pitfalls=pitfalls,
-                               steps=steps, stepsSource="ai-draft")
+    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-verified", pitfalls=pitfalls,
+                               steps=steps, stepsSource="ai-verified")
 
 
 S(1, "א",
@@ -412,16 +416,14 @@ S(3, "ב",
       r"הפתרון כותב את $n$ כמכפלה של חזקת 7 ומספר זר ל-7 ומחשב את $\phi$ מהנוסחה.", 0),
    order("סדרו את שורות ההוכחה.",
          [r"$n=7^\alpha m$ עבור $2\le\alpha$ ו-$\gcd(7,m)=1$.",
-          r"$\phi(n)=\phi(7^\alpha)\phi(m)$, כי $7^\alpha$ ו-$m$ זרים.",
-          r"$\phi(7^\alpha)=7^\alpha\left(1-\frac17\right)=7^{\alpha-1}\cdot6$.",
+          r"$\phi(n)=\phi(7^\alpha)\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\alpha-1}\cdot6\cdot\phi(m)$, כי $7^\alpha$ ו-$m$ זרים.",
           r"$\alpha-1\ge1$ ו-$3\mid6$, ולכן $21=7\cdot3\mid\phi(n)$."],
          "כל שורה נשענת על הקודמת."),
    bug("בהוכחה שורה אחת שגויה. איזו?",
        [r"$n=7^\alpha m$ עבור $2\le\alpha$ ו-$\gcd(7,m)=1$.",
-        r"$\phi(n)=\phi(7^\alpha)\phi(m)$, כי $7^\alpha$ ו-$m$ זרים.",
-        r"$\phi(7^\alpha)=7^\alpha\left(1-\frac17\right)=7^{\alpha-1}\cdot8$.",
+        r"$\phi(n)=\phi(7^\alpha)\phi(m)=7^\alpha\left(1-\frac17\right)\phi(m)=7^{\alpha-1}\cdot8\cdot\phi(m)$, כי $7^\alpha$ ו-$m$ זרים.",
         r"$\alpha-1\ge1$ ו-$3\mid6$, ולכן $21=7\cdot3\mid\phi(n)$."],
-       2, r"$7^\alpha\left(1-\frac17\right)=7^{\alpha-1}\cdot6$ ולא $\cdot8$. עם 8 לא היה נשאר הגורם 3.")]),
+       1, r"$7^\alpha\left(1-\frac17\right)=7^{\alpha-1}\cdot6$ ולא $\cdot8$. עם 8 לא היה נשאר הגורם 3.")]),
 
 S(3, "ג",
   [(r"מ-$\binom n2=435$ מקבלים $n=30$", 2), (r"7 כפולות של 4 ו-10 ראשוניים בלי חפיפה", 2), (r"$\binom73\binom{10}6=35\cdot210=7350$", 2)],

@@ -36,7 +36,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור גם את שני האיברים האחרונים כחופשיים ולקבל $9\\cdot2$.",
     "לחשב $D_4$ כ-$4!-3!=18$."
@@ -64,7 +64,7 @@
      "explain": "$9\\cdot1=9$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -95,7 +95,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש בכפליות של $\\phi$ על $5^{\\alpha-1}$ ו-4 בלי לבדוק שהם זרים.",
     "לשכוח ש-$5^\\alpha>100$ מחייב $\\alpha\\ge3$, ולכן $5^{\\alpha-3}$ שלם."
@@ -160,7 +160,7 @@
      "explain": "$\\phi(4)=2$ ולא 4 (רק 1 ו-3 זרים ל-4)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -191,7 +191,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהמשלים חייב להיות עץ גם הוא, ולכן יש לו בדיוק $n-1$ צלעות.",
     "לבדוק רק את $K_{1,3}$ ולהסיק שאין פתרון."
@@ -261,7 +261,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -292,7 +292,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את הזוג כשני איברים חופשיים ולשכוח את הגורם 2 לסדר הפנימי.",
     "לשכוח להחסיר את החיתוך."
@@ -320,7 +320,7 @@
      "explain": "$48+48-24=72$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -351,7 +351,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור את 5 הזוגות מתוך כל 12 הזוגות של $A\\times B$, כולל אלה עם $z$.",
     "לספור את הסדרות המתחילות ב-$ax$ ו-$by$ כחופפות (אין חפיפה)."
@@ -386,7 +386,7 @@
      "explain": "$60+60=120$, כי אין סדרה שמתחילה בשני הזוגות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -417,7 +417,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון ש-$\\phi$ עולה כי היא 'כמעט' עולה (למשל $\\phi(5)=4>2=\\phi(6)$).",
     "להפעיל את משפט Euler בלי לבדוק ש-$\\gcd(11,500)=\\gcd(3,500)=1$."
@@ -480,7 +480,7 @@
      "explain": "$1+1=2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -507,7 +507,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש ב-$k=9$ (כך מודפס בפתרון), במקום 7 שנשארו בפועל.",
     "לחשב $\\binom{11}{7}$ או $\\binom{12}{4}$ במקום $\\binom{11}{4}$ בלי התאמה לנוסחה."
@@ -535,7 +535,7 @@
      "explain": "$D(5,7)=\\binom{5-1+7}{5-1}=\\binom{11}4=330$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -570,7 +570,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור פתרון פרטי $A\\cdot n\\cdot3^n$ (3 אינו שורש של המשוואה האופיינית).",
     "להציב $a_1=60$ במקום הערך הנתון $a_1=56$."
@@ -633,7 +633,7 @@
      "explain": "$a_1=2C_1+2C_2+54=56$, ולכן $C_2=0$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -665,7 +665,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחפש דוגמה נגדית בגרף שבו יש יותר מצומת בודד בדרגה 2.",
     "לשכוח שצומת מבודד במשלים אינו עלה."
@@ -718,7 +718,7 @@
      "explain": "המשלים מכיל את הצלעות שחסרות ב-$G$: רק $(a,c)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -749,7 +749,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את 1 כראשוני.",
     "להשתמש ב-$2^n=512$ ולקבל $n=9$."
@@ -784,7 +784,7 @@
      "explain": "$\\binom42\\cdot\\binom63=6\\cdot20=120$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -815,7 +815,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $\\phi(7^n)=7^{2n}\\cdots$ (כך מודפס בפתרון) במקום $6\\cdot7^{n-1}$.",
     "לספור גם מחלקים זוגיים, או לשכוח שהגורם 3 מגיע מ-$\\phi(7^n)$."
@@ -892,7 +892,7 @@
      "explain": "$2\\cdot6\\cdot6=72=2n^2$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -923,7 +923,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $\\sum\\deg=|E|$ ולא $2|E|$.",
     "לשכוח שהקשירות נדרשת כדי להסיק שהגרף עץ."
@@ -971,7 +971,7 @@
      "explain": "לפי משפט הדרגות $\\sum\\deg=2|E|$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

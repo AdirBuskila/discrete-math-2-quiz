@@ -194,8 +194,8 @@ STEPS = {}
 
 
 def S(num_, part, rubric, pitfalls, steps):
-    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-draft", pitfalls=pitfalls,
-                               steps=steps, stepsSource="ai-draft")
+    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-verified", pitfalls=pitfalls,
+                               steps=steps, stepsSource="ai-verified")
 
 
 # NOTE: the printed paper gives no per-part points for Q1 (three parts, 25 points in all); the rubric splits them 8/8/9 like the
@@ -256,7 +256,7 @@ S(2, "ב",
 S(2, "ג",
   [(r"(ג1) $n=1$ מקיים $n\mid\phi(n)$", 1), (r"(ג1) לכל $n>1$ מתקיים $\phi(n)\le n-1$, ולכן $n\nmid\phi(n)$", 3), (r"(ג2) $\phi(2^p3^q)=2^p3^{q-1}$", 3), (r"(ג2) לכן $\phi(n)\mid n$", 1)],
   [r"לשכוח את המקרה $n=1$ ולכתוב שאין פתרון בכלל.",
-   r"לחשב $\phi(2^p3^q)=2^{p-1}\cdot3^{q-1}\cdot2$ ולטעות בגורם $\left(1-\frac12\right)\left(1-\frac13\right)$."],
+   r"לחשב $\phi(3^q)=3^{q-1}$ במקום $2\cdot3^{q-1}$ (לשכוח את הגורם $3-1$), ולקבל $\phi(n)=2^{p-1}3^{q-1}$ במקום $2^p3^{q-1}$."],
   [ch(r"אילו $n$ מקיימים $n\mid\phi(n)$?", r"$n=1$ בלבד", [r"$n\in\{1,2\}$", r"$n\in\{1,2,3\}$", "אין אף $n$"],
       r"$\phi(1)=1$ ו-$1\mid1$. עבור $n>1$ מתקיים $\phi(n)\le n-1<n$, ולכן $n\nmid\phi(n)$ (כי $\phi(n)\ge1$).", 0),
    num(r"עבור $n=2^3\cdot3^4=648$, מהו $\phi(n)$?", 216, r"$2^3\cdot3^{3}=216$, בהתאם ל-$\phi(2^p3^q)=2^p3^{q-1}$."),

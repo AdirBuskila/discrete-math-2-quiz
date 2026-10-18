@@ -36,7 +36,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור גם חזקה 1 של 7 ולקבל $9\\cdot5\\cdot3\\cdot2=270$ (המחלקים שמתחלקים ב-7 נכללים).",
     "לחשב את החזקה של 2 ב-$10!$ כ-7 במקום 8 (יש להחשיב גם את $4$ ואת $8$: $5+2+1$)."
@@ -92,7 +92,7 @@
      "explain": "$9\\cdot5\\cdot3=135$ (חזקת 5 בין 0 ל-2, וחזקת 7 היא 0)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -123,7 +123,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את כל התמורות אי-סדר מלא של $\\{1,\\dots,7\\}$ (1854) ולשכוח שהמספרים $1,2,3,4$ חייבים להישאר בארבעת המקומות הראשונים.",
     "לחשב $\\alpha(4)$ כ-$4!-3!$ או לשכוח את אחד מאיברי ההכלה וההדחה."
@@ -151,7 +151,7 @@
      "explain": "$9\\cdot2=18$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -182,7 +182,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש ב-$2n$ במקום $2(n-1)$ בסכום הדרגות של עץ.",
     "לתת לצמתים מדרגה 5 את המשקל 1 ולעלים את המשקל 5 בעת כתיבת המשוואה."
@@ -231,7 +231,7 @@
      "explain": "$p+150-5p=58\\Rightarrow4p=92\\Rightarrow p=23$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -262,7 +262,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את משתנה העודף ולפתור משוואה בלבד עם שוויון.",
     "לכתוב $x_1\\ge-2$ במקום $x_1\\ge-1$ (החסם $-2<x_1$ הוא אי-שוויון חזק, ולכן $x_1\\ge-1$)."
@@ -311,7 +311,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -342,7 +342,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $(8+1)^n$ בסכום השני, ולשכוח את הגורם $3^{n-k}$ שמביא ל-$(8+3)^n$.",
     "לאפשר $\\alpha=0$ או $\\beta=0$ למרות שהמחלק חייב להתחלק ב-3 וב-5."
@@ -398,7 +398,7 @@
      "explain": "$11\\cdot11\\cdot12=1452=n^2(n+1)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -429,7 +429,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור פונקציות עולות במקום יורדות (או להפך).",
     "לשכוח את המקרה $n<10$, שבו אין פונקציה חד-חד-ערכית כלל."
@@ -485,7 +485,7 @@
      "explain": "$P(12,10)=\\frac{12!}{2!}=239500800$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -520,7 +520,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור פתרון פרטי $A\\cdot n\\cdot5^n$ כשאחד השורשים אינו 5 (אין התאבכות).",
     "לטעות בסימן ב-$C_1$ ולקבל $C_1=5$."
@@ -604,7 +604,7 @@
      "explain": "$C_2=-C_1=5$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -631,7 +631,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את המקרה $n=2$, שבו $\\phi(2)=1$ אינו ראשוני.",
     "לשכוח ש-$\\phi(n)=n-1$ זוגי כש-$n>2$ ראשוני, ולכן אינו ראשוני אלא אם $\\phi(n)=2$."
@@ -685,7 +685,7 @@
      "explain": "רק $n=3$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -712,7 +712,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את 2 כראשוני אי-זוגי (הוא זוגי).",
     "לחשב $2^n-1$ במקום $2^{n-1}-1$ למספר תתי-הקבוצות הלא ריקות בגודל זוגי."
@@ -747,7 +747,7 @@
      "explain": "$\\binom53\\binom64=10\\cdot15=150$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -775,7 +775,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $|E|=\\sum_{v\\in V}\\deg(v)$ ולשכוח שהסכום הזה שווה ל-$2|E|$.",
     "לשכוח שהגרף דו-צדדי: בלי זה אין דרך לספור כל צלע פעם אחת."
@@ -829,7 +829,7 @@
      "explain": "שני צמתים בדרגה 4, כלומר 8, וזהו מספר הצלעות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -856,7 +856,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק ש-$|V|$ זוגי מכך שהדרגות ראשוניות, ולא מכך שהן אי-זוגיות.",
     "לשכוח שגרף Euler (כל הדרגות זוגיות, וקשיר) אין בו גשרים."
@@ -905,7 +905,7 @@
      "explain": "כל הדרגות במשלים זוגיות, ולכן אין גשרים."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -941,7 +941,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב את הדרגות ב-$H$ כ-4 (דרגות $G$) במקום $11-1-4=6$.",
     "לבדוק ישירות הכלה של המנסרה ב-$H$ במקום להשתמש בכך שהמשלים שלה הוא $C_6$."
@@ -1036,7 +1036,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1063,7 +1063,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את 1 פעם אחת בלבד במקום ראשון ולשכוח שהוא יכול להופיע בכל אחד מ-5 המקומות.",
     "לחשב את שאר המקומות כ-$P(8,4)$ (אפשרות להשתמש שוב ב-1)."
@@ -1091,7 +1091,7 @@
      "explain": "$5\\cdot840=4200$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1118,7 +1118,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכלול גם את הגודל 2 (גודל זוגי, אבל קטן מ-4).",
     "להסיק $n=7$ מ-$2^{n-1}=128$."
@@ -1146,7 +1146,7 @@
      "explain": "$\\binom84+\\binom86+\\binom88=70+28+1=99$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1173,7 +1173,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון שגרף דו-צדדי לא יכול להיות משלים של גרף דו-צדדי קשיר בלי לבדוק את $P_4$.",
     "לבלבל בין מסלול Euler (שתי דרגות אי-זוגיות) למעגל Euler."
@@ -1257,7 +1257,7 @@
      "explain": "בעץ על $|A|+|B|$ צמתים יש $|A|+|B|-1$ צלעות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1288,7 +1288,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחבר את מספר תתי-הקבוצות בלבד, בלי להכפיל בגודל $|B|$.",
     "לפרש את הסכום כסכום על אינדקס $|B|$ ולא על תתי-קבוצות של $A$."
@@ -1337,7 +1337,7 @@
      "explain": "$3\\cdot1330+4\\cdot5985+5\\cdot20349=3990+23940+101745=129675$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1368,7 +1368,7 @@
      "points": 4
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהצומת מדרגה 4 נמצא בצד אחד בלבד, ולכתוב $5|A|=5|B|$.",
     "להסיק $\\chi(G)\\ge3$ בלי להראות שאין צביעה ב-2 צבעים."
@@ -1433,7 +1433,7 @@
      "explain": "הצומת מדרגה 4 נמצא רק בצד $A$. בצד $B$ כל הדרגות 5, ולכן הסכום הוא $5|B|$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

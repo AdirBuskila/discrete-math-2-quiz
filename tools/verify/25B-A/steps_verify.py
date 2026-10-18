@@ -169,11 +169,11 @@ assert all(a[k] == 4*3**k + 12*2**k for k in range(40)) and Av == 12
 # ---- 3b ----
 sl3 = sol("3b")
 C("3b", 0, ["gcd(7,m)=1" in sl3 and "\\phi(7^\\alpha)" in sl3, "אינדוקציה" in sl3, "שובך" in sl3, "בשלילה" in sl3])
-ORD("3b", 1, 4)
+ORD("3b", 1, 3)
 for al in range(2, 8):
     assert totient(7**al) == 7**(al - 1) * 6 and totient(7**al) != 7**(al - 1) * 8
 assert all(totient(m) % 21 == 0 for m in range(49, 20000, 49))
-BUG("3b", 2, 2, 1)
+BUG("3b", 2, 1, 1)
 
 # ---- 3c ----
 nn = next(k for k in range(3, 100) if comb(k, 2) == 435); N("3c", 0, nn)

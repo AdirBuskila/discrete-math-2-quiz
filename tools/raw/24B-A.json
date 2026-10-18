@@ -35,7 +35,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את הרצף 123 כשלושה איברים חופשיים ולקבל $6!/3!$ או $3!\\cdot4!$ במקום $4!$.",
     "להחסיר את $5!$ (בלוק בגודל 2) במקום $4!$."
@@ -63,7 +63,7 @@
      "explain": "$720-24=696$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -93,7 +93,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור 3 איברים מתוך 9 במקום מתוך 5 הנותרים.",
     "לשכוח שגם 5 וגם 7 אסורים, ולבחור מתוך 6 איברים."
@@ -121,7 +121,7 @@
      "explain": "$\\binom53=\\binom52=10$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -152,7 +152,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון שבצד אחד יש 3 צמתים בלי שהסכום הוא לפחות 5.",
     "להסיק שהמשלים אינו עץ רק מכך שיש בו מעגל באורך 3, בלי לציין שבעץ אין מעגלים."
@@ -217,7 +217,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -244,7 +244,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את ארבעת האחרונים כתמורה כלשהי ($4!$) ולא כאי-סדר מלא.",
     "לחשב $D_4$ כ-$4!-3!$."
@@ -272,7 +272,7 @@
      "explain": "$9\\cdot9=81$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -303,7 +303,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח להחסיר את החיתוך ולקבל 12.",
     "לבחור את שני האיברים החסרים מתוך 6 ולא מתוך 4."
@@ -331,7 +331,7 @@
      "explain": "$6+6-1=11$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -362,10 +362,10 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את המקרה $n=1$ ולכתוב שאין פתרון בכלל.",
-    "לחשב $\\phi(2^p3^q)=2^{p-1}\\cdot3^{q-1}\\cdot2$ ולטעות בגורם $\\left(1-\\frac12\\right)\\left(1-\\frac13\\right)$."
+    "לחשב $\\phi(3^q)=3^{q-1}$ במקום $2\\cdot3^{q-1}$ (לשכוח את הגורם $3-1$), ולקבל $\\phi(n)=2^{p-1}3^{q-1}$ במקום $2^p3^{q-1}$."
    ],
    "steps": [
     {
@@ -411,7 +411,7 @@
      "explain": "$\\frac{2^p3^q}{2^p3^{q-1}}=3$, ולכן $\\phi(n)\\mid n$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -438,7 +438,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש ב-15 במקום ב-7 בנוסחת $D(n,k)$.",
     "לחשב $\\binom{10}{4}$ או $\\binom{4+7}{7}$ בלי להתאים את הנוסחה $\\binom{n-1+k}{n-1}$."
@@ -466,7 +466,7 @@
      "explain": "$D(4,7)=\\binom{4-1+7}{4-1}=\\binom{10}3=120$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -501,7 +501,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור פתרון פרטי $A\\cdot n\\cdot5^n$ כשהשורש הכפול הוא 3 (אין התאבכות עם 5).",
     "להציב $a_1=131$ במקום הערך הנתון $a_1=128$."
@@ -564,7 +564,7 @@
      "explain": "$a_1=3C_1+3C_2+125=128$, ולכן $C_2=0$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -592,7 +592,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח ש-$r$ ראשוני גדול מ-2 הוא אי-זוגי, ולכן $|V|$ זוגי.",
     "לכתוב את דרגת הצומת במשלים כ-$|V|-r$ ולא $|V|-r-1$."
@@ -646,7 +646,7 @@
      "explain": "אם $|V|$ זוגי אז $|V|-1$ אי-זוגי, ולכן $2r=|V|-1$ הוא שוויון בין זוגי לאי-זוגי, וזו הסתירה."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -677,7 +677,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לא לספור את 1 כמספר לא ראשוני (הוא נכלל ב-16).",
     "להחליף בין הגדלים: $\\binom{9}{4}\\cdot\\binom{16}{3}$."
@@ -719,7 +719,7 @@
      "explain": "$84\\cdot1820=152880$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -750,7 +750,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהמחלק חייב להתחלק ב-$7^2$, ולכן החזקה של 7 מתחילה ב-2.",
     "לחלץ את הגורם $4^n$ כ-$2^n$ ולקבל חזקה שגויה של 2."
@@ -806,7 +806,7 @@
      "explain": "$16\\cdot9=144=(3n+1)(2n-1)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -833,7 +833,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $|E|=p+x$ במקום $p+x-1$ (בעץ יש צלע אחת פחות מצמתים).",
     "לשכוח שסכום הדרגות שווה ל-$2|E|$ ולא ל-$|E|$."
@@ -896,7 +896,7 @@
      "explain": "$|E|=p+x-1$ ולכן סכום הדרגות הוא $2(p+x-1)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

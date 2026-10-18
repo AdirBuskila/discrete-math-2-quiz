@@ -302,8 +302,8 @@ STEPS = {}
 
 
 def S(num_, part, rubric, pitfalls, steps):
-    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-draft", pitfalls=pitfalls,
-                               steps=steps, stepsSource="ai-draft")
+    STEPS[(num_, part)] = dict(rubric=rub(*rubric), rubricSource="ai-verified", pitfalls=pitfalls,
+                               steps=steps, stepsSource="ai-verified")
 
 
 S(1, "א",

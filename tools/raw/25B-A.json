@@ -36,7 +36,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להפעיל הכלה והדחה עם חיתוכים בגודל שונה מאפס, בלי לבדוק שה-lcm של כל זוג גדול מ-100.",
     "לספור את $\\lfloor 100/49\\rfloor$ כ-1 או 3 במקום 2 (המכפלות הן 49 ו-98)."
@@ -87,7 +87,7 @@
      "explain": "$33+2+2=37$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -118,7 +118,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את שש הסדרות האפשריות של 1,2,3 בתוך הבלוק במקום שתיים בלבד, ולשכוח שהתנאי הוא 1 לפני 2 וגם 1 לפני 3.",
     "לספור את הבלוק כשלוש יחידות נפרדות ולקבל $7!$ במקום $5!$."
@@ -146,7 +146,7 @@
      "explain": "$2\\cdot120=240$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -173,7 +173,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסתפק בכך ש-$\\mathrm{dist}(a,b)=1$ בין הצדדים ולשכוח שלשני צמתים באותו צד המרחק 2 (ולכן הקוטר 2 ולא 1).",
     "לטעון שכל גרף בקוטר 2 הוא דו-צדדי שלם, בלי לבדוק את $C_5$."
@@ -227,7 +227,7 @@
      "explain": "צמתים בצדדים שונים הם סמוכים, כלומר במרחק 1. המרחק 2 מתקבל רק בתוך אותו צד."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -258,7 +258,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להתעלם מאי-השוויון ולפתור רק $x_1+x_2+x_3=20$.",
     "לשכוח שהחסם $-2<x_2$ אומר $x_2\\ge-1$ (ולא $x_2\\ge-2$ או $x_2\\ge0$)."
@@ -307,7 +307,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -338,7 +338,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לכתוב $(2+1)^n$ במקום $(6+1)^n$ בסכום השני (המקדם של $k$ הוא 6).",
     "לספור את החזקה של 2 מ-0 ולא מ-2 (המחלק חייב להתחלק ב-$2^2$)."
@@ -415,7 +415,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -446,7 +446,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לספור את $f(4),\\dots,f(10)$ מתוך $\\{1,\\dots,n\\}$ במקום מתוך $\\{6,\\dots,n\\}$.",
     "לשכוח שעבור $n\\ne10$ אין פונקציה שהיא גם על וגם חד-חד-ערכית."
@@ -502,7 +502,7 @@
      "explain": "$f(2),\\dots,f(10)$ הן תמורה של $\\{2,\\dots,10\\}$, כלומר $9!=362880$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -537,7 +537,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבחור פתרון פרטי $A\\cdot3^n$ או $A\\cdot n\\cdot3^n$ כשהאיבר החופשי הוא $2^n$ (2 אינו שורש).",
     "להציב $a_0=18,\\ a_1=8$ במקום הערכים הנתונים $a_0=16,\\ a_1=36$."
@@ -600,7 +600,7 @@
      "explain": "$a_1=3C_1+3C_2+24=36$, ולכן $C_2=0$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -631,7 +631,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש בכפליות $\\phi(n)=\\phi(7^\\alpha)\\phi(m)$ בלי שהנחנו $\\gcd(7,m)=1$.",
     "לשכוח ש-$\\alpha\\ge2$ הכרחי כדי שיישאר גורם 7 ב-$7^{\\alpha-1}$."
@@ -670,8 +670,7 @@
      "prompt": "סדרו את שורות ההוכחה.",
      "lines": [
       "$n=7^\\alpha m$ עבור $2\\le\\alpha$ ו-$\\gcd(7,m)=1$.",
-      "$\\phi(n)=\\phi(7^\\alpha)\\phi(m)$, כי $7^\\alpha$ ו-$m$ זרים.",
-      "$\\phi(7^\\alpha)=7^\\alpha\\left(1-\\frac17\\right)=7^{\\alpha-1}\\cdot6$.",
+      "$\\phi(n)=\\phi(7^\\alpha)\\phi(m)=7^\\alpha\\left(1-\\frac17\\right)\\phi(m)=7^{\\alpha-1}\\cdot6\\cdot\\phi(m)$, כי $7^\\alpha$ ו-$m$ זרים.",
       "$\\alpha-1\\ge1$ ו-$3\\mid6$, ולכן $21=7\\cdot3\\mid\\phi(n)$."
      ],
      "explain": "כל שורה נשענת על הקודמת."
@@ -681,15 +680,14 @@
      "prompt": "בהוכחה שורה אחת שגויה. איזו?",
      "lines": [
       "$n=7^\\alpha m$ עבור $2\\le\\alpha$ ו-$\\gcd(7,m)=1$.",
-      "$\\phi(n)=\\phi(7^\\alpha)\\phi(m)$, כי $7^\\alpha$ ו-$m$ זרים.",
-      "$\\phi(7^\\alpha)=7^\\alpha\\left(1-\\frac17\\right)=7^{\\alpha-1}\\cdot8$.",
+      "$\\phi(n)=\\phi(7^\\alpha)\\phi(m)=7^\\alpha\\left(1-\\frac17\\right)\\phi(m)=7^{\\alpha-1}\\cdot8\\cdot\\phi(m)$, כי $7^\\alpha$ ו-$m$ זרים.",
       "$\\alpha-1\\ge1$ ו-$3\\mid6$, ולכן $21=7\\cdot3\\mid\\phi(n)$."
      ],
-     "bugIndex": 2,
+     "bugIndex": 1,
      "explain": "$7^\\alpha\\left(1-\\frac17\\right)=7^{\\alpha-1}\\cdot6$ ולא $\\cdot8$. עם 8 לא היה נשאר הגורם 3."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -697,7 +695,7 @@
    "kind": "computation",
    "topic": "combinations_subsets",
    "question": "(6 נק') לקבוצה $A=\\{1,2,\\dots,n\\}$ יש 435 תתי-קבוצות בגודל $n-2$. חשבו כמה תתי-קבוצות של $A$ מכילות בדיוק 3 מספרים שמתחלקים ב-4 וגם 6 מספרים ראשוניים.",
-   "solution": "מספרי ההכפלות של 4 ב-$\\{1,\\dots,30\\}$: 7, והראשוניים: 10 (מ-$\\binom n2=435$ נובע $n=30$).\n\nהפתרון הרשמי עם תיקון בתשובה הסופית: בכתב היד $\\binom{10}4$ חושב כ-$\\frac{10\\cdot9\\cdot8\\cdot7}{1\\cdot2\\cdot3}=840$ (המכנה $4$ נשמט), והתשובה הסופית הודפסה $35\\cdot840=29400$. הערך הנכון הוא $\\binom{10}6=\\binom{10}4=210$.\n\n$$\\binom73\\cdot\\binom{10}6=35\\cdot210=7350$$",
+   "solution": "הערה: בניסוח המילולי של השאלה (בדיוק 3 כפולות של 4 ובדיוק 6 ראשוניים, ושאר האיברים חופשיים) נשארים 13 איברים חופשיים ב-$\\{1,\\dots,30\\}$, והמספר הוא $7350\\cdot2^{13}=60211200$. המפתח הרשמי $7350$ מניח שהתת-קבוצה כוללת רק את 9 האיברים האלה ($|B|=9$), וזו הקריאה המכוונת.\n\nמספרי ההכפלות של 4 ב-$\\{1,\\dots,30\\}$: 7, והראשוניים: 10 (מ-$\\binom n2=435$ נובע $n=30$).\n\nהפתרון הרשמי עם תיקון בתשובה הסופית: בכתב היד $\\binom{10}4$ חושב כ-$\\frac{10\\cdot9\\cdot8\\cdot7}{1\\cdot2\\cdot3}=840$ (המכנה $4$ נשמט), והתשובה הסופית הודפסה $35\\cdot840=29400$. הערך הנכון הוא $\\binom{10}6=\\binom{10}4=210$.\n\n$$\\binom73\\cdot\\binom{10}6=35\\cdot210=7350$$",
    "solutionSource": "solved",
    "official": false,
    "confidence": "high",
@@ -716,7 +714,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב $\\binom{10}{4}$ כ-$\\frac{10\\cdot9\\cdot8\\cdot7}{1\\cdot2\\cdot3}=840$ ולשמוט את המכנה 4, ולכן לקבל 29400.",
     "לבחור 6 ראשוניים מתוך 7 או 3 כפולות של 4 מתוך 10 (להחליף בין הגדלים)."
@@ -758,7 +756,7 @@
      "explain": "$35\\cdot210=7350$ (אין מספר שהוא גם ראשוני וגם כפולה של 4)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -786,7 +784,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שהצומת מדרגה 6 בגרף על 7 צמתים מחובר לכל האחרים, ולכן כל דרגה אחרת קטנה ב-1 אחרי הסרתו.",
     "להסיק שהסדרה אינה גרפית רק כי הדרגות 'גדולות מדי'."
@@ -839,7 +837,7 @@
      "explain": "בנייה ואז בדיקה: כל שורה נשענת על הקודמת."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -866,7 +864,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעון שבצד גדול יש לפחות 3 צמתים בלי להסביר שסכום הצדדים הוא 5.",
     "לשכוח שצמתים באותו צד אינם סמוכים ב-$T$, ולכן הם יוצרים משולש במשלים."
@@ -910,7 +908,7 @@
      "explain": "אפשרית גם חלוקה $3+2$ (כמו ב-$P_5$), ולכן מובטח רק $\\max\\ge3$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -946,7 +944,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשב את דרגות $H$ כ-3 במקום $8-1-3=4$.",
     "לבדוק $C_5$ מושרה ב-$H$ ישירות במקום לעבור ל-$G$ ולהשתמש בכך ש-$\\overline{C_5}\\cong C_5$ וש-$G$ דו-צדדי."
@@ -1021,7 +1019,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1029,7 +1027,7 @@
    "kind": "computation",
    "topic": "combinations_subsets",
    "question": "(7 נק') לקבוצה $A=\\{1,2,\\dots,n\\}$ יש 1276 תתי-קבוצות בגודל 2 לכל היותר. חשבו את מספר תתי-הקבוצות של $A$ המכילות בדיוק 5 מספרים שמתחלקים ב-5 וגם 2 מספרים שמתחלקים ב-11.",
-   "solution": "נתון ש: $1+n+\\binom n2=1276\\iff n^2+n-2550=0$\n\n$$n_{1,2}=\\frac{-1\\pm101}{2}=\\begin{cases}-51\\\\50\\end{cases}$$\n\n($-51$ לא מתאים), ולכן $A=\\{1,2,\\dots,50\\}$.\n\nב-$A$ יש $10=\\left\\lfloor\\frac{50}{5}\\right\\rfloor$ מספרים שמתחלקים ב-5, וגם $4=\\left\\lfloor\\frac{50}{11}\\right\\rfloor$ מספרים שמתחלקים ב-11.\n\nבלי חפיפה: יש $\\binom{10}{5}$ אופציות עבור 5 מספרים שמתחלקים ב-5, ו-$\\binom42$ אופציות עבור 2 מספרים שמתחלקים ב-11.\n\nמסקנה: $\\binom{10}{5}\\cdot\\binom42=252\\cdot6=1512$ תתי-קבוצות.",
+   "solution": "הערה: בניסוח המילולי של השאלה (בדיוק 5 כפולות של 5 ובדיוק 2 כפולות של 11, ושאר האיברים חופשיים) נשארים 36 איברים חופשיים ב-$\\{1,\\dots,50\\}$, והמספר הוא $1512\\cdot2^{36}=103903848824832$. המפתח הרשמי $1512$ מניח שהתת-קבוצה כוללת רק את 7 האיברים האלה ($|B|=7$), וזו הקריאה המכוונת.\n\nנתון ש: $1+n+\\binom n2=1276\\iff n^2+n-2550=0$\n\n$$n_{1,2}=\\frac{-1\\pm101}{2}=\\begin{cases}-51\\\\50\\end{cases}$$\n\n($-51$ לא מתאים), ולכן $A=\\{1,2,\\dots,50\\}$.\n\nב-$A$ יש $10=\\left\\lfloor\\frac{50}{5}\\right\\rfloor$ מספרים שמתחלקים ב-5, וגם $4=\\left\\lfloor\\frac{50}{11}\\right\\rfloor$ מספרים שמתחלקים ב-11.\n\nבלי חפיפה: יש $\\binom{10}{5}$ אופציות עבור 5 מספרים שמתחלקים ב-5, ו-$\\binom42$ אופציות עבור 2 מספרים שמתחלקים ב-11.\n\nמסקנה: $\\binom{10}{5}\\cdot\\binom42=252\\cdot6=1512$ תתי-קבוצות.",
    "solutionSource": "student-solution",
    "official": true,
    "confidence": "high",
@@ -1048,7 +1046,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את תת-הקבוצה הריקה ואת קבוצות הגודל 1 בעת חישוב $n$ (בגודל 2 לכל היותר).",
     "לא לבדוק שאין מספר המתחלק גם ב-5 וגם ב-11 (הכפולה הראשונה של 55 גדולה מ-50)."
@@ -1090,7 +1088,7 @@
      "explain": "$252\\cdot\\binom42=252\\cdot6=1512$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1117,7 +1115,7 @@
      "points": 5
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לחשוב שמספר צלעות גדול ממספר הצמתים מבטיח קשירות (גרף לא קשיר יכול להכיל רכיב צפוף).",
     "לשכוח שבעץ פורש $|U|=|V|-1$, וש-$|V|$ זוגי הוא תוצאה של משפט הדרגות."
@@ -1198,7 +1196,7 @@
      "explain": "בעץ פורש על $n$ צמתים יש $n-1$ צלעות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1225,7 +1223,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לאפשר $d$ גם במקומות האמצעיים (היא מופיעה פעם אחת בלבד, והיא כבר בסוף).",
     "לספור את האות הראשונה והאחרונה כחלק מהבחירה החופשית."
@@ -1253,7 +1251,7 @@
      "explain": "$3^5=243$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1284,7 +1282,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שמספר הצמתים בדרגה אי-זוגית בכל גרף הוא זוגי.",
     "לחשוב שהמשלים של עץ הוא גרף Euler בלי לבדוק זוגיות של $n-2,\\ n-3,\\ n-4$."
@@ -1341,7 +1339,7 @@
      ]
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 6,
@@ -1376,7 +1374,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח להחסיר את החיתוך $8!$ ולספור פעמיים את הפונקציות עם $f(1)=1$ וגם $f(10)=10$.",
     "לחשב את החיתוך כ-$9!$ או $7!$ במקום $8!$ (נשארות 8 פונקציות חופשיות)."
@@ -1404,7 +1402,7 @@
      "explain": "$9!+9!-8!=8!\\cdot17=685440$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

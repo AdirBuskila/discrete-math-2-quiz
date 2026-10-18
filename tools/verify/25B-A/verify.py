@@ -77,6 +77,7 @@ assert not has_c5; print("Q4c ok: H Eulerian, G Hamiltonian, induced P4/C4/K4 in
 # Q5a
 n = next(n for n in range(2, 100) if 1 + n + comb(n, 2) == 1276); assert n == 50
 c = comb(50 // 5, 5) * comb(50 // 11, 2); assert c == 1512 and not any(x % 55 == 0 for x in range(1, 51)); print("Q5a", n, c)
+assert comb(7, 3) * comb(10, 6) * 2 ** 13 == 60211200 and 1512 * 2 ** 36 == 103903848824832  # literal readings quoted in the notes of Q3c/Q5a
 # Q5b
 K4p = nx.complete_graph(4); K4p.add_node(4); assert K4p.number_of_edges() > K4p.number_of_nodes() and not nx.is_connected(K4p)
 P4 = nx.path_graph(4); assert P4.number_of_edges() < P4.number_of_nodes() and nx.is_connected(P4)
